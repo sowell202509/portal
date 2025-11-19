@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>もみ徳｜今日の疲れ、今日のうちに。｜木田 出勤（曜日固定）</title>
+  <meta name="description" content="福岡のリラクゼーション『もみ徳』。60分3,500円〜。予約は公式アプリから。木田の出勤は【日・月・水・金】で固定。"/>
+  <meta name="theme-color" content="#5A463B"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800;900&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","system-ui","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'momi-ink':'#2B2725',
+            'momi-brown':'#5A463B',
+            'momi-darkbrown':'#3E3029',
+            'momi-gold':'#E2B46D',
+            'momi-beige':'#F6F1EB',
+            'momi-ivory':'#FBF9F6'
+          },
+          boxShadow:{ soft:'0 10px 40px rgba(0,0,0,.08)' },
+          backgroundImage:{ paper:'radial-gradient(40% 60% at 30% 20%, rgba(226,180,109,.18), transparent 60%), radial-gradient(30% 50% at 80% 10%, rgba(90,70,59,.10), transparent 70%)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .text-balance { text-wrap: balance; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-momi-ivory text-momi-ink leading-relaxed antialiased">
+
+  <header class="sticky top-0 z-50 bg-gradient-to-r from-momi-darkbrown to-momi-brown text-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="h-16 flex items-center gap-4">
+        <a href="#top" class="flex items-center gap-3 group hover:text-momi-gold transition">
+          <img src="./momitokulogp.png" alt="もみ徳ロゴ" class="h-8 w-auto object-contain"> 
+          <span class="font-extrabold tracking-tight text-lg">もみ徳 <span class="text-xs font-normal text-white/70 ml-1">木田の出勤案内</span></span>
+        </a>
+        <nav class="ml-auto hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#reason" class="hover:text-momi-gold transition">選ばれる理由</a>
+          <a href="#sowell" class="hover:text-momi-gold transition">Sowell特典</a>
+          <a href="#pricing" class="hover:text-momi-gold transition">料金</a>
+          <a href="#schedule" class="hover:text-momi-gold transition">出勤（曜日固定）</a>
+          <a href="#faq" class="hover:text-momi-gold transition">FAQ</a>
+          <a href="index.html" class="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs hover:bg-white hover:text-momi-brown transition">← ポータルTopへ</a>
+        </nav>
+        <div class="md:hidden ml-auto">
+          <button id="menuBtn" class="h-10 w-10 grid place-items-center rounded-xl bg-white/10 text-white hover:bg-white/20" aria-label="メニュー">≡</button>
+        </div>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-momi-brown/10 bg-white text-momi-ink">
+      <div class="max-w-6xl mx-auto px-4 py-4 grid gap-2 text-sm">
+        <a href="#reason" class="py-2 border-b border-gray-100">選ばれる理由</a>
+        <a href="#sowell" class="py-2 border-b border-gray-100">Sowell特典</a>
+        <a href="#pricing" class="py-2 border-b border-gray-100">料金</a>
+        <a href="#schedule" class="py-2 border-b border-gray-100">出勤（曜日固定）</a>
+        <a href="#faq" class="py-2">FAQ</a>
+        <hr class="border-momi-brown/10 my-2">
+        <a href="index.html" class="py-2 text-momi-brown font-bold">← ポータルTopへ戻る</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="bg-momi-brown/5 border-y border-momi-brown/15">
+    <div class="max-w-6xl mx-auto px-4 py-3 text-sm flex items-center gap-3">
+      <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-momi-brown text-white text-xs shrink-0" aria-hidden="true">ℹ︎</span>
+      <span class="font-medium">ご予約は<strong class="text-momi-brown">公式アプリ</strong>から。<span class="hidden md:inline ml-2">アプリ利用でポイントも貯まります。</span></span>
+      <div class="ml-auto hidden sm:flex gap-2">
+        <a href="https://play.google.com/store/apps/details?id=com.momitoku.salon&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-momi-brown text-white font-bold text-xs hover:opacity-80">Google Play</a>
+        <a href="https://apps.apple.com/jp/app/%E3%82%82%E3%81%BF%E5%BE%B3-%E5%85%AC%E5%BC%8F-%E5%85%A8%E8%BA%AB%E3%82%82%E3%81%BF%E3%81%BB%E3%81%90%E3%81%97%E3%82%84%E8%B6%B3%E3%81%A4%E3%81%BC-%E3%83%95%E3%83%83%E3%83%88%E3%82%B1%E3%82%A2/id1532379940" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-momi-gold text-momi-ink font-bold text-xs hover:opacity-80">App Store</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="top" class="relative">
+    <div class="max-w-6xl mx-auto px-4 py-14 md:py-20">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 text-xs md:text-sm px-3 py-1 rounded-full bg-white text-momi-brown border border-momi-brown/20">出勤：日・月・水・金 ／ 60分 3,500円〜</p>
+          <h1 class="mt-5 text-4xl md:text-6xl font-black tracking-tight text-balance font-serif">やさしさで、<br>芯からほどける。</h1>
+          <p class="mt-4 md:text-lg text-momi-ink/80">手軽さと満足感にこだわったリラクゼーション。<br>指名で“優しい整体 <span class="font-semibold">Sowell</span>”を追加して、もみほぐし＋整体にアップグレード。</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://play.google.com/store/apps/details?id=com.momitoku.salon&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="inline-flex h-12 px-6 rounded-xl items-center justify-center font-bold bg-gradient-to-r from-momi-darkbrown to-momi-brown text-white shadow-soft hover:opacity-90 transition">Androidで予約</a>
+            <a href="https://apps.apple.com/jp/app/%E3%82%82%E3%81%BF%E5%BE%B3-%E5%85%AC%E5%BC%8F-%E5%85%A8%E8%BA%AB%E3%82%82%E3%81%BF%E3%81%BB%E3%81%90%E3%81%97%E3%82%84%E8%B6%B3%E3%81%A4%E3%81%BC-%E3%83%95%E3%83%83%E3%83%88%E3%82%B1%E3%82%A2/id1532379940" target="_blank" rel="noopener noreferrer" class="inline-flex h-12 px-6 rounded-xl items-center justify-center font-bold bg-momi-gold text-momi-ink shadow-soft hover:opacity-90 transition">iOSで予約</a>
+            <a href="#reason" class="inline-flex h-12 px-6 rounded-xl items-center justify-center font-bold bg-white border border-momi-brown/20 hover:bg-gray-50 transition">詳しく見る</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-soft bg-paper">
+            <img src="./image.png" alt="施術イメージ" class="w-full h-full object-cover mix-blend-multiply"/>
+          </div>
+          <div class="absolute -bottom-5 -left-5 bg-white shadow-soft rounded-2xl px-4 py-3 border border-momi-brown/10">
+            <p class="text-sm"><span class="font-bold text-momi-brown">￥3,500</span> / 60分・基本もみほぐし</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reason" class="py-16 bg-momi-ivory">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight text-momi-brown text-center font-serif">もみ徳が選ばれる理由</h2>
+      <p class="mt-3 text-center text-momi-ink/80">“通いやすさ”を、とことん。</p>
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-7 rounded-2xl shadow-soft border border-momi-brown/10">
+          <h3 class="text-xl font-bold text-momi-brown">1. 通いやすい価格</h3>
+          <p class="mt-2">毎日でも無理なく通える <span class="font-bold">60分 3,500円〜</span>。継続しやすい価格設定です。</p>
+        </div>
+        <div class="bg-white p-7 rounded-2xl shadow-soft border border-momi-brown/10 ring-2 ring-momi-gold">
+           <h3 class="text-xl font-bold text-momi-brown">2. 通いやすい場所</h3>
+          <p class="mt-2">福岡県内と大分に店舗があり、赤坂駅・姪浜駅からはいずれも徒歩3分。生活導線に寄り添った“通いやすい”立地です。</p>
+        </div>
+        <div class="bg-white p-7 rounded-2xl shadow-soft border border-momi-brown/10">
+          <h3 class="text-xl font-bold text-momi-brown">3. 創業15年の安心感</h3>
+          <p class="mt-2">福岡で長く愛されてきた創業15年の経験と信頼。初めての方でも安心して任せられる技術と温かさがあります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sowell" class="py-20 bg-momi-beige">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="bg-white p-8 rounded-2xl shadow-soft border border-momi-brown/10">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-momi-brown font-serif">指名で “優しい整体 Sowell” を追加</h2>
+        <p class="mt-3 text-momi-ink/80">指名料（<span class="font-bold">+300円〜</span>）で、いつもの施術が <strong>Sowell整体</strong> 付きにアップグレード。バキバキしない、やさしく深部に届く整体です。</p>
+        <p class="mt-5 inline-block bg-momi-ivory px-4 py-2 rounded-full font-bold text-momi-brown border border-momi-brown/10">最もお得：<span class="text-momi-gold">もみほぐし＋Sowell</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight text-momi-brown text-center font-serif">料金プラン</h2>
+      <p class="mt-3 text-center text-momi-ink/80">明瞭会計。今日は“ちょうどいい”を選ぶだけ。</p>
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-7 rounded-2xl shadow-soft border border-momi-brown/10 flex flex-col">
+          <h3 class="text-lg font-bold text-momi-brown">基本コース</h3>
+          <div class="mt-2 text-3xl font-black text-momi-brown">3,500<span class="text-base font-bold">円</span></div>
+          <p class="mt-2 text-sm text-momi-ink/70">もみほぐし 60分</p>
+          <div class="mt-4 text-sm text-momi-ink/70">延長20分ごと +1,100円（最大120分）</div>
+        </div>
+        <div class="bg-white p-7 rounded-2xl shadow-soft border border-momi-brown/10 ring-2 ring-momi-gold flex flex-col">
+          <p class="mb-2 inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-momi-gold/90 text-momi-ink">おすすめ</p>
+          <h3 class="text-lg font-bold text-momi-brown">足つぼセット</h3>
+          <div class="mt-2 text-3xl font-black text-momi-brown">4,000<span class="text-base font-bold">円〜</span></div>
+          <p class="mt-2 text-sm text-momi-ink/70">足つぼ＋もみほぐし 60分〜</p>
+        </div>
+        <div class="bg-white p-7 rounded-2xl shadow-soft border border-momi-brown/10 flex flex-col">
+          <h3 class="text-lg font-bold text-momi-brown">指名（Sowell追加）</h3>
+          <div class="mt-2 text-3xl font-black text-momi-brown">+300<span class="text-base font-bold">円〜</span></div>
+          <p class="mt-2 text-sm text-momi-ink/70">全コースに“Sowell整体”を追加</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight text-momi-brown text-center font-serif">出勤（曜日固定）</h2>
+      <p class="mt-3 text-center text-momi-ink/80">木田の出勤は <strong>日・月・水・金</strong> 固定です。<span class="text-sm text-momi-ink/60">（<span class="font-semibold">日・月・水＝赤坂駅店／金＝姪浜店</span>）</span></p>
+
+      <div class="mt-10 bg-white rounded-2xl shadow-soft border border-momi-brown/10 p-4 md:p-6">
+        
+        <div class="md:hidden">
+          <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2">
+            <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-brown text-white text-center shadow-soft">
+              <p class="text-[13px] md:text-sm opacity-95 font-semibold tracking-wide">日</p>
+              <p class="mt-1 text-2xl font-extrabold leading-tight">13:00<br><span class="text-base font-bold">- 21:00</span></p>
+              <p class="mt-1 text-[11px] opacity-95">赤坂</p>
+            </div>
+            <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-brown text-white text-center shadow-soft">
+              <p class="text-[13px] md:text-sm opacity-95 font-semibold tracking-wide">月</p>
+              <p class="mt-1 text-2xl font-extrabold leading-tight">10:00<br><span class="text-base font-bold">- 18:00</span></p>
+              <p class="mt-1 text-[11px] opacity-95">赤坂</p>
+            </div>
+            <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-ivory text-momi-ink text-center border border-momi-brown/15">
+              <p class="text-[13px] md:text-sm opacity-70 font-semibold tracking-wide">火</p>
+              <p class="mt-1 text-xl font-extrabold leading-tight opacity-40">—</p>
+              <p class="mt-1 text-[11px] opacity-40">OFF</p>
+            </div>
+            <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-brown text-white text-center shadow-soft">
+              <p class="text-[13px] md:text-sm opacity-95 font-semibold tracking-wide">水</p>
+              <p class="mt-1 text-2xl font-extrabold leading-tight">10:00<br><span class="text-base font-bold">- 18:00</span></p>
+              <p class="mt-1 text-[11px] opacity-95">赤坂</p>
+            </div>
+            <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-ivory text-momi-ink text-center border border-momi-brown/15">
+              <p class="text-[13px] md:text-sm opacity-70 font-semibold tracking-wide">木</p>
+              <p class="mt-1 text-xl font-extrabold leading-tight opacity-40">—</p>
+              <p class="mt-1 text-[11px] opacity-40">OFF</p>
+            </div>
+            <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-gold text-momi-ink text-center shadow-soft">
+              <p class="text-[13px] md:text-sm opacity-95 font-semibold tracking-wide">金</p>
+              <p class="mt-1 text-2xl font-extrabold leading-tight">13:00<br><span class="text-base font-bold">- 22:00</span></p>
+              <p class="mt-1 text-[11px] opacity-95">姪浜</p>
+            </div>
+            <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-ivory text-momi-ink text-center border border-momi-brown/15">
+              <p class="text-[13px] md:text-sm opacity-70 font-semibold tracking-wide">土</p>
+              <p class="mt-1 text-xl font-extrabold leading-tight opacity-40">—</p>
+              <p class="mt-1 text-[11px] opacity-40">OFF</p>
+            </div>
+          </div>
+          <div class="mt-3 flex items-center justify-center gap-4 text-xs">
+            <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded bg-momi-brown inline-block"></span>赤坂駅店</span>
+            <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded bg-momi-gold inline-block"></span>姪浜店</span>
+          </div>
+        </div>
+
+        <div class="hidden md:grid grid-cols-7 gap-2 text-center">
+          <div class="p-4 rounded-xl bg-momi-brown text-white">
+            <p class="text-xs opacity-90">日</p>
+            <p class="mt-1 leading-tight text-[17px] md:text-lg font-extrabold tracking-tight tabular-nums font-mono">13-21</p>
+            <p class="mt-1 text-[12px] opacity-95">赤坂</p>
+          </div>
+          <div class="p-4 rounded-xl bg-momi-brown text-white">
+            <p class="text-xs opacity-90">月</p>
+            <p class="mt-1 leading-tight text-[17px] md:text-lg font-extrabold tracking-tight tabular-nums font-mono">10-18</p>
+            <p class="mt-1 text-[12px] opacity-95">赤坂</p>
+          </div>
+          <div class="p-4 rounded-xl bg-momi-ivory border-2 border-momi-brown/20 text-momi-ink/50">
+            <p class="text-xs opacity-70">火</p>
+            <p class="mt-1 text-lg font-bold opacity-40">—</p>
+          </div>
+          <div class="p-4 rounded-xl bg-momi-brown text-white">
+            <p class="text-xs opacity-90">水</p>
+            <p class="mt-1 leading-tight text-[17px] md:text-lg font-extrabold tracking-tight tabular-nums font-mono">10-18</p>
+            <p class="mt-1 text-[12px] opacity-95">赤坂</p>
+          </div>
+          <div class="p-4 rounded-xl bg-momi-ivory border-2 border-momi-brown/20 text-momi-ink/50">
+            <p class="text-xs opacity-70">木</p>
+            <p class="mt-1 text-lg font-bold opacity-40">—</p>
+          </div>
+          <div class="p-4 rounded-xl bg-momi-gold text-momi-ink ring-1 ring-momi-gold/40">
+            <p class="text-xs opacity-90">金</p>
+            <p class="mt-1 leading-tight text-[17px] md:text-lg font-extrabold tracking-tight tabular-nums font-mono">13-22</p>
+            <p class="mt-1 text-[12px] opacity-95">姪浜</p>
+          </div>
+          <div class="p-4 rounded-xl bg-momi-ivory border-2 border-momi-brown/20 text-momi-ink/50">
+            <p class="text-xs opacity-70">土</p>
+            <p class="mt-1 text-lg font-bold opacity-40">—</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="access" class="py-20 bg-momi-ivory">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight text-momi-brown text-center font-serif">アクセス</h2>
+      <div class="mt-12 grid md:grid-cols-2 gap-10">
+        <div class="bg-white p-6 rounded-2xl shadow-soft border-2 border-momi-brown/40">
+          <h3 class="text-xl font-bold text-momi-brown mb-2">赤坂駅店（日・月・水）</h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.717611486168!2d130.3890812763243!3d33.58666954216923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541918668332029%3A0x9786046210c3756e!2z44KC44G_5b6zIOeZvemcqOWdgueTpQ!5e0!3m2!1sja!2sjp!4v1709650000000!5m2!1sja!2sjp" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg"></iframe>
+          <div class="mt-3 flex gap-2 text-sm">
+            <a href="https://momitoku.main.jp/tenjinwest.html" target="_blank" class="text-momi-brown underline">店舗公式HP</a>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-soft border-2 border-momi-gold/60">
+          <h3 class="text-xl font-bold text-momi-brown mb-2">姪浜店（金のみ）</h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4743618296416!2d130.3266169763246!3d33.59300924186936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193a4114c503f%3A0x554191310364651e!2z44KC44G_5b6zIOW姪eWcjOW6lw!5e0!3m2!1sja!2sjp!4v1709650000000!5m2!1sja!2sjp" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg"></iframe>
+          <div class="mt-3 flex gap-2 text-sm">
+             <a href="https://momitoku.main.jp/meinohama/index.html" target="_blank" class="text-momi-brown underline">店舗公式HP</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-16 bg-momi-beige">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight text-momi-brown text-center font-serif">よくあるご質問</h2>
+      <div class="mt-8 space-y-4 max-w-3xl mx-auto">
+        <details class="group border border-momi-brown/10 rounded-2xl p-5 bg-white">
+          <summary class="font-bold cursor-pointer list-none flex items-center justify-between">強めも対応できますか？<span class="transition group-open:rotate-45">＋</span></summary>
+          <p class="mt-3 text-momi-ink/80">お好みに合わせて調整できます。強め・やさしめ、どちらもご遠慮なくお伝えください。</p>
+        </details>
+        <details class="group border border-momi-brown/10 rounded-2xl p-5 bg-white">
+          <summary class="font-bold cursor-pointer list-none flex items-center justify-between">Sowell整体は痛くない？<span class="transition group-open:rotate-45">＋</span></summary>
+          <p class="mt-3 text-momi-ink/80">バキバキしない優しい整体です。リラックスが苦手な方にもおすすめです。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="py-20 bg-gradient-to-b from-momi-brown to-black text-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-black tracking-tight font-serif">今すぐ予約して、体をリセットする</h2>
+      <p class="mt-4 md:text-lg text-white/90">“今日の疲れを、今日のうちに”。指名でSowell追加が一番お得です。</p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a href="https://play.google.com/store/apps/details?id=com.momitoku.salon&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="inline-flex h-12 px-6 rounded-xl items-center justify-center font-bold bg-momi-gold text-momi-ink shadow-soft hover:opacity-90">Androidで予約</a>
+        <a href="https://apps.apple.com/jp/app/%E3%82%82%E3%81%BF%E5%BE%B3-%E5%85%AC%E5%BC%8F-%E5%85%A8%E8%BA%AB%E3%82%82%E3%81%BF%E3%81%BB%E3%81%90%E3%81%97%E3%82%84%E8%B6%B3%E3%81%A4%E3%81%BC-%E3%83%95%E3%83%83%E3%83%88%E3%82%B1%E3%82%A2/id1532379940" target="_blank" rel="noopener noreferrer" class="inline-flex h-12 px-6 rounded-xl items-center justify-center font-bold bg-white text-momi-brown shadow-soft hover:opacity-90">iOSで予約</a>
+        <a href="#pricing" class="inline-flex h-12 px-6 rounded-xl items-center justify-center font-bold bg-white/10 hover:bg-white/20">料金を確認</a>
+      </div>
+      <p class="mt-4 text-xs text-white/70">※ 当日予約はアプリ／お電話にて。web予約は仮予約のため、受付後に確定します。</p>
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <a href="https://apps.apple.com/jp/app/%E3%82%82%E3%81%BF%E5%BE%B3-%E5%85%AC%E5%BC%8F-%E5%85%A8%E8%BA%AB%E3%82%82%E3%81%BF%E3%81%BB%E3%81%90%E3%81%97%E3%82%84%E8%B6%B3%E3%81%A4%E3%81%BC-%E3%83%95%E3%83%83%E3%83%88%E3%82%B1%E3%82%A2/id1532379940" target="_blank" rel="noopener noreferrer" class="inline-block"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="Download on the App Store" class="h-12" loading="lazy" decoding="async"/></a>
+        <a href="https://play.google.com/store/apps/details?id=com.momitoku.salon&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="inline-block"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/ja_badge_web_generic.png" alt="Get it on Google Play" class="h-12" loading="lazy" decoding="async"/></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gradient-to-r from-momi-darkbrown to-momi-brown text-white/80 py-10 text-center text-sm">
+    <p class="font-serif text-white text-lg mb-4">もみ徳｜木田（ほぐしや きだ）</p>
+    <div class="flex justify-center gap-6 mb-8 text-xs">
+      <a href="index.html" class="hover:text-momi-gold transition">ポータルTop</a>
+      <a href="kampo_list.html" class="hover:text-momi-gold transition">漢方の教科書</a>
+    </div>
+    <p class="text-xs opacity-50">© 2025 Hogushi-ya Kida. All rights reserved.</p>
+  </footer>
+
+  <div class="fixed bottom-4 inset-x-4 sm:hidden z-50">
+    <div class="bg-white shadow-soft rounded-2xl p-2 flex items-center gap-2 border ring-1 ring-black/5">
+      <span class="text-sm font-bold text-momi-brown pl-2">60分 3,500円〜</span>
+      <a href="https://play.google.com/store/apps/details?id=com.momitoku.salon" target="_blank" class="ml-auto inline-flex h-10 px-3 rounded-xl items-center justify-center font-bold bg-gradient-to-r from-momi-darkbrown to-momi-brown text-white text-xs">Android</a>
+      <a href="https://apps.apple.com/jp/app/id1532379940" target="_blank" class="inline-flex h-10 px-3 rounded-xl items-center justify-center font-bold bg-momi-gold text-momi-ink text-xs">iOS</a>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+  </script>
+</body>
+</html>

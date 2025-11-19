@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vol.0 なぜ、雨の日は頭が痛くなるのか？｜漢方学習帳</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'brand-black':'#333333',
+            'brand-brown':'#5A463B',
+            'brand-darkbrown':'#3E3029',
+            'brand-gold':'#E2B46D',
+            'brand-bg':'#F2F0EB', /* 背景色を少し濃くして白を目立たせる */
+            'brand-paper':'#FFFFFF'
+          },
+          boxShadow:{ card:'0 4px 20px rgba(90, 70, 59, 0.08)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* 読みやすさのためのカスタムスタイル */
+    body {
+      background-image: radial-gradient(#E0DCD5 1px, transparent 1px);
+      background-size: 20px 20px; /* ドット方眼紙のような背景 */
+    }
+    .article-body p {
+      margin-bottom: 1.8em;
+      line-height: 2;
+      font-size: 1.05rem; /* 少し大きめで読みやすく */
+      color: #4a4a4a;
+    }
+    .article-body h2 {
+      font-family: "Shippori Mincho", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #5A463B;
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E2B46D; /* 下線 */
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h2::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 24px;
+      background-color: #5A463B;
+      border-radius: 4px;
+    }
+    .marker {
+      background: linear-gradient(transparent 60%, #FDE68A 60%);
+      font-weight: 700;
+      padding: 0 2px;
+    }
+    /* 吹き出しスタイル */
+    .bubble {
+      position: relative;
+      background: #F8F6F4;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      border: 1px solid #EDE9E4;
+    }
+    .bubble::after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      bottom: -10px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #F8F6F4;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-black antialiased flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-brand-brown/10 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="kampo_list.html" class="text-xs font-bold text-brand-brown hover:bg-brand-brown hover:text-white transition flex items-center gap-1 px-3 py-1 rounded-full border border-brand-brown/20">
+        ← 一覧へ
+      </a>
+      <span class="font-serif font-bold text-lg text-brand-brown tracking-widest">漢方学習帳</span>
+      <div class="w-16"></div>
+    </div>
+  </header>
+
+  <main class="flex-grow py-8 md:py-12 px-4">
+    
+    <article class="max-w-3xl mx-auto bg-brand-paper rounded-3xl shadow-card overflow-hidden">
+      
+      <div class="bg-brand-brown text-white text-center pt-12 pb-10 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/washi.png')]"></div>
+        <span class="inline-block bg-brand-gold text-brand-brown text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm">Vol.0 学びの記録</span>
+        <h1 class="text-2xl md:text-4xl font-serif font-bold leading-tight mb-2">
+          なぜ、雨の日は<br>頭が痛くなるのか？
+        </h1>
+        <p class="text-sm opacity-80 mt-4 font-serif">
+          ── 「天人合一」の考え方が面白かった話
+        </p>
+      </div>
+
+      <div class="p-6 md:p-12 article-body">
+        
+        <p>こんにちは、ほぐしや きだです。<br>
+        施術をしていると、こんな声をよく耳にします。</p>
+
+        <div class="bubble">
+          <p class="mb-0 text-sm font-medium text-brand-brown">
+            「雨が降る前は頭が痛くて…」<br>
+            「季節の変わり目はなんとなくダルいんです」
+          </p>
+        </div>
+
+        <p>実は私もそうでした。これらをずっと「体質のせい」や「気圧のせい」にして諦めていたんです。</p>
+
+        <p>でも、漢方を学び始めて<span class="marker">「なるほど、だからなのか！」</span>と腑に落ちた考え方がありました。今日はその学びをシェアしたいと思います。</p>
+
+        <h2>1. 人間も「自然の一部」だった</h2>
+
+        <p>漢方の古典『黄帝内経（こうていだいけい）』を勉強していて、こんな言葉に出会いました。</p>
+
+        <div class="bg-[#FAF8F5] border-l-4 border-brand-gold p-6 my-8 rounded-r-lg">
+          <p class="mb-2 font-bold font-serif text-xl text-brand-brown">「人以天地之気生」</p>
+          <p class="text-sm text-gray-600 mb-0">（読み：人は天地の気をもって生ず）</p>
+        </div>
+
+        <p>専門用語で<strong>「天人合一（てんじんごういつ）」</strong>というそうです。</p>
+        
+        <p>直訳すると「天と人は一つである」。<br>
+        つまり、人間を「独立したロボット」のように見るのではなく、<span class="marker">「大自然（宇宙）という大きなシステムの一部」</span>として見る、という世界観です。</p>
+
+        <div class="grid md:grid-cols-3 gap-4 my-8 text-center text-sm">
+          <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+            <div class="text-2xl mb-2">☁️</div>
+            <div class="font-bold text-brand-brown mb-1">天（てん）</div>
+            <div class="text-gray-500">季節・気候</div>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+            <div class="text-2xl mb-2">⛰️</div>
+            <div class="font-bold text-brand-brown mb-1">地（ち）</div>
+            <div class="text-gray-500">環境・場所</div>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+            <div class="text-2xl mb-2">🧍</div>
+            <div class="font-bold text-brand-brown mb-1">人（ひと）</div>
+            <div class="text-gray-500">体調・感情</div>
+          </div>
+        </div>
+
+        <p>この3つは繋がっていて、切り離せないものだと考えるんですね。</p>
+
+        <h2>2. 体は「小さな宇宙」かもしれない</h2>
+
+        <p>この考え方を知ってから、不調の捉え方が変わりました。</p>
+        <p>例えば、自然界で雨が続いて川が増水すること（湿気）と、体の中で水分が溜まってむくむこと（水滞）。<br>
+        漢方ではこれを<strong>「同じ現象」</strong>として見るそうです。</p>
+        
+        <p>だから、雨が降って外の湿度が上がれば、体の中の湿度（水分）も影響を受けて当然なんだ、と思えるようになりました。</p>
+
+        <ul class="list-none bg-brand-bg p-6 rounded-xl space-y-3">
+          <li class="flex items-start gap-3">
+            <span class="text-brand-brown mt-1">●</span>
+            <span>「天（気圧）」が変われば、<br class="md:hidden">体内の圧バランスも変わる。</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-brown mt-1">●</span>
+            <span>「地（湿気）」が増えれば、<br class="md:hidden">体内の水分も重くなる。</span>
+          </li>
+        </ul>
+
+        <p>こう考えると、頭痛やダルさは「故障」ではなく、<span class="marker">「体が自然に反応している証拠」</span>なのかもしれません。そう思うと、少し自分の体が愛おしくなりませんか？</p>
+
+        <h2>3. 学びからの気づき</h2>
+
+        <p>漢方の勉強は難しい用語が多いですが、<br>根本にあるのはとてもシンプルな「調和」の話でした。</p>
+
+        <div class="text-center py-8">
+          <p class="font-serif text-lg md:text-xl text-brand-brown leading-loose">
+            空を見て、足元を見て、<br>
+            「いま、自然はどうなっているかな？」<br>
+            と考えてみる。
+          </p>
+        </div>
+
+        <p>それだけで、自分の体調の変化を少し優しく受け入れられる気がします。<br>
+        次回は、この世界を分ける「陰と陽」について学んだことをまとめようと思います。</p>
+
+      </div>
+
+      <div class="bg-[#FDFBF7] border-t border-dashed border-brand-brown/20 p-8 md:p-12 text-center">
+        <div class="inline-block bg-white border border-brand-brown/20 rounded-full px-4 py-1 mb-4">
+          <p class="text-brand-brown text-[10px] font-bold tracking-widest">THERAPIST MESSAGE</p>
+        </div>
+        <h3 class="text-lg md:text-xl font-serif font-bold mb-4 text-brand-brown">不調の理由がわかると、ケアが変わります</h3>
+        <p class="text-gray-600 text-sm mb-8 leading-relaxed max-w-lg mx-auto">
+          「なぜ辛いのか」を東洋医学の視点で見立て、<br>お一人お一人に合わせた施術を行っています。<br>
+          雨の日が辛い方も、ぜひ一度ご相談ください。
+        </p>
+        <a href="salon.html" class="inline-flex items-center justify-center gap-2 bg-brand-brown text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkbrown hover:-translate-y-1 transition shadow-lg w-full md:w-auto">
+          <span>もみ徳（予約・出勤）を見る</span>
+          <span class="text-brand-gold">→</span>
+        </a>
+      </div>
+
+    </article>
+
+    <div class="max-w-2xl mx-auto mt-12 text-center">
+      <a href="kampo_list.html" class="text-brand-brown/60 text-sm font-bold hover:text-brand-brown hover:underline transition">
+        目次に戻る
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="bg-brand-brown text-white/60 py-10 text-center text-xs mt-auto">
+    <div class="flex justify-center gap-6 mb-6 font-bold text-white/80">
+      <a href="index.html" class="hover:text-brand-gold transition">ポータルTop</a>
+      <a href="salon.html" class="hover:text-brand-gold transition">もみ徳 予約</a>
+    </div>
+    <p>© 2025 Hogushi-ya Kida</p>
+  </footer>
+
+</body>
+</html>
