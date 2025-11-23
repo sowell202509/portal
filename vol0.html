@@ -18,7 +18,7 @@
             'brand-brown':'#5A463B',
             'brand-darkbrown':'#3E3029',
             'brand-gold':'#E2B46D',
-            'brand-bg':'#F2F0EB', /* 背景色を少し濃くして白を目立たせる */
+            'brand-bg':'#F2F0EB', 
             'brand-paper':'#FFFFFF'
           },
           boxShadow:{ card:'0 4px 20px rgba(90, 70, 59, 0.08)' }
@@ -27,15 +27,14 @@
     }
   </script>
   <style>
-    /* 読みやすさのためのカスタムスタイル */
     body {
       background-image: radial-gradient(#E0DCD5 1px, transparent 1px);
-      background-size: 20px 20px; /* ドット方眼紙のような背景 */
+      background-size: 20px 20px;
     }
     .article-body p {
       margin-bottom: 1.8em;
       line-height: 2;
-      font-size: 1.05rem; /* 少し大きめで読みやすく */
+      font-size: 1.05rem;
       color: #4a4a4a;
     }
     .article-body h2 {
@@ -46,7 +45,7 @@
       margin-top: 3.5rem;
       margin-bottom: 1.5rem;
       padding-bottom: 0.5rem;
-      border-bottom: 2px solid #E2B46D; /* 下線 */
+      border-bottom: 2px solid #E2B46D;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -64,7 +63,6 @@
       font-weight: 700;
       padding: 0 2px;
     }
-    /* 吹き出しスタイル */
     .bubble {
       position: relative;
       background: #F8F6F4;
@@ -199,7 +197,28 @@
         <p>それだけで、自分の体調の変化を少し優しく受け入れられる気がします。<br>
         次回は、この世界を分ける「陰と陽」について学んだことをまとめようと思います。</p>
 
-      </div>
+        <div class="mt-16 pt-12 border-t-2 border-dashed border-brand-brown/20 text-center">
+          
+          <p class="font-bold text-brand-brown mb-6">最後まで読んでくれて<br>ありがとうございます！</p>
+          
+          <button id="likeBtn" class="group relative inline-flex items-center justify-center gap-2 bg-white border-2 border-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-brand-bg transition-all duration-300 transform active:scale-95 shadow-sm">
+            <span id="likeIcon" class="text-xl group-hover:scale-125 transition-transform duration-300">🤍</span>
+            <span id="likeText">見たよ！</span>
+            <span id="floatingHeart" class="absolute -top-4 left-1/2 transform -translate-x-1/2 text-2xl opacity-0 pointer-events-none">💖</span>
+          </button>
+          <p id="thanksMsg" class="text-sm text-brand-gold font-bold mt-4 opacity-0 transition-opacity duration-500 h-0">
+            応援ありがとうございます！励みになります🌿
+          </p>
+
+          <div class="mt-8">
+            <p class="text-xs text-gray-500 mb-2">記事の感想やご質問はこちらから</p>
+            <a href="https://forms.gle/KG1RNXE7tEPHfsej9" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-brand-brown border-b border-brand-brown/30 hover:border-brand-brown hover:text-brand-darkbrown transition pb-1">
+              📝 メッセージ・感想を送る（Googleフォーム）
+            </a>
+          </div>
+
+        </div>
+        </div>
 
       <div class="bg-[#FDFBF7] border-t border-dashed border-brand-brown/20 p-8 md:p-12 text-center">
         <div class="inline-block bg-white border border-brand-brown/20 rounded-full px-4 py-1 mb-4">
@@ -233,6 +252,42 @@
     </div>
     <p>© 2025 Hogushi-ya Kida</p>
   </footer>
+
+  <script>
+    const likeBtn = document.getElementById('likeBtn');
+    const likeIcon = document.getElementById('likeIcon');
+    const likeText = document.getElementById('likeText');
+    const thanksMsg = document.getElementById('thanksMsg');
+    const floatingHeart = document.getElementById('floatingHeart');
+
+    const pageId = window.location.pathname; 
+    if (localStorage.getItem('liked_' + pageId)) {
+      setLikedState();
+    }
+
+    likeBtn.addEventListener('click', function() {
+      if (likeBtn.classList.contains('liked')) return;
+
+      floatingHeart.animate([
+        { transform: 'translate(-50%, 0) scale(1)', opacity: 1 },
+        { transform: 'translate(-50%, -50px) scale(1.5)', opacity: 0 }
+      ], {
+        duration: 800,
+        easing: 'ease-out'
+      });
+
+      localStorage.setItem('liked_' + pageId, 'true');
+      setLikedState();
+    });
+
+    function setLikedState() {
+      likeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
+      likeIcon.textContent = '💖';
+      likeText.textContent = 'Thank you!';
+      thanksMsg.classList.remove('opacity-0', 'h-0');
+      likeBtn.style.pointerEvents = 'none';
+    }
+  </script>
 
 </body>
 </html>
