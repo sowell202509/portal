@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vol.1 陰陽とは？｜漢方学習帳</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'brand-black':'#333333',
+            'brand-brown':'#5A463B',
+            'brand-darkbrown':'#3E3029',
+            'brand-gold':'#E2B46D',
+            'brand-bg':'#F2F0EB', 
+            'brand-paper':'#FFFFFF'
+          },
+          boxShadow:{ card:'0 4px 20px rgba(90, 70, 59, 0.08)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-image: radial-gradient(#E0DCD5 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .article-body p {
+      margin-bottom: 1.8em;
+      line-height: 2;
+      font-size: 1.05rem;
+      color: #4a4a4a;
+    }
+    .article-body h2 {
+      font-family: "Shippori Mincho", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #5A463B;
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E2B46D;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h2::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 24px;
+      background-color: #5A463B;
+      border-radius: 4px;
+    }
+    .marker {
+      background: linear-gradient(transparent 60%, #FDE68A 60%);
+      font-weight: 700;
+      padding: 0 2px;
+    }
+    .bubble {
+      position: relative;
+      background: #F8F6F4;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      border: 1px solid #EDE9E4;
+    }
+    .bubble::after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      bottom: -10px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #F8F6F4;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-black antialiased flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-brand-brown/10 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="kampo_list.html" class="text-xs font-bold text-brand-brown hover:bg-brand-brown hover:text-white transition flex items-center gap-1 px-3 py-1 rounded-full border border-brand-brown/20">
+        ← 一覧へ
+      </a>
+      <span class="font-serif font-bold text-lg text-brand-brown tracking-widest">漢方学習帳</span>
+      <div class="w-16"></div>
+    </div>
+  </header>
+
+  <main class="flex-grow py-8 md:py-12 px-4">
+    
+    <article class="max-w-3xl mx-auto bg-brand-paper rounded-3xl shadow-card overflow-hidden">
+      
+      <div class="bg-brand-brown text-white text-center pt-12 pb-10 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/washi.png')]"></div>
+        <span class="inline-block bg-brand-gold text-brand-brown text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm">Vol.1 学びの記録</span>
+        <h1 class="text-2xl md:text-4xl font-serif font-bold leading-tight mb-2">
+          「陰陽」は、<br>バランスの科学だった。
+        </h1>
+        <p class="text-sm opacity-80 mt-4 font-serif">
+          ── 男と女、太陽と月、活動と休息
+        </p>
+      </div>
+
+      <div class="p-6 md:p-12 article-body">
+        
+        <p>こんにちは、ほぐしや きだです。<br>
+        「陰陽（いんよう）」という言葉を聞いて、どんなイメージを持ちますか？</p>
+
+        <div class="bubble">
+          <p class="mb-0 text-sm font-medium text-brand-brown">
+            「陰気な性格、陽気な性格のこと？」<br>
+            「占いとか、スピリチュアルな話？」
+          </p>
+        </div>
+
+        <p>正直に言うと、私も最初はそう思っていました。<br>
+        でも勉強を進めていくと、これは占いではなく<strong>「この世界のバランスを説明する物理法則」</strong>に近いものだと気づきました。</p>
+
+        <p>この法則を知ると、<span class="marker">「なぜ体調を崩すのか」</span>の理由がとてもクリアになります。</p>
+
+        <h2>1. 良いも悪いもない、ただの「関係性」</h2>
+
+        <p>漢方では、世界のあらゆるものを「陰（いん）」と「陽（よう）」の2つに分けて考えます。</p>
+
+        <div class="grid md:grid-cols-2 gap-4 my-8 text-center text-sm">
+          <div class="bg-[#FFF5F5] p-6 rounded-xl border border-red-100">
+            <div class="text-4xl mb-2">☀️</div>
+            <div class="font-bold text-brand-brown text-lg mb-2">陽（よう）</div>
+            <div class="text-gray-600 leading-loose">
+              太陽・昼・夏・火<br>
+              活動・熱・男性・動く
+            </div>
+          </div>
+          <div class="bg-[#F0F9FF] p-6 rounded-xl border border-blue-100">
+            <div class="text-4xl mb-2">🌙</div>
+            <div class="font-bold text-brand-brown text-lg mb-2">陰（いん）</div>
+            <div class="text-gray-600 leading-loose">
+              月・夜・冬・水<br>
+              休息・冷・女性・静か
+            </div>
+          </div>
+        </div>
+
+        <p>ここで大切なのは、<strong>「陽が良いもので、陰が悪いもの」ではない</strong>ということです。</p>
+        <p>昼（陽）が来れば、必ず夜（陰）が来ます。<br>
+        活動（陽）したら、休息（陰）が必要です。<br>
+        どちらか片方だけでは、世界も、私たちの体も成り立ちません。</p>
+
+        <h2>2. 「自律神経」も陰陽だった</h2>
+
+        <p>この考え方、現代医学でいうところの<strong>「自律神経」</strong>にそっくりだと思いませんか？</p>
+
+        <ul class="list-none bg-brand-bg p-6 rounded-xl space-y-3">
+          <li class="flex items-start gap-3">
+            <span class="text-brand-brown mt-1 font-bold">交感神経</span>
+            <span>＝ 戦う・逃げる・活動する神経（陽）</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-brown mt-1 font-bold">副交感神経</span>
+            <span>＝ 休む・消化する・眠る神経（陰）</span>
+          </li>
+        </ul>
+
+        <p>現代人は、スマホや仕事で常に「陽（活動モード）」になりすぎていて、「陰（休息モード）」が足りていないことが多いです。<br>
+        これを漢方では<span class="marker">「陽極まって陰とならず」</span>のような状態で捉えます。</p>
+        
+        <p>バランスが崩れて「陽」が強すぎると、のぼせやイライラ、不眠になります。<br>
+        逆に「陰」が強すぎると、冷えやむくみ、やる気の低下が起こります。</p>
+
+        <h2>3. バランスを取り戻すために</h2>
+
+        <p>「陰陽論」が教えてくれるのは、<strong>「中庸（ちゅうよう）」</strong>、つまり「ちょうどいいバランス」の大切さです。</p>
+
+        <div class="bg-white p-6 border-l-4 border-brand-gold my-8 italic text-brand-brown shadow-sm">
+          <p class="mb-0">
+            熱ければ冷ます。<br>
+            寒ければ温める。<br>
+            動きすぎたら休み、休みすぎたら動く。
+          </p>
+        </div>
+
+        <p>当たり前のことのようですが、私たちはつい無理をして、このシーソーのバランスを崩してしまいがちです。</p>
+        <p>「最近、陽に傾きすぎてないかな？（頑張りすぎてないかな？）」<br>
+        「陰に傾いてないかな？（冷えてないかな？）」</p>
+        
+        <p>そんなふうに自分に問いかけることが、健康への第一歩なのだと学びました。</p>
+
+      </div>
+
+      <div class="bg-[#FDFBF7] border-t border-dashed border-brand-brown/20 p-8 md:p-12 text-center">
+        <div class="inline-block bg-white border border-brand-brown/20 rounded-full px-4 py-1 mb-4">
+          <p class="text-brand-brown text-[10px] font-bold tracking-widest">THERAPIST MESSAGE</p>
+        </div>
+        <h3 class="text-lg md:text-xl font-serif font-bold mb-4 text-brand-brown">あなたの「陰陽バランス」整えます</h3>
+        <p class="text-gray-600 text-sm mb-8 leading-relaxed max-w-lg mx-auto">
+          頑張りすぎて高ぶった神経（陽）を鎮めたり、<br>冷えて滞った巡り（陰）を動かしたり。<br>
+          もみ徳では、お体の状態に合わせたバランス調整を行っています。
+        </p>
+        <a href="salon.html" class="inline-flex items-center justify-center gap-2 bg-brand-brown text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkbrown hover:-translate-y-1 transition shadow-lg w-full md:w-auto">
+          <span>もみ徳（予約・出勤）を見る</span>
+          <span class="text-brand-gold">→</span>
+        </a>
+      </div>
+
+    </article>
+
+    <div class="max-w-2xl mx-auto mt-12 text-center">
+      <a href="kampo_list.html" class="text-brand-brown/60 text-sm font-bold hover:text-brand-brown hover:underline transition">
+        目次に戻る
+      </a>
+    </div>
+
+    <div class="max-w-2xl mx-auto mt-16 mb-12 px-4">
+      <div class="bg-white rounded-2xl shadow-sm border border-brand-brown/10 p-8 text-center">
+        <p class="font-bold text-brand-brown mb-6">最後まで読んでくれて<br>ありがとうございます！</p>
+        
+        <button id="likeBtn" class="group relative inline-flex items-center justify-center gap-2 bg-white border-2 border-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-brand-bg transition-all duration-300 transform active:scale-95 shadow-sm">
+          <span id="likeIcon" class="text-xl group-hover:scale-125 transition-transform duration-300">🤍</span>
+          <span id="likeText">見たよ！</span>
+          <span id="floatingHeart" class="absolute -top-4 left-1/2 transform -translate-x-1/2 text-2xl opacity-0 pointer-events-none">💖</span>
+        </button>
+        <p id="thanksMsg" class="text-sm text-brand-gold font-bold mt-4 opacity-0 transition-opacity duration-500 h-0">
+          応援ありがとうございます！励みになります🌿
+        </p>
+
+        <button id="shareBtn" class="mt-6 text-brand-brown/60 text-xs font-bold flex items-center justify-center gap-2 mx-auto hover:text-brand-gold transition py-2 px-4 rounded hover:bg-brand-bg/50">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+          </svg>
+          <span>この記事をシェアする</span>
+        </button>
+
+        <div class="mt-8">
+          <p class="text-xs text-gray-500 mb-2">記事の感想やご質問はこちらから</p>
+          <a href="https://forms.gle/KG1RNXE7tEPHfsej9" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-brand-brown border-b border-brand-brown/30 hover:border-brand-brown hover:text-brand-darkbrown transition pb-1">
+            📝 メッセージ・感想を送る（Googleフォーム）
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-brand-brown text-white/60 py-10 text-center text-xs mt-auto">
+    <div class="flex justify-center gap-6 mb-6 font-bold text-white/80">
+      <a href="index.html" class="hover:text-brand-gold transition">ポータルTop</a>
+      <a href="salon.html" class="hover:text-brand-gold transition">もみ徳 予約</a>
+    </div>
+    <p>© 2025 Hogushi-ya Kida</p>
+  </footer>
+
+  <script>
+    const likeBtn = document.getElementById('likeBtn');
+    const likeIcon = document.getElementById('likeIcon');
+    const likeText = document.getElementById('likeText');
+    const thanksMsg = document.getElementById('thanksMsg');
+    const floatingHeart = document.getElementById('floatingHeart');
+    const pageId = window.location.pathname; 
+
+    if (localStorage.getItem('liked_' + pageId)) {
+      setLikedState();
+    }
+
+    likeBtn.addEventListener('click', function() {
+      if (likeBtn.classList.contains('liked')) return;
+      floatingHeart.animate([
+        { transform: 'translate(-50%, 0) scale(1)', opacity: 1 },
+        { transform: 'translate(-50%, -50px) scale(1.5)', opacity: 0 }
+      ], { duration: 800, easing: 'ease-out' });
+      localStorage.setItem('liked_' + pageId, 'true');
+      setLikedState();
+    });
+
+    function setLikedState() {
+      likeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
+      likeIcon.textContent = '💖';
+      likeText.textContent = 'Thank you!';
+      thanksMsg.classList.remove('opacity-0', 'h-0');
+      likeBtn.style.pointerEvents = 'none';
+    }
+
+    const shareBtn = document.getElementById('shareBtn');
+    shareBtn.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title,
+            text: 'ほぐしや きだ｜漢方学習帳',
+            url: window.location.href
+          });
+        } catch (err) {}
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert('URLをコピーしました！\nThreadsやSNSに貼り付けてください🌿');
+      }
+    });
+  </script>
+
+</body>
+</html>
