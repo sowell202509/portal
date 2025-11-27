@@ -72,13 +72,12 @@
   .btn-save { background: var(--brand-gold); color: #fff; } 
   .btn-secondary { background: #fff; color: var(--brand-brown); border: 2px solid #eee; box-shadow: none; }
   
-  /* Instagramボタン */
   .btn-insta {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     color: #fff;
   }
 
-  /* ▼▼▼ 選択肢ボタン（スマホ対策修正版） ▼▼▼ */
+  /* 選択肢ボタン（スマホ対策済み） */
   .options button {
     display: block; width: 100%; padding: 15px 20px; margin: 10px 0;
     background: #fff; border: 1px solid #ddd; border-radius: 8px;
@@ -86,13 +85,12 @@
     cursor: pointer; transition: background 0.1s, transform 0.1s;
     text-align: left; font-family: inherit;
     position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    -webkit-tap-highlight-color: transparent; /* タップ時の青枠削除 */
+    -webkit-tap-highlight-color: transparent;
   }
   .options button::before { 
     content: "●"; color: #ccc; margin-right: 10px; font-size: 0.8em; transition: 0.2s; 
   }
 
-  /* PC（マウス）のみホバー有効 */
   @media (hover: hover) {
     .options button:hover { 
       background: #fffaf0; border-color: var(--brand-gold); transform: translateX(2px); 
@@ -100,11 +98,9 @@
     .options button:hover::before { color: var(--accent-red); }
   }
 
-  /* スマホのタップ時アクション */
   .options button:active {
     background: #fffaf0; border-color: var(--brand-gold); transform: scale(0.98);
   }
-  /* ▲▲▲ 修正ここまで ▲▲▲ */
 
   /* 結果カード */
   .result-card { border: 4px double var(--brand-gold); padding: 30px 15px; text-align: center; background: #fff; }
@@ -249,8 +245,11 @@
 </div>
 
 <script>
-// 公開URL（空欄で自動取得）
+// 設定：公開URL（空欄で自動取得）
 const PAGE_URL = ""; 
+
+// 属性リスト（ID変換用）
+const ELEMENTS = ["wood", "fire", "earth", "metal", "water"];
 
 const questions = [
   { t: "何かを始める時、あなたは？", opts: [{t:"計画・準備を入念に", el:"wood"}, {t:"とりあえずやってみる", el:"fire"}, {t:"みんなの意見を聞く", el:"earth"}, {t:"手順と効率を確認", el:"metal"}, {t:"状況の流れを読む", el:"water"}] },
@@ -287,15 +286,26 @@ let scores = { wood: 0, fire: 0, earth: 0, metal: 0, water: 0 };
 let userName = "";
 let shareData = null;
 
+// URLパラメータ処理（短縮ID版）
 window.onload = function() {
   const params = new URLSearchParams(window.location.search);
-  const m = params.get('m');
-  const s = params.get('s');
+  const d = params.get('d');
   const n = params.get('n');
-  const t = params.get('t');
 
-  if (m && s && n && t) {
-    displayResultFromParams(m, s, n, t);
+  if (d !== null && n) {
+    const id = parseInt(d, 10);
+    const mainIndex = Math.floor(id / 5);
+    const subIndex = id % 5;
+    
+    if(mainIndex >=0 && mainIndex < 5 && subIndex >= 0 && subIndex < 5) {
+      const mainEl = ELEMENTS[mainIndex];
+      const subEl = ELEMENTS[subIndex];
+      const prefixes = titleParts[subEl].prefix;
+      const nouns = titleParts[mainEl].noun;
+      // 簡易的な称号生成（毎回ランダムだが違和感は少ない）
+      const generatedTitle = `${prefixes[Math.floor(Math.random() * prefixes.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}`;
+      displayResultFromParams(mainEl, subEl, n, generatedTitle);
+    }
   }
 };
 
@@ -388,7 +398,6 @@ function renderResultScreen(mainEl, subEl, name, title, scoreData) {
   });
 }
 
-// 共有機能
 function shareImageToNative() {
   const element = document.getElementById("guild-card");
   const originalBoxShadow = element.style.boxShadow;
@@ -425,21 +434,31 @@ function saveCardImage() {
   });
 }
 
+// URL短縮ロジック
+function getShareUrl() {
+  if (!shareData) return window.location.href;
+  let baseUrl = PAGE_URL ? PAGE_URL : (location.protocol + '//' + location.host + location.pathname);
+  const mainIndex = ELEMENTS.indexOf(shareData.m);
+  const subIndex = ELEMENTS.indexOf(shareData.s);
+  const diagId = (mainIndex * 5) + subIndex;
+  const params = new URLSearchParams();
+  params.set('d', diagId);
+  params.set('n', shareData.n);
+  return `${baseUrl}?${params.toString()}`;
+}
+
 function shareResult() {
   if (!shareData) return;
   const shareText = `【五行診断 by ほぐしやきだ】\n私の属性は「主：${profiles[shareData.m].name} / 従：${profiles[shareData.s].name}」\n授かりし称号は『${shareData.t}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
-  let url = PAGE_URL ? PAGE_URL : (location.protocol + '//' + location.host + location.pathname);
-  const params = new URLSearchParams(shareData).toString();
-  const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + " " + url + "?" + params)}`;
+  const url = getShareUrl();
+  const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + " " + url)}`;
   window.open(threadsUrl, '_blank');
 }
 
 function copyUrl() {
-  let url = PAGE_URL ? PAGE_URL : (location.protocol + '//' + location.host + location.pathname);
-  const params = new URLSearchParams(shareData).toString();
-  const fullUrl = `${url}?${params}`;
-  navigator.clipboard.writeText(fullUrl).then(() => {
-    alert("URLをコピーしました！");
+  const url = getShareUrl();
+  navigator.clipboard.writeText(url).then(() => {
+    alert("短縮URLをコピーしました！");
   }).catch(err => alert("コピーに失敗しました"));
 }
 </script>
