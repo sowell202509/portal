@@ -46,16 +46,24 @@
   }
   input[type="text"]:focus { border-color: var(--brand-gold); box-shadow: 0 0 0 3px rgba(226, 180, 109, 0.2); }
   
+  /* ボタン共通設定 */
   .btn-base {
     border: none; padding: 18px 30px; border-radius: 50px; cursor: pointer; 
     font-size: 1.1em; width: 100%; font-family: 'Shippori Mincho', serif; font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s; margin-top: 20px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s; margin-top: 15px; 
     display: block; text-decoration: none; text-align: center; box-sizing: border-box;
   }
   .btn-base:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+  .btn-base:active { transform: translateY(0); }
 
+  /* 色違いボタン */
   .btn-primary { background: var(--accent-red); color: #fff; }
   .btn-share { background: #000; color: #fff; }
+  
+  /* コピーボタン（グレー） */
+  .btn-copy { background: #666; color: #fff; }
+  
+  /* 戻るボタン（白） */
   .btn-secondary { background: #fff; color: var(--brand-brown); border: 2px solid #eee; box-shadow: none; }
   .btn-secondary:hover { border-color: var(--brand-brown); }
 
@@ -113,7 +121,6 @@
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='black' filter='url(%23g)'/%3E%3C/svg%3E");
   }
 
-  /* ▼▼▼ 参考文献エリアのデザイン ▼▼▼ */
   .references-box {
     margin-top: 30px; padding: 15px; border-top: 1px solid #ddd;
     text-align: left; font-size: 0.75em; color: #888;
@@ -180,6 +187,10 @@
           <i class="fa-brands fa-threads"></i> 結果をThreadsで共有
         </button>
         
+        <button class="btn-base btn-copy" onclick="copyUrl()">
+          <i class="fa-solid fa-link"></i> URLをコピーして共有
+        </button>
+        
         <button class="btn-base btn-secondary" onclick="location.reload()">トップに戻る</button>
         <p style="text-align:center; font-size:0.85em; color:rgba(255,255,255,0.7); margin-top:15px;">※画像を保存（スクショ）して記録とします</p>
     </div>
@@ -188,7 +199,7 @@
 
 <script>
 // ★ここだけ書き換えてください（公開するURL）
-const PAGE_URL = "https://your-site-url.com"; 
+const PAGE_URL = ""; 
 
 const questions = [
   { t: "何かを始める時、あなたは？", opts: [{t:"計画・準備を入念に", el:"wood"}, {t:"とりあえずやってみる", el:"fire"}, {t:"みんなの意見を聞く", el:"earth"}, {t:"手順と効率を確認", el:"metal"}, {t:"状況の流れを読む", el:"water"}] },
@@ -308,11 +319,23 @@ function showResult() {
   });
 }
 
+// Threadsシェア
 function shareResult() {
-  const shareText = `【五行診断 by ほぐしや きだ】\n私の属性は「主：${finalResult.main} / 従：${finalResult.sub}」\n授かりし称号は『${finalResult.title}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
-  let urlToShare = (PAGE_URL.indexOf("http") === 0) ? PAGE_URL : window.location.href;
+  const shareText = `【五行診断 by ほぐしやきだ】\n私の属性は「主：${finalResult.main} / 従：${finalResult.sub}」\n授かりし称号は『${finalResult.title}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
+  let urlToShare = PAGE_URL ? PAGE_URL : window.location.href;
   const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + " " + urlToShare)}`;
   window.open(threadsUrl, '_blank');
+}
+
+// ▼▼▼ URLコピー機能（追加） ▼▼▼
+function copyUrl() {
+  let urlToShare = PAGE_URL ? PAGE_URL : window.location.href;
+  navigator.clipboard.writeText(urlToShare).then(() => {
+    alert("URLをコピーしました！\n好きな場所に貼り付けてシェアしてください。");
+  }).catch(err => {
+    console.error('コピーに失敗しました', err);
+    alert("コピーに失敗しました。URLを手動でコピーしてください。");
+  });
 }
 </script>
 </body>
