@@ -294,6 +294,39 @@
   </footer>
 
   <script>
+    const likeBtn = document.getElementById('likeBtn');
+    const likeIcon = document.getElementById('likeIcon');
+    const likeText = document.getElementById('likeText');
+    const thanksMsg = document.getElementById('thanksMsg');
+    const floatingHeart = document.getElementById('floatingHeart');
+    const pageId = window.location.pathname; 
+
+    if (localStorage.getItem('liked_' + pageId)) { setLikedState(); }
+
+    if(likeBtn){
+        likeBtn.addEventListener('click', function() {
+        if (likeBtn.classList.contains('liked')) return;
+        floatingHeart.animate([{ transform: 'translate(-50%, 0) scale(1)', opacity: 1 }, { transform: 'translate(-50%, -50px) scale(1.5)', opacity: 0 }], { duration: 800, easing: 'ease-out' });
+        localStorage.setItem('liked_' + pageId, 'true');
+        setLikedState();
+        });
+    }
+    function setLikedState() {
+      if(!likeBtn) return;
+      likeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
+      likeIcon.textContent = '💖'; likeText.textContent = 'Thank you!';
+      thanksMsg.classList.remove('opacity-0', 'h-0'); likeBtn.style.pointerEvents = 'none';
+    }
+    const shareBtn = document.getElementById('shareBtn');
+    if(shareBtn){
+        shareBtn.addEventListener('click', async () => {
+        if (navigator.share) { try { await navigator.share({ title: document.title, text: 'ほぐしや きだ｜漢方学習帳', url: window.location.href }); } catch (err) {} } 
+        else { navigator.clipboard.writeText(window.location.href); alert('URLをコピーしました！\nThreadsやSNSに貼り付けてください🌿'); }
+        });
+    }
+  </script>
+
+  <script>
     const articleBody = document.querySelector('.article-body');
     const reactionHTML = `
         <div class="mt-16 pt-12 border-t-2 border-dashed border-brand-brown/20 text-center">
