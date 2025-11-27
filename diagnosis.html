@@ -57,6 +57,7 @@
   }
   input[type="text"]:focus { border-color: var(--brand-gold); box-shadow: 0 0 0 3px rgba(226, 180, 109, 0.2); }
   
+  /* ボタン類 */
   .btn-base {
     border: none; padding: 15px 20px; border-radius: 50px; cursor: pointer; 
     font-size: 1em; width: 100%; font-family: 'Shippori Mincho', serif; font-weight: bold;
@@ -71,23 +72,41 @@
   .btn-save { background: var(--brand-gold); color: #fff; } 
   .btn-secondary { background: #fff; color: var(--brand-brown); border: 2px solid #eee; box-shadow: none; }
   
-  /* Instagramボタン（グラデーション） */
+  /* Instagramボタン */
   .btn-insta {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     color: #fff;
   }
 
+  /* ▼▼▼ 選択肢ボタン（スマホ対策修正版） ▼▼▼ */
   .options button {
     display: block; width: 100%; padding: 15px 20px; margin: 10px 0;
     background: #fff; border: 1px solid #ddd; border-radius: 8px;
     color: var(--text-main); font-size: 1em; font-weight: 500;
-    cursor: pointer; transition: 0.2s; text-align: left; font-family: inherit;
+    cursor: pointer; transition: background 0.1s, transform 0.1s;
+    text-align: left; font-family: inherit;
     position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    -webkit-tap-highlight-color: transparent; /* タップ時の青枠削除 */
   }
-  .options button::before { content: "●"; color: #ccc; margin-right: 10px; font-size: 0.8em; transition: 0.2s; }
-  .options button:hover { background: #fffaf0; border-color: var(--brand-gold); transform: translateX(2px); }
-  .options button:hover::before { color: var(--accent-red); }
+  .options button::before { 
+    content: "●"; color: #ccc; margin-right: 10px; font-size: 0.8em; transition: 0.2s; 
+  }
 
+  /* PC（マウス）のみホバー有効 */
+  @media (hover: hover) {
+    .options button:hover { 
+      background: #fffaf0; border-color: var(--brand-gold); transform: translateX(2px); 
+    }
+    .options button:hover::before { color: var(--accent-red); }
+  }
+
+  /* スマホのタップ時アクション */
+  .options button:active {
+    background: #fffaf0; border-color: var(--brand-gold); transform: scale(0.98);
+  }
+  /* ▲▲▲ 修正ここまで ▲▲▲ */
+
+  /* 結果カード */
   .result-card { border: 4px double var(--brand-gold); padding: 30px 15px; text-align: center; background: #fff; }
   .card-name { font-size: 1.1em; margin-bottom: 5px; opacity: 0.7; font-family: 'Shippori Mincho', serif; }
   .card-title { 
@@ -116,6 +135,7 @@
     font-size: 0.7em; padding: 2px 8px; margin-right: 8px; border-radius: 4px; font-family: sans-serif;
   }
   
+  /* グリッドレイアウト（文字ズレ解消） */
   .advice-content dl { 
     display: grid; grid-template-columns: max-content 1fr; gap: 8px 15px; 
     margin: 0; font-size: 0.95em; align-items: baseline;
@@ -229,6 +249,7 @@
 </div>
 
 <script>
+// 公開URL（空欄で自動取得）
 const PAGE_URL = ""; 
 
 const questions = [
@@ -367,33 +388,19 @@ function renderResultScreen(mainEl, subEl, name, title, scoreData) {
   });
 }
 
-// ▼▼▼ 画像共有（Instagram対応）機能 ▼▼▼
+// 共有機能
 function shareImageToNative() {
   const element = document.getElementById("guild-card");
   const originalBoxShadow = element.style.boxShadow;
   element.style.boxShadow = "none";
   element.style.transform = "scale(1)"; 
-
   html2canvas(element, { scale: 2, backgroundColor: "#ffffff", useCORS: true }).then(canvas => {
     element.style.boxShadow = originalBoxShadow;
     canvas.toBlob(async (blob) => {
-      // ファイルオブジェクト作成
       const file = new File([blob], "diagnosis_result.png", { type: "image/png" });
-      
-      // Web Share API (Level 2) が使えるかチェック
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        try {
-          await navigator.share({
-            files: [file],
-            // InstagramはURLを同時に送れない場合が多いので画像のみ送る場合もある
-            // title: '五行診断結果',
-            // text: '私の診断結果です！ #五行診断'
-          });
-        } catch (err) {
-          console.log("シェアキャンセル");
-        }
+        try { await navigator.share({ files: [file] }); } catch (err) { console.log("シェアキャンセル"); }
       } else {
-        // 対応していない場合（PCなど）はダウンロードさせる
         alert("お使いの環境では直接シェアできませんでした。\n画像を保存しますので、手動で投稿してください。");
         const link = document.createElement('a');
         link.download = `五行診断_${shareData ? shareData.t : '結果'}.png`;
@@ -404,7 +411,6 @@ function shareImageToNative() {
   });
 }
 
-// 通常の画像保存
 function saveCardImage() {
   const element = document.getElementById("guild-card");
   const originalBoxShadow = element.style.boxShadow;
@@ -419,7 +425,6 @@ function saveCardImage() {
   });
 }
 
-// テキスト＋URLシェア
 function shareResult() {
   if (!shareData) return;
   const shareText = `【五行診断 by ほぐしやきだ】\n私の属性は「主：${profiles[shareData.m].name} / 従：${profiles[shareData.s].name}」\n授かりし称号は『${shareData.t}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
