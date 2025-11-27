@@ -19,12 +19,26 @@
             'brand-darkbrown':'#3E3029',
             'brand-gold':'#E2B46D',
             'brand-bg':'#F2F0EB', 
-            'brand-paper':'#FFFFFF'
+            'brand-paper':'#FFFFFF',
+            /* 五行カラー */
+            'gogyo-wood':'#729B79',
+            'gogyo-fire':'#D96C6C',
+            'gogyo-earth':'#C7A76C',
+            'gogyo-metal':'#A8A8A8',
+            'gogyo-water':'#6B8BAD',
           },
           boxShadow:{ card:'0 4px 20px rgba(90, 70, 59, 0.08)' }
         }
       }
     }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SXB69DFE11');
   </script>
   <style>
     body {
@@ -100,7 +114,7 @@
       font-weight: bold;
       color: #5A463B;
     }
-    /* スマホで横スクロールさせる設定 */
+    /* スマホで横スクロール */
     .table-scroll {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -320,7 +334,7 @@
     const shareBtn = document.getElementById('shareBtn');
     if(shareBtn){
         shareBtn.addEventListener('click', async () => {
-        if (navigator.share) { try { await navigator.share({ title: document.title, text: 'ほぐしや きだ｜漢方学習帳', url: window.location.href }); } catch (err) {} } 
+        if (navigator.share) { try { await navigator.share({ title: document.title, text: 'ほぐしや きだ｜漢方学習帳 Vol.2', url: window.location.href }); } catch (err) {} } 
         else { navigator.clipboard.writeText(window.location.href); alert('URLをコピーしました！\nThreadsやSNSに貼り付けてください🌿'); }
         });
     }
