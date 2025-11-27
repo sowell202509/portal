@@ -46,21 +46,22 @@
   }
   input[type="text"]:focus { border-color: var(--brand-gold); box-shadow: 0 0 0 3px rgba(226, 180, 109, 0.2); }
   
-  /* ボタン共通設定 */
   .btn-base {
     border: none; padding: 18px 30px; border-radius: 50px; cursor: pointer; 
     font-size: 1.1em; width: 100%; font-family: 'Shippori Mincho', serif; font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s; margin-top: 15px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s; margin-top: 20px; 
     display: block; text-decoration: none; text-align: center; box-sizing: border-box;
   }
   .btn-base:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
-  .btn-base:active { transform: translateY(0); }
 
   .btn-primary { background: var(--accent-red); color: #fff; }
   .btn-share { background: #000; color: #fff; }
   .btn-copy { background: #666; color: #fff; }
   .btn-secondary { background: #fff; color: var(--brand-brown); border: 2px solid #eee; box-shadow: none; }
   .btn-secondary:hover { border-color: var(--brand-brown); }
+
+  /* シェア時専用ボタン（私もやる） */
+  .btn-retry { background: var(--brand-gold); color: #fff; }
 
   .options button {
     display: block; width: 100%; padding: 18px 25px; margin: 15px 0;
@@ -101,21 +102,12 @@
     font-size: 0.7em; padding: 3px 10px; margin-right: 10px; border-radius: 4px; font-family: sans-serif;
   }
 
-  /* ▼▼▼ ここを修正しました（文字ズレ解消） ▼▼▼ */
   .advice-content dl { 
-    display: grid;
-    grid-template-columns: max-content 1fr; /* 左は文字幅、右は残り */
-    gap: 10px 20px; /* 縦横の間隔 */
-    margin: 0; font-size: 1em; 
-    align-items: baseline; /* 文字の下端を揃える */
+    display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; 
+    margin: 0; font-size: 1em; align-items: baseline;
   }
-  .advice-content dt { 
-    font-weight: bold; color: var(--accent-red); margin: 0; text-align: right;
-  }
-  .advice-content dd { 
-    margin: 0; color: #444; line-height: 1.6;
-  }
-  /* ▲▲▲ 修正ここまで ▲▲▲ */
+  .advice-content dt { font-weight: bold; color: var(--accent-red); margin: 0; text-align: right; }
+  .advice-content dd { margin: 0; color: #444; line-height: 1.6; }
   
   .stats-chart { display: flex; justify-content: space-between; margin: 40px 10px 20px; font-size: 0.85em; }
   .stat-item { flex: 1; text-align: center; }
@@ -164,6 +156,10 @@
   </div>
 
   <div id="result-screen" class="hidden">
+    <div id="shared-notice" class="hidden" style="text-align:center; margin-bottom:20px; color:#fff; font-weight:bold;">
+      ▼ 共有された診断結果です ▼
+    </div>
+
     <div id="guild-card" class="result-card washi-card">
       <div class="card-name" id="res-name">名前 殿</div>
       <div class="card-title" id="res-title">称号</div>
@@ -199,6 +195,10 @@
           <i class="fa-solid fa-link"></i> URLをコピーして共有
         </button>
         
+        <button id="btn-new-diag" class="btn-base btn-retry hidden" onclick="location.href=location.pathname">
+          <i class="fa-solid fa-rotate-right"></i> 私も診断してみる
+        </button>
+
         <button class="btn-base btn-secondary" onclick="location.reload()">トップに戻る</button>
         <p style="text-align:center; font-size:0.85em; color:rgba(255,255,255,0.7); margin-top:15px;">※画像を保存（スクショ）して記録とします</p>
     </div>
@@ -206,7 +206,7 @@
 </div>
 
 <script>
-// ★ここだけ書き換えてください（公開するURL）
+// ★設定：公開時のURLが決まっていればここに記入（空欄でも自動取得します）
 const PAGE_URL = ""; 
 
 const questions = [
@@ -242,7 +242,21 @@ const kanjiNum = ["〇","一","二","三","四","五","六","七","八","九","�
 let currentQ = 0;
 let scores = { wood: 0, fire: 0, earth: 0, metal: 0, water: 0 };
 let userName = "";
-let finalResult = { title: "", main: "", sub: "" };
+let shareData = null; // シェア用データを保持
+
+// ▼ ページ読み込み時にURLパラメータをチェック
+window.onload = function() {
+  const params = new URLSearchParams(window.location.search);
+  const m = params.get('m');
+  const s = params.get('s');
+  const n = params.get('n');
+  const t = params.get('t'); // 称号もURLに含めるように改良
+
+  if (m && s && n && t) {
+    // パラメータがあれば、クイズを飛ばして結果を表示
+    displayResultFromParams(m, s, n, t);
+  }
+};
 
 function startQuiz() {
   const input = document.getElementById('username');
@@ -270,33 +284,59 @@ function showQuestion() {
 function answer(element) {
   scores[element]++;
   currentQ++;
-  if(currentQ < questions.length) { showQuestion(); } else { showResult(); }
+  if(currentQ < questions.length) { showQuestion(); } else { calcAndShowResult(); }
 }
 
-function showResult() {
-  document.getElementById('quiz-screen').classList.add('hidden');
-  document.getElementById('result-screen').classList.remove('hidden');
-
+// 診断結果を計算して表示（通常ルート）
+function calcAndShowResult() {
   const sorted = Object.keys(scores).sort((a,b) => scores[b] - scores[a]);
   const mainEl = sorted[0];
   const subEl = sorted[1];
+  
+  // 称号生成
+  const prefixes = titleParts[subEl].prefix;
+  const nouns = titleParts[mainEl].noun;
+  const generatedTitle = `${prefixes[Math.floor(Math.random() * prefixes.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}`;
+  
+  // シェア用データをセット
+  shareData = { m: mainEl, s: subEl, n: userName, t: generatedTitle };
+  
+  // 描画
+  renderResultScreen(mainEl, subEl, userName, generatedTitle, scores);
+}
+
+// URLパラメータから結果を表示（シェアルート）
+function displayResultFromParams(mainEl, subEl, name, title) {
+  document.getElementById('start-screen').classList.add('hidden');
+  document.getElementById('shared-notice').classList.remove('hidden'); // 「共有された結果です」を表示
+  document.getElementById('btn-new-diag').classList.remove('hidden'); // 「私もやる」ボタンを表示
+  
+  // シェア用データ（自分もこれを再シェアできるように）
+  shareData = { m: mainEl, s: subEl, n: name, t: title };
+
+  // チャート用のダミースコア作成（メイン5、サブ4、その他2）
+  const dummyScores = { wood: 2, fire: 2, earth: 2, metal: 2, water: 2 };
+  dummyScores[mainEl] = 5;
+  dummyScores[subEl] = 4;
+  
+  renderResultScreen(mainEl, subEl, name, title, dummyScores);
+}
+
+// 画面描画の共通関数
+function renderResultScreen(mainEl, subEl, name, title, scoreData) {
+  document.getElementById('quiz-screen').classList.add('hidden');
+  document.getElementById('result-screen').classList.remove('hidden');
+
   const mainData = profiles[mainEl];
   const subData = profiles[subEl];
-
-  const prefixes = titleParts[subEl].prefix;
-  const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-  const nouns = titleParts[mainEl].noun;
-  const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
-  const generatedTitle = `${randomPrefix}${randomNoun}`;
-
-  finalResult = { title: generatedTitle, main: mainData.name, sub: subData.name };
-
-  document.getElementById('res-name').textContent = `${userName} 殿`;
-  document.getElementById('res-title').textContent = generatedTitle;
+  
+  document.getElementById('res-name').textContent = `${name} 殿`;
+  document.getElementById('res-title').textContent = title;
   document.getElementById('res-attr').textContent = `主：${mainData.name} / 従：${subData.name}`;
   document.getElementById('res-attr').style.backgroundColor = `var(${mainData.colorVar})`;
   document.getElementById('res-msg').innerHTML = mainData.msg;
 
+  // カード色設定
   const mainColor = `var(${mainData.colorVar})`;
   document.getElementById('guild-card').style.borderColor = "#E2B46D";
   document.getElementById('advice-area').style.borderLeftColor = mainColor;
@@ -309,12 +349,13 @@ function showResult() {
     </dl>
   `;
 
+  // チャート生成
   const chartDiv = document.getElementById('res-stats');
   chartDiv.innerHTML = "";
   ["wood", "fire", "earth", "metal", "water"].forEach(el => {
     const p = profiles[el];
-    const score = scores[el];
-    const h = Math.min((score / 4) * 100, 100);
+    const s = scoreData[el];
+    const h = Math.min((s / 4) * 100, 100);
     const isMain = (el === mainEl);
     chartDiv.innerHTML += `
       <div class="stat-item">
@@ -322,25 +363,45 @@ function showResult() {
         <div class="stat-bar-container">
           <div class="stat-fill" style="height:${h}%; background:var(${p.colorVar}); opacity:${isMain?1:0.6};"></div>
         </div>
-        <strong>${score}</strong>
+        <strong>${s}</strong>
       </div>`;
   });
 }
 
+// シェアURL生成（パラメータ付き）
+function getShareUrl() {
+  if (!shareData) return window.location.href;
+  
+  // 現在のページURL（ベース）
+  let baseUrl = PAGE_URL ? PAGE_URL : (location.protocol + '//' + location.host + location.pathname);
+  
+  // パラメータを付与
+  const params = new URLSearchParams();
+  params.set('m', shareData.m);
+  params.set('s', shareData.s);
+  params.set('n', shareData.n);
+  params.set('t', shareData.t);
+  
+  return `${baseUrl}?${params.toString()}`;
+}
+
+// Threadsシェア実行
 function shareResult() {
-  const shareText = `【五行診断 by ほぐしやきだ】\n私の属性は「主：${finalResult.main} / 従：${finalResult.sub}」\n授かりし称号は『${finalResult.title}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
-  let urlToShare = PAGE_URL ? PAGE_URL : window.location.href;
-  const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + " " + urlToShare)}`;
+  if (!shareData) return;
+  const shareText = `【五行診断 by ほぐしやきだ】\n私の属性は「主：${profiles[shareData.m].name} / 従：${profiles[shareData.s].name}」\n授かりし称号は『${shareData.t}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
+  const url = getShareUrl();
+  const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + " " + url)}`;
   window.open(threadsUrl, '_blank');
 }
 
+// URLコピー実行
 function copyUrl() {
-  let urlToShare = PAGE_URL ? PAGE_URL : window.location.href;
-  navigator.clipboard.writeText(urlToShare).then(() => {
-    alert("URLをコピーしました！\n好きな場所に貼り付けてシェアしてください。");
+  const url = getShareUrl();
+  navigator.clipboard.writeText(url).then(() => {
+    alert("診断結果のURLをコピーしました！\nSNSやメッセージで共有できます。");
   }).catch(err => {
-    console.error('コピーに失敗しました', err);
-    alert("コピーに失敗しました。URLを手動でコピーしてください。");
+    console.error('コピー失敗', err);
+    alert("コピーできませんでした。");
   });
 }
 </script>
