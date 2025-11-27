@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五行特性診断 - 陰陽調和の書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  :root {
+    --wood: #006e54; --fire: #d3381c; --earth: #f7c114; --metal: #767c88; --water: #274a78;
+    --brand-brown: #5A463B; --brand-gold: #E2B46D; --brand-ivory: #FBF9F6;
+    --text-main: #2B2725; --washi-bg: #2a2a2a; --accent-red: #c9171e;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--washi-bg); color: var(--text-main); padding: 20px; line-height: 1.8;
+    background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.05'%3E%3Cpath d='M300,0C134.31,0,0,134.31,0,300s134.31,300,300,300,300-134.31,300-300S465.69,0,300,0ZM300,50c82.84,0,150,67.16,150,150S382.84,350,300,350,150,282.84,150,200,217.16,50,300,50ZM300,550c-82.84,0-150-67.16-150-150S217.16,250,300,250s150,67.16,150,150-67.16,150-150,150Z' fill='%23ffffff'/%3E%3C/g%3E%3Crect width='100%25' height='100%25' fill='none'/%3E%3C/svg%3E");
+    background-size: cover; background-attachment: fixed;
+  }
+  
+  .washi-card {
+    background-color: var(--brand-ivory);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+    padding: 40px 30px; border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    max-width: 600px; margin: 0 auto 30px; position: relative;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  h1 { 
+    font-family: 'Shippori Mincho', serif; text-align: center; font-size: 2.2em; 
+    letter-spacing: 0.1em; margin-bottom: 0.8em; color: var(--brand-brown); font-weight: 700;
+  }
+  .intro-text { text-align: center; margin-bottom: 30px; font-size: 0.95em; color: #555; }
+  
+  input[type="text"] {
+    width: 100%; max-width: 400px; padding: 15px; margin: 30px auto; display: block;
+    background: #fff; border: 2px solid #ddd; border-radius: 8px;
+    font-family: inherit; font-size: 1.1em; text-align: center; outline: none;
+    transition: 0.3s; box-sizing: border-box;
+  }
+  input[type="text"]:focus { border-color: var(--brand-gold); box-shadow: 0 0 0 3px rgba(226, 180, 109, 0.2); }
+  
+  .btn-base {
+    border: none; padding: 18px 30px; border-radius: 50px; cursor: pointer; 
+    font-size: 1.1em; width: 100%; font-family: 'Shippori Mincho', serif; font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s; margin-top: 20px; 
+    display: block; text-decoration: none; text-align: center; box-sizing: border-box;
+  }
+  .btn-base:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+
+  .btn-primary { background: var(--accent-red); color: #fff; }
+  .btn-share { background: #000; color: #fff; }
+  .btn-secondary { background: #fff; color: var(--brand-brown); border: 2px solid #eee; box-shadow: none; }
+  .btn-secondary:hover { border-color: var(--brand-brown); }
+
+  .options button {
+    display: block; width: 100%; padding: 18px 25px; margin: 15px 0;
+    background: #fff; border: 1px solid #ddd; border-radius: 8px;
+    color: var(--text-main); font-size: 1.05em; font-weight: 500;
+    cursor: pointer; transition: 0.2s; text-align: left; font-family: inherit;
+    position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  .options button::before { content: "●"; color: #ccc; margin-right: 15px; font-size: 0.8em; transition: 0.2s; }
+  .options button:hover { background: #fffaf0; border-color: var(--brand-gold); transform: translateX(3px); }
+  .options button:hover::before { color: var(--accent-red); }
+
+  .result-card { border: 4px double var(--brand-gold); padding: 40px 20px; text-align: center; background: #fff; }
+  .card-name { font-size: 1.2em; margin-bottom: 5px; opacity: 0.7; font-family: 'Shippori Mincho', serif; }
+  .card-title { 
+    font-size: 2em; font-weight: 800; margin-bottom: 20px; 
+    border-bottom: 2px solid var(--brand-brown); display: inline-block; padding-bottom: 10px; line-height: 1.3;
+    font-family: 'Shippori Mincho', serif; color: var(--brand-brown);
+  }
+  
+  .attribute-badge {
+    display: inline-block; padding: 8px 30px; border-radius: 50px;
+    color: #fff; margin: 10px 0 25px; font-size: 1.1em; letter-spacing: 0.1em;
+    font-family: 'Shippori Mincho', serif;
+  }
+
+  .advice-box {
+    text-align: left; margin: 30px 0; padding: 25px; background: #f9f4ef;
+    border-radius: 8px; border-left: 6px solid #555; position: relative;
+  }
+  .advice-header {
+    font-weight: bold; font-size: 1.2em; margin-bottom: 15px; color: var(--brand-brown);
+    display: flex; align-items: center; border-bottom: 1px dashed #ccc; padding-bottom: 10px;
+    font-family: 'Shippori Mincho', serif;
+  }
+  .advice-header::before {
+    content: "処方箋"; display: inline-block; background: var(--brand-brown); color: #fff;
+    font-size: 0.7em; padding: 3px 10px; margin-right: 10px; border-radius: 4px; font-family: sans-serif;
+  }
+  .advice-content dl { margin: 0; font-size: 1em; }
+  .advice-content dt { font-weight: bold; color: var(--accent-red); margin-top: 15px; float: left; clear: left; width: 3.5em; }
+  .advice-content dd { margin-left: 3.5em; margin-top: 15px; color: #444; }
+  
+  .stats-chart { display: flex; justify-content: space-between; margin: 40px 10px 20px; font-size: 0.85em; }
+  .stat-item { flex: 1; text-align: center; }
+  .stat-bar-container { 
+    height: 100px; width: 16px; margin: 0 auto 8px; 
+    background: #eee; position: relative; border-radius: 20px; overflow: hidden; 
+  }
+  .stat-fill { 
+    position: absolute; bottom: 0; width: 100%; transition: height 1.2s ease-out; 
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='black' filter='url(%23g)'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='black' filter='url(%23g)'/%3E%3C/svg%3E");
+  }
+
+  /* ▼▼▼ 参考文献エリアのデザイン ▼▼▼ */
+  .references-box {
+    margin-top: 30px; padding: 15px; border-top: 1px solid #ddd;
+    text-align: left; font-size: 0.75em; color: #888;
+  }
+  .references-title { font-weight: bold; margin-bottom: 5px; display: block; }
+
+  .disclaimer-box {
+    margin-top: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px;
+    font-size: 0.7em; color: #999; text-align: left; line-height: 1.5;
+  }
+
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div id="start-screen" class="washi-card">
+    <h1>五行特性診断</h1>
+    <p class="intro-text">
+      天地万物を構成する五つの元素。<br>
+      心身の偏りを知り、調和へと導く<br>
+      東洋医学の知恵に基づく鑑定です。
+    </p>
+    <input type="text" id="username" placeholder="お名前を入力">
+    <button class="btn-base btn-primary" onclick="startQuiz()">鑑定を始める</button>
+  </div>
+
+  <div id="quiz-screen" class="washi-card hidden">
+    <h2 id="q-number" style="text-align:center; border:none; color:var(--brand-brown); font-size:1em;">問ノ一</h2>
+    <div id="q-text" style="text-align:center; font-weight:bold; margin-bottom:30px; font-size:1.3em;">質問</div>
+    <div id="options" class="options"></div>
+  </div>
+
+  <div id="result-screen" class="hidden">
+    <div id="guild-card" class="result-card washi-card">
+      <div class="card-name" id="res-name">名前 殿</div>
+      <div class="card-title" id="res-title">称号</div>
+      <div class="attribute-badge" id="res-attr">木 / 火</div>
+      
+      <div id="res-msg" style="text-align:left; margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px; font-weight:500;"></div>
+
+      <div id="advice-area" class="advice-box">
+        <div class="advice-header">心身調和ノ処方箋</div>
+        <div class="advice-content" id="res-advice"></div>
+      </div>
+
+      <div class="stats-chart" id="res-stats"></div>
+      
+      <div style="font-size:0.85em; color:var(--brand-brown); font-weight:bold; margin-top:20px;">五行診断 by ほぐしや きだ</div>
+      
+      <div class="references-box">
+        <span class="references-title">【参考文献・出典】</span>
+        『黄帝内経』（素問・霊枢）、『傷寒雑病論』、日本東洋医学会 学術情報 他
+      </div>
+
+      <div class="disclaimer-box">
+        ※本コンテンツは東洋医学の基礎理論（五行色体表など）を取り入れたエンターテインメントであり、医師による診断や治療を目的としたものではありません。著しい体調不良を感じる場合は、必ず医療機関を受診してください。
+      </div>
+    </div>
+    
+    <div style="max-width:600px; margin:0 auto;">
+        <button class="btn-base btn-share" onclick="shareResult()">
+          <i class="fa-brands fa-threads"></i> 結果をThreadsで共有
+        </button>
+        
+        <button class="btn-base btn-secondary" onclick="location.reload()">トップに戻る</button>
+        <p style="text-align:center; font-size:0.85em; color:rgba(255,255,255,0.7); margin-top:15px;">※画像を保存（スクショ）して記録とします</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ★ここだけ書き換えてください（公開するURL）
+const PAGE_URL = "https://your-site-url.com"; 
+
+const questions = [
+  { t: "何かを始める時、あなたは？", opts: [{t:"計画・準備を入念に", el:"wood"}, {t:"とりあえずやってみる", el:"fire"}, {t:"みんなの意見を聞く", el:"earth"}, {t:"手順と効率を確認", el:"metal"}, {t:"状況の流れを読む", el:"water"}] },
+  { t: "ストレスを感じた時の反応は？", opts: [{t:"イライラ・怒り", el:"wood"}, {t:"興奮・落ち着かない", el:"fire"}, {t:"悩み・考え込む", el:"earth"}, {t:"悲観・殻に閉じこもる", el:"metal"}, {t:"不安・恐怖", el:"water"}] },
+  { t: "つい出てしまう体の不調は？", opts: [{t:"目の疲れ・肩こり", el:"wood"}, {t:"動悸・不眠", el:"fire"}, {t:"胃もたれ・だるさ", el:"earth"}, {t:"肌荒れ・呼吸の浅さ", el:"metal"}, {t:"冷え・むくみ", el:"water"}] },
+  { t: "人から評価される点は？", opts: [{t:"発想力・行動力", el:"wood"}, {t:"華やかさ・情熱", el:"fire"}, {t:"安心感・調整力", el:"earth"}, {t:"分析力・几帳面さ", el:"metal"}, {t:"柔軟性・本質を見抜く", el:"water"}] },
+  { t: "嫌いな環境は？", opts: [{t:"束縛・マンネリ", el:"wood"}, {t:"静寂・無視", el:"fire"}, {t:"急変・争い", el:"earth"}, {t:"不潔・無秩序", el:"metal"}, {t:"騒音・干渉", el:"water"}] },
+  { t: "理想の休日は？", opts: [{t:"自然の中で活動", el:"wood"}, {t:"イベントや集まり", el:"fire"}, {t:"家で美味しい食事", el:"earth"}, {t:"整理整頓・美の追求", el:"metal"}, {t:"読書・温泉", el:"water"}] },
+  { t: "困難への対処法は？", opts: [{t:"真正面から突破", el:"wood"}, {t:"勢いで乗り切る", el:"fire"}, {t:"耐えて好転を待つ", el:"earth"}, {t:"原因を分析・排除", el:"metal"}, {t:"上手くかわす", el:"water"}] },
+  { t: "好む味覚は？", opts: [{t:"酸味（酢・柑橘）", el:"wood"}, {t:"苦味（コーヒー・ゴーヤ）", el:"fire"}, {t:"甘味（芋・穀物）", el:"earth"}, {t:"辛味（生姜・スパイス）", el:"metal"}, {t:"塩味（海藻・出汁）", el:"water"}] },
+  { t: "目指したい自分は？", opts: [{t:"成長し続ける自分", el:"wood"}, {t:"輝いている自分", el:"fire"}, {t:"頼られる自分", el:"earth"}, {t:"洗練された自分", el:"metal"}, {t:"自由で深い自分", el:"water"}] },
+  { t: "直感で選ぶ色は？", opts: [{t:"青緑・若草", el:"wood"}, {t:"赤・紫", el:"fire"}, {t:"黄・茶", el:"earth"}, {t:"白・銀", el:"metal"}, {t:"黒・群青", el:"water"}] }
+];
+
+const profiles = {
+  wood: { name: "木", colorVar: "--wood", msg: "春の芽吹きのようなエネルギーを持ち、上昇志向が強いタイプ。しかし頑張りすぎると「気」が滞りやすくなります。", organs: "肝・胆・目", symptom: "イライラ、目の疲れ、筋肉の痙攣", advice: "酸味を取り入れ、深呼吸で気の巡りを良くしましょう。", food: "柑橘類、梅干し、セロリ、春菊" },
+  fire: { name: "火", colorVar: "--fire", msg: "太陽のように周囲を照らす情熱家。エネルギーの燃焼が激しく、オーバーヒート（心労）に注意が必要です。", organs: "心・小腸・舌", symptom: "動悸、不眠、多汗、口内炎", advice: "苦味のある食材で熱を冷まし、良質な睡眠を。", food: "ゴーヤ、緑茶、トマト、赤身肉" },
+  earth: { name: "土", colorVar: "--earth", msg: "大地のような包容力と安定感。あれこれ悩みすぎて胃腸に負担をかけやすい傾向があります。", organs: "脾・胃・口", symptom: "胃もたれ、食欲不振、全身のだるさ", advice: "胃腸を温め、自然な甘みで元気を補いましょう。", food: "かぼちゃ、芋類、米、大豆製品" },
+  metal: { name: "金", colorVar: "--metal", msg: "研ぎ澄まされた感性と規律を愛するタイプ。乾燥に弱く、バリア機能（免疫・皮膚）が低下しやすいです。", organs: "肺・大腸・鼻", symptom: "咳、鼻炎、肌の乾燥、悲観的思考", advice: "潤いを保ち、辛味食材で発散させましょう。", food: "大根、梨、白ネギ、生姜、豆腐" },
+  water: { name: "水", colorVar: "--water", msg: "静かな水面のような知性と適応力。生命力の源「腎」に関わるため、冷えと過労は大敵です。", organs: "腎・膀胱・耳", symptom: "足腰の冷え、むくみ、耳鳴り、白髪", advice: "とにかく冷え対策。黒い食材で生命力を養って。", food: "黒豆、黒ごま、海藻、豚肉、塩" }
+};
+
+const titleParts = {
+  wood: { prefix: ["疾風の", "蒼き", "新緑の", "繁栄の", "悠々たる", "気高き"], noun: ["開拓者", "賢者", "大樹", "冒険家", "先駆者", "風雲児"] },
+  fire: { prefix: ["紅蓮の", "灼熱の", "陽炎の", "情熱の", "輝ける", "不滅の"], noun: ["英雄", "闘士", "灯火", "改革者", "太陽", "司令官"] },
+  earth: { prefix: ["磐石の", "黄金の", "悠久の", "不動の", "恵みの", "包容なる"], noun: ["守護者", "皇帝", "大地", "要塞", "母港", "調停者"] },
+  metal: { prefix: ["白銀の", "鋭利な", "純白の", "粛清の", "鋼の", "玲瓏なる"], noun: ["騎士", "裁定者", "剣聖", "革命家", "美学者", "志士"] },
+  water: { prefix: ["深淵の", "静寂の", "幻影の", "幽玄の", "変幻自在の", "神秘の"], noun: ["策士", "詠み手", "龍神", "哲学者", "治療家", "求道者"] }
+};
+
+const kanjiNum = ["〇","一","二","三","四","五","六","七","八","九","十"];
+let currentQ = 0;
+let scores = { wood: 0, fire: 0, earth: 0, metal: 0, water: 0 };
+let userName = "";
+let finalResult = { title: "", main: "", sub: "" };
+
+function startQuiz() {
+  const input = document.getElementById('username');
+  if(!input.value) { alert("御名前を入力してください"); return; }
+  userName = input.value;
+  document.getElementById('start-screen').classList.add('hidden');
+  document.getElementById('quiz-screen').classList.remove('hidden');
+  showQuestion();
+}
+
+function showQuestion() {
+  const q = questions[currentQ];
+  document.getElementById('q-number').textContent = `問ノ${kanjiNum[currentQ + 1]}`;
+  document.getElementById('q-text').textContent = q.t;
+  const optsDiv = document.getElementById('options');
+  optsDiv.innerHTML = "";
+  q.opts.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.textContent = opt.t;
+    btn.onclick = () => answer(opt.el);
+    optsDiv.appendChild(btn);
+  });
+}
+
+function answer(element) {
+  scores[element]++;
+  currentQ++;
+  if(currentQ < questions.length) { showQuestion(); } else { showResult(); }
+}
+
+function showResult() {
+  document.getElementById('quiz-screen').classList.add('hidden');
+  document.getElementById('result-screen').classList.remove('hidden');
+
+  const sorted = Object.keys(scores).sort((a,b) => scores[b] - scores[a]);
+  const mainEl = sorted[0];
+  const subEl = sorted[1];
+  const mainData = profiles[mainEl];
+  const subData = profiles[subEl];
+
+  const prefixes = titleParts[subEl].prefix;
+  const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+  const nouns = titleParts[mainEl].noun;
+  const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+  const generatedTitle = `${randomPrefix}${randomNoun}`;
+
+  finalResult = { title: generatedTitle, main: mainData.name, sub: subData.name };
+
+  document.getElementById('res-name').textContent = `${userName} 殿`;
+  document.getElementById('res-title').textContent = generatedTitle;
+  document.getElementById('res-attr').textContent = `主：${mainData.name} / 従：${subData.name}`;
+  document.getElementById('res-attr').style.backgroundColor = `var(${mainData.colorVar})`;
+  document.getElementById('res-msg').innerHTML = mainData.msg;
+
+  const mainColor = `var(${mainData.colorVar})`;
+  document.getElementById('guild-card').style.borderColor = "#E2B46D";
+  document.getElementById('advice-area').style.borderLeftColor = mainColor;
+
+  document.getElementById('res-advice').innerHTML = `
+    <dl>
+      <dt>注意</dt><dd><strong>${mainData.organs}</strong> の不調 / ${mainData.symptom}</dd>
+      <dt>養生</dt><dd>${mainData.advice}</dd>
+      <dt>食薬</dt><dd>${mainData.food}</dd>
+    </dl>
+  `;
+
+  const chartDiv = document.getElementById('res-stats');
+  chartDiv.innerHTML = "";
+  ["wood", "fire", "earth", "metal", "water"].forEach(el => {
+    const p = profiles[el];
+    const score = scores[el];
+    const h = Math.min((score / 4) * 100, 100);
+    const isMain = (el === mainEl);
+    chartDiv.innerHTML += `
+      <div class="stat-item">
+        <div style="margin-bottom:5px;">${p.name}</div>
+        <div class="stat-bar-container">
+          <div class="stat-fill" style="height:${h}%; background:var(${p.colorVar}); opacity:${isMain?1:0.6};"></div>
+        </div>
+        <strong>${score}</strong>
+      </div>`;
+  });
+}
+
+function shareResult() {
+  const shareText = `【五行診断 by ほぐしや きだ】\n私の属性は「主：${finalResult.main} / 従：${finalResult.sub}」\n授かりし称号は『${finalResult.title}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
+  let urlToShare = (PAGE_URL.indexOf("http") === 0) ? PAGE_URL : window.location.href;
+  const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + " " + urlToShare)}`;
+  window.open(threadsUrl, '_blank');
+}
+</script>
+</body>
+</html>
