@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SXB69DFE11');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ほぐしや きだ｜公式ポータルサイト</title>
-  <meta name="description" content="「ほぐしや きだ」の活動総合案内。漢方の教科書、リラクゼーションもみ徳での出勤情報、開業準備中の秋月サロンについて。"/>
+  <meta name="description" content="「ほぐしや きだ」の活動総合案内。五行診断、漢方の教科書、リラクゼーションもみ徳での出勤情報、開業準備中の秋月サロンについて。"/>
   <meta name="theme-color" content="#5A463B"/>
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -48,6 +38,7 @@
       </a>
       
       <nav class="hidden md:flex gap-6 text-sm font-medium text-white/90">
+        <a href="diagnosis.html" class="text-brand-gold font-bold hover:text-white transition">五行診断</a>
         <a href="kampo_list.html" class="hover:text-brand-gold transition">漢方学習帳</a>
         <a href="salon.html" class="hover:text-brand-gold transition">もみ徳（予約）</a>
         <a href="profile.html" class="hover:text-brand-gold transition">プロフィール</a>
@@ -60,7 +51,6 @@
   </header>
 
   <main class="flex-grow">
-    
     <section class="py-16 md:py-20 px-4 text-center">
       <div class="inline-block border border-brand-brown/30 rounded-full px-4 py-1 mb-6">
         <p class="text-brand-brown font-bold text-xs tracking-widest">OFFICIAL PORTAL SITE</p>
@@ -81,9 +71,24 @@
       </a>
     </section>
 
-    <section class="max-w-5xl mx-auto px-4 pb-12">
+    <section class="max-w-5xl mx-auto px-4 pb-20">
       <div class="grid md:grid-cols-2 gap-6">
         
+        <a href="diagnosis.html" class="group block bg-gradient-to-br from-white to-brand-ivory rounded-2xl p-8 shadow-soft border-2 border-brand-gold/40 hover:-translate-y-1 transition duration-300 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl shadow-sm z-10">NEW</div>
+          <div class="flex items-center gap-4 mb-4 border-b border-brand-brown/10 pb-4">
+            <div class="w-10 h-10 bg-brand-gold text-white rounded-lg flex items-center justify-center text-xl shadow-sm">
+              ☯️
+            </div>
+            <h2 class="text-lg font-serif font-bold text-brand-brown">五行特性診断</h2>
+          </div>
+          <p class="text-sm text-brand-black/70 leading-relaxed">
+            「木・火・土・金・水」あなたの本質はどのタイプ？<br>
+            性格や不調の傾向を東洋医学の視点で分析し、オリジナルの「称号」を授与します。<span class="text-xs text-brand-brown/60 block mt-2 font-bold">（所要時間：約1分）</span>
+          </p>
+          <span class="inline-block mt-4 text-xs font-bold text-brand-gold group-hover:underline">今すぐ診断してみる →</span>
+        </a>
+
         <a href="kampo_list.html" class="group block bg-white rounded-2xl p-8 shadow-soft border border-brand-brown/5 hover:-translate-y-1 transition duration-300">
           <div class="flex items-center gap-4 mb-4 border-b border-brand-brown/10 pb-4">
             <div class="w-10 h-10 bg-brand-brown text-white rounded-lg flex items-center justify-center text-xl">
@@ -92,13 +97,13 @@
             <h2 class="text-lg font-serif font-bold text-brand-brown">漢方学習帳</h2>
           </div>
           <p class="text-sm text-brand-black/70 leading-relaxed">
-            『黄帝内経』などの古典に基づき、日々の施術で気づいたことや学びを記録しています。
+            『黄帝内経』などの古典に基づき、日々の施術で気づいたことや、東洋医学の学びを記録しています。
           </p>
-          <span class="inline-block mt-4 text-xs font-bold text-brand-brown group-hover:underline">学びの記録を見る →</span>
+          <span class="inline-block mt-4 text-xs font-bold text-brand-brown group-hover:underline">記事一覧を見る →</span>
         </a>
 
         <a href="salon.html" class="group block bg-white rounded-2xl p-8 shadow-soft border border-brand-brown/5 hover:-translate-y-1 transition duration-300 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-brand-gold text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">ご予約はこちら</div>
+          <div class="absolute top-0 right-0 bg-brand-brown text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl">予約優先</div>
           <div class="flex items-center gap-4 mb-4 border-b border-brand-brown/10 pb-4">
             <div class="w-10 h-10 bg-brand-brown text-white rounded-lg flex items-center justify-center text-xl">
               🌿
@@ -110,18 +115,6 @@
           </p>
           <span class="inline-block mt-4 text-xs font-bold text-brand-brown group-hover:underline">詳細・予約ページへ →</span>
         </a>
-
-        <div class="group block bg-gray-50 rounded-2xl p-8 border border-gray-200 opacity-70">
-          <div class="flex items-center gap-4 mb-4 border-b border-gray-200 pb-4">
-            <div class="w-10 h-10 bg-gray-300 text-white rounded-lg flex items-center justify-center text-xl">
-              🌙
-            </div>
-            <h2 class="text-lg font-serif font-bold text-gray-500">秋月サロン（準備中）</h2>
-          </div>
-          <p class="text-sm text-gray-500 leading-relaxed">
-            理想の癒やしを追求する、完全個室のプライベートサロン。現在、開業準備を進めています。
-          </p>
-        </div>
 
         <a href="profile.html" class="group block bg-white rounded-2xl p-8 shadow-soft border border-brand-brown/5 hover:-translate-y-1 transition duration-300">
           <div class="flex items-center gap-4 mb-4 border-b border-brand-brown/10 pb-4">
@@ -136,69 +129,26 @@
           <span class="inline-block mt-4 text-xs font-bold text-brand-brown group-hover:underline">詳細を見る →</span>
         </a>
 
+        <div class="group block bg-gray-50 rounded-2xl p-8 border border-gray-200 opacity-70">
+          <div class="flex items-center gap-4 mb-4 border-b border-gray-200 pb-4">
+            <div class="w-10 h-10 bg-gray-300 text-white rounded-lg flex items-center justify-center text-xl">
+              🌙
+            </div>
+            <h2 class="text-lg font-serif font-bold text-gray-500">秋月サロン（準備中）</h2>
+          </div>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            理想の癒やしを追求する、完全個室のプライベートサロン。現在、開業準備を進めています。
+          </p>
+        </div>
+
       </div>
     </section>
-
-    <section class="max-w-2xl mx-auto px-4 pb-12">
-      <div class="bg-white rounded-2xl shadow-sm border border-brand-brown/10 overflow-hidden">
-        <div class="bg-brand-brown text-white text-center py-3">
-          <h3 class="font-serif font-bold tracking-widest text-sm">📩 研究日誌（メルマガ）を受け取る</h3>
-        </div>
-        <div class="relative w-full" style="padding-top: 150%;"> 
-          <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSflamGyAl8lvtF_68jcuX8aai6zzhYu8VzVFZ-Rewi-Dy446A/viewform?embedded=true" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0" 
-            class="absolute top-0 left-0 w-full h-full"
-          >読み込んでいます…</iframe>
-        </div>
-      </div>
-      <p class="text-center text-[10px] text-gray-400 mt-2">
-        ※LINEのような通知はなく、メールで静かに届きます。
-      </p>
-    </section>
-
-    <section class="max-w-2xl mx-auto px-4 pb-20">
-      <div class="bg-[#FDFBF7] border border-brand-brown/20 rounded-2xl p-8 text-center shadow-sm">
-        
-        <div class="text-3xl mb-2">☕</div>
-        <h3 class="font-serif font-bold text-brand-brown text-lg mb-4">研究用のコーヒーを差し入れる</h3>
-        
-        <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-          記事が役に立った！と感じていただけたら、<br>
-          Amazonギフト券でのサポート（150円〜）をいただけると<br>
-          研究書籍の購入やサーバー維持費の励みになります。
-        </p>
-    
-        <div class="mb-6">
-          <p class="text-[10px] text-gray-400 mb-1">受取人メールアドレス（タップでコピー）</p>
-          <button onclick="copyToClipboard()" class="group relative bg-white border-2 border-dashed border-brand-brown/30 rounded-lg px-4 py-3 w-full max-w-sm mx-auto hover:border-brand-gold hover:bg-brand-bg transition cursor-pointer">
-            
-            <code id="donationEmail" class="font-mono text-brand-brown font-bold text-base break-all">yasutokida85+kampa@gmail.com</code>
-            
-            <span id="copyMsg" class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-brand-brown text-white text-xs py-1 px-3 rounded opacity-0 transition-opacity duration-300 pointer-events-none">
-              Copied!
-            </span>
-          </button>
-        </div>
-    
-        <a href="https://www.amazon.co.jp/dp/B004N3APGO" target="_blank" class="inline-flex items-center gap-2 bg-brand-gold text-white font-bold py-3 px-8 rounded-full shadow-md hover:bg-[#D4A35C] hover:shadow-lg transition transform hover:-translate-y-0.5">
-          <span>Amazonギフト券を送る ↗</span>
-        </a>
-    
-        <p class="text-[10px] text-gray-400 mt-4">
-          ※Amazonのサイトへ移動します。<br>
-          ※金額は150円から設定可能です。
-        </p>
-      </div>
-    </section>
-
   </main>
 
   <footer class="bg-gradient-to-r from-brand-darkbrown to-brand-brown text-white/80 py-8 text-center text-sm">
     <div class="flex justify-center gap-6 mb-6 text-xs font-bold">
       <a href="index.html" class="hover:text-brand-gold transition">ポータルTop</a>
+      <a href="diagnosis.html" class="text-brand-gold hover:text-white transition">五行診断</a>
       <a href="kampo_list.html" class="hover:text-brand-gold transition">漢方学習帳</a>
       <a href="salon.html" class="hover:text-brand-gold transition">もみ徳（予約）</a>
     </div>
@@ -207,19 +157,6 @@
     </div>
     <p class="text-xs opacity-50">© 2025 ほぐしや きだ</p>
   </footer>
-
-  <script>
-    function copyToClipboard() {
-      const emailText = document.getElementById('donationEmail').innerText;
-      navigator.clipboard.writeText(emailText).then(() => {
-        const msg = document.getElementById('copyMsg');
-        msg.classList.remove('opacity-0');
-        setTimeout(() => {
-          msg.classList.add('opacity-0');
-        }, 2000);
-      });
-    }
-  </script>
 
 </body>
 </html>
