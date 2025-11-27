@@ -56,14 +56,9 @@
   .btn-base:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
   .btn-base:active { transform: translateY(0); }
 
-  /* 色違いボタン */
   .btn-primary { background: var(--accent-red); color: #fff; }
   .btn-share { background: #000; color: #fff; }
-  
-  /* コピーボタン（グレー） */
   .btn-copy { background: #666; color: #fff; }
-  
-  /* 戻るボタン（白） */
   .btn-secondary { background: #fff; color: var(--brand-brown); border: 2px solid #eee; box-shadow: none; }
   .btn-secondary:hover { border-color: var(--brand-brown); }
 
@@ -105,9 +100,22 @@
     content: "処方箋"; display: inline-block; background: var(--brand-brown); color: #fff;
     font-size: 0.7em; padding: 3px 10px; margin-right: 10px; border-radius: 4px; font-family: sans-serif;
   }
-  .advice-content dl { margin: 0; font-size: 1em; }
-  .advice-content dt { font-weight: bold; color: var(--accent-red); margin-top: 15px; float: left; clear: left; width: 3.5em; }
-  .advice-content dd { margin-left: 3.5em; margin-top: 15px; color: #444; }
+
+  /* ▼▼▼ ここを修正しました（文字ズレ解消） ▼▼▼ */
+  .advice-content dl { 
+    display: grid;
+    grid-template-columns: max-content 1fr; /* 左は文字幅、右は残り */
+    gap: 10px 20px; /* 縦横の間隔 */
+    margin: 0; font-size: 1em; 
+    align-items: baseline; /* 文字の下端を揃える */
+  }
+  .advice-content dt { 
+    font-weight: bold; color: var(--accent-red); margin: 0; text-align: right;
+  }
+  .advice-content dd { 
+    margin: 0; color: #444; line-height: 1.6;
+  }
+  /* ▲▲▲ 修正ここまで ▲▲▲ */
   
   .stats-chart { display: flex; justify-content: space-between; margin: 40px 10px 20px; font-size: 0.85em; }
   .stat-item { flex: 1; text-align: center; }
@@ -319,7 +327,6 @@ function showResult() {
   });
 }
 
-// Threadsシェア
 function shareResult() {
   const shareText = `【五行診断 by ほぐしやきだ】\n私の属性は「主：${finalResult.main} / 従：${finalResult.sub}」\n授かりし称号は『${finalResult.title}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
   let urlToShare = PAGE_URL ? PAGE_URL : window.location.href;
@@ -327,7 +334,6 @@ function shareResult() {
   window.open(threadsUrl, '_blank');
 }
 
-// ▼▼▼ URLコピー機能（追加） ▼▼▼
 function copyUrl() {
   let urlToShare = PAGE_URL ? PAGE_URL : window.location.href;
   navigator.clipboard.writeText(urlToShare).then(() => {
