@@ -4,10 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>五行特性診断 - 陰陽調和の書</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SXB69DFE11');
+</script>
+
+<meta property="og:title" content="五行特性診断 - 陰陽調和の書">
+<meta property="og:description" content="東洋医学の知恵に基づく体質分析。あなたの本質を司る元素と、隠された能力を解析します。">
+<meta property="og:type" content="article">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <style>
   :root {
@@ -18,7 +32,7 @@
 
   body {
     font-family: 'Noto Sans JP', sans-serif;
-    background-color: var(--washi-bg); color: var(--text-main); padding: 20px; line-height: 1.8;
+    background-color: var(--washi-bg); color: var(--text-main); padding: 15px; line-height: 1.6;
     background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.05'%3E%3Cpath d='M300,0C134.31,0,0,134.31,0,300s134.31,300,300,300,300-134.31,300-300S465.69,0,300,0ZM300,50c82.84,0,150,67.16,150,150S382.84,350,300,350,150,282.84,150,200,217.16,50,300,50ZM300,550c-82.84,0-150-67.16-150-150S217.16,250,300,250s150,67.16,150,150-67.16,150-150,150Z' fill='%23ffffff'/%3E%3C/g%3E%3Crect width='100%25' height='100%25' fill='none'/%3E%3C/svg%3E");
     background-size: cover; background-attachment: fixed;
   }
@@ -26,93 +40,93 @@
   .washi-card {
     background-color: var(--brand-ivory);
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
-    padding: 40px 30px; border-radius: 12px;
+    padding: 30px 20px; border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    max-width: 600px; margin: 0 auto 30px; position: relative;
+    max-width: 600px; margin: 0 auto 20px; position: relative;
     border: 1px solid rgba(255,255,255,0.1);
   }
 
-  h1 { 
-    font-family: 'Shippori Mincho', serif; text-align: center; font-size: 2.2em; 
-    letter-spacing: 0.1em; margin-bottom: 0.8em; color: var(--brand-brown); font-weight: 700;
-  }
-  .intro-text { text-align: center; margin-bottom: 30px; font-size: 0.95em; color: #555; }
+  h1 { font-family: 'Shippori Mincho', serif; text-align: center; font-size: 1.8em; letter-spacing: 0.1em; margin-bottom: 0.5em; color: var(--brand-brown); font-weight: 700; }
+  .intro-text { text-align: center; margin-bottom: 25px; font-size: 0.9em; color: #555; }
   
   input[type="text"] {
-    width: 100%; max-width: 400px; padding: 15px; margin: 30px auto; display: block;
+    width: 100%; max-width: 400px; padding: 12px; margin: 20px auto; display: block;
     background: #fff; border: 2px solid #ddd; border-radius: 8px;
-    font-family: inherit; font-size: 1.1em; text-align: center; outline: none;
+    font-family: inherit; font-size: 1em; text-align: center; outline: none;
     transition: 0.3s; box-sizing: border-box;
   }
   input[type="text"]:focus { border-color: var(--brand-gold); box-shadow: 0 0 0 3px rgba(226, 180, 109, 0.2); }
   
   .btn-base {
-    border: none; padding: 18px 30px; border-radius: 50px; cursor: pointer; 
-    font-size: 1.1em; width: 100%; font-family: 'Shippori Mincho', serif; font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s; margin-top: 20px; 
+    border: none; padding: 15px 20px; border-radius: 50px; cursor: pointer; 
+    font-size: 1em; width: 100%; font-family: 'Shippori Mincho', serif; font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: all 0.3s; margin-top: 15px; 
     display: block; text-decoration: none; text-align: center; box-sizing: border-box;
   }
-  .btn-base:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
-
+  .btn-base:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.25); }
+  
   .btn-primary { background: var(--accent-red); color: #fff; }
   .btn-share { background: #000; color: #fff; }
   .btn-copy { background: #666; color: #fff; }
+  .btn-save { background: var(--brand-gold); color: #fff; } 
   .btn-secondary { background: #fff; color: var(--brand-brown); border: 2px solid #eee; box-shadow: none; }
-  .btn-secondary:hover { border-color: var(--brand-brown); }
-
-  /* シェア時専用ボタン（私もやる） */
-  .btn-retry { background: var(--brand-gold); color: #fff; }
+  
+  /* Instagramボタン（グラデーション） */
+  .btn-insta {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff;
+  }
 
   .options button {
-    display: block; width: 100%; padding: 18px 25px; margin: 15px 0;
+    display: block; width: 100%; padding: 15px 20px; margin: 10px 0;
     background: #fff; border: 1px solid #ddd; border-radius: 8px;
-    color: var(--text-main); font-size: 1.05em; font-weight: 500;
+    color: var(--text-main); font-size: 1em; font-weight: 500;
     cursor: pointer; transition: 0.2s; text-align: left; font-family: inherit;
     position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   }
-  .options button::before { content: "●"; color: #ccc; margin-right: 15px; font-size: 0.8em; transition: 0.2s; }
-  .options button:hover { background: #fffaf0; border-color: var(--brand-gold); transform: translateX(3px); }
+  .options button::before { content: "●"; color: #ccc; margin-right: 10px; font-size: 0.8em; transition: 0.2s; }
+  .options button:hover { background: #fffaf0; border-color: var(--brand-gold); transform: translateX(2px); }
   .options button:hover::before { color: var(--accent-red); }
 
-  .result-card { border: 4px double var(--brand-gold); padding: 40px 20px; text-align: center; background: #fff; }
-  .card-name { font-size: 1.2em; margin-bottom: 5px; opacity: 0.7; font-family: 'Shippori Mincho', serif; }
+  .result-card { border: 4px double var(--brand-gold); padding: 30px 15px; text-align: center; background: #fff; }
+  .card-name { font-size: 1.1em; margin-bottom: 5px; opacity: 0.7; font-family: 'Shippori Mincho', serif; }
   .card-title { 
-    font-size: 2em; font-weight: 800; margin-bottom: 20px; 
-    border-bottom: 2px solid var(--brand-brown); display: inline-block; padding-bottom: 10px; line-height: 1.3;
+    font-size: 1.8em; font-weight: 800; margin-bottom: 15px; 
+    border-bottom: 2px solid var(--brand-brown); display: inline-block; padding-bottom: 5px; line-height: 1.3;
     font-family: 'Shippori Mincho', serif; color: var(--brand-brown);
   }
   
   .attribute-badge {
-    display: inline-block; padding: 8px 30px; border-radius: 50px;
-    color: #fff; margin: 10px 0 25px; font-size: 1.1em; letter-spacing: 0.1em;
+    display: inline-block; padding: 6px 20px; border-radius: 50px;
+    color: #fff; margin: 5px 0 20px; font-size: 0.95em; letter-spacing: 0.1em;
     font-family: 'Shippori Mincho', serif;
   }
 
   .advice-box {
-    text-align: left; margin: 30px 0; padding: 25px; background: #f9f4ef;
-    border-radius: 8px; border-left: 6px solid #555; position: relative;
+    text-align: left; margin: 20px 0; padding: 20px; background: #f9f4ef;
+    border-radius: 8px; border-left: 5px solid #555; position: relative;
   }
   .advice-header {
-    font-weight: bold; font-size: 1.2em; margin-bottom: 15px; color: var(--brand-brown);
-    display: flex; align-items: center; border-bottom: 1px dashed #ccc; padding-bottom: 10px;
+    font-weight: bold; font-size: 1.1em; margin-bottom: 10px; color: var(--brand-brown);
+    display: flex; align-items: center; border-bottom: 1px dashed #ccc; padding-bottom: 8px;
     font-family: 'Shippori Mincho', serif;
   }
   .advice-header::before {
     content: "処方箋"; display: inline-block; background: var(--brand-brown); color: #fff;
-    font-size: 0.7em; padding: 3px 10px; margin-right: 10px; border-radius: 4px; font-family: sans-serif;
+    font-size: 0.7em; padding: 2px 8px; margin-right: 8px; border-radius: 4px; font-family: sans-serif;
   }
-
+  
   .advice-content dl { 
-    display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px; 
-    margin: 0; font-size: 1em; align-items: baseline;
+    display: grid; grid-template-columns: max-content 1fr; gap: 8px 15px; 
+    margin: 0; font-size: 0.95em; align-items: baseline;
   }
   .advice-content dt { font-weight: bold; color: var(--accent-red); margin: 0; text-align: right; }
-  .advice-content dd { margin: 0; color: #444; line-height: 1.6; }
+  .advice-content dd { margin: 0; color: #444; line-height: 1.5; }
   
-  .stats-chart { display: flex; justify-content: space-between; margin: 40px 10px 20px; font-size: 0.85em; }
+  .stats-chart { display: flex; justify-content: space-between; margin: 25px 5px 15px; font-size: 0.8em; }
   .stat-item { flex: 1; text-align: center; }
   .stat-bar-container { 
-    height: 100px; width: 16px; margin: 0 auto 8px; 
+    height: 60px; width: 14px; margin: 0 auto 5px; 
     background: #eee; position: relative; border-radius: 20px; overflow: hidden; 
   }
   .stat-fill { 
@@ -121,18 +135,18 @@
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='black' filter='url(%23g)'/%3E%3C/svg%3E");
   }
 
-  .references-box {
-    margin-top: 30px; padding: 15px; border-top: 1px solid #ddd;
-    text-align: left; font-size: 0.75em; color: #888;
-  }
-  .references-title { font-weight: bold; margin-bottom: 5px; display: block; }
-
-  .disclaimer-box {
-    margin-top: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px;
-    font-size: 0.7em; color: #999; text-align: left; line-height: 1.5;
-  }
+  details { margin-top: 20px; text-align: left; font-size: 0.8em; color: #888; border-top: 1px solid #ddd; padding-top: 10px; }
+  summary { cursor: pointer; outline: none; font-weight: bold; margin-bottom: 5px; }
+  .details-content { padding: 10px; background: #f9f9f9; border-radius: 4px; line-height: 1.5; font-size: 0.9em; }
 
   .hidden { display: none; }
+  
+  @media (max-width: 480px) {
+    .washi-card { padding: 25px 15px; }
+    h1 { font-size: 1.5em; }
+    .card-title { font-size: 1.6em; }
+    .stat-bar-container { height: 50px; }
+  }
 </style>
 </head>
 <body>
@@ -151,12 +165,12 @@
 
   <div id="quiz-screen" class="washi-card hidden">
     <h2 id="q-number" style="text-align:center; border:none; color:var(--brand-brown); font-size:1em;">問ノ一</h2>
-    <div id="q-text" style="text-align:center; font-weight:bold; margin-bottom:30px; font-size:1.3em;">質問</div>
+    <div id="q-text" style="text-align:center; font-weight:bold; margin-bottom:30px; font-size:1.2em;">質問</div>
     <div id="options" class="options"></div>
   </div>
 
   <div id="result-screen" class="hidden">
-    <div id="shared-notice" class="hidden" style="text-align:center; margin-bottom:20px; color:#fff; font-weight:bold;">
+    <div id="shared-notice" class="hidden" style="text-align:center; margin-bottom:20px; color:#fff; font-weight:bold; font-size:0.9em;">
       ▼ 共有された診断結果です ▼
     </div>
 
@@ -165,7 +179,7 @@
       <div class="card-title" id="res-title">称号</div>
       <div class="attribute-badge" id="res-attr">木 / 火</div>
       
-      <div id="res-msg" style="text-align:left; margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:15px; font-weight:500;"></div>
+      <div id="res-msg" style="text-align:left; margin-bottom:15px; border-bottom:1px solid #ddd; padding-bottom:15px; font-weight:500; font-size:0.95em;"></div>
 
       <div id="advice-area" class="advice-box">
         <div class="advice-header">心身調和ノ処方箋</div>
@@ -174,39 +188,47 @@
 
       <div class="stats-chart" id="res-stats"></div>
       
-      <div style="font-size:0.85em; color:var(--brand-brown); font-weight:bold; margin-top:20px;">五行診断 by ほぐしや きだ</div>
-      
-      <div class="references-box">
-        <span class="references-title">【参考文献・出典】</span>
-        『黄帝内経』（素問・霊枢）、『傷寒雑病論』、日本東洋医学会 学術情報 他
-      </div>
-
-      <div class="disclaimer-box">
-        ※本コンテンツは東洋医学の基礎理論（五行色体表など）を取り入れたエンターテインメントであり、医師による診断や治療を目的としたものではありません。著しい体調不良を感じる場合は、必ず医療機関を受診してください。
-      </div>
+      <div style="font-size:0.8em; color:var(--brand-brown); font-weight:bold; margin-top:15px;">五行診断 by ほぐしや きだ</div>
     </div>
     
     <div style="max-width:600px; margin:0 auto;">
-        <button class="btn-base btn-share" onclick="shareResult()">
-          <i class="fa-brands fa-threads"></i> 結果をThreadsで共有
-        </button>
         
-        <button class="btn-base btn-copy" onclick="copyUrl()">
-          <i class="fa-solid fa-link"></i> URLをコピーして共有
+        <details>
+          <summary>出典・注意事項を表示</summary>
+          <div class="details-content">
+            <strong>【参考文献・出典】</strong><br>
+            『黄帝内経』（素問・霊枢）、『傷寒雑病論』、日本東洋医学会 学術情報 他<br><br>
+            <strong>【注意事項】</strong><br>
+            ※本コンテンツは東洋医学の基礎理論（五行色体表など）を取り入れたエンターテインメントであり、医師による診断や治療を目的としたものではありません。著しい体調不良を感じる場合は、必ず医療機関を受診してください。
+          </div>
+        </details>
+
+        <button class="btn-base btn-insta" onclick="shareImageToNative()">
+          <i class="fa-brands fa-instagram"></i> Instagram / 画像で共有
         </button>
+
+        <div style="display:flex; gap:10px; margin-top:10px;">
+          <button class="btn-base btn-save" style="margin-top:0;" onclick="saveCardImage()">
+            <i class="fa-solid fa-download"></i> 保存
+          </button>
+          <button class="btn-base btn-share" style="margin-top:0;" onclick="shareResult()">
+            <i class="fa-brands fa-threads"></i> Threads
+          </button>
+          <button class="btn-base btn-copy" style="margin-top:0;" onclick="copyUrl()">
+            <i class="fa-solid fa-link"></i> URL
+          </button>
+        </div>
         
-        <button id="btn-new-diag" class="btn-base btn-retry hidden" onclick="location.href=location.pathname">
+        <button id="btn-new-diag" class="btn-base btn-primary hidden" onclick="location.href=location.pathname.split('?')[0]">
           <i class="fa-solid fa-rotate-right"></i> 私も診断してみる
         </button>
 
         <button class="btn-base btn-secondary" onclick="location.reload()">トップに戻る</button>
-        <p style="text-align:center; font-size:0.85em; color:rgba(255,255,255,0.7); margin-top:15px;">※画像を保存（スクショ）して記録とします</p>
     </div>
   </div>
 </div>
 
 <script>
-// ★設定：公開時のURLが決まっていればここに記入（空欄でも自動取得します）
 const PAGE_URL = ""; 
 
 const questions = [
@@ -242,18 +264,16 @@ const kanjiNum = ["〇","一","二","三","四","五","六","七","八","九","�
 let currentQ = 0;
 let scores = { wood: 0, fire: 0, earth: 0, metal: 0, water: 0 };
 let userName = "";
-let shareData = null; // シェア用データを保持
+let shareData = null;
 
-// ▼ ページ読み込み時にURLパラメータをチェック
 window.onload = function() {
   const params = new URLSearchParams(window.location.search);
   const m = params.get('m');
   const s = params.get('s');
   const n = params.get('n');
-  const t = params.get('t'); // 称号もURLに含めるように改良
+  const t = params.get('t');
 
   if (m && s && n && t) {
-    // パラメータがあれば、クイズを飛ばして結果を表示
     displayResultFromParams(m, s, n, t);
   }
 };
@@ -287,60 +307,41 @@ function answer(element) {
   if(currentQ < questions.length) { showQuestion(); } else { calcAndShowResult(); }
 }
 
-// 診断結果を計算して表示（通常ルート）
 function calcAndShowResult() {
   const sorted = Object.keys(scores).sort((a,b) => scores[b] - scores[a]);
   const mainEl = sorted[0];
   const subEl = sorted[1];
-  
-  // 称号生成
   const prefixes = titleParts[subEl].prefix;
   const nouns = titleParts[mainEl].noun;
   const generatedTitle = `${prefixes[Math.floor(Math.random() * prefixes.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}`;
-  
-  // シェア用データをセット
   shareData = { m: mainEl, s: subEl, n: userName, t: generatedTitle };
-  
-  // 描画
   renderResultScreen(mainEl, subEl, userName, generatedTitle, scores);
 }
 
-// URLパラメータから結果を表示（シェアルート）
 function displayResultFromParams(mainEl, subEl, name, title) {
   document.getElementById('start-screen').classList.add('hidden');
-  document.getElementById('shared-notice').classList.remove('hidden'); // 「共有された結果です」を表示
-  document.getElementById('btn-new-diag').classList.remove('hidden'); // 「私もやる」ボタンを表示
-  
-  // シェア用データ（自分もこれを再シェアできるように）
+  document.getElementById('shared-notice').classList.remove('hidden');
+  document.getElementById('btn-new-diag').classList.remove('hidden');
   shareData = { m: mainEl, s: subEl, n: name, t: title };
-
-  // チャート用のダミースコア作成（メイン5、サブ4、その他2）
   const dummyScores = { wood: 2, fire: 2, earth: 2, metal: 2, water: 2 };
   dummyScores[mainEl] = 5;
   dummyScores[subEl] = 4;
-  
   renderResultScreen(mainEl, subEl, name, title, dummyScores);
 }
 
-// 画面描画の共通関数
 function renderResultScreen(mainEl, subEl, name, title, scoreData) {
   document.getElementById('quiz-screen').classList.add('hidden');
   document.getElementById('result-screen').classList.remove('hidden');
-
   const mainData = profiles[mainEl];
   const subData = profiles[subEl];
-  
   document.getElementById('res-name').textContent = `${name} 殿`;
   document.getElementById('res-title').textContent = title;
   document.getElementById('res-attr').textContent = `主：${mainData.name} / 従：${subData.name}`;
   document.getElementById('res-attr').style.backgroundColor = `var(${mainData.colorVar})`;
   document.getElementById('res-msg').innerHTML = mainData.msg;
-
-  // カード色設定
   const mainColor = `var(${mainData.colorVar})`;
   document.getElementById('guild-card').style.borderColor = "#E2B46D";
   document.getElementById('advice-area').style.borderLeftColor = mainColor;
-
   document.getElementById('res-advice').innerHTML = `
     <dl>
       <dt>注意</dt><dd><strong>${mainData.organs}</strong> の不調 / ${mainData.symptom}</dd>
@@ -348,8 +349,6 @@ function renderResultScreen(mainEl, subEl, name, title, scoreData) {
       <dt>食薬</dt><dd>${mainData.food}</dd>
     </dl>
   `;
-
-  // チャート生成
   const chartDiv = document.getElementById('res-stats');
   chartDiv.innerHTML = "";
   ["wood", "fire", "earth", "metal", "water"].forEach(el => {
@@ -368,41 +367,75 @@ function renderResultScreen(mainEl, subEl, name, title, scoreData) {
   });
 }
 
-// シェアURL生成（パラメータ付き）
-function getShareUrl() {
-  if (!shareData) return window.location.href;
-  
-  // 現在のページURL（ベース）
-  let baseUrl = PAGE_URL ? PAGE_URL : (location.protocol + '//' + location.host + location.pathname);
-  
-  // パラメータを付与
-  const params = new URLSearchParams();
-  params.set('m', shareData.m);
-  params.set('s', shareData.s);
-  params.set('n', shareData.n);
-  params.set('t', shareData.t);
-  
-  return `${baseUrl}?${params.toString()}`;
+// ▼▼▼ 画像共有（Instagram対応）機能 ▼▼▼
+function shareImageToNative() {
+  const element = document.getElementById("guild-card");
+  const originalBoxShadow = element.style.boxShadow;
+  element.style.boxShadow = "none";
+  element.style.transform = "scale(1)"; 
+
+  html2canvas(element, { scale: 2, backgroundColor: "#ffffff", useCORS: true }).then(canvas => {
+    element.style.boxShadow = originalBoxShadow;
+    canvas.toBlob(async (blob) => {
+      // ファイルオブジェクト作成
+      const file = new File([blob], "diagnosis_result.png", { type: "image/png" });
+      
+      // Web Share API (Level 2) が使えるかチェック
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({
+            files: [file],
+            // InstagramはURLを同時に送れない場合が多いので画像のみ送る場合もある
+            // title: '五行診断結果',
+            // text: '私の診断結果です！ #五行診断'
+          });
+        } catch (err) {
+          console.log("シェアキャンセル");
+        }
+      } else {
+        // 対応していない場合（PCなど）はダウンロードさせる
+        alert("お使いの環境では直接シェアできませんでした。\n画像を保存しますので、手動で投稿してください。");
+        const link = document.createElement('a');
+        link.download = `五行診断_${shareData ? shareData.t : '結果'}.png`;
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      }
+    });
+  });
 }
 
-// Threadsシェア実行
+// 通常の画像保存
+function saveCardImage() {
+  const element = document.getElementById("guild-card");
+  const originalBoxShadow = element.style.boxShadow;
+  element.style.boxShadow = "none";
+  element.style.transform = "scale(1)"; 
+  html2canvas(element, { scale: 2, backgroundColor: "#ffffff", useCORS: true }).then(canvas => {
+    element.style.boxShadow = originalBoxShadow;
+    const link = document.createElement('a');
+    link.download = `五行診断_${shareData ? shareData.t : '結果'}.png`;
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  });
+}
+
+// テキスト＋URLシェア
 function shareResult() {
   if (!shareData) return;
   const shareText = `【五行診断 by ほぐしやきだ】\n私の属性は「主：${profiles[shareData.m].name} / 従：${profiles[shareData.s].name}」\n授かりし称号は『${shareData.t}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
-  const url = getShareUrl();
-  const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + " " + url)}`;
+  let url = PAGE_URL ? PAGE_URL : (location.protocol + '//' + location.host + location.pathname);
+  const params = new URLSearchParams(shareData).toString();
+  const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + " " + url + "?" + params)}`;
   window.open(threadsUrl, '_blank');
 }
 
-// URLコピー実行
 function copyUrl() {
-  const url = getShareUrl();
-  navigator.clipboard.writeText(url).then(() => {
-    alert("診断結果のURLをコピーしました！\nSNSやメッセージで共有できます。");
-  }).catch(err => {
-    console.error('コピー失敗', err);
-    alert("コピーできませんでした。");
-  });
+  let url = PAGE_URL ? PAGE_URL : (location.protocol + '//' + location.host + location.pathname);
+  const params = new URLSearchParams(shareData).toString();
+  const fullUrl = `${url}?${params}`;
+  navigator.clipboard.writeText(fullUrl).then(() => {
+    alert("URLをコピーしました！");
+  }).catch(err => alert("コピーに失敗しました"));
 }
 </script>
 </body>
