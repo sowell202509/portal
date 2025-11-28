@@ -20,7 +20,7 @@
     
     <style>
         /* =========================================
-           🎨 デザインCSS (タップ痕跡対策済み)
+           🎨 デザインCSS
            ========================================= */
         body {
             background-color: #111;
@@ -63,12 +63,10 @@
         .yin-yang-btn {
             display: flex; align-items: center; justify-content: flex-start;
             background: #222; border: 2px solid #555; border-radius: 10px;
-            padding: 15px; margin-bottom: 15px; cursor: pointer; transition: 0.1s; /* 反応速度アップ */
+            padding: 15px; margin-bottom: 15px; cursor: pointer; transition: 0.1s;
             box-sizing: border-box; overflow: hidden; position: relative;
-            /* スマホでのタップ時の青い背景を消す */
             -webkit-tap-highlight-color: transparent; 
         }
-        /* PCのみホバー効果を適用（スマホでは無効化） */
         @media (hover: hover) {
             .yin-yang-btn:hover { border-color: #c9a063; background: #2a2a2a; }
         }
@@ -101,29 +99,19 @@
         
         .options-grid { display: flex; flex-direction: column; gap: 10px; }
         
-        /* ★修正ポイント：ボタンのスタイル */
         .option-btn {
             width: 100%; box-sizing: border-box; padding: 15px;
             background: #333; color: #e0e0e0; border: 1px solid #555;
             border-radius: 8px; font-size: 1rem; cursor: pointer; text-align: left;
             transition: 0.1s; position: relative; line-height: 1.4;
-            /* スマホタップ時のハイライトを消す */
-            -webkit-tap-highlight-color: transparent;
-            outline: none; /* フォーカス枠も消す */
+            -webkit-tap-highlight-color: transparent; outline: none;
         }
-
-        /* PC（マウス操作）の時だけホバー色を変える */
         @media (hover: hover) {
             .option-btn:hover { background: #c9a063; color: #000; border-color: #c9a063; transform: scale(1.02); }
         }
+        .option-btn:active { background: #c9a063; color: #000; border-color: #c9a063; transform: scale(0.98); }
 
-        /* スマホもPCも、押した瞬間だけ変化させる */
-        .option-btn:active { 
-            background: #c9a063; color: #000; border-color: #c9a063; 
-            transform: scale(0.98); 
-        }
-
-        /* --- SCENE 3: 結果カード (RPG風) --- */
+        /* --- SCENE 3: 結果カード --- */
         .rpg-card {
             font-family: 'Reggae One', cursive; background: #1a1a1a;
             border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.9);
@@ -167,6 +155,7 @@
             display: flex; align-items: center; justify-content: center; gap: 10px;
             text-decoration: none; font-size: 1.1rem; -webkit-tap-highlight-color: transparent;
         }
+        .btn-threads:hover { background: #222; }
         .btn-sns {
             padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;
             text-align: center; text-decoration: none; font-size: 0.9rem;
@@ -201,7 +190,8 @@
 
         .reserve-btn {
             display: block; width: 100%; box-sizing: border-box; padding: 15px;
-            background: #00C300; color: #fff; text-align: center; text-decoration: none;
+            background: #00C300; /* LINE Green */
+            color: #fff; text-align: center; text-decoration: none;
             font-weight: bold; border-radius: 8px; margin-top: 20px;
             font-size: 1.1rem; box-shadow: 0 4px 0 #008f00; transition: 0.1s;
             -webkit-tap-highlight-color: transparent;
@@ -309,9 +299,11 @@
                 <canvas id="radarChart"></canvas>
             </div>
             <p id="chart-comment"></p>
-            <a href="https://line.me/R/ti/p/@hogushiya_kida" class="reserve-btn" target="_blank">
+            
+            <a href="salon.html" class="reserve-btn" target="_blank">
                 Sowellで養生する（予約）
             </a>
+            
             <button class="detail-btn" onclick="location.reload()" style="margin-top:15px; background:#333;">
                 もう一度診断する
             </button>
