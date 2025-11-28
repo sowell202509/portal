@@ -20,7 +20,7 @@
     
     <style>
         /* =========================================
-           🎨 デザインCSS (GA4搭載・最終版)
+           🎨 デザインCSS (タップ痕跡対策済み)
            ========================================= */
         body {
             background-color: #111;
@@ -59,14 +59,20 @@
         .active { display: block; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- SCENE 1: 陰陽選択（画像ボタン） --- */
+        /* --- SCENE 1: 陰陽選択 --- */
         .yin-yang-btn {
             display: flex; align-items: center; justify-content: flex-start;
             background: #222; border: 2px solid #555; border-radius: 10px;
-            padding: 15px; margin-bottom: 15px; cursor: pointer; transition: 0.2s;
+            padding: 15px; margin-bottom: 15px; cursor: pointer; transition: 0.1s; /* 反応速度アップ */
             box-sizing: border-box; overflow: hidden; position: relative;
+            /* スマホでのタップ時の青い背景を消す */
+            -webkit-tap-highlight-color: transparent; 
         }
-        .yin-yang-btn:hover { border-color: #c9a063; background: #2a2a2a; }
+        /* PCのみホバー効果を適用（スマホでは無効化） */
+        @media (hover: hover) {
+            .yin-yang-btn:hover { border-color: #c9a063; background: #2a2a2a; }
+        }
+        .yin-yang-btn:active { transform: scale(0.98); background: #333; }
         
         .yy-img-box {
             width: 80px; height: 80px; border-radius: 8px; overflow: hidden;
@@ -94,14 +100,28 @@
         }
         
         .options-grid { display: flex; flex-direction: column; gap: 10px; }
+        
+        /* ★修正ポイント：ボタンのスタイル */
         .option-btn {
             width: 100%; box-sizing: border-box; padding: 15px;
             background: #333; color: #e0e0e0; border: 1px solid #555;
             border-radius: 8px; font-size: 1rem; cursor: pointer; text-align: left;
-            transition: 0.2s; position: relative; line-height: 1.4;
+            transition: 0.1s; position: relative; line-height: 1.4;
+            /* スマホタップ時のハイライトを消す */
+            -webkit-tap-highlight-color: transparent;
+            outline: none; /* フォーカス枠も消す */
         }
-        .option-btn:hover { background: #c9a063; color: #000; border-color: #c9a063; transform: scale(1.02); }
-        .option-btn:active { transform: scale(0.98); }
+
+        /* PC（マウス操作）の時だけホバー色を変える */
+        @media (hover: hover) {
+            .option-btn:hover { background: #c9a063; color: #000; border-color: #c9a063; transform: scale(1.02); }
+        }
+
+        /* スマホもPCも、押した瞬間だけ変化させる */
+        .option-btn:active { 
+            background: #c9a063; color: #000; border-color: #c9a063; 
+            transform: scale(0.98); 
+        }
 
         /* --- SCENE 3: 結果カード (RPG風) --- */
         .rpg-card {
@@ -145,26 +165,28 @@
             grid-column: span 2; background: #000; color: #fff; border: 1px solid #333;
             padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer;
             display: flex; align-items: center; justify-content: center; gap: 10px;
-            text-decoration: none; font-size: 1.1rem;
+            text-decoration: none; font-size: 1.1rem; -webkit-tap-highlight-color: transparent;
         }
-        .btn-threads:hover { background: #222; }
         .btn-sns {
             padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;
             text-align: center; text-decoration: none; font-size: 0.9rem;
             display: flex; align-items: center; justify-content: center; gap: 5px;
-            border: none;
+            border: none; -webkit-tap-highlight-color: transparent;
         }
         .btn-save { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); color: #fff; }
         .btn-copy { background: #555; color: #fff; }
         .btn-x { background: #000; color: #fff; border: 1px solid #333; }
+        
+        .btn-threads:active, .btn-sns:active { transform: scale(0.95); opacity: 0.8; }
 
         /* 詳細 & 予約ボタン */
         .detail-btn {
             width: 100%; box-sizing: border-box; padding: 15px;
             background: #444; color: #fff; border: 1px solid #888;
             border-radius: 8px; font-size: 1rem; cursor: pointer; margin-top: 10px;
+            -webkit-tap-highlight-color: transparent;
         }
-        .detail-btn:hover { background: #555; }
+        .detail-btn:active { background: #666; transform: scale(0.98); }
 
         #detail-area {
             margin-top: 30px; padding: 20px; background: #222;
@@ -182,6 +204,7 @@
             background: #00C300; color: #fff; text-align: center; text-decoration: none;
             font-weight: bold; border-radius: 8px; margin-top: 20px;
             font-size: 1.1rem; box-shadow: 0 4px 0 #008f00; transition: 0.1s;
+            -webkit-tap-highlight-color: transparent;
         }
         .reserve-btn:active { transform: translateY(4px); box-shadow: none; }
 
