@@ -1,492 +1,520 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>五行特性診断 - 陰陽調和の書</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-SXB69DFE11');
+    </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-SXB69DFE11');
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毒舌五行診断 | ほぐしや木田</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <style>
+        /* =========================================
+           🎨 デザインCSS (GA4搭載・最終版)
+           ========================================= */
+        body {
+            background-color: #111;
+            color: #f0f0f0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            margin: 0; padding: 0;
+            display: flex; justify-content: center; min-height: 100vh;
+        }
 
-<meta property="og:title" content="五行特性診断 - 陰陽調和の書">
-<meta property="og:description" content="東洋医学の知恵に基づく体質分析。あなたの本質を司る元素と、隠された能力を解析します。">
-<meta property="og:type" content="article">
+        .container {
+            width: 100%; max-width: 480px; padding: 20px;
+            box-sizing: border-box;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        h1.app-title {
+            font-family: 'Reggae One', cursive; text-align: center;
+            color: #c9a063; text-shadow: 2px 2px 4px #000; margin-bottom: 20px;
+        }
 
-<style>
-  :root {
-    --wood: #006e54; --fire: #d3381c; --earth: #f7c114; --metal: #767c88; --water: #274a78;
-    --brand-brown: #5A463B; --brand-gold: #E2B46D; --brand-ivory: #FBF9F6;
-    --text-main: #2B2725; --washi-bg: #2a2a2a; --accent-red: #c9171e;
-  }
+        /* 毒舌警告ボックス */
+        .warning-box {
+            background: repeating-linear-gradient(45deg, #2a0a0a, #2a0a0a 10px, #3a1a1a 10px, #3a1a1a 20px);
+            border: 2px solid #ff4500; border-radius: 8px; padding: 20px; margin-bottom: 25px;
+            text-align: center; box-shadow: 0 0 15px rgba(255, 69, 0, 0.3); animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px rgba(255, 69, 0, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(255, 69, 0, 0.6); }
+            100% { box-shadow: 0 0 10px rgba(255, 69, 0, 0.3); }
+        }
+        .warning-title { color: #ff4500; font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; }
+        .warning-text { color: #ffcccc; font-size: 0.9rem; line-height: 1.6; text-align: left; }
 
-  body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background-color: var(--washi-bg); color: var(--text-main); padding: 15px; line-height: 1.6;
-    background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.05'%3E%3Cpath d='M300,0C134.31,0,0,134.31,0,300s134.31,300,300,300,300-134.31,300-300S465.69,0,300,0ZM300,50c82.84,0,150,67.16,150,150S382.84,350,300,350,150,282.84,150,200,217.16,50,300,50ZM300,550c-82.84,0-150-67.16-150-150S217.16,250,300,250s150,67.16,150,150-67.16,150-150,150Z' fill='%23ffffff'/%3E%3C/g%3E%3Crect width='100%25' height='100%25' fill='none'/%3E%3C/svg%3E");
-    background-size: cover; background-attachment: fixed;
-  }
-  
-  .washi-card {
-    background-color: var(--brand-ivory);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
-    padding: 30px 20px; border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    max-width: 600px; margin: 0 auto 20px; position: relative;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
+        /* 画面切り替えアニメーション */
+        .screen { display: none; }
+        .active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-  h1 { font-family: 'Shippori Mincho', serif; text-align: center; font-size: 1.8em; letter-spacing: 0.1em; margin-bottom: 0.5em; color: var(--brand-brown); font-weight: 700; }
-  .intro-text { text-align: center; margin-bottom: 25px; font-size: 0.9em; color: #555; }
-  
-  input[type="text"] {
-    width: 100%; max-width: 400px; padding: 12px; margin: 20px auto; display: block;
-    background: #fff; border: 2px solid #ddd; border-radius: 8px;
-    font-family: inherit; font-size: 1em; text-align: center; outline: none;
-    transition: 0.3s; box-sizing: border-box;
-  }
-  input[type="text"]:focus { border-color: var(--brand-gold); box-shadow: 0 0 0 3px rgba(226, 180, 109, 0.2); }
-  
-  /* ボタン類 */
-  .btn-base {
-    border: none; padding: 15px 20px; border-radius: 50px; cursor: pointer; 
-    font-size: 1em; width: 100%; font-family: 'Shippori Mincho', serif; font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: all 0.3s; margin-top: 15px; 
-    display: block; text-decoration: none; text-align: center; box-sizing: border-box;
-  }
-  .btn-base:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.25); }
-  
-  .btn-primary { background: var(--accent-red); color: #fff; }
-  .btn-share { background: #000; color: #fff; }
-  .btn-copy { background: #666; color: #fff; }
-  .btn-save { background: var(--brand-gold); color: #fff; } 
-  .btn-secondary { background: #fff; color: var(--brand-brown); border: 2px solid #eee; box-shadow: none; }
-  
-  .btn-insta {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: #fff;
-  }
+        /* --- SCENE 1: 陰陽選択（画像ボタン） --- */
+        .yin-yang-btn {
+            display: flex; align-items: center; justify-content: flex-start;
+            background: #222; border: 2px solid #555; border-radius: 10px;
+            padding: 15px; margin-bottom: 15px; cursor: pointer; transition: 0.2s;
+            box-sizing: border-box; overflow: hidden; position: relative;
+        }
+        .yin-yang-btn:hover { border-color: #c9a063; background: #2a2a2a; }
+        
+        .yy-img-box {
+            width: 80px; height: 80px; border-radius: 8px; overflow: hidden;
+            border: 2px solid #444; margin-right: 20px; flex-shrink: 0;
+        }
+        .yy-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .yy-info { display: flex; align-items: center; }
+        .yy-info h3 { margin: 0; color: #fff; font-size: 1.5rem; letter-spacing: 2px; }
 
-  /* 選択肢ボタン（スマホ対策済み） */
-  .options button {
-    display: block; width: 100%; padding: 15px 20px; margin: 10px 0;
-    background: #fff; border: 1px solid #ddd; border-radius: 8px;
-    color: var(--text-main); font-size: 1em; font-weight: 500;
-    cursor: pointer; transition: background 0.1s, transform 0.1s;
-    text-align: left; font-family: inherit;
-    position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    -webkit-tap-highlight-color: transparent;
-  }
-  .options button::before { 
-    content: "●"; color: #ccc; margin-right: 10px; font-size: 0.8em; transition: 0.2s; 
-  }
+        /* --- SCENE 2: 質問カード --- */
+        .progress-container {
+            width: 100%; background: #333; height: 6px; border-radius: 3px;
+            margin-bottom: 20px; overflow: hidden;
+        }
+        .progress-bar { height: 100%; background: #c9a063; width: 0%; transition: width 0.3s; }
 
-  @media (hover: hover) {
-    .options button:hover { 
-      background: #fffaf0; border-color: var(--brand-gold); transform: translateX(2px); 
-    }
-    .options button:hover::before { color: var(--accent-red); }
-  }
+        .question-card {
+            background: #1a1a1a; border: 1px solid #444; border-radius: 10px;
+            padding: 20px; margin-bottom: 20px; box-sizing: border-box;
+        }
+        .q-header { display: flex; justify-content: space-between; color: #c9a063; font-weight: bold; margin-bottom: 15px; }
+        .q-text { 
+            font-size: 1.15rem; line-height: 1.6; font-weight: bold; margin-bottom: 25px;
+            border-bottom: 1px solid #444; padding-bottom: 15px;
+        }
+        
+        .options-grid { display: flex; flex-direction: column; gap: 10px; }
+        .option-btn {
+            width: 100%; box-sizing: border-box; padding: 15px;
+            background: #333; color: #e0e0e0; border: 1px solid #555;
+            border-radius: 8px; font-size: 1rem; cursor: pointer; text-align: left;
+            transition: 0.2s; position: relative; line-height: 1.4;
+        }
+        .option-btn:hover { background: #c9a063; color: #000; border-color: #c9a063; transform: scale(1.02); }
+        .option-btn:active { transform: scale(0.98); }
 
-  .options button:active {
-    background: #fffaf0; border-color: var(--brand-gold); transform: scale(0.98);
-  }
+        /* --- SCENE 3: 結果カード (RPG風) --- */
+        .rpg-card {
+            font-family: 'Reggae One', cursive; background: #1a1a1a;
+            border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+            text-align: center; overflow: hidden; margin-bottom: 20px;
+            width: 100%; box-sizing: border-box;
+        }
+        .card-border {
+            border: 3px solid #c9a063; border-radius: 10px; padding: 15px;
+            background: linear-gradient(180deg, #2c2222 0%, #1a1a1a 100%);
+        }
+        .card-header { color: #ffd700; font-weight: bold; margin-bottom: 10px; }
+        .card-image-box {
+            width: 100%; border: 2px solid #5a3a3a; border-radius: 6px;
+            overflow: hidden; background: #000; margin-bottom: 15px;
+        }
+        .card-image-box img { width: 100%; height: auto; display: block; filter: contrast(1.1) brightness(1.1); }
+        
+        .card-title {
+            font-size: 1.3rem; background: linear-gradient(45deg, #ff4500, #ff8c00);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin: 5px 0 15px; border-bottom: 1px solid #5a3a3a; padding-bottom: 10px;
+        }
+        .card-desc {
+            font-size: 1rem; line-height: 1.8; text-align: justify;
+            background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px;
+            color: #e0e0e0; margin-bottom: 15px;
+        }
+        .card-footer {
+            background: #332222; padding: 12px; border-radius: 6px; border: 1px solid #5a3a3a;
+        }
+        .footer-label { display: block; color: #ff7f50; font-size: 0.8rem; margin-bottom: 5px; }
+        #card-lucky-item { font-weight: bold; }
 
-  /* 結果カード */
-  .result-card { border: 4px double var(--brand-gold); padding: 30px 15px; text-align: center; background: #fff; }
-  .card-name { font-size: 1.1em; margin-bottom: 5px; opacity: 0.7; font-family: 'Shippori Mincho', serif; }
-  .card-title { 
-    font-size: 1.8em; font-weight: 800; margin-bottom: 15px; 
-    border-bottom: 2px solid var(--brand-brown); display: inline-block; padding-bottom: 5px; line-height: 1.3;
-    font-family: 'Shippori Mincho', serif; color: var(--brand-brown);
-  }
-  
-  .attribute-badge {
-    display: inline-block; padding: 6px 20px; border-radius: 50px;
-    color: #fff; margin: 5px 0 20px; font-size: 0.95em; letter-spacing: 0.1em;
-    font-family: 'Shippori Mincho', serif;
-  }
+        /* --- SNS & 保存ボタンエリア --- */
+        .share-area {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;
+        }
+        .btn-threads {
+            grid-column: span 2; background: #000; color: #fff; border: 1px solid #333;
+            padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            text-decoration: none; font-size: 1.1rem;
+        }
+        .btn-threads:hover { background: #222; }
+        .btn-sns {
+            padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;
+            text-align: center; text-decoration: none; font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center; gap: 5px;
+            border: none;
+        }
+        .btn-save { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); color: #fff; }
+        .btn-copy { background: #555; color: #fff; }
+        .btn-x { background: #000; color: #fff; border: 1px solid #333; }
 
-  .advice-box {
-    text-align: left; margin: 20px 0; padding: 20px; background: #f9f4ef;
-    border-radius: 8px; border-left: 5px solid #555; position: relative;
-  }
-  .advice-header {
-    font-weight: bold; font-size: 1.1em; margin-bottom: 10px; color: var(--brand-brown);
-    display: flex; align-items: center; border-bottom: 1px dashed #ccc; padding-bottom: 8px;
-    font-family: 'Shippori Mincho', serif;
-  }
-  .advice-header::before {
-    content: "処方箋"; display: inline-block; background: var(--brand-brown); color: #fff;
-    font-size: 0.7em; padding: 2px 8px; margin-right: 8px; border-radius: 4px; font-family: sans-serif;
-  }
-  
-  /* グリッドレイアウト（文字ズレ解消） */
-  .advice-content dl { 
-    display: grid; grid-template-columns: max-content 1fr; gap: 8px 15px; 
-    margin: 0; font-size: 0.95em; align-items: baseline;
-  }
-  .advice-content dt { font-weight: bold; color: var(--accent-red); margin: 0; text-align: right; }
-  .advice-content dd { margin: 0; color: #444; line-height: 1.5; }
-  
-  .stats-chart { display: flex; justify-content: space-between; margin: 25px 5px 15px; font-size: 0.8em; }
-  .stat-item { flex: 1; text-align: center; }
-  .stat-bar-container { 
-    height: 60px; width: 14px; margin: 0 auto 5px; 
-    background: #eee; position: relative; border-radius: 20px; overflow: hidden; 
-  }
-  .stat-fill { 
-    position: absolute; bottom: 0; width: 100%; transition: height 1.2s ease-out; 
-    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='black' filter='url(%23g)'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='5'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='black' filter='url(%23g)'/%3E%3C/svg%3E");
-  }
+        /* 詳細 & 予約ボタン */
+        .detail-btn {
+            width: 100%; box-sizing: border-box; padding: 15px;
+            background: #444; color: #fff; border: 1px solid #888;
+            border-radius: 8px; font-size: 1rem; cursor: pointer; margin-top: 10px;
+        }
+        .detail-btn:hover { background: #555; }
 
-  details { margin-top: 20px; text-align: left; font-size: 0.8em; color: #888; border-top: 1px solid #ddd; padding-top: 10px; }
-  summary { cursor: pointer; outline: none; font-weight: bold; margin-bottom: 5px; }
-  .details-content { padding: 10px; background: #f9f9f9; border-radius: 4px; line-height: 1.5; font-size: 0.9em; }
+        #detail-area {
+            margin-top: 30px; padding: 20px; background: #222;
+            border-radius: 10px; box-sizing: border-box; width: 100%;
+        }
+        #chart-comment {
+            text-align: justify; font-size: 0.95rem; color: #e0e0e0;
+            background: #332222; padding: 15px; border-radius: 8px;
+            border: 1px solid #5a3a3a; margin-top: 20px; line-height: 1.6;
+        }
+        #chart-comment strong { color: #ff4500; }
 
-  .hidden { display: none; }
-  
-  @media (max-width: 480px) {
-    .washi-card { padding: 25px 15px; }
-    h1 { font-size: 1.5em; }
-    .card-title { font-size: 1.6em; }
-    .stat-bar-container { height: 50px; }
-  }
-</style>
+        .reserve-btn {
+            display: block; width: 100%; box-sizing: border-box; padding: 15px;
+            background: #00C300; color: #fff; text-align: center; text-decoration: none;
+            font-weight: bold; border-radius: 8px; margin-top: 20px;
+            font-size: 1.1rem; box-shadow: 0 4px 0 #008f00; transition: 0.1s;
+        }
+        .reserve-btn:active { transform: translateY(4px); box-shadow: none; }
+
+        /* ポータルへ戻る */
+        .back-link { text-align: center; margin-top: 40px; margin-bottom: 20px; }
+        .back-link a {
+            color: #888; text-decoration: none; font-size: 0.9rem;
+            border-bottom: 1px solid #555; padding-bottom: 2px;
+        }
+        .back-link a:hover { color: #c9a063; border-color: #c9a063; }
+    </style>
 </head>
 <body>
 
 <div class="container">
-  <div id="start-screen" class="washi-card">
-    <h1>五行特性診断</h1>
-    <p class="intro-text">
-      天地万物を構成する五つの元素。<br>
-      心身の偏りを知り、調和へと導く<br>
-      東洋医学の知恵に基づく鑑定です。
-    </p>
-    <input type="text" id="username" placeholder="お名前を入力">
-    <button class="btn-base btn-primary" onclick="startQuiz()">鑑定を始める</button>
-  </div>
+    <h1 class="app-title">毒舌五行診断</h1>
 
-  <div id="quiz-screen" class="washi-card hidden">
-    <h2 id="q-number" style="text-align:center; border:none; color:var(--brand-brown); font-size:1em;">問ノ一</h2>
-    <div id="q-text" style="text-align:center; font-weight:bold; margin-bottom:30px; font-size:1.2em;">質問</div>
-    <div id="options" class="options"></div>
-  </div>
-
-  <div id="result-screen" class="hidden">
-    <div id="shared-notice" class="hidden" style="text-align:center; margin-bottom:20px; color:#fff; font-weight:bold; font-size:0.9em;">
-      ▼ 共有された診断結果です ▼
-    </div>
-
-    <div id="guild-card" class="result-card washi-card">
-      <div class="card-name" id="res-name">名前 殿</div>
-      <div class="card-title" id="res-title">称号</div>
-      <div class="attribute-badge" id="res-attr">木 / 火</div>
-      
-      <div id="res-msg" style="text-align:left; margin-bottom:15px; border-bottom:1px solid #ddd; padding-bottom:15px; font-weight:500; font-size:0.95em;"></div>
-
-      <div id="advice-area" class="advice-box">
-        <div class="advice-header">心身調和ノ処方箋</div>
-        <div class="advice-content" id="res-advice"></div>
-      </div>
-
-      <div class="stats-chart" id="res-stats"></div>
-      
-      <div style="font-size:0.8em; color:var(--brand-brown); font-weight:bold; margin-top:15px;">五行診断 by ほぐしや きだ</div>
-    </div>
-    
-    <div style="max-width:600px; margin:0 auto;">
-        
-        <details>
-          <summary>出典・注意事項を表示</summary>
-          <div class="details-content">
-            <strong>【参考文献・出典】</strong><br>
-            『黄帝内経』（素問・霊枢）、『傷寒雑病論』、日本東洋医学会 学術情報 他<br><br>
-            <strong>【注意事項】</strong><br>
-            ※本コンテンツは東洋医学の基礎理論（五行色体表など）を取り入れたエンターテインメントであり、医師による診断や治療を目的としたものではありません。著しい体調不良を感じる場合は、必ず医療機関を受診してください。
-          </div>
-        </details>
-
-        <button class="btn-base btn-insta" onclick="shareImageToNative()">
-          <i class="fa-brands fa-instagram"></i> Instagram / 画像で共有
-        </button>
-
-        <div style="display:flex; gap:10px; margin-top:10px;">
-          <button class="btn-base btn-save" style="margin-top:0;" onclick="saveCardImage()">
-            <i class="fa-solid fa-download"></i> 保存
-          </button>
-          <button class="btn-base btn-share" style="margin-top:0;" onclick="shareResult()">
-            <i class="fa-brands fa-threads"></i> Threads
-          </button>
-          <button class="btn-base btn-copy" style="margin-top:0;" onclick="copyUrl()">
-            <i class="fa-solid fa-link"></i> URL
-          </button>
+    <div id="scene-start" class="screen active">
+        <div class="warning-box">
+            <div class="warning-title">☠️ 副作用の警告</div>
+            <div class="warning-text">
+                この診断は、あなたの心身のバランス崩壊を<strong>「極めて毒舌」</strong>に指摘します。<br>
+                「ショック」「動悸」「イラ立ち」等の副作用が出ても、当方は一切責任を負いません。<br>
+                それでも<strong>「真実」</strong>を知る覚悟がある者だけ、下へ進め。
+            </div>
         </div>
+
+        <p style="text-align: center; color: #aaa; margin-bottom: 20px; font-weight: bold; line-height: 1.8;">
+            理屈は捨てろ。<br>
+            <span style="color: #c9a063; font-size: 1.2rem;">直感だけ</span>で、魂の属性を選べ。
+        </p>
         
-        <button id="btn-new-diag" class="btn-base btn-primary hidden" onclick="location.href=location.pathname.split('?')[0]">
-          <i class="fa-solid fa-rotate-right"></i> 私も診断してみる
+        <div class="yin-yang-btn" onclick="startGame('yang')">
+            <div class="yy-img-box">
+                <img src="img/yang_button.png" alt="陽のエネルギー">
+            </div>
+            <div class="yy-info"><h3>陽 (YANG)</h3></div>
+        </div>
+
+        <div class="yin-yang-btn" onclick="startGame('yin')">
+            <div class="yy-img-box">
+                <img src="img/yin_button.png" alt="陰のエネルギー">
+            </div>
+            <div class="yy-info"><h3>陰 (YIN)</h3></div>
+        </div>
+
+        <div class="back-link"><a href="index.html">← ポータルサイトに戻る</a></div>
+    </div>
+
+    <div id="scene-quiz" class="screen">
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="question-card">
+            <div class="q-header">
+                <span>SCENE</span>
+                <span><span id="q-num">1</span> / <span id="q-total"></span></span>
+            </div>
+            <div id="q-text" class="q-text"></div>
+            <div id="options-area" class="options-grid"></div>
+        </div>
+    </div>
+
+    <div id="scene-result" class="screen">
+        <div id="capture-target" class="rpg-card">
+            <div class="card-border">
+                <div class="card-header" id="card-rarity">【SSR】</div>
+                <div class="card-image-box">
+                    <img id="card-char-img" src="" alt="Character">
+                </div>
+                <h3 id="card-title" class="card-title">称号</h3>
+                <div id="card-desc" class="card-desc">診断結果</div>
+                <div class="card-footer">
+                    <span class="footer-label">🛡️ 投げやり処方箋：</span>
+                    <span id="card-lucky-item">アイテム</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="share-area">
+            <button class="btn-threads" onclick="shareThreads()">
+                <span>@</span> Threadsで結果をシェア
+            </button>
+            <button class="btn-sns btn-save" onclick="saveCardImage()">
+                📸 画像保存<br><span style="font-size:0.7rem">(インスタ用)</span>
+            </button>
+            <button class="btn-sns btn-copy" onclick="copyLink()">
+                🔗 リンク<br>コピー
+            </button>
+            <button class="btn-sns btn-x" onclick="shareX()">
+                𝕏 で<br>シェア
+            </button>
+        </div>
+
+        <button id="show-detail-btn" class="detail-btn" onclick="showChart()">
+            📊 なぜバレた？分析データを見る
         </button>
 
-        <button class="btn-base btn-secondary" onclick="location.reload()">トップに戻る</button>
+        <div id="detail-area" style="display: none;">
+            <h3 style="text-align:center; color:#c9a063;">五行バランス分析</h3>
+            <div class="chart-container" style="position: relative; height: 300px; width: 100%;">
+                <canvas id="radarChart"></canvas>
+            </div>
+            <p id="chart-comment"></p>
+            <a href="https://line.me/R/ti/p/@hogushiya_kida" class="reserve-btn" target="_blank">
+                Sowellで養生する（予約）
+            </a>
+            <button class="detail-btn" onclick="location.reload()" style="margin-top:15px; background:#333;">
+                もう一度診断する
+            </button>
+        </div>
+
+        <div class="back-link"><a href="index.html">← ポータルサイトに戻る</a></div>
     </div>
-  </div>
 </div>
 
 <script>
-// 設定：公開URL（空欄で自動取得）
-const PAGE_URL = ""; 
+/* =========================================
+   🧠 ロジック (10問・シェア・GA4対応)
+   ========================================= */
 
-// 属性リスト（ID変換用）
-const ELEMENTS = ["wood", "fire", "earth", "metal", "water"];
+let userYinYang = 'yang';
+let currentQIndex = 0;
+let scores = { wood: 0, fire: 0, earth: 0, metal: 0, water: 0 };
+let finalResultType = 'wood';
+let subResultType = null;
 
 const questions = [
-  { t: "何かを始める時、あなたは？", opts: [{t:"計画・準備を入念に", el:"wood"}, {t:"とりあえずやってみる", el:"fire"}, {t:"みんなの意見を聞く", el:"earth"}, {t:"手順と効率を確認", el:"metal"}, {t:"状況の流れを読む", el:"water"}] },
-  { t: "ストレスを感じた時の反応は？", opts: [{t:"イライラ・怒り", el:"wood"}, {t:"興奮・落ち着かない", el:"fire"}, {t:"悩み・考え込む", el:"earth"}, {t:"悲観・殻に閉じこもる", el:"metal"}, {t:"不安・恐怖", el:"water"}] },
-  { t: "つい出てしまう体の不調は？", opts: [{t:"目の疲れ・肩こり", el:"wood"}, {t:"動悸・不眠", el:"fire"}, {t:"胃もたれ・だるさ", el:"earth"}, {t:"肌荒れ・呼吸の浅さ", el:"metal"}, {t:"冷え・むくみ", el:"water"}] },
-  { t: "人から評価される点は？", opts: [{t:"発想力・行動力", el:"wood"}, {t:"華やかさ・情熱", el:"fire"}, {t:"安心感・調整力", el:"earth"}, {t:"分析力・几帳面さ", el:"metal"}, {t:"柔軟性・本質を見抜く", el:"water"}] },
-  { t: "嫌いな環境は？", opts: [{t:"束縛・マンネリ", el:"wood"}, {t:"静寂・無視", el:"fire"}, {t:"急変・争い", el:"earth"}, {t:"不潔・無秩序", el:"metal"}, {t:"騒音・干渉", el:"water"}] },
-  { t: "理想の休日は？", opts: [{t:"自然の中で活動", el:"wood"}, {t:"イベントや集まり", el:"fire"}, {t:"家で美味しい食事", el:"earth"}, {t:"整理整頓・美の追求", el:"metal"}, {t:"読書・温泉", el:"water"}] },
-  { t: "困難への対処法は？", opts: [{t:"真正面から突破", el:"wood"}, {t:"勢いで乗り切る", el:"fire"}, {t:"耐えて好転を待つ", el:"earth"}, {t:"原因を分析・排除", el:"metal"}, {t:"上手くかわす", el:"water"}] },
-  { t: "好む味覚は？", opts: [{t:"酸味（酢・柑橘）", el:"wood"}, {t:"苦味（コーヒー・ゴーヤ）", el:"fire"}, {t:"甘味（芋・穀物）", el:"earth"}, {t:"辛味（生姜・スパイス）", el:"metal"}, {t:"塩味（海藻・出汁）", el:"water"}] },
-  { t: "目指したい自分は？", opts: [{t:"成長し続ける自分", el:"wood"}, {t:"輝いている自分", el:"fire"}, {t:"頼られる自分", el:"earth"}, {t:"洗練された自分", el:"metal"}, {t:"自由で深い自分", el:"water"}] },
-  { t: "直感で選ぶ色は？", opts: [{t:"青緑・若草", el:"wood"}, {t:"赤・紫", el:"fire"}, {t:"黄・茶", el:"earth"}, {t:"白・銀", el:"metal"}, {t:"黒・群青", el:"water"}] }
+    { text: "渋滞やレジ待ちでイライラ…<br>その時、心の中でどう思ってる？", options: [{ type: 'wood', label: "「チッ、早く動けよ」と舌打ちしそうになる" }, { type: 'fire', label: "「暇だしスマホ見るか！」とSNSを開く" }, { type: 'earth', label: "「まあいいか」と持ってたお菓子を食べ始める" }, { type: 'metal', label: "「予定より3分遅れる…」と時間を計算する" }, { type: 'water', label: "「トイレ行きたくなったらどうしよう」と不安になる" }] },
+    { text: "新しい仕事を任されたとき、<br>最初のアクションは？", options: [{ type: 'wood', label: "「よし、やってやる！」と即座に動き出す" }, { type: 'fire', label: "「面白そう！」と周りに言いふらして盛り上がる" }, { type: 'earth', label: "「えー、めんどくさいな…」と一旦休憩する" }, { type: 'metal', label: "「マニュアルは？手順は？」と詳細を確認する" }, { type: 'water', label: "「失敗したらどうしよう」とリスクを考える" }] },
+    { text: "休日の過ごし方、<br>理想に近いのはどれ？", options: [{ type: 'wood', label: "スポーツやジムで体を動かして発散！" }, { type: 'fire', label: "イベントや飲み会で大騒ぎ！" }, { type: 'earth', label: "家でゴロゴロしながら動画とポテチ" }, { type: 'metal', label: "部屋の掃除や断捨離で完璧に整える" }, { type: 'water', label: "一人で静かに読書や映画鑑賞" }] },
+    { text: "友達との会話中、<br>よくやってしまうことは？", options: [{ type: 'wood', label: "つい熱くなって自分の意見を押し通す" }, { type: 'fire', label: "笑いすぎて何の話をしてたか忘れる" }, { type: 'earth', label: "「へー」「そうだね」と聞き流して別の事考える" }, { type: 'metal', label: "相手の言葉の間違いや矛盾を指摘しちゃう" }, { type: 'water', label: "愛想笑いをして本音は言わない" }] },
+    { text: "体調が悪くなると、<br>最初に出やすい症状は？", options: [{ type: 'wood', label: "目が疲れる、肩がガチガチになる" }, { type: 'fire', label: "動悸がする、眠れなくなる" }, { type: 'earth', label: "胃もたれする、口内炎ができる" }, { type: 'metal', label: "喉が痛くなる、咳が出る、肌が荒れる" }, { type: 'water', label: "足腰が冷える、トイレが近くなる" }] },
+    { text: "理不尽な上司や客に絡まれた！<br>あなたの脳内反応は？", options: [{ type: 'wood', label: "「は？」と顔に出てしまい、反論したくなる" }, { type: 'fire', label: "「信じらんない！」と後で同僚に喋り散らす" }, { type: 'earth', label: "「私が悪いのかな…」と一人で抱え込んで落ち込む" }, { type: 'metal', label: "「規定ではこうです」と冷静に論破する" }, { type: 'water', label: "怖くて何も言えず、愛想笑いでやり過ごす" }] },
+    { text: "臨時収入で10万円入った！<br>どう使う？", options: [{ type: 'wood', label: "欲しかったブランド物や機材を即決で買う" }, { type: 'fire', label: "友達と飲みに行ったり、パーッと派手に使う" }, { type: 'earth', label: "美味しいものを食べに行くか、とりあえず貯金" }, { type: 'metal', label: "以前から計画していた必要な設備投資に回す" }, { type: 'water', label: "何があるか分からないから、全額タンス預金" }] },
+    { text: "部屋の片付け、<br>あなたのスタイルは？", options: [{ type: 'wood', label: "やるとなったら徹底的に捨てまくる（勢い重視）" }, { type: 'fire', label: "懐かしい写真を見つけて作業が止まる（脱線）" }, { type: 'earth', label: "「いつか使うかも」と物が捨てられない（溜め込み）" }, { type: 'metal', label: "本の高さや服の向きまで完璧に揃える（几帳面）" }, { type: 'water', label: "そもそも動きたくない、コタツから出ない（停滞）" }] },
+    { text: "カフェで注文した料理が全然来ない…<br>どうする？", options: [{ type: 'wood', label: "店員を呼んで「まだですか？」と問い詰める" }, { type: 'fire', label: "「忘れられてる？」とソワソワしてキョロキョロする" }, { type: 'earth', label: "言い出せなくて、ひたすらお腹を空かせて待つ" }, { type: 'metal', label: "時計を見て「20分経過しましたね」と事実を伝える" }, { type: 'water', label: "「私の注文だけ通ってないかも…」と被害妄想する" }] },
+    { text: "寝る前のルーティン、<br>一番近いのは？", options: [{ type: 'wood', label: "明日のToDoを確認して、戦闘態勢で寝る" }, { type: 'fire', label: "スマホを見すぎて、気づけば深夜2時" }, { type: 'earth', label: "今日あったことを思い出して、一人反省会が始まる" }, { type: 'metal', label: "アロマや湿度管理など、完璧な環境を整える" }, { type: 'water', label: "トイレに行ったり戸締まりを確認したり、落ち着かない" }] }
 ];
 
-const profiles = {
-  wood: { name: "木", colorVar: "--wood", msg: "春の芽吹きのようなエネルギーを持ち、上昇志向が強いタイプ。しかし頑張りすぎると「気」が滞りやすくなります。", organs: "肝・胆・目", symptom: "イライラ、目の疲れ、筋肉の痙攣", advice: "酸味を取り入れ、深呼吸で気の巡りを良くしましょう。", food: "柑橘類、梅干し、セロリ、春菊" },
-  fire: { name: "火", colorVar: "--fire", msg: "太陽のように周囲を照らす情熱家。エネルギーの燃焼が激しく、オーバーヒート（心労）に注意が必要です。", organs: "心・小腸・舌", symptom: "動悸、不眠、多汗、口内炎", advice: "苦味のある食材で熱を冷まし、良質な睡眠を。", food: "ゴーヤ、緑茶、トマト、赤身肉" },
-  earth: { name: "土", colorVar: "--earth", msg: "大地のような包容力と安定感。あれこれ悩みすぎて胃腸に負担をかけやすい傾向があります。", organs: "脾・胃・口", symptom: "胃もたれ、食欲不振、全身のだるさ", advice: "胃腸を温め、自然な甘みで元気を補いましょう。", food: "かぼちゃ、芋類、米、大豆製品" },
-  metal: { name: "金", colorVar: "--metal", msg: "研ぎ澄まされた感性と規律を愛するタイプ。乾燥に弱く、バリア機能（免疫・皮膚）が低下しやすいです。", organs: "肺・大腸・鼻", symptom: "咳、鼻炎、肌の乾燥、悲観的思考", advice: "潤いを保ち、辛味食材で発散させましょう。", food: "大根、梨、白ネギ、生姜、豆腐" },
-  water: { name: "水", colorVar: "--water", msg: "静かな水面のような知性と適応力。生命力の源「腎」に関わるため、冷えと過労は大敵です。", organs: "腎・膀胱・耳", symptom: "足腰の冷え、むくみ、耳鳴り、白髪", advice: "とにかく冷え対策。黒い食材で生命力を養って。", food: "黒豆、黒ごま、海藻、豚肉、塩" }
-};
-
-const titleParts = {
-  wood: { prefix: ["疾風の", "蒼き", "新緑の", "繁栄の", "悠々たる", "気高き"], noun: ["開拓者", "賢者", "大樹", "冒険家", "先駆者", "風雲児"] },
-  fire: { prefix: ["紅蓮の", "灼熱の", "陽炎の", "情熱の", "輝ける", "不滅の"], noun: ["英雄", "闘士", "灯火", "改革者", "太陽", "司令官"] },
-  earth: { prefix: ["磐石の", "黄金の", "悠久の", "不動の", "恵みの", "包容なる"], noun: ["守護者", "皇帝", "大地", "要塞", "母港", "調停者"] },
-  metal: { prefix: ["白銀の", "鋭利な", "純白の", "粛清の", "鋼の", "玲瓏なる"], noun: ["騎士", "裁定者", "剣聖", "革命家", "美学者", "志士"] },
-  water: { prefix: ["深淵の", "静寂の", "幻影の", "幽玄の", "変幻自在の", "神秘の"], noun: ["策士", "詠み手", "龍神", "哲学者", "治療家", "求道者"] }
-};
-
-const kanjiNum = ["〇","一","二","三","四","五","六","七","八","九","十"];
-let currentQ = 0;
-let scores = { wood: 0, fire: 0, earth: 0, metal: 0, water: 0 };
-let userName = "";
-let shareData = null;
-
-// URLパラメータ処理（短縮ID版）
-window.onload = function() {
-  const params = new URLSearchParams(window.location.search);
-  const d = params.get('d');
-  const n = params.get('n');
-
-  if (d !== null && n) {
-    const id = parseInt(d, 10);
-    const mainIndex = Math.floor(id / 5);
-    const subIndex = id % 5;
-    
-    if(mainIndex >=0 && mainIndex < 5 && subIndex >= 0 && subIndex < 5) {
-      const mainEl = ELEMENTS[mainIndex];
-      const subEl = ELEMENTS[subIndex];
-      const prefixes = titleParts[subEl].prefix;
-      const nouns = titleParts[mainEl].noun;
-      // 簡易的な称号生成（毎回ランダムだが違和感は少ない）
-      const generatedTitle = `${prefixes[Math.floor(Math.random() * prefixes.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}`;
-      displayResultFromParams(mainEl, subEl, n, generatedTitle);
+const resultData = {
+    wood: {
+        desc: "お前、自分が有能だと思ってるだろ？ 周りは『圧が強すぎてウザい』としか思ってねぇよ。眉間のシワに挟まったそのプライド、さっさと捨てな。肝臓が焼き切れて、ただの枯れ木になる前に。",
+        item: "酸っぱいもんかじって、さっさと寝ろ。",
+        yang: { title: "😡 陽木の暴君：イキり散らかしの大樹", img: "img/wood_yang.png" },
+        yin:  { title: "🥀 陰木のメンヘラ：絡みつくツタ植物", img: "img/wood_yin.png" },
+        chartComment: "グラフを見ろ。「木（肝）」が突き抜けてるだろ？ これは<strong>「怒りのエネルギー」が暴走してる証拠</strong>だ。お前のそのイライラが、筋肉を硬直させ、目を疲れさせてるんだよ。自業自得だな。",
+        subDesc: "さらに厄介なのは、お前の中に潜む<strong>『木（怒り）』</strong>の気質だ。普段隠してるつもりかもしれないが、ふとした瞬間に不機嫌オーラが漏れ出てるぞ。"
+    },
+    fire: {
+        desc: "楽しそうなフリしてんのバレバレなんだよ。心の穴を『いいね！』で埋めようとするな、虚しくなるだけだろ。お前のそのハイテンション、見てるこっちが息切れするわ。中身スカスカの風船かよ。",
+        item: "スマホ電源切って、苦いコーヒー飲め。",
+        yang: { title: "🤬 陽火の爆弾：制御不能の核融合炉", img: "img/fire_yang.png" },
+        yin:  { title: "🕯️ 陰火の怨念：呪いの炎", img: "img/fire_yin.png" },
+        chartComment: "「火（心）」の数値が異常だな。お前は常にアクセル全開のスポーツカーだ。<strong>ブレーキ（水）が壊れてる</strong>から、いつか壁に激突して燃え尽きるぞ。その動悸は、心臓からの悲鳴だ。",
+        subDesc: "その上、<strong>『火（焦り）』</strong>の要素も強い。調子に乗ると歯止めが効かなくなるだろ？ 勢いだけで約束して、後で後悔する癖、直した方がいいぞ。"
+    },
+    earth: {
+        desc: "『でも…だって…』って、お前の人生言い訳ばっかだな。悩みすぎて胃に穴開けるのが趣味か？ そのくせ甘い菓子ばっか食って、思考も体型もドロドロに溶けてんだよ。見てらんなわ。",
+        item: "芋とかカボチャ食って、散歩しろ。",
+        yang: { title: "🚜 陽土の頑固岩：動かざる山", img: "img/earth_yang.png" },
+        yin:  { title: "🫠 陰土の沼：優柔不断な妖怪", img: "img/earth_yin.png" },
+        chartComment: "「土（脾）」が突出してるな。これは<strong>「悩みすぎ」と「糖分過多」の証明書</strong>だ。胃腸が弱って、食べたものをエネルギーに変えられてない。だからいつもダルくて、思考が沼のように重たいんだよ。",
+        subDesc: "あと、根本的に<strong>『土（迷い）』</strong>の気質があるな。何か決める時にウジウジ悩んで時間を無駄にする。その優柔不断さが、周りをイラつかせてることに気づけ。"
+    },
+    metal: {
+        desc: "お前の『正論』は正しいけど、息苦しいんだよ。白黒つけなきゃ気が済まないその潔癖さが、周りの空気まで乾燥させてることに気づけ。カサカサの心で正しさを振りかざして、何が楽しいの？",
+        item: "大根おろし食って、深呼吸しろ。",
+        yang: { title: "🤖 陽金の処刑人：冷徹ロボット", img: "img/metal_yang.png" },
+        yin:  { title: "💎 陰金の宝石：ガラスのハート", img: "img/metal_yin.png" },
+        chartComment: "「金（肺）」のグラフが尖りすぎだ。お前は自分にも他人にも厳しすぎる。その完璧主義が、<strong>呼吸を浅くし、肌を乾燥させてる元凶</strong>だ。正しさで武装しても、心はカサカサのままだぞ。",
+        subDesc: "加えて<strong>『金（頑固）』</strong>な面も見え隠れする。変なとこで几帳面というか、融通が利かないだろ。その「謎のこだわり」は、他人から見たらただの面倒くさい奴だ。"
+    },
+    water: {
+        desc: "石橋を叩きすぎて壊すタイプだな。賢いつもりでいるみたいだが、それはただのビビリだ。腹の底で計算ばっかして冷え切ってるから、実年齢より老け込んでんだよ。孤独死一直線だぞ。",
+        item: "黒豆茶でも飲んで、温めとけ。",
+        yang: { title: "🌊 陽水の大津波：破壊神", img: "img/water_yang.png" },
+        yin:  { title: "❄️ 陰水の氷柱：ビビリな老人", img: "img/water_yin.png" },
+        chartComment: "「水（腎）」が他を圧倒してるな。これは賢さじゃない、<strong>「恐怖」と「冷え」が骨の髄まで染み付いてる証拠</strong>だ。生命力のタンクが枯渇してるから、老化が加速してるぞ。ミイラになりたいのか？",
+        subDesc: "それと、隠しきれていないのが<strong>『水（恐怖）』</strong>の弱さだ。新しいことを前にすると、急に腰が引けて逃げ道を探す。リスク管理と言えば聞こえはいいが、単なるビビリだ。"
     }
-  }
 };
 
-function startQuiz() {
-  const input = document.getElementById('username');
-  if(!input.value) { alert("御名前を入力してください"); return; }
-  userName = input.value;
-  document.getElementById('start-screen').classList.add('hidden');
-  document.getElementById('quiz-screen').classList.remove('hidden');
-  showQuestion();
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function startGame(type) {
+    userYinYang = type;
+    document.getElementById('scene-start').classList.remove('active');
+    document.getElementById('scene-quiz').classList.add('active');
+    document.getElementById('q-total').textContent = questions.length;
+    showQuestion();
 }
 
 function showQuestion() {
-  const q = questions[currentQ];
-  document.getElementById('q-number').textContent = `問ノ${kanjiNum[currentQ + 1]}`;
-  document.getElementById('q-text').textContent = q.t;
-  const optsDiv = document.getElementById('options');
-  optsDiv.innerHTML = "";
-  q.opts.forEach(opt => {
-    const btn = document.createElement('button');
-    btn.textContent = opt.t;
-    btn.onclick = () => answer(opt.el);
-    optsDiv.appendChild(btn);
-  });
-}
-
-function answer(element) {
-  scores[element]++;
-  currentQ++;
-  if(currentQ < questions.length) { showQuestion(); } else { calcAndShowResult(); }
-}
-
-function calcAndShowResult() {
-  const sorted = Object.keys(scores).sort((a,b) => scores[b] - scores[a]);
-  const mainEl = sorted[0];
-  const subEl = sorted[1];
-  const prefixes = titleParts[subEl].prefix;
-  const nouns = titleParts[mainEl].noun;
-  const generatedTitle = `${prefixes[Math.floor(Math.random() * prefixes.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}`;
-  shareData = { m: mainEl, s: subEl, n: userName, t: generatedTitle };
-  renderResultScreen(mainEl, subEl, userName, generatedTitle, scores);
-}
-
-function displayResultFromParams(mainEl, subEl, name, title) {
-  document.getElementById('start-screen').classList.add('hidden');
-  document.getElementById('shared-notice').classList.remove('hidden');
-  document.getElementById('btn-new-diag').classList.remove('hidden');
-  shareData = { m: mainEl, s: subEl, n: name, t: title };
-  const dummyScores = { wood: 2, fire: 2, earth: 2, metal: 2, water: 2 };
-  dummyScores[mainEl] = 5;
-  dummyScores[subEl] = 4;
-  renderResultScreen(mainEl, subEl, name, title, dummyScores);
-}
-
-function renderResultScreen(mainEl, subEl, name, title, scoreData) {
-  document.getElementById('quiz-screen').classList.add('hidden');
-  document.getElementById('result-screen').classList.remove('hidden');
-  const mainData = profiles[mainEl];
-  const subData = profiles[subEl];
-  document.getElementById('res-name').textContent = `${name} 殿`;
-  document.getElementById('res-title').textContent = title;
-  document.getElementById('res-attr').textContent = `主：${mainData.name} / 従：${subData.name}`;
-  document.getElementById('res-attr').style.backgroundColor = `var(${mainData.colorVar})`;
-  document.getElementById('res-msg').innerHTML = mainData.msg;
-  const mainColor = `var(${mainData.colorVar})`;
-  document.getElementById('guild-card').style.borderColor = "#E2B46D";
-  document.getElementById('advice-area').style.borderLeftColor = mainColor;
-  document.getElementById('res-advice').innerHTML = `
-    <dl>
-      <dt>注意</dt><dd><strong>${mainData.organs}</strong> の不調 / ${mainData.symptom}</dd>
-      <dt>養生</dt><dd>${mainData.advice}</dd>
-      <dt>食薬</dt><dd>${mainData.food}</dd>
-    </dl>
-  `;
-  const chartDiv = document.getElementById('res-stats');
-  chartDiv.innerHTML = "";
-  ["wood", "fire", "earth", "metal", "water"].forEach(el => {
-    const p = profiles[el];
-    const s = scoreData[el];
-    const h = Math.min((s / 4) * 100, 100);
-    const isMain = (el === mainEl);
-    chartDiv.innerHTML += `
-      <div class="stat-item">
-        <div style="margin-bottom:5px;">${p.name}</div>
-        <div class="stat-bar-container">
-          <div class="stat-fill" style="height:${h}%; background:var(${p.colorVar}); opacity:${isMain?1:0.6};"></div>
-        </div>
-        <strong>${s}</strong>
-      </div>`;
-  });
-}
-
-function shareImageToNative() {
-  const element = document.getElementById("guild-card");
-  const originalBoxShadow = element.style.boxShadow;
-  element.style.boxShadow = "none";
-  element.style.transform = "scale(1)"; 
-  html2canvas(element, { scale: 2, backgroundColor: "#ffffff", useCORS: true }).then(canvas => {
-    element.style.boxShadow = originalBoxShadow;
-    canvas.toBlob(async (blob) => {
-      const file = new File([blob], "diagnosis_result.png", { type: "image/png" });
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        try { await navigator.share({ files: [file] }); } catch (err) { console.log("シェアキャンセル"); }
-      } else {
-        alert("お使いの環境では直接シェアできませんでした。\n画像を保存しますので、手動で投稿してください。");
-        const link = document.createElement('a');
-        link.download = `五行診断_${shareData ? shareData.t : '結果'}.png`;
-        link.href = canvas.toDataURL("image/png");
-        link.click();
-      }
+    const q = questions[currentQIndex];
+    const progressPercent = ((currentQIndex) / questions.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+    document.getElementById('q-num').textContent = currentQIndex + 1;
+    document.getElementById('q-text').innerHTML = q.text;
+    const optionsArea = document.getElementById('options-area');
+    optionsArea.innerHTML = '';
+    const shuffledOptions = shuffle([...q.options]);
+    shuffledOptions.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = opt.label;
+        btn.onclick = () => answer(opt.type);
+        optionsArea.appendChild(btn);
     });
-  });
+}
+
+function answer(type) {
+    scores[type] += 1;
+    currentQIndex++;
+    if (currentQIndex < questions.length) {
+        showQuestion();
+    } else {
+        document.getElementById('progress-bar').style.width = '100%';
+        calcResult();
+    }
+}
+
+function calcResult() {
+    const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    finalResultType = sortedScores[0][0];
+    if (sortedScores[1] && sortedScores[1][1] > 0) {
+        subResultType = sortedScores[1][0];
+    } else {
+        subResultType = null;
+    }
+    showResultScreen();
+}
+
+function showResultScreen() {
+    document.getElementById('scene-quiz').classList.remove('active');
+    document.getElementById('scene-result').classList.add('active');
+    const data = resultData[finalResultType];
+    const specific = (userYinYang === 'yang') ? data.yang : data.yin;
+    document.getElementById('card-rarity').textContent = `【SSR】${specific.title.split('：')[0]}`;
+    document.getElementById('card-title').textContent = specific.title.split('：')[1];
+    document.getElementById('card-char-img').src = specific.img; 
+    document.getElementById('card-desc').textContent = data.desc;
+    document.getElementById('card-lucky-item').textContent = data.item;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// 3段構え分析
+function showChart() {
+    document.getElementById('detail-area').style.display = 'block';
+    document.getElementById('show-detail-btn').style.display = 'none';
+    let yinYangText = (userYinYang === 'yang') 
+        ? "<strong>【根本診断】</strong><br>お前、最初に『陽』を選んだな？ それは<strong>『落ち着きのなさ』</strong>の表れだ。エネルギーを無駄に垂れ流して、周りを疲れさせてる自覚を持て。<br><br>"
+        : "<strong>【根本診断】</strong><br>お前、最初に『陰』を選んだな？ それは<strong>『根暗で執念深い』</strong>証拠だ。腹の底に言葉を溜め込んで、後でネチネチ思い出すタイプだろ。<br><br>";
+    let mainText = "<strong>【メイン傾向】</strong><br>" + resultData[finalResultType].chartComment;
+    let subText = subResultType ? "<br><br><strong>【隠れた本性】</strong><br>" + resultData[subResultType].subDesc : "";
+    document.getElementById('chart-comment').innerHTML = yinYangText + mainText + subText;
+
+    const ctx = document.getElementById('radarChart').getContext('2d');
+    if (window.myRadarChart) { window.myRadarChart.destroy(); }
+    window.myRadarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['木(肝)', '火(心)', '土(脾)', '金(肺)', '水(腎)'],
+            datasets: [{
+                label: '傾向',
+                data: [scores.wood, scores.fire, scores.earth, scores.metal, scores.water],
+                backgroundColor: 'rgba(201, 160, 99, 0.5)',
+                borderColor: '#c9a063',
+                borderWidth: 3,
+                pointBackgroundColor: '#fff',
+                pointBorderColor: '#c9a063'
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    angleLines: { color: '#555' },
+                    grid: { color: '#333', circular: true },
+                    pointLabels: { color: '#ffd700', font: { size: 14, family: "'Reggae One'" } },
+                    suggestedMin: 0, suggestedMax: 5,
+                    ticks: { display: false, backdropColor: 'transparent' }
+                }
+            },
+            plugins: { legend: { display: false } },
+            animation: { duration: 2000, easing: 'easeOutQuart' }
+        }
+    });
+    document.getElementById('detail-area').scrollIntoView({ behavior: 'smooth' });
+}
+
+// SNSシェア機能
+function shareThreads() {
+    const data = resultData[finalResultType];
+    const specific = (userYinYang === 'yang') ? data.yang : data.yin;
+    const title = specific.title.split('：')[1];
+    const url = "https://hogushiyakida.com/diagnosis.html";
+    const text = `【毒舌五行診断】\n私の本性は...『${title}』でした。\n\n${data.desc.substring(0, 30)}...\n\n#毒舌五行診断 #ほぐしや木田\n`;
+    window.open(`https://www.threads.net/intent/post?text=${encodeURIComponent(text + url)}`, '_blank');
 }
 
 function saveCardImage() {
-  const element = document.getElementById("guild-card");
-  const originalBoxShadow = element.style.boxShadow;
-  element.style.boxShadow = "none";
-  element.style.transform = "scale(1)"; 
-  html2canvas(element, { scale: 2, backgroundColor: "#ffffff", useCORS: true }).then(canvas => {
-    element.style.boxShadow = originalBoxShadow;
-    const link = document.createElement('a');
-    link.download = `五行診断_${shareData ? shareData.t : '結果'}.png`;
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-  });
+    const target = document.getElementById('capture-target');
+    html2canvas(target, { scale: 2, backgroundColor: "#1a1a1a" }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'dokuzetsu_diagnosis.png';
+        link.href = canvas.toDataURL();
+        link.click();
+        alert('画像を保存しました。\nインスタのストーリー等でシェアしてね！');
+    });
 }
 
-// URL短縮ロジック
-function getShareUrl() {
-  if (!shareData) return window.location.href;
-  let baseUrl = PAGE_URL ? PAGE_URL : (location.protocol + '//' + location.host + location.pathname);
-  const mainIndex = ELEMENTS.indexOf(shareData.m);
-  const subIndex = ELEMENTS.indexOf(shareData.s);
-  const diagId = (mainIndex * 5) + subIndex;
-  const params = new URLSearchParams();
-  params.set('d', diagId);
-  params.set('n', shareData.n);
-  return `${baseUrl}?${params.toString()}`;
+function copyLink() {
+    const url = "https://hogushiyakida.com/diagnosis.html";
+    navigator.clipboard.writeText(url).then(() => {
+        alert('リンクをコピーしました！\n好きなSNSに貼り付けてシェアしてね。');
+    });
 }
 
-// ★★ ココだけ修正：Threadsアプリ優先で開く shareResult ★★
-function shareResult() {
-  if (!shareData) return;
-
-  const shareText = `【五行診断 by ほぐしやきだ】\n私の属性は「主：${profiles[shareData.m].name} / 従：${profiles[shareData.s].name}」\n授かりし称号は『${shareData.t}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
-  const url = getShareUrl();
-  const fullText = shareText + url;
-
-  const encoded = encodeURIComponent(fullText);
-
-  // Threadsネイティブアプリ（barcelona://）を優先
-  const nativeUrl = `barcelona://create?text=${encoded}`;
-  const webUrl    = `https://www.threads.net/intent/post?text=${encoded}`;
-
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  if (isMobile) {
-    const start = Date.now();
-
-    // アプリ起動に失敗したときだけWebにフォールバック
-    setTimeout(() => {
-      if (Date.now() - start < 1500) {
-        window.location.href = webUrl;
-      }
-    }, 800);
-
-    // まずアプリ用スキームを叩く
-    window.location.href = nativeUrl;
-  } else {
-    // PCなどはそのままブラウザで開く
-    window.open(webUrl, '_blank');
-  }
-}
-
-function copyUrl() {
-  const url = getShareUrl();
-  navigator.clipboard.writeText(url).then(() => {
-    alert("短縮URLをコピーしました！");
-  }).catch(err => alert("コピーに失敗しました"));
+function shareX() {
+    const specific = (userYinYang === 'yang') ? resultData[finalResultType].yang : resultData[finalResultType].yin;
+    const title = specific.title.split('：')[1];
+    const url = "https://hogushiyakida.com/diagnosis.html";
+    const text = `【毒舌五行診断】私の本性は...『${title}』でした。\n\n覚悟を決めて診断する↓`;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=毒舌五行診断,ほぐしや木田`;
+    window.open(twitterUrl, '_blank');
 }
 </script>
+
 </body>
 </html>
