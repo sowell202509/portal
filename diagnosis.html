@@ -447,12 +447,38 @@ function getShareUrl() {
   return `${baseUrl}?${params.toString()}`;
 }
 
+// ★★ ココだけ修正：Threadsアプリ優先で開く shareResult ★★
 function shareResult() {
   if (!shareData) return;
+
   const shareText = `【五行診断 by ほぐしやきだ】\n私の属性は「主：${profiles[shareData.m].name} / 従：${profiles[shareData.s].name}」\n授かりし称号は『${shareData.t}』でした。\n\n#五行診断 #ほぐしやきだ #東洋医学\n`;
   const url = getShareUrl();
-  const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(shareText + " " + url)}`;
-  window.open(threadsUrl, '_blank');
+  const fullText = shareText + url;
+
+  const encoded = encodeURIComponent(fullText);
+
+  // Threadsネイティブアプリ（barcelona://）を優先
+  const nativeUrl = `barcelona://create?text=${encoded}`;
+  const webUrl    = `https://www.threads.net/intent/post?text=${encoded}`;
+
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    const start = Date.now();
+
+    // アプリ起動に失敗したときだけWebにフォールバック
+    setTimeout(() => {
+      if (Date.now() - start < 1500) {
+        window.location.href = webUrl;
+      }
+    }, 800);
+
+    // まずアプリ用スキームを叩く
+    window.location.href = nativeUrl;
+  } else {
+    // PCなどはそのままブラウザで開く
+    window.open(webUrl, '_blank');
+  }
 }
 
 function copyUrl() {
