@@ -145,7 +145,6 @@
         #detail-area {
             margin-top: 20px; padding: 20px; background: #222;
             border-radius: 10px; box-sizing: border-box; width: 100%;
-            /* 以前は display: none だったが、今回は常時表示 */
             display: block; 
         }
         #chart-comment {
@@ -247,9 +246,10 @@
             <button class="btn-native-share" onclick="shareImageNative()">
                 <span>📱</span> 結果画像をシェア<br><span style="font-size:0.7rem; font-weight:normal;">(Threads / Instagramなど)</span>
             </button>
+            
             <div class="sub-share-grid">
                 <button class="btn-sub" onclick="saveCardImage()">📸 画像保存</button>
-                <button class="btn-sub" onclick="shareTextOnly()">🔗 リンクのみ</button>
+                <button class="btn-sub" onclick="shareToThreads()">🧵 Threadsでつぶやく</button>
             </div>
         </div>
 
@@ -276,7 +276,7 @@
 
 <script>
 /* =========================================
-   🧠 ロジック (全自動表示版)
+   🧠 ロジック (X削除・Threads対応版)
    ========================================= */
 
 let userYinYang = 'yang';
@@ -389,11 +389,7 @@ function answer(type) {
 function calcResult() {
     const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
     finalResultType = sortedScores[0][0];
-    if (sortedScores[1] && sortedScores[1][1] > 0) {
-        subResultType = sortedScores[1][0];
-    } else {
-        subResultType = null;
-    }
+    subResultType = (sortedScores[1] && sortedScores[1][1] > 0) ? sortedScores[1][0] : null;
     showResultScreen();
 }
 
@@ -401,7 +397,6 @@ function showResultScreen() {
     document.getElementById('scene-quiz').classList.remove('active');
     document.getElementById('scene-result').classList.add('active');
     
-    // ★ここを変更：カードを表示しつつ、すぐにチャートも描画する
     const data = resultData[finalResultType];
     const specific = (userYinYang === 'yang') ? data.yang : data.yin;
 
@@ -412,16 +407,10 @@ function showResultScreen() {
     document.getElementById('card-lucky-item').textContent = data.item;
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // 自動でチャート表示（分析）も行う
     showChart();
 }
 
-// 3段構え分析
 function showChart() {
-    // 隠さずにそのまま表示
-    // document.getElementById('detail-area').style.display = 'block'; // もうCSSで最初から消していないので不要だが念のため
-    
     let yinYangText = (userYinYang === 'yang') 
         ? "<strong>【根本診断】</strong><br>お前、最初に『陽』を選んだな？ それは<strong>『落ち着きのなさ』</strong>の表れだ。エネルギーを無駄に垂れ流して、周りを疲れさせてる自覚を持て。<br><br>"
         : "<strong>【根本診断】</strong><br>お前、最初に『陰』を選んだな？ それは<strong>『根暗で執念深い』</strong>証拠だ。腹の底に言葉を溜め込んで、後でネチネチ思い出すタイプだろ。<br><br>";
@@ -461,16 +450,11 @@ function showChart() {
     });
 }
 
-// SNSシェア機能
-function shareThreads() {
-    const data = resultData[finalResultType];
-    const specific = (userYinYang === 'yang') ? data.yang : data.yin;
-    const title = specific.title.split('：')[1];
-    const url = "https://hogushiyakida.com/diagnosis.html";
-    const text = `【毒舌五行診断】\n私の本性は...『${title}』でした。\n\n${data.desc.substring(0, 30)}...\n\n#毒舌五行診断 #ほぐしや木田\n`;
-    window.open(`https://www.threads.net/intent/post?text=${encodeURIComponent(text + url)}`, '_blank');
-}
+// =========================================
+// 📲 SNSシェア機能 (Threads & Native)
+// =========================================
 
+// 【画像保存】
 function saveCardImage() {
     const target = document.getElementById('capture-target');
     html2canvas(target, { scale: 2, backgroundColor: "#1a1a1a" }).then(canvas => {
@@ -482,22 +466,19 @@ function saveCardImage() {
     });
 }
 
-function copyLink() {
-    const url = "https://hogushiyakida.com/diagnosis.html";
-    navigator.clipboard.writeText(url).then(() => {
-        alert('リンクをコピーしました！\n好きなSNSに貼り付けてシェアしてね。');
-    });
-}
-
-function shareX() {
+// 【Threadsへのリンクシェア】
+function shareToThreads() {
     const specific = (userYinYang === 'yang') ? resultData[finalResultType].yang : resultData[finalResultType].yin;
     const title = specific.title.split('：')[1];
     const url = "https://hogushiyakida.com/diagnosis.html";
-    const text = `【毒舌五行診断】私の本性は...『${title}』でした。\n\n覚悟を決めて診断する↓`;
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=毒舌五行診断,ほぐしや木田`;
-    window.open(twitterUrl, '_blank');
+    const text = `【毒舌五行診断】\n私の本性は...『${title}』でした。\n\n#毒舌五行診断 #ほぐしや木田\n\n診断はこちら↓\n`;
+    
+    // Threadsの投稿画面を開く
+    const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(text + url)}`;
+    window.open(threadsUrl, '_blank');
 }
 
+// 【ネイティブ共有 (スマホ用)】
 function shareImageNative() {
     const target = document.getElementById('capture-target');
     const shareBtn = document.querySelector('.btn-native-share');
@@ -519,22 +500,13 @@ function shareImageNative() {
             if (navigator.canShare && navigator.canShare(shareData)) {
                 navigator.share(shareData);
             } else {
-                alert('このブラウザは画像共有に対応していません。\n「画像保存」ボタンを使ってください。');
-                saveCardImage();
+                // 非対応ならThreads共有へ飛ばす
+                shareToThreads();
             }
             shareBtn.innerHTML = '<span>📱</span> 結果画像をシェア<br><span style="font-size:0.7rem; font-weight:normal;">(Threads / Instagramなど)</span>';
             shareBtn.style.opacity = '1';
         }, 'image/png');
     });
-}
-
-function shareTextOnly() {
-    const specific = (userYinYang === 'yang') ? resultData[finalResultType].yang : resultData[finalResultType].yin;
-    const title = specific.title.split('：')[1];
-    const url = "https://hogushiyakida.com/diagnosis.html";
-    const text = `【毒舌五行診断】私の本性は...『${title}』でした。\n\n覚悟を決めて診断する↓`;
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=毒舌五行診断,ほぐしや木田`;
-    window.open(twitterUrl, '_blank');
 }
 </script>
 
