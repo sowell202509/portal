@@ -128,13 +128,25 @@
 
         /* --- SNSエリア --- */
         .share-area { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
+        
         .btn-native-share {
             width: 100%; box-sizing: border-box; padding: 16px; background: #fff; color: #000; border: none;
             border-radius: 50px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
             font-size: 1.1rem; box-shadow: 0 4px 10px rgba(255,255,255,0.2); -webkit-tap-highlight-color: transparent;
         }
         .btn-native-share:active { transform: scale(0.98); background: #e0e0e0; }
-        .sub-share-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        
+        /* Threads専用ボタン */
+        .btn-threads {
+            width: 100%; box-sizing: border-box; padding: 16px; 
+            background: #000; color: #fff; border: 1px solid #333;
+            border-radius: 50px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+            font-size: 1.0rem; box-shadow: 0 4px 10px rgba(0,0,0,0.5); -webkit-tap-highlight-color: transparent;
+        }
+        .btn-threads:active { transform: scale(0.98); background: #222; }
+
+        /* サブボタン（保存・コピー） */
+        .sub-share-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }
         .btn-sub {
             padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; text-align: center;
             font-size: 0.85rem; border: 1px solid #444; background: #222; color: #ccc; -webkit-tap-highlight-color: transparent;
@@ -244,12 +256,16 @@
 
         <div class="share-area">
             <button class="btn-native-share" onclick="shareImageNative()">
-                <span>📱</span> 結果画像をシェア<br><span style="font-size:0.7rem; font-weight:normal;">(Threads / Instagramなど)</span>
+                <span>📱</span> 結果画像をシェア<br><span style="font-size:0.7rem; font-weight:normal;">(インスタ / Threads 等)</span>
             </button>
             
+            <button class="btn-threads" onclick="shareToThreadsApp()">
+                <span>🧵</span> Threadsアプリで開く
+            </button>
+
             <div class="sub-share-grid">
                 <button class="btn-sub" onclick="saveCardImage()">📸 画像保存</button>
-                <button class="btn-sub" onclick="shareToThreads()">🧵 Threadsでつぶやく</button>
+                <button class="btn-sub" onclick="copyLink()">🔗 リンクをコピー</button>
             </div>
         </div>
 
@@ -276,7 +292,7 @@
 
 <script>
 /* =========================================
-   🧠 ロジック (X削除・Threads対応版)
+   🧠 ロジック (スマホアプリ対応版)
    ========================================= */
 
 let userYinYang = 'yang';
@@ -451,10 +467,27 @@ function showChart() {
 }
 
 // =========================================
-// 📲 SNSシェア機能 (Threads & Native)
+// 📲 SNS機能群 (Threadsアプリ起動 & 便利機能)
 // =========================================
 
-// 【画像保存】
+// 【1. Threadsアプリを直接開く】
+function shareToThreadsApp() {
+    const specific = (userYinYang === 'yang') ? resultData[finalResultType].yang : resultData[finalResultType].yin;
+    const title = specific.title.split('：')[1];
+    const url = "https://hogushiyakida.com/diagnosis.html";
+    const text = `【毒舌五行診断】\n私の本性は...『${title}』でした。\n\n#毒舌五行診断 #ほぐしや木田\n\n診断はこちら↓\n`;
+    
+    // アプリを呼び出すスキーム (threads://)
+    // 万が一アプリがない場合などは反応しないため、PC等ではWeb版URLもコンソールに出すか、
+    // あるいはシンプルに「スマホならアプリが開く」仕様と割り切ります。
+    window.location.href = `threads://intent/post?text=${encodeURIComponent(text + url)}`;
+    
+    // ※もしPCなどでクリックして「何も起きない」のを防ぐため、
+    // 0.5秒後にWeb版へ飛ばす処理を入れることも可能ですが、
+    // 「アプリを開くようにして」という強い要望のため、まずは強制スキームのみにします。
+}
+
+// 【2. 画像保存】
 function saveCardImage() {
     const target = document.getElementById('capture-target');
     html2canvas(target, { scale: 2, backgroundColor: "#1a1a1a" }).then(canvas => {
@@ -462,23 +495,21 @@ function saveCardImage() {
         link.download = 'dokuzetsu_diagnosis.png';
         link.href = canvas.toDataURL();
         link.click();
-        alert('画像を保存しました。\nインスタのストーリー等でシェアしてね！');
+        alert('画像を保存しました。');
     });
 }
 
-// 【Threadsへのリンクシェア】
-function shareToThreads() {
-    const specific = (userYinYang === 'yang') ? resultData[finalResultType].yang : resultData[finalResultType].yin;
-    const title = specific.title.split('：')[1];
+// 【3. リンクをコピー】
+function copyLink() {
     const url = "https://hogushiyakida.com/diagnosis.html";
-    const text = `【毒舌五行診断】\n私の本性は...『${title}』でした。\n\n#毒舌五行診断 #ほぐしや木田\n\n診断はこちら↓\n`;
-    
-    // Threadsの投稿画面を開く
-    const threadsUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(text + url)}`;
-    window.open(threadsUrl, '_blank');
+    navigator.clipboard.writeText(url).then(() => {
+        alert('リンクをコピーしました！\n好きな場所に貼り付けてね。');
+    }, () => {
+        alert('コピーに失敗しました。\nURL: ' + url);
+    });
 }
 
-// 【ネイティブ共有 (スマホ用)】
+// 【4. ネイティブ共有 (画像シェア)】
 function shareImageNative() {
     const target = document.getElementById('capture-target');
     const shareBtn = document.querySelector('.btn-native-share');
@@ -500,10 +531,9 @@ function shareImageNative() {
             if (navigator.canShare && navigator.canShare(shareData)) {
                 navigator.share(shareData);
             } else {
-                // 非対応ならThreads共有へ飛ばす
-                shareToThreads();
+                alert('このブラウザは画像共有に対応していません。\n下の「画像保存」を使ってね。');
             }
-            shareBtn.innerHTML = '<span>📱</span> 結果画像をシェア<br><span style="font-size:0.7rem; font-weight:normal;">(Threads / Instagramなど)</span>';
+            shareBtn.innerHTML = '<span>📱</span> 結果画像をシェア<br><span style="font-size:0.7rem; font-weight:normal;">(インスタ / Threads 等)</span>';
             shareBtn.style.opacity = '1';
         }, 'image/png');
     });
