@@ -6,7 +6,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-SXB69DFE11');
     </script>
 
@@ -54,7 +53,7 @@
         .warning-title { color: #ff4500; font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; }
         .warning-text { color: #ffcccc; font-size: 0.9rem; line-height: 1.6; text-align: left; }
 
-        /* 画面切り替えアニメーション */
+        /* 画面切り替え */
         .screen { display: none; }
         .active { display: block; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -67,9 +66,7 @@
             box-sizing: border-box; overflow: hidden; position: relative;
             -webkit-tap-highlight-color: transparent; 
         }
-        @media (hover: hover) {
-            .yin-yang-btn:hover { border-color: #c9a063; background: #2a2a2a; }
-        }
+        @media (hover: hover) { .yin-yang-btn:hover { border-color: #c9a063; background: #2a2a2a; } }
         .yin-yang-btn:active { transform: scale(0.98); background: #333; }
         
         .yy-img-box {
@@ -77,17 +74,14 @@
             border: 2px solid #444; margin-right: 20px; flex-shrink: 0;
         }
         .yy-img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .yy-info { display: flex; align-items: center; }
         .yy-info h3 { margin: 0; color: #fff; font-size: 1.5rem; letter-spacing: 2px; }
 
-        /* 解説記事リンクボタン */
         .knowledge-link { text-align: center; margin-top: 10px; margin-bottom: 30px; }
         .knowledge-link a {
             color: #c9a063; font-weight: bold; text-decoration: none; font-size: 0.9rem;
             border: 1px solid #c9a063; padding: 12px 25px; border-radius: 30px;
             display: inline-block; transition: 0.2s; background: rgba(0,0,0,0.3);
         }
-        .knowledge-link a:hover { background: #c9a063; color: #000; }
 
         /* --- SCENE 2: 質問カード --- */
         .progress-container {
@@ -101,94 +95,58 @@
             padding: 20px; margin-bottom: 20px; box-sizing: border-box;
         }
         .q-header { display: flex; justify-content: space-between; color: #c9a063; font-weight: bold; margin-bottom: 15px; }
-        .q-text { 
-            font-size: 1.15rem; line-height: 1.6; font-weight: bold; margin-bottom: 25px;
-            border-bottom: 1px solid #444; padding-bottom: 15px;
-        }
+        .q-text { font-size: 1.15rem; line-height: 1.6; font-weight: bold; margin-bottom: 25px; border-bottom: 1px solid #444; padding-bottom: 15px; }
         
         .options-grid { display: flex; flex-direction: column; gap: 10px; }
-        
         .option-btn {
             width: 100%; box-sizing: border-box; padding: 15px;
             background: #333; color: #e0e0e0; border: 1px solid #555;
             border-radius: 8px; font-size: 1rem; cursor: pointer; text-align: left;
-            transition: 0.1s; position: relative; line-height: 1.4;
-            -webkit-tap-highlight-color: transparent; outline: none;
+            transition: 0.1s; position: relative; line-height: 1.4; -webkit-tap-highlight-color: transparent; outline: none;
         }
-        @media (hover: hover) {
-            .option-btn:hover { background: #c9a063; color: #000; border-color: #c9a063; transform: scale(1.02); }
-        }
+        @media (hover: hover) { .option-btn:hover { background: #c9a063; color: #000; border-color: #c9a063; transform: scale(1.02); } }
         .option-btn:active { background: #c9a063; color: #000; border-color: #c9a063; transform: scale(0.98); }
 
         /* --- SCENE 3: 結果カード --- */
         .rpg-card {
             font-family: 'Reggae One', cursive; background: #1a1a1a;
             border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.9);
-            text-align: center; overflow: hidden; margin-bottom: 20px;
-            width: 100%; box-sizing: border-box;
+            text-align: center; overflow: hidden; margin-bottom: 20px; width: 100%; box-sizing: border-box;
         }
-        .card-border {
-            border: 3px solid #c9a063; border-radius: 10px; padding: 15px;
-            background: linear-gradient(180deg, #2c2222 0%, #1a1a1a 100%);
-        }
+        .card-border { border: 3px solid #c9a063; border-radius: 10px; padding: 15px; background: linear-gradient(180deg, #2c2222 0%, #1a1a1a 100%); }
         .card-header { color: #ffd700; font-weight: bold; margin-bottom: 10px; letter-spacing: 1px; }
-        .card-image-box {
-            width: 100%; border: 2px solid #5a3a3a; border-radius: 6px;
-            overflow: hidden; background: #000; margin-bottom: 15px;
-        }
+        .card-image-box { width: 100%; border: 2px solid #5a3a3a; border-radius: 6px; overflow: hidden; background: #000; margin-bottom: 15px; }
         .card-image-box img { width: 100%; height: auto; display: block; filter: contrast(1.1) brightness(1.1); }
-        
         .card-title {
-            font-size: 1.3rem; background: linear-gradient(45deg, #ff4500, #ff8c00);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            font-size: 1.3rem; background: linear-gradient(45deg, #ff4500, #ff8c00); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             margin: 5px 0 15px; border-bottom: 1px solid #5a3a3a; padding-bottom: 10px;
         }
-        .card-desc {
-            font-size: 1rem; line-height: 1.8; text-align: justify;
-            background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px;
-            color: #e0e0e0; margin-bottom: 15px;
-        }
-        .card-footer {
-            background: #332222; padding: 12px; border-radius: 6px; border: 1px solid #5a3a3a;
-        }
+        .card-desc { font-size: 1rem; line-height: 1.8; text-align: justify; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; color: #e0e0e0; margin-bottom: 15px; }
+        .card-footer { background: #332222; padding: 12px; border-radius: 6px; border: 1px solid #5a3a3a; }
         .footer-label { display: block; color: #ff7f50; font-size: 0.8rem; margin-bottom: 5px; }
         #card-lucky-item { font-weight: bold; }
 
-        /* --- SNS & 保存ボタンエリア --- */
-        .share-area {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;
+        /* --- SNSエリア --- */
+        .share-area { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
+        .btn-native-share {
+            width: 100%; box-sizing: border-box; padding: 16px; background: #fff; color: #000; border: none;
+            border-radius: 50px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+            font-size: 1.1rem; box-shadow: 0 4px 10px rgba(255,255,255,0.2); -webkit-tap-highlight-color: transparent;
         }
-        .btn-threads {
-            grid-column: span 2; background: #000; color: #fff; border: 1px solid #333;
-            padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            text-decoration: none; font-size: 1.1rem; -webkit-tap-highlight-color: transparent;
+        .btn-native-share:active { transform: scale(0.98); background: #e0e0e0; }
+        .sub-share-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .btn-sub {
+            padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; text-align: center;
+            font-size: 0.85rem; border: 1px solid #444; background: #222; color: #ccc; -webkit-tap-highlight-color: transparent;
         }
-        .btn-threads:hover { background: #222; }
-        .btn-sns {
-            padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;
-            text-align: center; text-decoration: none; font-size: 0.9rem;
-            display: flex; align-items: center; justify-content: center; gap: 5px;
-            border: none; -webkit-tap-highlight-color: transparent;
-        }
-        .btn-save { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); color: #fff; }
-        .btn-copy { background: #555; color: #fff; }
-        .btn-x { background: #000; color: #fff; border: 1px solid #333; }
-        
-        .btn-threads:active, .btn-sns:active { transform: scale(0.95); opacity: 0.8; }
+        .btn-sub:active { background: #333; }
 
-        /* 詳細 & 予約ボタン */
-        .detail-btn {
-            width: 100%; box-sizing: border-box; padding: 15px;
-            background: #444; color: #fff; border: 1px solid #888;
-            border-radius: 8px; font-size: 1rem; cursor: pointer; margin-top: 10px;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .detail-btn:active { background: #666; transform: scale(0.98); }
-
+        /* --- 詳細エリア（最初から表示） --- */
         #detail-area {
-            margin-top: 30px; padding: 20px; background: #222;
+            margin-top: 20px; padding: 20px; background: #222;
             border-radius: 10px; box-sizing: border-box; width: 100%;
+            /* 以前は display: none だったが、今回は常時表示 */
+            display: block; 
         }
         #chart-comment {
             text-align: justify; font-size: 0.95rem; color: #e0e0e0;
@@ -197,17 +155,14 @@
         }
         #chart-comment strong { color: #ff4500; }
 
-        /* 養生ボタン（和モダンゴールド） */
         .reserve-btn {
             display: block; width: 100%; box-sizing: border-box; padding: 18px;
             background: linear-gradient(135deg, #c9a063 0%, #8e6e42 100%);
             color: #fff; text-align: center; text-decoration: none;
             font-weight: bold; border-radius: 50px; margin-top: 25px;
             font-size: 1.1rem; letter-spacing: 0.1em;
-            box-shadow: 0 5px 20px rgba(201, 160, 99, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease; position: relative; overflow: hidden;
-            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 5px 20px rgba(201, 160, 99, 0.4); border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease; position: relative; overflow: hidden; -webkit-tap-highlight-color: transparent;
         }
         .reserve-btn::before {
             content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
@@ -218,13 +173,14 @@
         .reserve-btn:hover::before { left: 100%; }
         .reserve-btn:active { transform: translateY(1px); box-shadow: 0 2px 10px rgba(201, 160, 99, 0.4); }
 
-        /* ポータルへ戻る */
-        .back-link { text-align: center; margin-top: 30px; margin-bottom: 20px; }
-        .back-link a {
-            color: #888; text-decoration: none; font-size: 0.9rem;
-            border-bottom: 1px solid #555; padding-bottom: 2px;
+        .detail-btn {
+            width: 100%; box-sizing: border-box; padding: 15px;
+            background: #444; color: #fff; border: 1px solid #888;
+            border-radius: 8px; font-size: 1rem; cursor: pointer; margin-top: 10px; -webkit-tap-highlight-color: transparent;
         }
-        .back-link a:hover { color: #c9a063; border-color: #c9a063; }
+        
+        .back-link { text-align: center; margin-top: 40px; margin-bottom: 20px; }
+        .back-link a { color: #888; text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid #555; padding-bottom: 2px; }
     </style>
 </head>
 <body>
@@ -248,16 +204,12 @@
         </p>
         
         <div class="yin-yang-btn" onclick="startGame('yang')">
-            <div class="yy-img-box">
-                <img src="img/yang_button.png" alt="陽のエネルギー">
-            </div>
+            <div class="yy-img-box"><img src="img/yang_button.png" alt="陽"></div>
             <div class="yy-info"><h3>陽 (YANG)</h3></div>
         </div>
 
         <div class="yin-yang-btn" onclick="startGame('yin')">
-            <div class="yy-img-box">
-                <img src="img/yin_button.png" alt="陰のエネルギー">
-            </div>
+            <div class="yy-img-box"><img src="img/yin_button.png" alt="陰"></div>
             <div class="yy-info"><h3>陰 (YIN)</h3></div>
         </div>
 
@@ -269,14 +221,9 @@
     </div>
 
     <div id="scene-quiz" class="screen">
-        <div class="progress-container">
-            <div id="progress-bar" class="progress-bar"></div>
-        </div>
+        <div class="progress-container"><div id="progress-bar" class="progress-bar"></div></div>
         <div class="question-card">
-            <div class="q-header">
-                <span>SCENE</span>
-                <span><span id="q-num">1</span> / <span id="q-total"></span></span>
-            </div>
+            <div class="q-header"><span>SCENE</span><span><span id="q-num">1</span> / <span id="q-total"></span></span></div>
             <div id="q-text" class="q-text"></div>
             <div id="options-area" class="options-grid"></div>
         </div>
@@ -286,9 +233,7 @@
         <div id="capture-target" class="rpg-card">
             <div class="card-border">
                 <div class="card-header" id="card-rarity">【ELEMENT】</div>
-                <div class="card-image-box">
-                    <img id="card-char-img" src="" alt="Character">
-                </div>
+                <div class="card-image-box"><img id="card-char-img" src="" alt="Character"></div>
                 <h3 id="card-title" class="card-title">称号</h3>
                 <div id="card-desc" class="card-desc">診断結果</div>
                 <div class="card-footer">
@@ -299,33 +244,27 @@
         </div>
 
         <div class="share-area">
-            <button class="btn-threads" onclick="shareThreads()">
-                <span>@</span> Threadsで結果をシェア
+            <button class="btn-native-share" onclick="shareImageNative()">
+                <span>📱</span> 結果画像をシェア<br><span style="font-size:0.7rem; font-weight:normal;">(Threads / Instagramなど)</span>
             </button>
-            <button class="btn-sns btn-save" onclick="saveCardImage()">
-                📸 画像保存<br><span style="font-size:0.7rem">(インスタ用)</span>
-            </button>
-            <button class="btn-sns btn-copy" onclick="copyLink()">
-                🔗 リンク<br>コピー
-            </button>
-            <button class="btn-sns btn-x" onclick="shareX()">
-                𝕏 で<br>シェア
-            </button>
+            <div class="sub-share-grid">
+                <button class="btn-sub" onclick="saveCardImage()">📸 画像保存</button>
+                <button class="btn-sub" onclick="shareTextOnly()">🔗 リンクのみ</button>
+            </div>
         </div>
 
-        <button id="show-detail-btn" class="detail-btn" onclick="showChart()">
-            📊 なぜバレた？分析データを見る
-        </button>
-
-        <div id="detail-area" style="display: none;">
+        <div id="detail-area">
             <h3 style="text-align:center; color:#c9a063;">五行バランス分析</h3>
             <div class="chart-container" style="position: relative; height: 300px; width: 100%;">
                 <canvas id="radarChart"></canvas>
             </div>
+            
             <p id="chart-comment"></p>
+            
             <a href="salon.html" class="reserve-btn" target="_blank">
                 Sowellで養生する（予約）
             </a>
+            
             <button class="detail-btn" onclick="location.reload()" style="margin-top:15px; background:#333;">
                 もう一度診断する
             </button>
@@ -337,7 +276,7 @@
 
 <script>
 /* =========================================
-   🧠 ロジック (10問・シェア・GA4対応)
+   🧠 ロジック (全自動表示版)
    ========================================= */
 
 let userYinYang = 'yang';
@@ -461,20 +400,28 @@ function calcResult() {
 function showResultScreen() {
     document.getElementById('scene-quiz').classList.remove('active');
     document.getElementById('scene-result').classList.add('active');
+    
+    // ★ここを変更：カードを表示しつつ、すぐにチャートも描画する
     const data = resultData[finalResultType];
     const specific = (userYinYang === 'yang') ? data.yang : data.yin;
+
     document.getElementById('card-rarity').textContent = `【ELEMENT】${specific.title.split('：')[0]}`;
     document.getElementById('card-title').textContent = specific.title.split('：')[1];
     document.getElementById('card-char-img').src = specific.img; 
     document.getElementById('card-desc').textContent = data.desc;
     document.getElementById('card-lucky-item').textContent = data.item;
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 自動でチャート表示（分析）も行う
+    showChart();
 }
 
 // 3段構え分析
 function showChart() {
-    document.getElementById('detail-area').style.display = 'block';
-    document.getElementById('show-detail-btn').style.display = 'none';
+    // 隠さずにそのまま表示
+    // document.getElementById('detail-area').style.display = 'block'; // もうCSSで最初から消していないので不要だが念のため
+    
     let yinYangText = (userYinYang === 'yang') 
         ? "<strong>【根本診断】</strong><br>お前、最初に『陽』を選んだな？ それは<strong>『落ち着きのなさ』</strong>の表れだ。エネルギーを無駄に垂れ流して、周りを疲れさせてる自覚を持て。<br><br>"
         : "<strong>【根本診断】</strong><br>お前、最初に『陰』を選んだな？ それは<strong>『根暗で執念深い』</strong>証拠だ。腹の底に言葉を溜め込んで、後でネチネチ思い出すタイプだろ。<br><br>";
@@ -512,7 +459,6 @@ function showChart() {
             animation: { duration: 2000, easing: 'easeOutQuart' }
         }
     });
-    document.getElementById('detail-area').scrollIntoView({ behavior: 'smooth' });
 }
 
 // SNSシェア機能
@@ -544,6 +490,45 @@ function copyLink() {
 }
 
 function shareX() {
+    const specific = (userYinYang === 'yang') ? resultData[finalResultType].yang : resultData[finalResultType].yin;
+    const title = specific.title.split('：')[1];
+    const url = "https://hogushiyakida.com/diagnosis.html";
+    const text = `【毒舌五行診断】私の本性は...『${title}』でした。\n\n覚悟を決めて診断する↓`;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=毒舌五行診断,ほぐしや木田`;
+    window.open(twitterUrl, '_blank');
+}
+
+function shareImageNative() {
+    const target = document.getElementById('capture-target');
+    const shareBtn = document.querySelector('.btn-native-share');
+    
+    shareBtn.textContent = '生成中...';
+    shareBtn.style.opacity = '0.7';
+
+    html2canvas(target, { scale: 2, backgroundColor: "#1a1a1a" }).then(canvas => {
+        canvas.toBlob(blob => {
+            if (!blob) return;
+            const file = new File([blob], "dokuzetsu_result.png", { type: "image/png" });
+            const shareData = {
+                files: [file],
+                title: '毒舌五行診断',
+                text: '私の本性はこれでした... #毒舌五行診断 #ほぐしや木田',
+                url: 'https://hogushiyakida.com/diagnosis.html'
+            };
+
+            if (navigator.canShare && navigator.canShare(shareData)) {
+                navigator.share(shareData);
+            } else {
+                alert('このブラウザは画像共有に対応していません。\n「画像保存」ボタンを使ってください。');
+                saveCardImage();
+            }
+            shareBtn.innerHTML = '<span>📱</span> 結果画像をシェア<br><span style="font-size:0.7rem; font-weight:normal;">(Threads / Instagramなど)</span>';
+            shareBtn.style.opacity = '1';
+        }, 'image/png');
+    });
+}
+
+function shareTextOnly() {
     const specific = (userYinYang === 'yang') ? resultData[finalResultType].yang : resultData[finalResultType].yin;
     const title = specific.title.split('：')[1];
     const url = "https://hogushiyakida.com/diagnosis.html";
