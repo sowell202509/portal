@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SXB69DFE11');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vol.2 養生レシピ｜漢方学習帳</title>
+  <meta name="description" content="長芋と塩麹で作る、胃腸にやさしい薬膳ホワイトシチューのレシピ。小麦粉・バター不使用で肺を潤します。"/>
+  <meta name="theme-color" content="#5A463B"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'brand-black':'#333333',
+            'brand-brown':'#5A463B',
+            'brand-darkbrown':'#3E3029',
+            'brand-gold':'#E2B46D',
+            'brand-bg':'#F2F0EB', 
+            'brand-paper':'#FFFFFF'
+          },
+          boxShadow:{ card:'0 4px 20px rgba(90, 70, 59, 0.08)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-image: radial-gradient(#E0DCD5 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .article-body p {
+      margin-bottom: 1.8em;
+      line-height: 2;
+      font-size: 1.05rem;
+      color: #4a4a4a;
+    }
+    .article-body h2 {
+      font-family: "Shippori Mincho", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #5A463B;
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E2B46D;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h2::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 24px;
+      background-color: #5A463B;
+      border-radius: 4px;
+    }
+    .marker {
+      background: linear-gradient(transparent 60%, #FDE68A 60%);
+      font-weight: 700;
+      padding: 0 2px;
+    }
+    .bubble {
+      position: relative;
+      background: #F8F6F4;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      border: 1px solid #EDE9E4;
+    }
+    .bubble::after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      bottom: -10px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #F8F6F4;
+    }
+    
+    /* レシピ専用スタイル */
+    .recipe-list li {
+      padding-bottom: 0.8rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px dashed #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+    }
+    .recipe-list li:last-child {
+      border-bottom: none;
+    }
+    .step-num {
+      background-color: #5A463B;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-black antialiased flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-brand-brown/10 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="kampo_list.html" class="text-xs font-bold text-brand-brown hover:bg-brand-brown hover:text-white transition flex items-center gap-1 px-3 py-1 rounded-full border border-brand-brown/20">
+        ← 一覧へ
+      </a>
+      <span class="font-serif font-bold text-lg text-brand-brown tracking-widest">漢方学習帳</span>
+      <div class="w-16"></div>
+    </div>
+  </header>
+
+  <main class="flex-grow py-8 md:py-12 px-4">
+    
+    <article class="max-w-3xl mx-auto bg-brand-paper rounded-3xl shadow-card overflow-hidden">
+      
+      <div class="bg-brand-brown text-white text-center pt-12 pb-10 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/washi.png')]"></div>
+        <span class="inline-block bg-brand-gold text-brand-brown text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm">Vol.2 養生レシピ</span>
+        <h1 class="text-2xl md:text-3xl font-serif font-bold leading-tight mb-2">
+          長芋と塩麹の<br>薬膳ホワイトシチュー
+        </h1>
+        <p class="text-sm opacity-80 mt-4 font-serif">
+          ── 小麦粉・バター不使用。肺を潤す冬の養生
+        </p>
+      </div>
+
+      <div class="p-6 md:p-12 article-body">
+        
+        <p>こんにちは、ほぐしや きだです。<br>
+        急に寒くなってきましたが、体調を崩していませんか？</p>
+
+        <figure class="my-8 rounded-2xl overflow-hidden shadow-md">
+            <img src="img/stew.jpg" alt="長芋と塩麹のホワイトシチュー" class="w-full h-auto object-cover">
+            <figcaption class="text-center text-xs text-gray-500 mt-2">とろみは全て「長芋」です。小麦粉は一切使っていません。</figcaption>
+        </figure>
+
+        <p>冬になると食べたくなるホワイトシチュー。<br>
+        でも、市販のルゥは「小麦粉」と「油脂」の塊なので、胃腸が疲れているときには少し重たいこともあります。</p>
+
+        <div class="bubble">
+          <p class="mb-0 text-sm font-medium text-brand-brown">
+            「シチューは食べたいけど、胃もたれするのは嫌だ…」<br>
+            「もっと体に優しくて、温まるものを食べたい」
+          </p>
+        </div>
+
+        <p>そんな時は、<strong>「長芋」と「塩麹」で作る薬膳シチュー</strong>が正解です。<br>
+        <span class="marker">食べる風邪薬</span>と言ってもいいくらい、回復効果が高いメニューです。</p>
+
+        <h2>1. 材料（2人分）</h2>
+        
+        <p>ポイントは「ルゥを買わない」こと。家にあるもので作れます。</p>
+
+        <div class="bg-white border-2 border-brand-bg p-6 rounded-xl my-6">
+          <h3 class="font-bold text-brand-brown mb-4 border-b pb-2">🥣 スープベース</h3>
+          <ul class="recipe-list text-sm">
+            <li><span>豆乳</span><span>200ml</span></li>
+            <li><span>水</span><span>150〜200ml</span></li>
+            <li><span>長芋（皮をむいておく）</span><span>150〜200g</span></li>
+            <li><span>コンソメ</span><span>小さじ2</span></li>
+            <li><span>塩麹</span><span>大さじ1〜</span></li>
+          </ul>
+          
+          <h3 class="font-bold text-brand-brown mb-4 mt-6 border-b pb-2">🥕 具材（お好みで）</h3>
+          <p class="text-sm mb-2">今回は以下の具材で作りました。冷蔵庫の余り物でOK！</p>
+          <ul class="text-sm list-disc list-inside space-y-1 text-gray-600 pl-2">
+            <li>鶏肉（もも、むね、どちらでも）</li>
+            <li>白菜（とろとろになって美味しい！）</li>
+            <li>しめじ、椎茸（きのこの旨味が合います）</li>
+            <li>小松菜、にんじん</li>
+          </ul>
+        </div>
+
+        <h2>2. 作り方</h2>
+
+        <div class="space-y-6">
+            <div>
+                <h3 class="font-bold text-brand-brown mb-2 flex items-center"><span class="step-num">1</span>具材を煮る</h3>
+                <p class="text-sm">鍋に油をひいて具材を炒め、<strong>水とコンソメ</strong>を入れて、具材が柔らかくなるまで煮込みます。</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-brand-brown mb-2 flex items-center"><span class="step-num">2</span>とろみの素を投入</h3>
+                <p class="text-sm">ここがポイント！ <strong>長芋をすりおろし</strong>、鍋に入れます。加熱すると驚くほどクリーミーなとろみが出ます。</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-brand-brown mb-2 flex items-center"><span class="step-num">3</span>仕上げ</h3>
+                <p class="text-sm">火を弱めて、<strong>豆乳と塩麹</strong>を加えます。豆乳は沸騰させすぎると分離するので、温める程度で火を止めます。</p>
+            </div>
+        </div>
+
+        <h2>3. 漢方的「推し」ポイント</h2>
+
+        <p>ただ美味しいだけではありません。このシチューは、漢方の視点で見ても<strong>「冬の乾燥」</strong>と<strong>「冷え」</strong>に特化した最強の組み合わせなんです。</p>
+
+        <div class="grid md:grid-cols-2 gap-4 my-8 text-center text-sm">
+          <div class="bg-[#FFFDF5] p-6 rounded-xl border border-yellow-100">
+            <div class="text-4xl mb-2">🍠</div>
+            <div class="font-bold text-brand-brown text-lg mb-2">長芋（山薬）</div>
+            <div class="text-gray-600 leading-loose">
+              気を補う「滋養強壮」の王様。<br>
+              胃腸を元気にし、疲れを取る。
+            </div>
+          </div>
+          <div class="bg-[#F5F9FF] p-6 rounded-xl border border-blue-100">
+            <div class="text-4xl mb-2">🥛</div>
+            <div class="font-bold text-brand-brown text-lg mb-2">白い食材</div>
+            <div class="text-gray-600 leading-loose">
+              豆乳・白菜・長芋<br>
+              「白」は肺を潤し、<br>肌や喉の乾燥を防ぐ。
+            </div>
+          </div>
+        </div>
+
+        <p>「最近なんだかカサカサする」「空咳が出る」<br>
+        そんな時は、体が<span class="marker">「潤い不足（陰虚）」</span>になっているサインかもしれません。</p>
+        
+        <p>このシチューは、体を温めながら（補気）、しっかりと潤いもチャージ（滋陰）できる、まさに<strong>「食べる美容液」</strong>です。</p>
+
+        <p>バターを使っていないのに、長芋と塩麹のおかげでとても濃厚。<br>
+        難しい工程は一切ないので、ぜひ今夜のメニューに作ってみてくださいね。</p>
+
+      </div>
+
+      <div class="bg-[#FDFBF7] border-t border-dashed border-brand-brown/20 p-8 md:p-12 text-center">
+        <div class="inline-block bg-white border border-brand-brown/20 rounded-full px-4 py-1 mb-4">
+          <p class="text-brand-brown text-[10px] font-bold tracking-widest">THERAPIST MESSAGE</p>
+        </div>
+        <h3 class="text-lg md:text-xl font-serif font-bold mb-4 text-brand-brown">食事で整え、手で癒やす</h3>
+        <p class="text-gray-600 text-sm mb-8 leading-relaxed max-w-lg mx-auto">
+          「何を食べるか」は「どう生きるか」と同じくらい大切。<br>
+          食養生で内側から、もみほぐしで外側から。<br>
+          あなたの体のメンテナンス、お手伝いします。
+        </p>
+        <a href="salon.html" class="inline-flex items-center justify-center gap-2 bg-brand-brown text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkbrown hover:-translate-y-1 transition shadow-lg w-full md:w-auto">
+          <span>もみ徳（予約・出勤）を見る</span>
+          <span class="text-brand-gold">→</span>
+        </a>
+      </div>
+
+    </article>
+
+    <div class="max-w-2xl mx-auto mt-12 text-center">
+      <a href="kampo_list.html" class="text-brand-brown/60 text-sm font-bold hover:text-brand-brown hover:underline transition">
+        目次に戻る
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="bg-brand-brown text-white/60 py-10 text-center text-xs mt-auto">
+    <div class="flex justify-center gap-6 mb-6 font-bold text-white/80">
+      <a href="index.html" class="hover:text-brand-gold transition">ポータルTop</a>
+      <a href="salon.html" class="hover:text-brand-gold transition">もみ徳 予約</a>
+    </div>
+    <p>© 2025 Hogushi-ya Kida</p>
+  </footer>
+
+  <script>
+    const articleBody = document.querySelector('.article-body');
+    const reactionHTML = `
+        <div class="mt-16 pt-12 border-t-2 border-dashed border-brand-brown/20 text-center">
+          <p class="font-bold text-brand-brown mb-6">最後まで読んでくれて<br>ありがとうございます！</p>
+          <button id="likeBtn" class="group relative inline-flex items-center justify-center gap-2 bg-white border-2 border-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-brand-bg transition-all duration-300 transform active:scale-95 shadow-sm">
+            <span id="likeIcon" class="text-xl group-hover:scale-125 transition-transform duration-300">😋</span>
+            <span id="likeText">美味しそう！</span>
+            <span id="floatingHeart" class="absolute -top-4 left-1/2 transform -translate-x-1/2 text-2xl opacity-0 pointer-events-none">🍲</span>
+          </button>
+          <p id="thanksMsg" class="text-sm text-brand-gold font-bold mt-4 opacity-0 transition-opacity duration-500 h-0">作ってみてくださいね！🌿</p>
+          <button id="shareBtn" class="mt-6 text-brand-brown/60 text-xs font-bold flex items-center justify-center gap-2 mx-auto hover:text-brand-gold transition py-2 px-4 rounded hover:bg-brand-bg/50">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" /></svg>
+            <span>この記事をシェアする</span>
+          </button>
+          <div class="mt-8">
+            <p class="text-xs text-gray-500 mb-2">記事の感想やご質問はこちらから</p>
+            <a href="https://forms.gle/KG1RNXE7tEPHfsej9" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-brand-brown border-b border-brand-brown/30 hover:border-brand-brown hover:text-brand-darkbrown transition pb-1">📝 メッセージ・感想を送る（Googleフォーム）</a>
+          </div>
+        </div>`;
+    
+    // 記事本文の後にリアクションパーツを挿入
+    if(articleBody) {
+        articleBody.insertAdjacentHTML('afterend', reactionHTML);
+        
+        // ボタンイベント設定
+        const newLikeBtn = document.getElementById('likeBtn');
+        const newLikeIcon = document.getElementById('likeIcon');
+        const newLikeText = document.getElementById('likeText');
+        const newThanksMsg = document.getElementById('thanksMsg');
+        const newFloatingHeart = document.getElementById('floatingHeart');
+        const pId = window.location.pathname;
+
+        if(newLikeBtn){
+            // 既にいいね済みかチェック
+            if (localStorage.getItem('liked_' + pId)) {
+                newLikeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
+                newLikeIcon.textContent = '😋'; 
+                newLikeText.textContent = '食べたい！';
+                newThanksMsg.classList.remove('opacity-0', 'h-0'); 
+                newLikeBtn.style.pointerEvents = 'none';
+            }
+            // クリック時の動作
+            newLikeBtn.addEventListener('click', function() {
+                newFloatingHeart.animate([{ transform: 'translate(-50%, 0) scale(1)', opacity: 1 }, { transform: 'translate(-50%, -50px) scale(1.5)', opacity: 0 }], { duration: 800, easing: 'ease-out' });
+                localStorage.setItem('liked_' + pId, 'true');
+                newLikeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
+                newLikeIcon.textContent = '😋'; 
+                newLikeText.textContent = '食べたい！';
+                newThanksMsg.classList.remove('opacity-0', 'h-0'); 
+                newLikeBtn.style.pointerEvents = 'none';
+            });
+        }
+        
+        const newShareBtn = document.getElementById('shareBtn');
+        if(newShareBtn){
+            newShareBtn.addEventListener('click', async () => {
+                if (navigator.share) { try { await navigator.share({ title: document.title, text: 'ほぐしや きだ｜漢方学習帳 Vol.2', url: window.location.href }); } catch (err) {} } 
+                else { navigator.clipboard.writeText(window.location.href); alert('URLをコピーしました！\nThreadsやSNSに貼り付けてください🌿'); }
+            });
+        }
+    }
+  </script>
+
+</body>
+</html>
