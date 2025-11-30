@@ -209,7 +209,7 @@
       <a href="salon.html" class="hover:text-brand-gold transition">もみ徳（予約）</a>
     </div>
     <div class="mb-6">
-       <a href="https://www.threads.net/@hogushiya_kida" target="_blank" class="text-xs border border-white/30 px-3 py-1 rounded-full hover:bg-white hover:text-brand-brown transition">Threads: @hogushiya_kida</a>
+        <a href="https://www.threads.net/@hogushiya_kida" target="_blank" class="text-xs border border-white/30 px-3 py-1 rounded-full hover:bg-white hover:text-brand-brown transition">Threads: @hogushiya_kida</a>
     </div>
     <p class="text-xs opacity-50">© 2025 ほぐしや きだ</p>
   </footer>
@@ -228,8 +228,8 @@
 
     const formData = new FormData(form);
 
-    // 新しいURLに更新済み (ApqA/exec)
-    fetch('https://script.google.com/macros/s/AKfycbz5QL6b5_ccLOm3gRZb-L1KYxKtaowlntlN2DY7v_xHNYj36plFD2HQ_S225WfXceApqA/exec', {
+    // ▼▼▼ ここを「テキストメール版」の正しいURLに修正しました ▼▼▼
+    fetch('https://script.google.com/macros/s/AKfycbzyKRHEAxLN1hoGy-4d77RHoXGcke-Eskpn0SVv4ykjPeb7EmZHYkXhFF6SboxXlApgTg/exec', {
       method: 'POST',
       body: formData,
       mode: 'no-cors'
