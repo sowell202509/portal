@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SXB69DFE11');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vol.3 気・血・津液とは？｜漢方学習帳</title>
+  <meta name="description" content="漢方の基礎「気・血・津液（き・けつ・しんえき）」を解説。これらが不足したり滞ったりするとどうなるか、毒舌かつ論理的に説明します。"/>
+  <meta name="theme-color" content="#5A463B"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'brand-black':'#333333',
+            'brand-brown':'#5A463B',
+            'brand-darkbrown':'#3E3029',
+            'brand-gold':'#E2B46D',
+            'brand-bg':'#F2F0EB', 
+            'brand-paper':'#FFFFFF'
+          },
+          boxShadow:{ card:'0 4px 20px rgba(90, 70, 59, 0.08)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-image: radial-gradient(#E0DCD5 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .article-body p {
+      margin-bottom: 1.8em;
+      line-height: 2;
+      font-size: 1.05rem;
+      color: #4a4a4a;
+    }
+    .article-body h2 {
+      font-family: "Shippori Mincho", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #5A463B;
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E2B46D;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h2::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 24px;
+      background-color: #5A463B;
+      border-radius: 4px;
+    }
+    .marker {
+      background: linear-gradient(transparent 60%, #FDE68A 60%);
+      font-weight: 700;
+      padding: 0 2px;
+    }
+    .bubble {
+      position: relative;
+      background: #F8F6F4;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      border: 1px solid #EDE9E4;
+    }
+    .bubble::after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      bottom: -10px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #F8F6F4;
+    }
+    
+    /* 今回の記事専用：3要素のカード */
+    .element-card {
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 24px;
+        border-left: 6px solid;
+    }
+    .element-title {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-black antialiased flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-brand-brown/10 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="kampo_list.html" class="text-xs font-bold text-brand-brown hover:bg-brand-brown hover:text-white transition flex items-center gap-1 px-3 py-1 rounded-full border border-brand-brown/20">
+        ← 一覧へ
+      </a>
+      <span class="font-serif font-bold text-lg text-brand-brown tracking-widest">漢方学習帳</span>
+      <div class="w-16"></div>
+    </div>
+  </header>
+
+  <main class="flex-grow py-8 md:py-12 px-4">
+    
+    <article class="max-w-3xl mx-auto bg-brand-paper rounded-3xl shadow-card overflow-hidden">
+      
+      <div class="bg-brand-brown text-white text-center pt-12 pb-10 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/washi.png')]"></div>
+        <span class="inline-block bg-brand-gold text-brand-brown text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm">Vol.3 学びの記録</span>
+        <h1 class="text-2xl md:text-3xl font-serif font-bold leading-tight mb-2">
+          気・血・津液<span class="text-base block mt-2 opacity-80">（き・けつ・しんえき）</span>
+        </h1>
+        <p class="text-sm opacity-80 mt-4 font-serif">
+          ── 不足すると人間は「ただの肉塊」になる
+        </p>
+      </div>
+
+      <div class="p-6 md:p-12 article-body">
+        
+        <p>「気合いだ！気合いだ！」と叫べばなんとかなると思っていませんか？</p>
+        <p>残念ながら、東洋医学で言う「気（き）」は、そんな精神論ではありません。<br>
+        私たちの体を構成し、動かしているのは<span class="marker">「気・血・津液（き・けつ・しんえき）」</span>という3つの要素。</p>
+
+        <div class="bubble">
+          <p class="mb-0 text-sm font-medium text-brand-brown">
+            これらが不足したり、滞ったりすると、あなたの体はスマホで言うところの<strong>「充電切れ」「画面割れ」「水没」</strong>と同じ状態になります。
+          </p>
+        </div>
+
+        <p>今回は、この3つの正体と、それぞれが不足した時の「ヤバい状態」について毒舌解説します。</p>
+
+        <h2>1. 気（Qi）＝「バッテリー残量」</h2>
+        
+        <div class="my-8 text-center">
+          <img src="img/qi_battery.png" alt="スマホのバッテリー切れ" class="w-full max-w-sm mx-auto rounded-xl shadow-md border border-brand-brown/10 mix-blend-multiply">
+          <p class="text-[10px] text-gray-400 mt-2 font-serif">気＝充電残量。5%じゃ何もできない。</p>
+        </div>
+
+        <p>目に見えない生命エネルギーのこと。元気、やる気、免疫力。<br>
+        いくら高性能なスマホ（肉体）を持っていても、充電（気）が切れていたらただの鉄の塊です。</p>
+
+        <div class="element-card bg-yellow-50 border-yellow-400">
+            <h4 class="element-title text-yellow-800">⚡️ 気が足りないと（気虚）</h4>
+            <p class="text-sm text-gray-700 !mb-0">
+                とにかくダルい、やる気が出ない、すぐ風邪を引く。<br>
+                「性格が怠惰」なんじゃなくて、単純に<strong>バッテリー残量が5%しかない状態</strong>です。省電力モードで生きてるから、新しいことなんてできるわけがない。
+            </p>
+        </div>
+
+        <h2>2. 血（Blood）＝「ガソリン 兼 修復材」</h2>
+
+        <div class="my-8 text-center">
+          <img src="img/blood_car.png" alt="ガス欠のレトロカー" class="w-full max-w-sm mx-auto rounded-xl shadow-md border border-brand-brown/10 mix-blend-multiply">
+          <p class="text-[10px] text-gray-400 mt-2 font-serif">血＝ガソリン。ガス欠だと不安で動けない。</p>
+        </div>
+
+        <p>全身に栄養を運び、精神を安定させる赤い液体。<br>
+        ただの血液ではなく、<strong>「メンタルの安定剤」</strong>としての役割が大きいのが東洋医学の特徴です。</p>
+
+        <div class="element-card bg-red-50 border-red-400">
+            <h4 class="element-title text-red-800">🩸 血が足りないと（血虚）</h4>
+            <p class="text-sm text-gray-700 !mb-0">
+                肌や髪がカサカサになる、目がかすむ、そして<strong>「不安になる」</strong>。<br>
+                夜中に急に将来が不安になって眠れなくなるのは、あなたの心が弱いからではありません。脳みそに栄養（血）が行ってないから、脳がパニックを起こしているだけです。
+            </p>
+        </div>
+
+        <h2>3. 津液（Shin-eki）＝「冷却水」</h2>
+
+        <div class="my-8 text-center">
+          <img src="img/fluid_engine.png" alt="オーバーヒートしたエンジン" class="w-full max-w-sm mx-auto rounded-xl shadow-md border border-brand-brown/10 mix-blend-multiply">
+          <p class="text-[10px] text-gray-400 mt-2 font-serif">津液＝冷却水。不足すると熱暴走する。</p>
+        </div>
+
+        <p>血以外のすべての水分（汗、涙、唾液、関節液など）。<br>
+        体を潤し、熱くなりすぎたエンジン（体温・炎症）を冷やす役割があります。</p>
+
+        <div class="element-card bg-blue-50 border-blue-400">
+            <h4 class="element-title text-blue-800">💧 津液が足りないと（陰虚）</h4>
+            <p class="text-sm text-gray-700 !mb-0">
+                のどが渇く、空咳が出る、手足がほてる、便秘になる。<br>
+                冷却水が不足したエンジンと同じで、体の中に熱がこもってオーバーヒートします。<strong>干からびたビーフジャーキー</strong>になりたくなければ、潤いは必須です。
+            </p>
+        </div>
+
+        <h2>4. 結論：巡らせろ</h2>
+        <p>この3つは、ただ「あればいい」わけではありません。<br>
+        気が血を動かし、血が気を養う。お互いが支え合ってグルグル回っているのが健康な状態です。</p>
+        
+        <p>ストレスで気が滞れば（気滞）、血もドロドロになり（瘀血）、水も溜まってむくみます（水滞）。</p>
+        <p><span class="marker">自分の不調が「不足（足りない）」なのか「滞り（詰まってる）」なのか。</span><br>
+        それを見極めるのが、養生の第一歩です。</p>
+
+      </div>
+
+      <div class="bg-[#FDFBF7] border-t border-dashed border-brand-brown/20 p-8 md:p-12 text-center">
+        <div class="inline-block bg-white border border-brand-brown/20 rounded-full px-4 py-1 mb-4">
+          <p class="text-brand-brown text-[10px] font-bold tracking-widest">DIAGNOSIS</p>
+        </div>
+        <h3 class="text-lg md:text-xl font-serif font-bold mb-4 text-brand-brown">あなたの「気・血・水」の状態は？</h3>
+        <p class="text-gray-600 text-sm mb-8 leading-relaxed max-w-lg mx-auto">
+          「最近イライラする（気の滞り？）」<br>
+          「肌が乾燥する（血の不足？）」<br>
+          自分の状態を知りたい方は、こちらの診断を試してみてください。
+        </p>
+        <a href="diagnosis.html" class="inline-flex items-center justify-center gap-2 bg-brand-brown text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkbrown hover:-translate-y-1 transition shadow-lg w-full md:w-auto">
+          <span>毒舌五行診断を受ける</span>
+          <span class="text-brand-gold">→</span>
+        </a>
+      </div>
+
+    </article>
+
+    <div class="max-w-2xl mx-auto mt-12 text-center">
+      <a href="kampo_list.html" class="text-brand-brown/60 text-sm font-bold hover:text-brand-brown hover:underline transition">
+        目次に戻る
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="bg-brand-brown text-white/60 py-10 text-center text-xs mt-auto">
+    <div class="flex justify-center gap-6 mb-6 font-bold text-white/80">
+      <a href="index.html" class="hover:text-brand-gold transition">ポータルTop</a>
+      <a href="salon.html" class="hover:text-brand-gold transition">もみ徳 予約</a>
+    </div>
+    <p>© 2025 Hogushi-ya Kida</p>
+  </footer>
+
+  <script>
+    const articleBody = document.querySelector('.article-body');
+    const reactionHTML = `
+        <div class="mt-16 pt-12 border-t-2 border-dashed border-brand-brown/20 text-center">
+          <p class="font-bold text-brand-brown mb-6">最後まで読んでくれて<br>ありがとうございます！</p>
+          <button id="likeBtn" class="group relative inline-flex items-center justify-center gap-2 bg-white border-2 border-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-brand-bg transition-all duration-300 transform active:scale-95 shadow-sm">
+            <span id="likeIcon" class="text-xl group-hover:scale-125 transition-transform duration-300">🤍</span>
+            <span id="likeText">見たよ！</span>
+            <span id="floatingHeart" class="absolute -top-4 left-1/2 transform -translate-x-1/2 text-2xl opacity-0 pointer-events-none">💖</span>
+          </button>
+          <p id="thanksMsg" class="text-sm text-brand-gold font-bold mt-4 opacity-0 transition-opacity duration-500 h-0">応援ありがとうございます！励みになります🌿</p>
+          <button id="shareBtn" class="mt-6 text-brand-brown/60 text-xs font-bold flex items-center justify-center gap-2 mx-auto hover:text-brand-gold transition py-2 px-4 rounded hover:bg-brand-bg/50">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" /></svg>
+            <span>この記事をシェアする</span>
+          </button>
+          <div class="mt-8">
+            <p class="text-xs text-gray-500 mb-2">記事の感想やご質問はこちらから</p>
+            <a href="https://forms.gle/KG1RNXE7tEPHfsej9" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-brand-brown border-b border-brand-brown/30 hover:border-brand-brown hover:text-brand-darkbrown transition pb-1">📝 メッセージ・感想を送る（Googleフォーム）</a>
+          </div>
+        </div>`;
+    
+    if(articleBody) {
+        articleBody.insertAdjacentHTML('afterend', reactionHTML);
+        
+        // ボタンイベント再設定
+        const newLikeBtn = document.getElementById('likeBtn');
+        const newLikeIcon = document.getElementById('likeIcon');
+        const newLikeText = document.getElementById('likeText');
+        const newThanksMsg = document.getElementById('thanksMsg');
+        const newFloatingHeart = document.getElementById('floatingHeart');
+        if(newLikeBtn){
+            const pId = window.location.pathname;
+            if (localStorage.getItem('liked_' + pId)) {
+                newLikeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
+                newLikeIcon.textContent = '💖'; newLikeText.textContent = 'Thank you!';
+                newThanksMsg.classList.remove('opacity-0', 'h-0'); newLikeBtn.style.pointerEvents = 'none';
+            }
+            newLikeBtn.addEventListener('click', function() {
+                newFloatingHeart.animate([{ transform: 'translate(-50%, 0) scale(1)', opacity: 1 }, { transform: 'translate(-50%, -50px) scale(1.5)', opacity: 0 }], { duration: 800, easing: 'ease-out' });
+                localStorage.setItem('liked_' + pId, 'true');
+                newLikeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
+                newLikeIcon.textContent = '💖'; newLikeText.textContent = 'Thank you!';
+                newThanksMsg.classList.remove('opacity-0', 'h-0'); newLikeBtn.style.pointerEvents = 'none';
+            });
+        }
+        const newShareBtn = document.getElementById('shareBtn');
+        if(newShareBtn){
+            newShareBtn.addEventListener('click', async () => {
+                if (navigator.share) { try { await navigator.share({ title: document.title, text: 'ほぐしや きだ｜漢方学習帳 Vol.3', url: window.location.href }); } catch (err) {} } 
+                else { navigator.clipboard.writeText(window.location.href); alert('URLをコピーしました！\nThreadsやSNSに貼り付けてください🌿'); }
+            });
+        }
+    }
+  </script>
+
+</body>
+</html>
