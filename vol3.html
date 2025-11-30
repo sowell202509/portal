@@ -12,8 +12,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vol.3 気・血・津液とは？｜漢方学習帳</title>
-  <meta name="description" content="漢方の基礎「気・血・津液（き・けつ・しんえき）」を解説。これらが不足したり滞ったりするとどうなるか、毒舌かつ論理的に説明します。"/>
-  <meta name="theme-color" content="#5A463B"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
@@ -215,6 +213,35 @@
 
       </div>
 
+      <div class="mt-8 pt-12 border-t-2 border-dashed border-brand-brown/20 text-center pb-12">
+          
+        <p class="font-bold text-brand-brown mb-6">最後まで読んでくれて<br>ありがとうございます！</p>
+        
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
+          <button id="likeBtn" class="w-full md:w-auto group relative inline-flex items-center justify-center gap-2 bg-white border-2 border-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-brand-bg transition-all duration-300 transform active:scale-95 shadow-sm">
+            <span id="likeIcon" class="text-xl group-hover:scale-125 transition-transform duration-300">🤍</span>
+            <span id="likeText">見たよ！</span>
+            <span id="floatingHeart" class="absolute -top-4 left-1/2 transform -translate-x-1/2 text-2xl opacity-0 pointer-events-none">💖</span>
+          </button>
+
+          <button id="shareBtn" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-brand-bg text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-brand-gold hover:text-white transition-all duration-300 transform active:scale-95 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5" /></svg>
+            <span>URLをコピー</span>
+          </button>
+        </div>
+        
+        <p id="thanksMsg" class="text-sm text-brand-gold font-bold mb-8 opacity-0 transition-opacity duration-500 h-0">
+          応援ありがとうございます！励みになります🌿
+        </p>
+
+        <div class="mt-8 pt-8 border-t border-brand-brown/10 w-full max-w-lg mx-auto">
+          <p class="text-sm text-gray-500 mb-4 font-bold">感想や質問はこちらから送れます</p>
+          <a href="https://forms.gle/KG1RNXE7tEPHfsej9" target="_blank" class="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-brand-brown text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkbrown transition shadow-lg hover:-translate-y-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+            感想・質問を送る
+          </a>
+        </div>
+      </div>
       <div class="bg-[#FDFBF7] border-t border-dashed border-brand-brown/20 p-8 md:p-12 text-center">
         <div class="inline-block bg-white border border-brand-brown/20 rounded-full px-4 py-1 mb-4">
           <p class="text-brand-brown text-[10px] font-bold tracking-widest">DIAGNOSIS</p>
@@ -250,57 +277,60 @@
   </footer>
 
   <script>
-    const articleBody = document.querySelector('.article-body');
-    const reactionHTML = `
-        <div class="mt-16 pt-12 border-t-2 border-dashed border-brand-brown/20 text-center">
-          <p class="font-bold text-brand-brown mb-6">最後まで読んでくれて<br>ありがとうございます！</p>
-          <button id="likeBtn" class="group relative inline-flex items-center justify-center gap-2 bg-white border-2 border-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-brand-bg transition-all duration-300 transform active:scale-95 shadow-sm">
-            <span id="likeIcon" class="text-xl group-hover:scale-125 transition-transform duration-300">🤍</span>
-            <span id="likeText">見たよ！</span>
-            <span id="floatingHeart" class="absolute -top-4 left-1/2 transform -translate-x-1/2 text-2xl opacity-0 pointer-events-none">💖</span>
-          </button>
-          <p id="thanksMsg" class="text-sm text-brand-gold font-bold mt-4 opacity-0 transition-opacity duration-500 h-0">応援ありがとうございます！励みになります🌿</p>
-          <button id="shareBtn" class="mt-6 text-brand-brown/60 text-xs font-bold flex items-center justify-center gap-2 mx-auto hover:text-brand-gold transition py-2 px-4 rounded hover:bg-brand-bg/50">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" /></svg>
-            <span>この記事をシェアする</span>
-          </button>
-          <div class="mt-8">
-            <p class="text-xs text-gray-500 mb-2">記事の感想やご質問はこちらから</p>
-            <a href="https://forms.gle/KG1RNXE7tEPHfsej9" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-brand-brown border-b border-brand-brown/30 hover:border-brand-brown hover:text-brand-darkbrown transition pb-1">📝 メッセージ・感想を送る（Googleフォーム）</a>
-          </div>
-        </div>`;
+    // --- 最新版のボタン処理 ---
     
-    if(articleBody) {
-        articleBody.insertAdjacentHTML('afterend', reactionHTML);
-        
-        // ボタンイベント再設定
-        const newLikeBtn = document.getElementById('likeBtn');
-        const newLikeIcon = document.getElementById('likeIcon');
-        const newLikeText = document.getElementById('likeText');
-        const newThanksMsg = document.getElementById('thanksMsg');
-        const newFloatingHeart = document.getElementById('floatingHeart');
-        if(newLikeBtn){
-            const pId = window.location.pathname;
-            if (localStorage.getItem('liked_' + pId)) {
-                newLikeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
-                newLikeIcon.textContent = '💖'; newLikeText.textContent = 'Thank you!';
-                newThanksMsg.classList.remove('opacity-0', 'h-0'); newLikeBtn.style.pointerEvents = 'none';
+    // いいねボタン
+    const likeBtn = document.getElementById('likeBtn');
+    const likeIcon = document.getElementById('likeIcon');
+    const likeText = document.getElementById('likeText');
+    const thanksMsg = document.getElementById('thanksMsg');
+    const floatingHeart = document.getElementById('floatingHeart');
+    const pageId = window.location.pathname; 
+
+    if (likeBtn) {
+        if (localStorage.getItem('liked_' + pageId)) {
+            setLikedState();
+        }
+
+        likeBtn.addEventListener('click', function() {
+            if (likeBtn.classList.contains('liked')) return;
+
+            floatingHeart.animate([
+                { transform: 'translate(-50%, 0) scale(1)', opacity: 1 },
+                { transform: 'translate(-50%, -50px) scale(1.5)', opacity: 0 }
+            ], { duration: 800, easing: 'ease-out' });
+
+            localStorage.setItem('liked_' + pageId, 'true');
+            setLikedState();
+        });
+    }
+
+    function setLikedState() {
+        likeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
+        likeIcon.textContent = '💖';
+        likeText.textContent = 'Thank you!';
+        thanksMsg.classList.remove('opacity-0', 'h-0');
+        likeBtn.style.pointerEvents = 'none';
+    }
+
+    // シェアボタン（URLコピー）
+    const shareBtn = document.getElementById('shareBtn');
+    if(shareBtn){
+        shareBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                // ボタンのテキストを一時的に変更
+                const originalText = shareBtn.innerHTML;
+                shareBtn.innerHTML = '<span>コピーしました！</span>';
+                shareBtn.classList.add('bg-brand-gold', 'text-white');
+                setTimeout(() => {
+                    shareBtn.innerHTML = originalText;
+                    shareBtn.classList.remove('bg-brand-gold', 'text-white');
+                }, 2000);
+            } catch (err) {
+                alert('コピーできませんでした');
             }
-            newLikeBtn.addEventListener('click', function() {
-                newFloatingHeart.animate([{ transform: 'translate(-50%, 0) scale(1)', opacity: 1 }, { transform: 'translate(-50%, -50px) scale(1.5)', opacity: 0 }], { duration: 800, easing: 'ease-out' });
-                localStorage.setItem('liked_' + pId, 'true');
-                newLikeBtn.classList.add('liked', 'bg-brand-bg', 'border-brand-gold'); 
-                newLikeIcon.textContent = '💖'; newLikeText.textContent = 'Thank you!';
-                newThanksMsg.classList.remove('opacity-0', 'h-0'); newLikeBtn.style.pointerEvents = 'none';
-            });
-        }
-        const newShareBtn = document.getElementById('shareBtn');
-        if(newShareBtn){
-            newShareBtn.addEventListener('click', async () => {
-                if (navigator.share) { try { await navigator.share({ title: document.title, text: 'ほぐしや きだ｜漢方学習帳 Vol.3', url: window.location.href }); } catch (err) {} } 
-                else { navigator.clipboard.writeText(window.location.href); alert('URLをコピーしました！\nThreadsやSNSに貼り付けてください🌿'); }
-            });
-        }
+        });
     }
   </script>
 
