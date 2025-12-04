@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SXB69DFE11');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>五臓六腑と性格の関係｜漢方学習帳</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'brand-black':'#333333',
+            'brand-brown':'#5A463B',
+            'brand-darkbrown':'#3E3029',
+            'brand-gold':'#E2B46D',
+            'brand-bg':'#F2F0EB', 
+            'brand-paper':'#FFFFFF'
+          },
+          boxShadow:{ card:'0 4px 20px rgba(90, 70, 59, 0.08)' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-image: radial-gradient(#E0DCD5 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .article-body p {
+      margin-bottom: 1.8em;
+      line-height: 2;
+      font-size: 1.05rem;
+      color: #4a4a4a;
+    }
+    .article-body h2 {
+      font-family: "Shippori Mincho", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #5A463B;
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E2B46D;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-body h2::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 24px;
+      background-color: #5A463B;
+      border-radius: 4px;
+    }
+    .gozo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin: 30px 0;
+    }
+    .gozo-card {
+      border: 1px solid #E2B46D;
+      border-radius: 12px;
+      padding: 24px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+    .gozo-title {
+      font-family: "Shippori Mincho", serif;
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #5A463B;
+      border-bottom: 2px dashed #E2B46D;
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .info-block {
+      background: #F9F9F9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+    .info-label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 4px;
+      color: #5A463B;
+    }
+    .marker { background: linear-gradient(transparent 60%, #FDE68A 60%); font-weight: 700; padding: 0 2px; }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-black antialiased flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-brand-brown/10 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="blog.html" class="text-xs font-bold text-brand-brown hover:bg-brand-brown hover:text-white transition flex items-center gap-1 px-3 py-1 rounded-full border border-brand-brown/20">
+        ← 一覧へ
+      </a>
+      <span class="font-serif font-bold text-lg text-brand-brown tracking-widest">漢方学習帳</span>
+      <div class="w-16"></div>
+    </div>
+  </header>
+
+  <main class="flex-grow py-8 md:py-12 px-4">
+    
+    <article class="max-w-3xl mx-auto bg-brand-paper rounded-3xl shadow-card overflow-hidden">
+      
+      <div class="bg-brand-brown text-white text-center pt-12 pb-10 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/washi.png')]"></div>
+        
+        <span class="inline-block bg-brand-gold text-brand-brown text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm">
+            Vol.4
+        </span>
+        
+        <h1 class="text-2xl md:text-3xl font-serif font-bold leading-tight mb-2">
+          五臓六腑と「性格」の関係<br>言葉に隠された身体論
+        </h1>
+        <p class="text-sm opacity-80 mt-4 font-serif">
+          ── 「肝っ玉」や「腹黒い」の正体とは？
+        </p>
+      </div>
+
+      <div class="p-6 md:p-12 article-body">
+        
+        <p>「あの人は肝っ玉が太い」「腹の虫がおさまらない」。<br>
+        私たちが普段使っている日本語には、臓器と感情を結びつける言葉がたくさんあります。</p>
+
+        <p>実はこれ、ただの比喩ではありません。<br>
+        漢方では<span class="marker">「感情は臓器から生まれる」</span>と考えます。各臓器には担当する「感情」があり、そのバランスが性格やメンタルにも影響するのです。</p>
+
+        <h2>1. 五臓の性格診断と科学的根拠</h2>
+        <p>あなたの性格や最近のメンタル不調は、どの臓器の疲れから来ているでしょうか？</p>
+
+        <div class="gozo-grid">
+            
+            <div class="gozo-card border-l-4 border-l-green-600">
+                <div class="gozo-title">
+                    <span>🌲 肝（かん）</span>
+                    <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">怒り・自律神経</span>
+                </div>
+                <div class="text-sm mb-4">
+                    気の巡りをコントロールし、血を貯蔵する司令塔。
+                </div>
+                
+                <div class="info-block bg-green-50/50">
+                    <span class="info-label">💡 言葉と性格</span>
+                    <strong>「肝っ玉（きもったま）」「癇障（かんしょう）」</strong><br>
+                    肝が据わっている人は度胸がありますが、肝が乱れると「癇（かん）」が強くなり、イライラして怒りっぽくなります。
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label">🔬 科学の答え合わせ</span>
+                    肝臓は血液の解毒工場。ここが疲弊（アルコールやストレス）すると、<strong>自律神経（交感神経）</strong>が過敏になり、実際に攻撃的になったり眠れなくなったりします。
+                </div>
+            </div>
+
+            <div class="gozo-card border-l-4 border-l-red-500">
+                <div class="gozo-title">
+                    <span>🔥 心（しん）</span>
+                    <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">喜び・意識</span>
+                </div>
+                <div class="text-sm mb-4">
+                    血液循環のポンプであり、精神（神）が宿る場所。
+                </div>
+
+                <div class="info-block bg-red-50/50">
+                    <span class="info-label">💡 言葉と性格</span>
+                    <strong>「心臓に毛が生えている」「胸が躍る」</strong><br>
+                    心が充実していると堂々として明るい性格になりますが、弱ると「小心者」になり、動悸や不安感に襲われます。
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label">🔬 科学の答え合わせ</span>
+                    脳への血流に関係します。心臓のポンプ機能が安定していると脳（前頭葉）も安定しますが、血流が悪いと<strong>脳の酸欠</strong>で不安やパニックが起きやすくなります。
+                </div>
+            </div>
+
+            <div class="gozo-card border-l-4 border-l-yellow-500">
+                <div class="gozo-title">
+                    <span>⛰️ 脾（ひ）</span>
+                    <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">悩み・消化</span>
+                </div>
+                <div class="text-sm mb-4">
+                    消化吸収を行い、エネルギーを生み出す工場。
+                </div>
+
+                <div class="info-block bg-yellow-50/50">
+                    <span class="info-label">💡 言葉と性格</span>
+                    <strong>「腹に落ちる」「腹黒い」「断腸の思い」</strong><br>
+                    脾が強いと物事を深く理解できますが、弱ると「思い悩み（クヨクヨ）」が止まらなくなります。
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label">🔬 科学の答え合わせ</span>
+                    いわゆる<strong>「脳腸相関（のうちょうそうかん）」</strong>です。ストレスを感じると胃が痛くなるように、胃腸の不調は脳へ「不安信号」を送ります。セロトニン（幸せホルモン）の9割は腸で作られます。
+                </div>
+            </div>
+
+            <div class="gozo-card border-l-4 border-l-gray-400">
+                <div class="gozo-title">
+                    <span>🛡️ 肺（はい）</span>
+                    <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">悲しみ・バリア</span>
+                </div>
+                <div class="text-sm mb-4">
+                    呼吸と水分代謝、皮膚のバリア機能を担当。
+                </div>
+
+                <div class="info-block bg-gray-50/50">
+                    <span class="info-label">💡 言葉と性格</span>
+                    <strong>「息が詰まる」「意気消沈」</strong><br>
+                    肺が弱いと気が滅入りやすく、悲観的（メランコリック）になりがちです。姿勢が悪く呼吸が浅い人に多い傾向です。
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label">🔬 科学の答え合わせ</span>
+                    呼吸が浅いと酸素不足になり、自律神経のバランスが崩れます。また、皮膚は<strong>「第三の脳」</strong>とも呼ばれ、肌荒れがメンタル低下に直結することが分かっています。
+                </div>
+            </div>
+
+            <div class="gozo-card border-l-4 border-l-blue-500">
+                <div class="gozo-title">
+                    <span>💧 腎（じん）</span>
+                    <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">恐れ・生命力</span>
+                </div>
+                <div class="text-sm mb-4">
+                    生命エネルギーの貯蔵庫。成長と老化を司る。
+                </div>
+
+                <div class="info-block bg-blue-50/50">
+                    <span class="info-label">💡 言葉と性格</span>
+                    <strong>「腰が抜ける」「地に足がつかない」</strong><br>
+                    腎は「恐れ」を担当します。腎が弱ると、ビクビクして驚きやすくなったり、新しいことに挑戦する気力が湧かなくなります。
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label">🔬 科学の答え合わせ</span>
+                    腎臓の上には<strong>「副腎（ふくじん）」</strong>があり、ここからアドレナリンやコルチゾール（抗ストレスホルモン）が出ます。ここが疲弊すると、恐怖やストレスに勝てなくなります。
+                </div>
+            </div>
+        </div>
+
+        <h2>2. つまり、性格を変えるには？</h2>
+        <p>「自分は怒りっぽい性格だ」「クヨクヨしやすい性格だ」と悩んでいるなら、それは性格ではなく<strong>「臓器の疲れ」</strong>かもしれません。</p>
+        
+        <p>性格を精神論で直すのは大変ですが、体をケアするのは簡単です。</p>
+        <ul class="list-disc pl-5 mb-8 text-brand-brown">
+            <li>イライラするなら、早く寝て「肝」を休める。</li>
+            <li>クヨクヨするなら、お粥を食べて「脾（胃腸）」を休める。</li>
+            <li>ビクビクするなら、足腰を温めて「腎」を養う。</li>
+        </ul>
+
+        <div class="mt-12 p-6 border border-brand-brown/20 rounded-xl bg-[#FFFBEF]">
+            <h3 class="text-lg font-bold mb-4 text-center">🤔 今のあなたの状態は？</h3>
+            <p class="text-sm text-center mb-6">
+                理論（五臓）がわかったら、次は実践です。<br>
+                今のあなたの不調にぴったり合う「養生（ケア）」を見つけに行きましょう。
+            </p>
+            <div class="text-center">
+                <a href="http://hogushiyakida.com/study.html.html" class="inline-block bg-brand-brown text-white font-bold px-8 py-4 rounded-full hover:bg-brand-darkbrown transition shadow-lg hover:-translate-y-1">
+                    🌿 わたしの状態に合う「知恵」をもらう
+                </a>
+            </div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <div class="max-w-2xl mx-auto mt-12 text-center">
+      <a href="blog.html" class="text-brand-brown/60 text-sm font-bold hover:text-brand-brown hover:underline transition">
+        一覧に戻る
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="bg-brand-brown text-white/60 py-10 text-center text-xs mt-auto">
+    <div class="flex justify-center gap-6 mb-6 font-bold text-white/80">
+      <a href="index.html" class="hover:text-brand-gold transition">ポータルTop</a>
+      <a href="salon.html" class="hover:text-brand-gold transition">もみ徳 予約</a>
+    </div>
+    <p>© 2025 Hogushi-ya Kida</p>
+  </footer>
+
+</body>
+</html>
