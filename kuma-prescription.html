@@ -397,23 +397,48 @@
         likeBtn.style.pointerEvents = 'none';
     }
 
-    // シェアボタン
+    // シェアボタン（★ここを修正しました★）
     const shareBtn = document.getElementById('shareBtn');
     if(shareBtn){
         shareBtn.addEventListener('click', async () => {
             try {
-                await navigator.clipboard.writeText(window.location.href);
-                const originalText = shareBtn.innerHTML;
-                shareBtn.innerHTML = '<span>コピーしました！</span>';
-                shareBtn.classList.add('bg-brand-gold', 'text-white');
-                setTimeout(() => {
-                    shareBtn.innerHTML = originalText;
-                    shareBtn.classList.remove('bg-brand-gold', 'text-white');
-                }, 2000);
+                // まずはモダンな方法を試す
+                if (navigator.clipboard) {
+                    await navigator.clipboard.writeText(window.location.href);
+                } else {
+                    // 古いブラウザや非SSL(file://)環境用のフォールバック
+                    throw new Error('Clipboard API unavailable');
+                }
+                showCopySuccess();
             } catch (err) {
-                alert('コピーできませんでした');
+                // エラーが出たら、昔ながらの方法（textareaを作ってコピー）を試す
+                try {
+                    const textArea = document.createElement("textarea");
+                    textArea.value = window.location.href;
+                    // 画面外に配置
+                    textArea.style.position = "fixed";
+                    textArea.style.left = "-9999px";
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showCopySuccess();
+                } catch (e) {
+                    alert('コピーできませんでした');
+                }
             }
         });
+
+        // コピー成功時の演出
+        function showCopySuccess() {
+            const originalText = shareBtn.innerHTML;
+            shareBtn.innerHTML = '<span>コピーしました！</span>';
+            shareBtn.classList.add('bg-brand-gold', 'text-white');
+            setTimeout(() => {
+                shareBtn.innerHTML = originalText;
+                shareBtn.classList.remove('bg-brand-gold', 'text-white');
+            }, 2000);
+        }
     }
   </script>
 
