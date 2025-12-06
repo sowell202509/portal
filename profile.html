@@ -2,13 +2,12 @@
 <html lang="ja">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
-  gtag('js', new Date());
-
-  gtag('config', 'G-SXB69DFE11');
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SXB69DFE11');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>活動理念・プロフィール｜ほぐしや きだ</title>
@@ -74,18 +73,15 @@
       <div class="bg-brand-paper rounded-3xl shadow-card overflow-hidden mb-12">
         <div class="md:flex">
           <div class="md:w-2/5 bg-gray-200 min-h-[300px] relative">
-
-            <!-- ★ 修正：img/profile_main.png に統一 ★ -->
-            <img src="img/profile_main.png" alt="木田 プロフィール" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply" onerror="this.style.display='none'">
-
-            <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-bold">Photo</div>
+            <img src="img/profile_main.png" alt="木田 プロフィール写真" class="absolute inset-0 w-full h-full object-cover object-top mix-blend-multiply" onerror="this.style.display='none'">
+            <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-bold z-[-1]">Photo</div>
           </div>
           
           <div class="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
             <div class="inline-block text-brand-gold font-bold text-xs tracking-widest mb-2">THERAPIST / OT</div>
-            <h1 class="text-3xl font-serif font-bold text-brand-brown mb-4">
+            <h1 class="text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-brown to-brand-darkbrown mb-4">
               ほぐしや きだ<br>
-              <span class="text-lg opacity-60 ml-1">(Yayan)</span>
+              <span class="text-lg text-brand-brown opacity-60 ml-1 font-sans font-normal">(Yayan)</span>
             </h1>
             <p class="text-sm leading-loose text-gray-600 mb-6">
               <strong>作業療法士</strong>としての臨床経験と、リラクゼーションの技術を融合。<br>
@@ -96,7 +92,7 @@
               <span class="px-3 py-1 bg-brand-bg text-brand-brown text-xs font-bold rounded-full">作業療法士(歴7年)</span>
               <span class="px-3 py-1 bg-brand-bg text-brand-brown text-xs font-bold rounded-full">セラピスト(歴8年)</span>
               
-              <a href="https://www.threads.net/@hogushiya_kida" target="_blank" class="inline-flex items-center gap-1 px-3 py-1 bg-black text-white text-xs font-bold rounded-full hover:bg-gray-700 transition">
+              <a href="https://www.threads.net/@hogushiya_kida" target="_blank" class="inline-flex items-center gap-1 px-3 py-1 bg-black text-white text-xs font-bold rounded-full hover:bg-gray-800 transition shadow-sm">
                 <span style="font-family: sans-serif;">@hogushiya_kida</span>
               </a>
             </div>
@@ -105,21 +101,21 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 mb-16">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-brown/10 text-center">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-brown/10 text-center hover:shadow-md transition duration-300">
           <div class="text-3xl mb-3">🏥</div>
           <h3 class="font-serif font-bold text-brand-brown mb-2">臨床経験 7年</h3>
           <p class="text-xs text-gray-600 leading-relaxed">
             脳血管疾患(CVA)・精神科でのリハビリ経験。解剖学とメンタルケアの基礎があります。
           </p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-brown/10 text-center">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-brown/10 text-center hover:shadow-md transition duration-300">
           <div class="text-3xl mb-3">🌿</div>
           <h3 class="font-serif font-bold text-brand-brown mb-2">癒やしの技術 8年</h3>
           <p class="text-xs text-gray-600 leading-relaxed">
             「もみ徳」での施術経験。筋肉の緊張を解き、深いリラックスへ導く手技を探求。
           </p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-brown/10 text-center">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-brown/10 text-center hover:shadow-md transition duration-300">
           <div class="text-3xl mb-3">📖</div>
           <h3 class="font-serif font-bold text-brand-brown mb-2">漢方の学び</h3>
           <p class="text-xs text-gray-600 leading-relaxed">
@@ -169,9 +165,11 @@
       <a href="kampo_list.html" class="hover:text-brand-gold transition">漢方学習帳</a>
       <a href="salon.html" class="hover:text-brand-gold transition">もみ徳 予約</a>
     </div>
-    <p class="text-xs opacity-50">© 2025 Hogushi-ya Kida. All rights reserved.</p>
+    <p class="text-xs opacity-50">© <span id="year"></span> Hogushi-ya Kida. All rights reserved.</p>
   </footer>
 
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
