@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SXB69DFE11');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>毒舌養生おみくじ｜ほぐしや きだ</title>
+  <meta name="description" content="1日3回限定。あなたの不摂生を漢方視点で斬る、毒舌おみくじ。"/>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'brand-black':'#2B2725',
+            'brand-brown':'#5A463B',
+            'brand-gold':'#E2B46D',
+            'brand-ivory':'#FBF9F6'
+          },
+          animation: {
+             'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+             'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+             'stamp': 'stamp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards'
+          },
+          keyframes: {
+            shake: {
+              '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+              '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+              '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+              '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            stamp: {
+              '0%': { opacity: '0', transform: 'scale(1.5)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-brand-black text-white min-h-screen flex flex-col font-sans">
+
+  <header class="p-4 flex justify-between items-center bg-brand-brown/20 border-b border-brand-gold/20">
+      <a href="index.html" class="text-brand-gold font-serif font-bold hover:text-white transition">← Topへ戻る</a>
+      <span class="text-xs text-white/50">本日あと <span id="remain-count" class="text-brand-gold font-bold text-lg">3</span> 回</span>
+  </header>
+
+  <main class="flex-grow flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none" 
+         style="background-image: radial-gradient(#E2B46D 2px, transparent 2px); background-size: 24px 24px;"></div>
+
+    <div id="start-screen" class="text-center z-10 max-w-md w-full animate-fade-in-up">
+        <h1 class="text-3xl md:text-4xl font-serif font-bold text-brand-gold mb-3 text-shadow-md">
+            毒舌養生おみくじ
+        </h1>
+        <p class="text-white/70 mb-10 text-sm tracking-widest">
+            不調の本質、暴きます。
+        </p>
+        
+        <div class="mb-10 relative mx-auto w-40 h-64 bg-brand-brown border-4 border-brand-gold rounded-t-3xl rounded-b-lg flex items-center justify-center shadow-2xl cursor-pointer hover:scale-105 transition duration-300" onclick="playOmikuji()">
+            <span class="text-5xl font-serif text-brand-gold opacity-50 select-none font-bold tracking-widest" style="writing-mode: vertical-rl; text-orientation: upright;">
+                御神籤
+            </span>
+            <div class="absolute -top-2 w-44 h-5 bg-gradient-to-r from-brand-gold to-yellow-200 rounded-full shadow-md"></div>
+        </div>
+
+        <button onclick="playOmikuji()" class="w-full max-w-xs mx-auto bg-brand-gold text-brand-black font-bold py-4 rounded-full shadow-[0_0_15px_rgba(226,180,109,0.5)] text-lg hover:bg-white transition animate-pulse tracking-widest">
+            運命を引く
+        </button>
+    </div>
+
+    <div id="result-screen" class="hidden z-10 w-full max-w-sm my-4">
+        
+        <div class="bg-brand-ivory text-brand-black rounded-sm shadow-2xl overflow-hidden animate-fade-in-up relative">
+            <div class="h-2 bg-red-700 w-full"></div>
+            
+            <div class="p-6 md:p-8 flex flex-col items-center text-center">
+                <h2 id="result-type" class="text-2xl font-serif font-bold text-brand-brown mb-4 tracking-widest border-b-2 border-brand-gold/50 pb-2 w-full"></h2>
+
+                <div class="w-48 h-48 mb-6 relative">
+                     <img id="result-img" src="" class="w-full h-full object-contain drop-shadow-md animate-stamp" alt="結果画像">
+                </div>
+
+                <div class="w-full space-y-4 font-serif">
+                    <div class="bg-white/60 p-3 rounded border border-brand-brown/10">
+                        <p class="text-xs text-brand-brown font-bold mb-1 tracking-wider">【 症 状 】</p>
+                        <p id="result-msg" class="text-base font-bold leading-relaxed"></p>
+                    </div>
+                    <div class="bg-white/60 p-3 rounded border border-brand-brown/10">
+                        <p class="text-xs text-brand-brown font-bold mb-1 tracking-wider">【 忠 告 】</p>
+                        <p id="result-advice" class="text-sm leading-7 text-justify break-all"></p>
+                    </div>
+                    <div class="bg-brand-gold/20 p-3 rounded border border-brand-gold">
+                        <p class="text-xs text-brand-brown font-bold mb-1 tracking-wider">【 ラッキー養生 】</p>
+                        <p id="result-lucky" class="text-lg font-bold text-brand-brown tracking-widest"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="h-2 bg-red-700 w-full"></div>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-3 px-4 pb-8">
+            <a id="btn-book" href="salon.html" class="w-full text-white font-bold py-3.5 rounded-lg shadow-lg transition block text-center transform active:scale-95 bg-brand-brown">
+                予約画面へ進む
+            </a>
+
+            <a id="btn-share" href="#" target="_blank" class="w-full bg-black border border-white/30 text-white font-bold py-3 rounded-full flex items-center justify-center gap-2 hover:bg-gray-900 transition mt-2">
+                <span>Threadsで晒す</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm0-22c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2z"/></svg>
+            </a>
+            
+            <button onclick="resetGame()" class="text-brand-gold text-sm underline hover:text-white py-2 tracking-wider mt-1">
+                もう一度引く（残り<span id="retry-count">0</span>回）
+            </button>
+        </div>
+    </div>
+
+    <div id="limit-screen" class="hidden text-center z-10 max-w-md w-full animate-fade-in-up">
+        <h2 class="text-6xl mb-4">🛑</h2>
+        <h3 class="text-2xl font-serif font-bold text-brand-gold mb-4">本日は打ち止め。</h3>
+        <p class="text-white/80 mb-8 leading-relaxed text-sm">
+            依存は新たな不調を生みます。<br>
+            続きは明日、またはサロンで。
+        </p>
+        <a href="salon.html" class="w-full bg-brand-gold text-brand-brown font-bold py-4 rounded-full shadow-lg text-lg block hover:bg-white transition">
+            木田に直接診せる
+        </a>
+        <a href="index.html" class="block mt-8 text-white/50 text-sm hover:text-white">トップページへ戻る</a>
+    </div>
+
+  </main>
+
+  <script>
+    // ▼▼▼ コンプライアンス配慮済みデータ ▼▼▼
+    const fortunes = [
+      { 
+        type: "【廃車寸前】", 
+        image: "./img/rank_scrap.png", 
+        msg: "全身サビだらけです", 
+        advice: "あなたの背中は錆びついた鉄板ですか？オイル（血流）が完全に切れています。メンテナンスしないと二度と動かなくなります。",
+        lucky: "深呼吸・予約",
+        btnText: "🚑 緊急ピットイン（空き確認）",
+        btnColor: "bg-red-600 hover:bg-red-500 animate-pulse"
+      },
+      { 
+        type: "【冷凍マグロ】", 
+        image: "./img/rank_frozen.png", 
+        msg: "解凍待ちの状態です", 
+        advice: "手足の温度が生命体として低すぎます。市場に出荷される直前ですか？ 今日は白湯を飲んで、湯船から15分は出ないこと。",
+        lucky: "白湯・厚着",
+        btnText: "🔥 解凍コースを予約する",
+        btnColor: "bg-blue-600 hover:bg-blue-500"
+      },
+      { 
+        type: "【スマホ奴隷】", 
+        image: "./img/rank_zombie.png", 
+        msg: "首の骨が泣いています", 
+        advice: "画面に支配されていますね。首が前に落ちてゾンビのような姿勢です。今すぐスマホを置いて遠くの山を見なさい。",
+        lucky: "デジタル断食",
+        btnText: "👀 首・目の疲れをリセット予約",
+        btnColor: "bg-purple-700 hover:bg-purple-600"
+      },
+      { 
+        type: "【ガス欠】", 
+        image: "./img/rank_gas.png", 
+        msg: "魂が抜けています", 
+        advice: "無理して走ろうとしていますが燃料タンクは空っぽです。これ以上進むとエンストします。今日は「何もしない」をしなさい。",
+        lucky: "早寝・放置",
+        btnText: "⛽ エネルギー充填を予約する",
+        btnColor: "bg-yellow-600 hover:bg-yellow-500"
+      },
+      { 
+        type: "【パン生地】", 
+        image: "./img/rank_bread.png", 
+        msg: "発酵しすぎです", 
+        advice: "水分代謝が悪すぎて、押すと戻ってきません。湿気を溜め込みすぎです。除湿機（プロの手）が必要です。",
+        lucky: "小豆茶・運動",
+        btnText: "💧 水抜き（むくみケア）を予約",
+        btnColor: "bg-orange-600 hover:bg-orange-500"
+      },
+      { 
+        type: "【養生吉】", 
+        image: "./img/rank_lucky.png", 
+        msg: "奇跡のバランスです", 
+        advice: "悔しいですが今は調子が良いようです。ですが油断大敵。調子に乗って夜ふかしすれば、明日は一転して「廃車」確定です。",
+        lucky: "瞑想・維持",
+        btnText: "🗓️ 来月のご褒美メンテを確保",
+        btnColor: "bg-green-600 hover:bg-green-500"
+      }
+    ];
+
+    // ▼▼▼ 本番設定：1日3回まで ▼▼▼
+    const MAX_TRIES = 3;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        checkLimitDisplay();
+    });
+
+    function getStatus() {
+        const today = new Date().toLocaleDateString();
+        const data = JSON.parse(localStorage.getItem('kidaOmikuji')) || { date: today, count: 0 };
+        if (data.date !== today) {
+            return { date: today, count: 0 };
+        }
+        return data;
+    }
+
+    function checkLimitDisplay() {
+        const status = getStatus();
+        const remain = MAX_TRIES - status.count;
+        
+        document.getElementById('remain-count').innerText = Math.max(0, remain);
+        document.getElementById('retry-count').innerText = Math.max(0, remain);
+
+        if (remain <= 0) {
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.add('hidden');
+            document.getElementById('limit-screen').classList.remove('hidden');
+            return false;
+        }
+        return true;
+    }
+
+    function playOmikuji() {
+        if (!checkLimitDisplay()) return;
+
+        const status = getStatus();
+        status.count++;
+        localStorage.setItem('kidaOmikuji', JSON.stringify(status));
+        
+        const container = document.getElementById('start-screen');
+        container.classList.add('animate-shake');
+        
+        setTimeout(() => {
+            container.classList.remove('animate-shake');
+            showResult();
+        }, 800);
+    }
+
+    function showResult() {
+        const result = fortunes[Math.floor(Math.random() * fortunes.length)];
+        
+        document.getElementById('start-screen').classList.add('hidden');
+        const resultScreen = document.getElementById('result-screen');
+        resultScreen.classList.remove('hidden');
+        
+        document.getElementById('result-type').innerText = result.type;
+        document.getElementById('result-img').src = result.image;
+        document.getElementById('result-msg').innerText = result.msg;
+        document.getElementById('result-advice').innerText = result.advice;
+        document.getElementById('result-lucky').innerText = "✨ " + result.lucky + " ✨";
+
+        const bookBtn = document.getElementById('btn-book');
+        bookBtn.innerText = result.btnText;
+        bookBtn.className = `w-full text-white font-bold py-3.5 rounded-lg shadow-lg transition block text-center transform active:scale-95 ${result.btnColor}`;
+
+        checkLimitDisplay();
+
+        const shareText = `【本日の毒舌診断】\n結果：${result.type}\n症状：${result.msg}\n\nラッキー養生：${result.lucky}\n\n漢方視点で斬られました。残り回数あとわずか。\n👇引いてみる\nhttps://hogushiyakida.com/omikuji.html\n#ほぐしやきだ #もみ徳 #ドS養生`;
+        const shareUrl = "https://www.threads.net/intent/post?text=" + encodeURIComponent(shareText);
+        document.getElementById('btn-share').href = shareUrl;
+    }
+
+    function resetGame() {
+        document.getElementById('result-screen').classList.add('hidden');
+        if (checkLimitDisplay()) {
+            document.getElementById('start-screen').classList.remove('hidden');
+        }
+    }
+  </script>
+</body>
+</html>
