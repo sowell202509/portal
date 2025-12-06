@@ -8,12 +8,16 @@
     gtag('js', new Date());
     gtag('config', 'G-SXB69DFE11');
   </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>活動理念・プロフィール｜ほぐしや きだ</title>
+  <title>プロフィール・理念｜ほぐしや きだ</title>
+  <meta name="description" content="ほぐしや きだ（木田）のプロフィール。作業療法士としての臨床経験と、東洋医学・Sowell®︎技術を融合。病院と日常の間に、心身の避難所を作ります。"/>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -21,155 +25,235 @@
         extend: {
           fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
           colors: {
-            'brand-black':'#333333',
+            'brand-black':'#2B2725',
             'brand-brown':'#5A463B',
             'brand-darkbrown':'#3E3029',
             'brand-gold':'#E2B46D',
-            'brand-bg':'#F2F0EB',
-            'brand-paper':'#FFFFFF'
+            'brand-beige':'#F6F1EB',
+            'brand-ivory':'#FBF9F6'
           },
-          boxShadow:{ card:'0 4px 20px rgba(90, 70, 59, 0.08)' }
+          animation: {
+            'fade-in': 'fadeIn 1s ease-out forwards'
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
         }
       }
     }
   </script>
   <style>
-    body { background-image: radial-gradient(#E0DCD5 1px, transparent 1px); background-size: 20px 20px; }
-    h2 {
-      font-family: "Shippori Mincho", serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #5A463B;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    /* 読み物としての質感を高める */
+    body { 
+        background-color: #FBF9F6;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235A463B' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
-    h2::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 24px;
-      background-color: #E2B46D;
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: 0.1em;
     }
   </style>
 </head>
-<body class="bg-brand-bg text-brand-black antialiased flex flex-col min-h-screen">
+<body class="text-brand-black antialiased flex flex-col min-h-screen">
 
-  <header class="sticky top-0 z-50 bg-gradient-to-r from-brand-darkbrown to-brand-brown text-white shadow-md">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-brand-brown/10">
     <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="index.html" class="text-xs font-bold text-white/80 hover:text-brand-gold transition flex items-center gap-1 px-3 py-1 rounded-full border border-white/20 hover:bg-white/10">
-        ← ポータルTop
+      <a href="index.html" class="flex items-center gap-2 text-brand-brown hover:opacity-70 transition">
+        <span class="text-lg">←</span>
+        <span class="text-xs font-bold">Home</span>
       </a>
-      <span class="font-serif font-bold text-lg tracking-widest">Profile</span>
-      <div class="w-20 hidden sm:block"></div>
-      <a href="salon.html" class="sm:hidden text-[10px] font-bold bg-white text-brand-brown px-2 py-1 rounded shadow">予約</a>
-    </div>
+      <span class="font-serif font-bold text-brand-brown">Profile & Philosophy</span>
+      <div class="w-12"></div> </div>
   </header>
 
-  <main class="flex-grow py-12 px-4">
-    <div class="max-w-3xl mx-auto">
+  <main class="flex-grow animate-fade-in">
 
-      <div class="bg-brand-paper rounded-3xl shadow-card overflow-hidden mb-12">
-        <div class="md:flex">
-          <div class="md:w-2/5 bg-gray-200 min-h-[300px] relative">
-            <img src="img/profile_main.png" alt="木田 プロフィール写真" class="absolute inset-0 w-full h-full object-cover object-top mix-blend-multiply" onerror="this.style.display='none'">
-            <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-bold z-[-1]">Photo</div>
-          </div>
-          
-          <div class="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
-            <div class="inline-block text-brand-gold font-bold text-xs tracking-widest mb-2">THERAPIST / OT</div>
-            <h1 class="text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-brown to-brand-darkbrown mb-4">
-              ほぐしや きだ<br>
-              <span class="text-lg text-brand-brown opacity-60 ml-1 font-sans font-normal">(Yayan)</span>
-            </h1>
-            <p class="text-sm leading-loose text-gray-600 mb-6">
-              <strong>作業療法士</strong>としての臨床経験と、リラクゼーションの技術を融合。<br>
-              医学的な視点と東洋医学（漢方）の知恵で、心と体の両面から「なんとなくの不調」を紐解きます。
-            </p>
+    <section class="relative pt-12 pb-20 px-4">
+        <div class="max-w-4xl mx-auto md:flex items-start gap-12">
             
-            <div class="flex flex-wrap gap-2 items-center">
-              <span class="px-3 py-1 bg-brand-bg text-brand-brown text-xs font-bold rounded-full">作業療法士(歴7年)</span>
-              <span class="px-3 py-1 bg-brand-bg text-brand-brown text-xs font-bold rounded-full">セラピスト(歴8年)</span>
-              
-              <a href="https://www.threads.net/@hogushiya_kida" target="_blank" class="inline-flex items-center gap-1 px-3 py-1 bg-black text-white text-xs font-bold rounded-full hover:bg-gray-800 transition shadow-sm">
-                <span style="font-family: sans-serif;">@hogushiya_kida</span>
-              </a>
+            <div class="md:w-5/12 mb-8 md:mb-0 relative">
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl bg-gray-200 relative">
+                    <img src="img/profile_main.png" alt="木田 プロフィール" class="w-full h-full object-cover hover:scale-105 transition duration-700" onerror="this.src='https://placehold.co/400x500/e2e2e2/5a463b?text=No+Image'">
+                </div>
+                <div class="absolute -bottom-6 -right-6 -z-10 text-[100px] leading-none text-brand-gold/20 font-serif font-bold">
+                    K
+                </div>
             </div>
-          </div>
+
+            <div class="md:w-7/12 pt-4">
+                <p class="text-brand-gold font-bold text-xs tracking-widest mb-3">THERAPIST / OT</p>
+                <h1 class="text-3xl md:text-4xl font-serif font-bold text-brand-brown mb-6 leading-tight">
+                    身体の声を翻訳し、<br>
+                    本来の設計図へ戻す。
+                </h1>
+                
+                <div class="space-y-4 text-sm md:text-base leading-loose text-brand-black/80 font-medium">
+                    <p>
+                        はじめまして、ほぐしや きだ です。<br>
+                        福岡の街で、少し変わったセラピストをしています。
+                    </p>
+                    <p>
+                        私の役割は、ただ筋肉を揉むことではありません。<br>
+                        西洋医学（リハビリ）の知識と、東洋医学（漢方）の知恵。<br>
+                        そして重力を味方につける技術（Sowell）。
+                    </p>
+                    <p>
+                        この3つのレンズを通して、あなたの身体で起きている<br>
+                        「不調の物語」を読み解き、書き換えるお手伝いをします。
+                    </p>
+                </div>
+
+                <div class="mt-8 flex items-center gap-4">
+                    <div class="text-right">
+                        <p class="text-xl font-serif font-bold text-brand-brown">木田</p>
+                        <p class="text-xs text-brand-brown/60 tracking-wider">Kida (Yayan)</p>
+                    </div>
+                    <div class="h-px w-12 bg-brand-brown/30"></div>
+                    <div class="flex gap-2">
+                         <a href="https://www.threads.net/@hogushiya_kida" target="_blank" class="text-xs border border-brand-black/20 px-3 py-1 rounded-full hover:bg-brand-black hover:text-white transition">
+                            Threads
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="grid md:grid-cols-3 gap-6 mb-16">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-brown/10 text-center hover:shadow-md transition duration-300">
-          <div class="text-3xl mb-3">🏥</div>
-          <h3 class="font-serif font-bold text-brand-brown mb-2">臨床経験 7年</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">
-            脳血管疾患(CVA)・精神科でのリハビリ経験。解剖学とメンタルケアの基礎があります。
-          </p>
+    <section class="bg-white py-16 px-4 border-y border-brand-brown/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-xl font-serif font-bold text-brand-brown inline-block border-b-2 border-brand-gold pb-2">
+                    私をつくる3つの視点
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-2xl bg-brand-ivory hover:shadow-lg transition duration-300">
+                    <div class="text-4xl mb-4">🏥</div>
+                    <h3 class="font-bold text-brand-brown mb-2">作業療法士 (OT)</h3>
+                    <p class="text-xs text-brand-black/60 mb-3">国家資格 / 臨床歴7年</p>
+                    <p class="text-sm text-brand-black/80 leading-relaxed text-left">
+                        脳血管疾患や精神科でのリハビリに従事。解剖学・生理学に基づき、身体の機能を論理的に捉える「西洋医学」のベースがあります。
+                    </p>
+                </div>
+
+                <div class="text-center p-6 rounded-2xl bg-brand-ivory hover:shadow-lg transition duration-300">
+                    <div class="text-4xl mb-4">⚖️</div>
+                    <h3 class="font-bold text-brand-brown mb-2">Sowellist</h3>
+                    <p class="text-xs text-brand-black/60 mb-3">重力調整技術</p>
+                    <p class="text-sm text-brand-black/80 leading-relaxed text-left">
+                        「重力」と「筋膜」の関係に着目。強く揉まずとも、身体の構造的なバランスを整えることで、羽が生えたような軽さを生み出します。
+                    </p>
+                </div>
+
+                <div class="text-center p-6 rounded-2xl bg-brand-ivory hover:shadow-lg transition duration-300">
+                    <div class="text-4xl mb-4">🌿</div>
+                    <h3 class="font-bold text-brand-brown mb-2">東洋医学・漢方</h3>
+                    <p class="text-xs text-brand-black/60 mb-3">探究・実践中</p>
+                    <p class="text-sm text-brand-black/80 leading-relaxed text-left">
+                        検査データには出ない「未病」や「気・血・水」の乱れを読み解くため、『黄帝内経』などの古典を研究。全体観で身体を診ます。
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-brown/10 text-center hover:shadow-md transition duration-300">
-          <div class="text-3xl mb-3">🌿</div>
-          <h3 class="font-serif font-bold text-brand-brown mb-2">癒やしの技術 8年</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">
-            「もみ徳」での施術経験。筋肉の緊張を解き、深いリラックスへ導く手技を探求。
-          </p>
+    </section>
+
+    <section class="py-20 px-4">
+        <div class="max-w-3xl mx-auto">
+            
+            <div class="relative bg-white p-8 md:p-12 rounded-3xl shadow-soft border border-brand-brown/10">
+                <div class="absolute -top-4 -left-2 text-6xl font-serif text-brand-gold opacity-50">“</div>
+
+                <h3 class="text-2xl font-serif font-bold text-brand-brown mb-8 text-center">
+                    白衣を脱いで、<br>街へ出た理由。
+                </h3>
+
+                <div class="space-y-6 text-sm md:text-base leading-loose text-brand-black/80 font-medium">
+                    <p>
+                        私は以前、病院でリハビリを担当していました。<br>
+                        そこは「病気になってしまった人」が、生活を取り戻すために戦う場所でした。
+                    </p>
+                    <p>
+                        日々、患者さんと向き合う中で、ある思いが強くなりました。<br>
+                        <span class="bg-brand-gold/20 font-bold px-1">「病気になる前に、もっとできることがあったはずだ」</span>と。
+                    </p>
+                    <p>
+                        身体が悲鳴を上げているのに、「検査結果は異常なし」だからと我慢している人。<br>
+                        心と身体の繋がりが切れかけている人。<br>
+                        そんな人たちが、気軽に羽を休められる「避難所」が、街の中には少なすぎる。
+                    </p>
+                    <p>
+                        だから私は、白衣を脱ぎました。<br>
+                        病院という枠組みを外し、より自由で、より日常に近い場所で。<br>
+                        専門的な知識を持ったまま、親戚のような距離感で。<br>
+                        あなたの「健やかさ」を守る番人でありたいと思っています。
+                    </p>
+                </div>
+            </div>
+
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-brown/10 text-center hover:shadow-md transition duration-300">
-          <div class="text-3xl mb-3">📖</div>
-          <h3 class="font-serif font-bold text-brand-brown mb-2">漢方の学び</h3>
-          <p class="text-xs text-gray-600 leading-relaxed">
-            西洋医学では見えにくい「未病」や「不調」をケアするため、現在漢方を猛勉強中。
-          </p>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 pb-20">
+        <div class="border-t border-brand-brown/10 pt-12">
+            <h3 class="text-sm font-bold text-brand-black/50 mb-6 text-center uppercase tracking-widest">Personal Data</h3>
+            
+            <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-sm">
+                <div class="flex border-b border-brand-brown/10 pb-2">
+                    <dt class="w-24 font-bold text-brand-brown">名前</dt>
+                    <dd class="flex-1">木田（Yayanと呼ばれたりします）</dd>
+                </div>
+                <div class="flex border-b border-brand-brown/10 pb-2">
+                    <dt class="w-24 font-bold text-brand-brown">拠点</dt>
+                    <dd class="flex-1">福岡市（もみ徳 赤坂・姪浜店）</dd>
+                </div>
+                <div class="flex border-b border-brand-brown/10 pb-2">
+                    <dt class="w-24 font-bold text-brand-brown">好きなこと</dt>
+                    <dd class="flex-1">読書（医学書から漫画まで）、美味しい養生食探し</dd>
+                </div>
+                <div class="flex border-b border-brand-brown/10 pb-2">
+                    <dt class="w-24 font-bold text-brand-brown">施術スタイル</dt>
+                    <dd class="flex-1">ボキボキしない。静かに深く沈み込むような圧。</dd>
+                </div>
+                <div class="flex border-b border-brand-brown/10 pb-2">
+                    <dt class="w-24 font-bold text-brand-brown">座右の銘</dt>
+                    <dd class="flex-1 font-serif">「上工は未病を治す」</dd>
+                </div>
+                <div class="flex border-b border-brand-brown/10 pb-2">
+                    <dt class="w-24 font-bold text-brand-brown">夢</dt>
+                    <dd class="flex-1">秋月の古民家で、滞在型のリトリートサロンを開くこと</dd>
+                </div>
+            </dl>
         </div>
-      </div>
+    </section>
 
-      <div class="bg-white p-8 md:p-12 rounded-3xl shadow-card">
-        
-        <h2>「リハビリ」から「癒やし」の世界へ</h2>
-        <p class="text-gray-700 leading-loose mb-8 text-sm md:text-base">
-          私は元々、<strong>作業療法士（OT）</strong>として病院に勤務していました。<br>
-          脳血管疾患（CVA）や精神科の現場で7年間、患者様の「生活を取り戻す」ためのリハビリに携わってきました。<br><br>
-          そこで痛感したのは、<strong>「心と体は密接に繋がっている」</strong>ということ。<br>
-          体が動かない不安は心を蝕み、心の不調は体を強張らせます。<br>
-          「もっと早い段階で、心身のケアができていれば…」そんな思いが、現在のセラピストとしての活動の原点です。
-        </p>
-
-        <h2>なぜ今、漢方なのか？</h2>
-        <p class="text-gray-700 leading-loose mb-8 text-sm md:text-base">
-          もみほぐしの現場に立って8年。<br>
-          筋肉をほぐすだけでは解決しない「季節の変わり目のダルさ」や「原因不明の不調」に多く出会いました。<br><br>
-          西洋医学的な解剖学の知識に加え、全体を俯瞰して見る<strong>東洋医学（漢方）</strong>の視点が必要だと感じ、現在は『黄帝内経』などを通して学びを深めています。<br>
-          
-          <strong>「西洋医学の確かな知識」×「東洋医学の全体観」×「癒やしの手技」。</strong><br>
-          これらを組み合わせ、Sowell®︎枕なども活用しながら、あなただけのオーダーメイドなケアを提供します。
-        </p>
-
-        <div class="mt-10 pt-10 border-t border-brand-brown/10 text-center">
-          <p class="font-bold text-brand-brown mb-6">福岡のサロン「もみ徳」でお待ちしています</p>
-          <a href="salon.html" class="inline-flex items-center justify-center gap-2 bg-brand-brown text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-darkbrown hover:-translate-y-1 transition shadow-lg w-full md:w-auto">
-            <span>もみ徳（予約・出勤）を確認する</span>
-            <span class="text-brand-gold">→</span>
-          </a>
+    <section class="bg-brand-brown text-white py-16 px-4 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-serif font-bold mb-4">お会いできるのを楽しみにしています</h2>
+            <p class="text-white/80 mb-8 leading-relaxed">
+                不調の原因がわからなくても大丈夫です。<br>
+                まずはその辛さを、そのままお持ちください。一緒に紐解きましょう。
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="salon.html" class="inline-block bg-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-white transition shadow-lg">
+                    指名予約をする
+                </a>
+                <a href="diagnosis.html" class="inline-block bg-transparent border border-white/30 text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition">
+                    まずは体質診断で遊ぶ
+                </a>
+            </div>
         </div>
+    </section>
 
-      </div>
-
-    </div>
   </main>
 
-  <footer class="bg-gradient-to-r from-brand-darkbrown to-brand-brown text-white/80 py-10 text-center text-sm">
-    <p class="font-serif text-white text-lg mb-4">ほぐしや きだ</p>
-    <div class="flex justify-center gap-6 mb-8 text-xs">
-      <a href="index.html" class="hover:text-brand-gold transition">ポータルTop</a>
-      <a href="kampo_list.html" class="hover:text-brand-gold transition">漢方学習帳</a>
-      <a href="salon.html" class="hover:text-brand-gold transition">もみ徳 予約</a>
-    </div>
-    <p class="text-xs opacity-50">© <span id="year"></span> Hogushi-ya Kida. All rights reserved.</p>
+  <footer class="bg-brand-darkbrown text-white/60 py-8 text-center text-xs">
+    <p>© 2025 Hogushi-ya Kida.</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
