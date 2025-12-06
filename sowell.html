@@ -1,425 +1,271 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sowell®調整法 | ほぐしや きだ</title>
-    <meta name="description" content="寝ても疲れが取れないあなたへ。重力から解放され、骨格を本来の位置へリセットする「Sowell®調整法」の特設ページです。">
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Icons (Updated to 6.5.1 for Threads icon) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            brown: '#5A463B', // ほぐしや きだ メインカラー
-                            gold: '#E2B46D',  // アクセントカラー
-                            light: '#F9F5F0', // 背景用薄ベージュ
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Noto Sans JP"', 'sans-serif'],
-                        serif: ['"Zen Old Mincho"', 'serif'],
-                    }
-                }
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SXB69DFE11');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>重力調整 Sowell®︎とは｜ほぐしや きだ</title>
+  <meta name="description" content="寝ても疲れが取れないあなたへ。重力から解放され、骨格を本来の位置へリセットする「Sowell®調整法」の紹介ページです。"/>
+  <meta name="theme-color" content="#5A463B"/>
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'brand-black':'#2B2725',
+            'brand-brown':'#5A463B',
+            'brand-darkbrown':'#3E3029',
+            'brand-gold':'#E2B46D',
+            'brand-beige':'#F6F1EB',
+            'brand-ivory':'#FBF9F6'
+          },
+          boxShadow:{ soft:'0 10px 40px rgba(0,0,0,.05)' },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.5s ease-out forwards'
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
             }
+          }
         }
-    </script>
-    <style>
-        .hero-gradient {
-            background: linear-gradient(rgba(90, 70, 59, 0.7), rgba(90, 70, 59, 0.5));
-        }
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-    </style>
-</head>
-<body id="top" class="font-sans text-brand-brown bg-white antialiased">
-
-    <!-- Header -->
-    <header class="bg-white shadow-md fixed w-full z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <h1 class="text-2xl font-serif font-bold tracking-wider">ほぐしや きだ</h1>
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-6 text-sm font-medium items-center">
-                <a href="#top" class="hover:text-brand-gold transition">ホーム</a>
-                <a href="#logic" class="hover:text-brand-gold transition">選ばれる理由</a>
-                <a href="#menu" class="hover:text-brand-gold transition">メニュー・料金</a>
-                <a href="#product" class="hover:text-brand-gold transition">商品紹介</a>
-                <a href="http://hogushiyakida.com/salon.html" target="_blank" class="ml-4 inline-flex items-center justify-center bg-brand-brown text-white px-4 py-1.5 rounded text-sm leading-none hover:bg-opacity-90 transition">ご予約</a>
-            </nav>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-2xl text-brand-brown" aria-label="メニューを開く">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <!-- Mobile Nav -->
-        <nav id="mobile-menu" class="md:hidden hidden border-t border-gray-200 bg-white">
-            <div class="px-4 py-3 space-y-3 text-sm font-medium">
-                <a href="#logic" class="block py-1 hover:text-brand-gold transition">選ばれる理由</a>
-                <a href="#menu" class="block py-1 hover:text-brand-gold transition">メニュー・料金</a>
-                <a href="#product" class="block py-1 hover:text-brand-gold transition">商品紹介</a>
-                <a href="http://hogushiyakida.com/salon.html" target="_blank" class="block mt-2 bg-brand-brown text-white text-center px-4 py-2 rounded hover:bg-opacity-90 transition">ご予約</a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative h-screen min-h-[600px] flex items-center justify-center">
-        <!-- Background Image (Placeholder) -->
-        <div class="absolute inset-0 z-0">
-            <img src="img/hero_bg.png" alt="深いリラックス状態" class="w-full h-full object-cover">
-            <div class="hero-gradient absolute inset-0"></div>
-        </div>
-        
-        <div class="relative z-10 text-center text-white px-4">
-            <p class="text-lg md:text-xl mb-4 font-medium tracking-widest text-brand-gold">揉んでも戻る、その疲れに。</p>
-            <h2 class="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight text-shadow">
-                重力を、脱ぐ。<br>
-                骨格を、<br>リセットする。
-            </h2>
-            <p class="text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-                あなたの体が休まらないのは、<br class="md:hidden">「寝ている間も支えている」から。<br>
-                物理的に重力の影響をゼロにする<br class="md:hidden">『Sowell®調整法』
-            </p>
-            <a href="#logic" class="inline-block bg-brand-gold text-brand-brown font-bold py-4 px-8 rounded-sm hover:bg-white hover:text-brand-brown transition duration-300 shadow-lg">
-                そのロジックを見る <i class="fas fa-arrow-down ml-2"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- Vertical Video Section -->
-    <section class="pt-16 pb-4 bg-white text-center">
-        <p class="text-sm text-brand-brown tracking-wide mb-4 opacity-80">
-            施術の雰囲気を30秒でご覧いただけます（音声なし）
-        </p>
-    </section>
-    <section class="pb-16 bg-white flex justify-center">
-        <div class="w-[320px] sm:w-[360px] md:w-[400px] rounded-xl overflow-hidden shadow-lg border border-brand-brown/20">
-            <video autoplay muted loop playsinline class="w-full h-auto">
-                <source src="video/sowell_vertical.mp4" type="video/mp4">
-            </video>
-        </div>
-    </section>
-
-    <!-- The Problem: なぜ治らないのか -->
-    <section class="py-20 bg-brand-light">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-serif font-bold mb-4">
-    なぜ、<br class="md:hidden">疲れが抜けないのか？
-</h3>
-                <div class="w-16 h-1 bg-brand-gold mx-auto"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-                <div>
-                    <img src="img/problem_muscle_fixation.png" alt="デスクワークでの姿勢の悪さ" class="rounded-lg shadow-xl w-full">
-                </div>
-                <div>
-                    <h4 class="text-xl font-bold mb-4 text-brand-brown">原因は「筋肉の固定化」です。</h4>
-                    <p class="leading-relaxed mb-6">
-                        私たちは起きている間、常に地球の「重力」にさらされています。<br>
-                        デスクワークで猫背になったり、立ち仕事で腰を反ったり。現代人の筋肉は、重力に抗って体を支えようと、<strong class="text-red-800 bg-red-100 px-1">ガチガチに緊張した状態で「固定」</strong>されています。
-                    </p>
-                    <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-brand-gold">
-                        <p class="font-bold text-lg mb-2">本来なら、横になれば休めるはずですが…</p>
-                        <p class="text-sm">
-                            長年の癖で筋肉が「支えること」を記憶してしまっているため、<br>
-                            ベッドに入っても筋肉は緊張し続け、悪い姿勢のまま固まっています。<br>
-                            これが<strong>「朝起きても体が痛い」「疲れが抜けない」</strong>正体です。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Solution: Sowell Logic -->
-    <section id="logic" class="py-20 bg-white scroll-mt-24">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <span class="text-brand-gold font-bold tracking-widest text-sm uppercase">Our Method</span>
-                <h3 class="text-3xl md:text-4xl font-serif font-bold mt-2 mb-6">
-                    <span class="block md:inline">Sowell®の</span>
-                    <span class="block md:inline">科学</span>
-                </h3>
-                <p class="max-w-2xl mx-auto text-gray-600">
-                    スピリチュアルや感覚の話ではありません。<br>
-                    物理的に環境を整えることで、体の反応を変えるアプローチです。
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Logic 1 -->
-                <div class="bg-brand-light p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-brand-brown text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
-                        <i class="fas fa-compress-arrows-alt"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">1. 重力からの解放</h4>
-                    <p class="text-sm leading-relaxed text-left">
-                        特殊な<strong>ブロック</strong>を使用し、体の隙間を物理的に埋めます。重力がかかるポイントを分散させ、まるで無重力空間にいるような「支えなくていい環境」を作ります。
-                    </p>
-                </div>
-
-                <!-- Logic 2 -->
-                <div class="bg-brand-light p-8 rounded-lg text-center hover:shadow-lg transition duration-300 relative">
-                     <!-- Connection Arrow for Desktop -->
-                     <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-brand-gold text-2xl z-10">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <div class="w-16 h-16 bg-brand-brown text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">2. 脳の認識リセット</h4>
-                    <p class="text-sm leading-relaxed text-left">
-                        体が完全に支えられていると感じると、脳は「もう筋肉を緊張させなくていい」と判断します。これにより、マッサージでは届かない深層の「防衛的な緊張」が解除されます。
-                    </p>
-                </div>
-
-                <!-- Logic 3 -->
-                <div class="bg-brand-light p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
-                    <div class="w-16 h-16 bg-brand-gold text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
-                        <i class="fas fa-bone"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">3. 生理的湾曲の回復</h4>
-                    <p class="text-sm leading-relaxed text-left">
-                        筋肉のロックが外れると、骨格は自然と本来あるべき<strong>生理的な湾曲</strong>（S字カーブ）に戻ろうとします。無理やり矯正するのではなく、体自身の力で「リセット」されます。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Visual Explanation Section -->
-    <section class="py-20 bg-brand-brown text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-                <div class="order-2 md:order-1">
-                    <h3 class="text-2xl md:text-3xl font-serif font-bold mb-6 leading-relaxed">
-    ゼロどまりのケアから、<br class="md:hidden">
-    Sowellで<span class="text-brand-gold">「マイナス」</span>へ。
-</h3>
-                    <p class="leading-relaxed mb-6 text-gray-300">
-                        一般的な整体は、緊張をほぐして「プラスマイナス・ゼロ」の状態を目指します。しかし、それだけでは足りません。
-                    </p>
-                    <p class="leading-relaxed mb-6 text-gray-300">
-                        バネが一度縮まないと高く飛べないように、人間の体も一度<strong>「マイナス（完全な脱力・タメ）」</strong>の状態を作らないと、本来のパフォーマンス（動き）は発揮できないのです。
-                    </p>
-                    <p class="leading-relaxed mb-8 text-gray-300 font-bold border-l-4 border-brand-gold pl-4">
-                        意識的な脱力では「ゼロ」が限界。<br>
-                        特殊なブロックに身を委ね、強制的に重力から解放されることで初めて、体は<span class="text-brand-gold">「動き出すためのマイナス」</span>へ到達します。
-                    </p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-brand-gold mt-1 mr-3"></i>
-                            <span>胸郭・腸腰筋が深く緩み、可動域が広がる</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-brand-gold mt-1 mr-3"></i>
-                            <span>生理的湾曲が戻り、立ち姿が変わる</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-brand-gold mt-1 mr-3"></i>
-                            <span>「縮む」ができるから、「伸びる」が楽になる</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="order-1 md:order-2">
-                    <!-- Placeholder for Sowell Pillow/Session Image -->
-                    <div class="relative rounded-lg overflow-hidden shadow-2xl border-4 border-brand-gold/30">
-                        <img src="img/sowell_session.png" alt="施術イメージ" class="w-full h-auto opacity-90">
-                        <div class="absolute bottom-0 left-0 bg-brand-gold text-brand-brown px-4 py-2 font-bold text-sm">
-                            完全脱力へのアプローチ
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recommended For -->
-    <section class="py-20 bg-brand-light">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-serif font-bold mb-12">こんな方に最適です</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div class="bg-white p-6 rounded shadow-sm">
-                    <div class="text-brand-gold text-3xl mb-3"><i class="fas fa-redo"></i></div>
-                    <p class="font-bold">マッサージに行っても<br>すぐ戻る</p>
-                </div>
-                <div class="bg-white p-6 rounded shadow-sm">
-                    <div class="text-brand-gold text-3xl mb-3"><i class="fas fa-bed"></i></div>
-                    <p class="font-bold">寝ても疲れが<br>取れない</p>
-                </div>
-                <div class="bg-white p-6 rounded shadow-sm">
-                    <div class="text-brand-gold text-3xl mb-3"><i class="fas fa-mobile-alt"></i></div>
-                    <p class="font-bold">猫背・ストレートネック<br>の自覚がある</p>
-                </div>
-                <div class="bg-white p-6 rounded shadow-sm">
-                    <div class="text-brand-gold text-3xl mb-3"><i class="fas fa-user-injured"></i></div>
-                    <p class="font-bold">腰痛・肩こりが<br>慢性化している</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu & Pricing -->
-    <section id="menu" class="py-20 bg-white scroll-mt-24">
-        <div class="container mx-auto px-4 max-w-3xl">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-serif font-bold mb-4">メニュー・料金</h3>
-                <p class="text-gray-600">
-                    初回はじっくりとお体の状態を確認し、<br>
-                    あなたに最適な「リセットポジション」を探ります。
-                </p>
-            </div>
-
-            <div class="border border-brand-brown rounded-lg overflow-hidden mb-12">
-                <div class="bg-brand-brown text-white p-4 text-center font-bold text-lg">
-                    Sowell 全身調整コース
-                </div>
-                <div class="p-6 md:p-10 bg-brand-light">
-                    <!-- Base Price -->
-                    <div class="flex justify-between items-center border-b border-gray-300 pb-4 mb-4">
-                        <span class="font-bold text-xl">施術料金（60分）</span>
-                        <span class="font-serif text-2xl font-bold">3,500<span class="text-sm font-sans font-normal ml-1">円</span></span>
-                    </div>
-                    <!-- Nomination Fee -->
-                    <div class="flex justify-between items-center text-brand-brown mb-1">
-                        <span class="font-bold text-xl">指名料</span>
-                        <span class="font-serif text-2xl font-bold">＋300<span class="text-sm font-sans font-normal ml-1">円</span></span>
-                    </div>
-                    <p class="text-xs text-red-600 text-right mb-6">※現在の指名料です。<br class="md:hidden">今後変動する可能性がございます。</p>
-                    
-                    <!-- Total Estimate -->
-                    <div class="bg-white p-4 rounded text-center border-2 border-brand-gold/30">
-                         <span class="text-gray-600 text-sm block mb-1">合計</span>
-                         <span class="font-serif text-4xl font-bold text-brand-brown">3,800<span class="text-sm font-sans font-normal ml-1">円(税込)</span></span>
-                    </div>
-
-                    <div class="mt-6 text-sm text-gray-600 leading-relaxed text-left space-y-2">
-                        <p>
-                            <i class="fas fa-tshirt text-brand-gold w-5 text-center mr-1"></i>
-                            <strong>お着替えについて</strong><br>
-                            館内着のご用意がございます。（気になる方はご持参ください）<br>
-                            日常から離れ、ココロからリセットしていただくために、リラックスできる服装へのお着替えをお勧めしております。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="product" class="py-20 bg-brand-light scroll-mt-24">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
-                <div class="md:w-1/2 relative">
-                    <!-- 画像パスを img/sowell_s.png に変更 -->
-                    <img src="img/sowell_s.jpg" alt="Sowellピロー" class="w-full h-full object-cover">
-                    <div class="absolute top-0 left-0 bg-brand-gold text-white px-4 py-2 font-bold text-sm">
-                        Home Care
-                    </div>
-                </div>
-                <div class="md:w-1/2 p-8 flex flex-col justify-center">
-                    <!-- タイトル・本文を Sowellピロー に変更 -->
-                    <h3 class="text-2xl font-serif font-bold mb-4">
-                    <span class="block md:inline">Sowellピローで、</span>
-                    <span class="block md:inline">毎日整う。</span>
-                    </h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        「サロンでの調整効果を長持ちさせたい」「毎日の睡眠でリセットしたい」という声にお応えし、ご自宅用の「Sowellピロー」も販売しております。
-                    </p>
-                    <ul class="space-y-2 mb-8 text-sm text-brand-brown">
-                        <li><i class="fas fa-check text-brand-gold mr-2"></i>寝るだけで生理的湾曲をサポート</li>
-                        <li><i class="fas fa-check text-brand-gold mr-2"></i>持ち運び可能なサイズ</li>
-                    </ul>
-                    <div class="bg-brand-light p-4 rounded text-center">
-                        <p class="font-bold text-lg mb-1">Sowellピロー</p>
-                        <p class="text-sm text-gray-500">※価格は店頭にてご確認ください</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Instagram Section -->
-    <section class="bg-brand-brown text-white py-12 border-b border-gray-600">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-xl font-serif font-bold mb-4">
-                <i class="fab fa-instagram text-2xl mr-2 align-middle"></i>
-                もっと詳しく知りたい方へ
-            </h3>
-            <p class="text-gray-300 mb-6 text-sm">
-                最新の施術事例や、ご自宅でできるセルフケア動画をInstagramで発信しています。<br>
-                Sowell®調整法の雰囲気を知りたい方は、<br class="md:hidden">ぜひフォローしてください。
-            </p>
-            <a href="https://www.instagram.com/sowell_specialist/" target="_blank" class="inline-block border border-white text-white px-8 py-3 rounded hover:bg-white hover:text-brand-brown transition duration-300">
-                発案者公式Instagramを見る
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer Action -->
-    <div class="bg-white py-12 text-center">
-        <div class="container mx-auto px-4">
-            <h3 class="text-2xl font-bold mb-6 text-brand-brown">まずは一度、<br>
-「重力からの解放」を<BR>
-ご体感ください。</h3>
-            <a href="http://hogushiyakida.com/salon.html" target="_blank" class="inline-block bg-brand-brown text-white font-bold py-4 px-16 rounded hover:bg-opacity-90 transition duration-300 shadow-lg text-lg animate-pulse">
-                サロンページで予約する
-                <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-            </a>
-            <p class="mt-4 text-sm text-gray-500">※外部のサロン紹介ページへ移動します</p>
-            <a href="index.html" class="inline-block mt-6 border border-brand-brown text-brand-brown font-bold py-3 px-10 rounded hover:bg-brand-brown hover:text-white transition duration-300">
-                トップページ（総合案内）に戻る
-            </a>
-        </div>
-    </div>
-
-    <!-- Footer Info -->
-    <footer id="access" class="bg-brand-brown text-white py-12 border-t border-gray-600">
-        <div class="container mx-auto px-4 text-center">
-            <!-- Threads Link -->
-            <a href="https://www.threads.net/@hogushiya_kida?xmt=AQF0jg1JRo6B5FOakS_Gv36JaTHkwzBeYu6f729XkxglZCo" target="_blank" class="inline-block group">
-                <h2 class="text-xl font-serif font-bold mb-2 group-hover:text-brand-gold transition">
-                    ほぐしや きだ <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i>
-                </h2>
-                <span class="text-2xl text-white group-hover:text-brand-gold transition">
-                    <i class="fa-brands fa-threads"></i>
-                </span>
-            </a>
-            
-            <div class="text-sm text-gray-300 space-y-2 mt-6 mb-8">
-                <!-- 営業時間削除 -->
-            </div>
-            <div class="text-xs text-gray-400">
-                &copy; Hogushiya Kida. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
-<script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const icon = mobileMenuButton.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-xmark');
-            }
-        });
+      }
     }
-</script>
+  </script>
+  <style>
+    /* Indexと同じ背景処理 */
+    .hero-bg {
+        /* 既存の sowell_session.png をヒーロー背景として再利用 */
+        background-image: url('img/sowell_session.png'); 
+        background-size: cover;
+        background-position: center;
+    }
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+    .text-balance {
+        text-wrap: balance;
+    }
+    /* 読み物としての質感を高める */
+    body { 
+        background-color: #FBF9F6;
+    }
+  </style>
+</head>
+<body class="bg-brand-ivory text-brand-black antialiased flex flex-col min-h-screen pb-24 md:pb-0">
+
+  <header class="sticky top-0 z-50 bg-gradient-to-r from-brand-darkbrown to-brand-brown text-white shadow-md">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-white hover:text-brand-gold transition">
+        <span class="text-lg">←</span>
+        <span class="text-xs font-bold">Home</span>
+      </a>
+      <span class="font-serif font-bold text-lg tracking-wider">Sowell<span class="text-xs align-top">®︎</span></span>
+      <div class="w-12"></div> </div>
+  </header>
+
+  <main class="flex-grow">
+    
+    <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center text-center hero-bg">
+      <div class="absolute inset-0 bg-brand-darkbrown/60 backdrop-blur-[1px]"></div> 
+      <div class="relative z-10 px-4 w-full max-w-4xl mx-auto">
+          
+          <div class="inline-block border border-white/30 text-white/90 px-4 py-1 rounded-full text-xs font-bold tracking-widest mb-6">
+            Sowell Method
+          </div>
+
+          <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight text-shadow text-balance">
+            重力を脱いで、<br>
+            骨格をリセットする。
+          </h1>
+          
+          <p class="text-white/90 max-w-lg mx-auto text-sm md:text-base mb-10 font-medium leading-loose text-shadow">
+             寝ても疲れが取れないのは、<br>
+             「寝ている間も支えている」から。<br>
+             物理的に重力をゼロにする、新しい休息法。
+          </p>
+
+          <a href="#logic" class="inline-block bg-brand-gold text-brand-brown px-8 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-white transition transform hover:scale-105">
+              そのロジックを見る ↓
+          </a>
+      </div>
+    </section>
+
+    <section id="logic" class="py-16 px-5 bg-white rounded-t-3xl -mt-6 relative z-20">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="mb-8 flex justify-center">
+                <div class="w-20 h-20 bg-brand-brown/5 rounded-full flex items-center justify-center p-4">
+                    <img src="img/icon_sowell_pillow.png" alt="Sowellアイコン" class="w-full h-full object-contain opacity-80">
+                </div>
+            </div>
+
+            <h2 class="text-xl md:text-2xl font-serif font-bold text-brand-brown mb-6">
+                なぜ、「枕」ひとつで<br>身体が変わるのか？
+            </h2>
+            
+            <div class="text-sm md:text-base leading-loose text-brand-black/80 font-medium text-left md:text-center space-y-6">
+                <p>
+                    私たちの筋肉は、起きている間じゅう、重力に抗って身体を支えています。<br>
+                    デスクワークや立ち仕事で固まった筋肉は、ベッドに横になっても「支える癖」が抜けず、緊張し続けています。
+                </p>
+                <p>
+                    <span class="bg-brand-gold/20 font-bold px-1">Sowell（ソウェル）</span>は、特殊な形状の枕を身体の隙間に「添える（Sowell）」ことで、物理的に支える必要のない環境を作り出します。
+                </p>
+                <p>
+                    「もう支えなくていいんだ」と脳が理解した瞬間、深層の筋肉がフッと緩み、骨格が本来あるべき場所へと帰っていくのです。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 px-4 bg-brand-ivory">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-xs font-bold text-brand-brown/60 mb-4 tracking-widest">30 SECONDS MOVIE</p>
+            <div class="inline-block rounded-2xl overflow-hidden shadow-xl border-4 border-white mx-auto w-full max-w-[300px]">
+                <video autoplay muted loop playsinline class="w-full h-auto bg-black">
+                    <source src="video/sowell_vertical.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p class="text-xs text-brand-brown/60 mt-4">※音声は流れません</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-brand-ivory">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-brand-gold font-bold text-[10px] tracking-widest uppercase">3 Points</span>
+                <h2 class="text-xl font-serif font-bold text-brand-brown mt-1">Sowellの科学</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-brown flex flex-col">
+                    <div class="h-10 w-10 bg-brand-brown/10 rounded-full flex items-center justify-center text-xl mb-4">⚖️</div>
+                    <h3 class="text-base font-serif font-bold text-brand-brown mb-2">1. 重力の分散</h3>
+                    <p class="text-sm text-brand-black/70 leading-relaxed">
+                        特殊なブロックで身体の隙間を埋め、重力がかかるポイントを分散。「無重力」に近い環境を作り、筋肉を休ませます。
+                    </p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-gold flex flex-col">
+                    <div class="h-10 w-10 bg-brand-gold/20 rounded-full flex items-center justify-center text-xl mb-4">🧠</div>
+                    <h3 class="text-base font-serif font-bold text-brand-brown mb-2">2. 脳の認識リセット</h3>
+                    <p class="text-sm text-brand-black/70 leading-relaxed">
+                        完全に支えられていると脳が認識すると、防衛本能による「緊張」が解除されます。マッサージでは届かない深層まで脱力します。
+                    </p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-brown flex flex-col">
+                    <div class="h-10 w-10 bg-brand-brown/10 rounded-full flex items-center justify-center text-xl mb-4">🦴</div>
+                    <h3 class="text-base font-serif font-bold text-brand-brown mb-2">3. 生理的湾曲の回復</h3>
+                    <p class="text-sm text-brand-black/70 leading-relaxed">
+                        筋肉のロックが外れると、骨格は自然と本来のS字カーブ（生理的湾曲）に戻ろうとします。無理な矯正は一切しません。
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-brand-beige rounded-3xl p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center shadow-soft">
+                <div class="md:w-1/2 w-full">
+                    <img src="img/sowell_s.jpg" alt="Sowellピロー" class="rounded-xl shadow-md w-full object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <span class="text-brand-gold font-bold text-[10px] tracking-widest uppercase">Home Care</span>
+                    <h3 class="text-xl font-serif font-bold text-brand-brown mt-2 mb-4">
+                        「Sowellピロー」で<br>毎日整う。
+                    </h3>
+                    <p class="text-sm text-brand-black/80 leading-relaxed mb-6">
+                        「サロンでの調整効果を長持ちさせたい」「毎日の睡眠でリセットしたい」という声にお応えし、ご自宅用のピローも販売しています。
+                    </p>
+                    <ul class="text-sm text-brand-brown font-bold space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><span class="text-brand-gold">✔</span> 寝るだけで生理的湾曲をサポート</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-gold">✔</span> 持ち運び可能なサイズ</li>
+                    </ul>
+                    <div class="text-xs text-brand-black/60 bg-white p-3 rounded-lg inline-block">
+                        ※価格・在庫は店頭にてご確認ください
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-brand-ivory">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-xl font-serif font-bold text-brand-brown mb-8">こんなお悩みの方へ</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">寝ても疲れが取れない</span>
+                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">マッサージですぐ戻る</span>
+                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">猫背・巻き肩</span>
+                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">呼吸が浅い気がする</span>
+                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">原因不明のダルさ</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-brand-brown text-white py-16 px-4 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-serif font-bold mb-4">まずは一度、ご体感ください</h2>
+            <p class="text-white/80 mb-8 leading-relaxed text-sm">
+                「重力を脱ぐ」感覚は、体験して初めて分かります。<br>
+                全身調整コースで、その軽さに驚いてください。
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="salon.html" class="inline-block bg-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-white transition shadow-lg">
+                    もみ徳（福岡）で予約する
+                </a>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-brand-darkbrown text-white/60 py-10 text-center text-xs">
+    <div class="flex justify-center gap-6 mb-8">
+      <a href="index.html" class="hover:text-white transition">Home</a>
+      <a href="salon.html" class="hover:text-white transition">Reserve</a>
+      <a href="https://www.instagram.com/sowell_specialist/" target="_blank" class="hover:text-white transition">Sowell Official</a>
+    </div>
+    <p>© 2025 Hogushi-ya Kida.</p>
+  </footer>
+
+  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-brand-brown/10 pb-safe pt-2 px-4 shadow-[0_-5px_20px_rgba(0,0,0,0.05)] animate-fade-in-up">
+    <div class="flex gap-3 pb-3">
+        <a href="diagnosis.html" class="flex-1 flex flex-col items-center justify-center bg-brand-ivory text-brand-brown py-2.5 rounded-lg border border-brand-brown/10">
+            <span class="text-lg mb-0.5">🔮</span>
+            <span class="text-[10px] font-bold">無料診断</span>
+        </a>
+        <a href="salon.html" class="flex-[2] flex items-center justify-center gap-2 bg-brand-brown text-white py-2.5 rounded-lg shadow-md">
+            <div class="flex flex-col items-start leading-none">
+                <span class="text-[9px] text-brand-gold font-bold mb-0.5">もみ徳（福岡）</span>
+                <span class="text-xs font-bold tracking-widest">木田を指名予約</span>
+            </div>
+            <span class="text-lg font-bold">→</span>
+        </a>
+    </div>
+  </div>
+
+  <style>
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+  </style>
 
 </body>
 </html>
