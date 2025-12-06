@@ -11,13 +11,13 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ほぐしや きだ｜福岡・もみ徳での指名予約・Sowellist公式</title>
-  <meta name="description" content="「ほぐしや きだ」公式サイト。福岡のリラクゼーションサロン「もみ徳」にて活動中。漢方×Sowell®︎×もみほぐしによる独自の養生体験をご提供します。"/>
+  <title>ほぐしや きだ｜福岡市・医療と日常の隙間を埋めるOTのほぐしサロン</title>
+  <meta name="description" content="福岡市で活動中。病院を飛び出した作業療法士（OT）が営む、東洋医学×重力調整Sowell®︎のサロン。湿布で治らない不調や自律神経の乱れに、身体の翻訳と心地よい解決策を。"/>
   <meta name="theme-color" content="#5A463B"/>
     
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -56,10 +56,14 @@
     .text-shadow {
         text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
+    /* 読みやすさのための行間調整 */
+    .leading-relaxed-lg {
+        line-height: 2.0;
+    }
   </style>
   <meta name="google-site-verification" content="ここに取得した認証コードがあればそのまま残す" />
 </head>
-<body class="bg-brand-ivory text-brand-black leading-relaxed antialiased flex flex-col min-h-screen pb-20 md:pb-0">
+<body class="bg-brand-ivory text-brand-black antialiased flex flex-col min-h-screen pb-24 md:pb-0">
 
   <header class="sticky top-0 z-50 bg-gradient-to-r from-brand-darkbrown to-brand-brown text-white shadow-md">
     <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -69,10 +73,9 @@
         
       <nav class="hidden md:flex gap-6 text-sm font-medium text-white/90">
         <a href="salon.html" class="text-brand-gold font-bold hover:text-white transition border-b border-brand-gold">指名予約</a>
-        <a href="omikuji.html" class="hover:text-brand-gold transition">おみくじ</a>
         <a href="diagnosis.html" class="hover:text-brand-gold transition">五行診断</a>
-        <a href="blog/blog.html" class="hover:text-brand-gold transition">知恵袋</a>
-        <a href="sowell.html" class="hover:text-brand-gold transition">Sowellとは？</a>
+        <a href="sowell.html" class="hover:text-brand-gold transition">Sowellとは</a>
+        <a href="blog/blog.html" class="hover:text-brand-gold transition">実験室（コラム）</a>
         <a href="profile.html" class="hover:text-brand-gold transition">プロフィール</a>
       </nav>
 
@@ -84,203 +87,147 @@
 
   <main class="flex-grow">
     
-    <section class="relative h-[480px] flex items-center justify-center text-center hero-bg">
+    <section class="relative h-[520px] flex items-center justify-center text-center hero-bg">
       <div class="absolute inset-0 bg-brand-darkbrown/40 backdrop-blur-[1px]"></div> 
-      <div class="relative z-10 px-4">
+      <div class="relative z-10 px-4 w-full max-w-4xl mx-auto">
           
-          <div class="inline-flex items-center gap-2 bg-black/30 backdrop-blur border border-white/20 text-white rounded-full px-4 py-1.5 mb-6">
-            <span class="bg-brand-gold text-brand-brown text-[10px] font-bold px-2 py-0.5 rounded">活動拠点</span>
-            <p class="font-bold text-xs tracking-wider">福岡・もみ徳（赤坂・姪浜）</p>
+          <div class="inline-flex items-center gap-2 bg-black/40 backdrop-blur border border-white/20 text-white rounded-full px-4 py-1.5 mb-6">
+            <span class="bg-brand-gold text-brand-brown text-[10px] font-bold px-2 py-0.5 rounded">福岡・赤坂/姪浜</span>
+            <p class="font-bold text-xs tracking-wider">作業療法士(OT)のほぐしサロン</p>
           </div>
 
-          <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight text-shadow">
-            整う、巡る。<br>
-            <span class="text-lg md:text-2xl mt-5 block font-normal opacity-95 tracking-wider">
-              漢方 × <span class="font-serif italic">Sowell</span><span class="text-xs align-top">®︎</span> × もみほぐし
+          <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight text-shadow">
+            福岡で「医療」と「日常」の<br class="md:hidden">隙間を埋める。<br>
+            <span class="text-base md:text-2xl mt-5 block font-normal opacity-95 tracking-wider leading-relaxed">
+               OTの視点 × 東洋医学 × 重力調整
             </span>
           </h1>
-          <p class="text-white/90 max-w-lg mx-auto text-sm md:text-base mb-8 font-medium">
-             東洋医学の知恵と独自の調整法で、<br>
-             あなたの「本来の調子」を取り戻す。
+          
+          <p class="text-white/90 max-w-lg mx-auto text-sm md:text-base mb-8 font-medium leading-loose">
+             「異常なし」と言われたその不調、<br class="md:hidden">抱え込んでいませんか？<br>
+             ここは白衣を脱いだ専門家が営む、<br class="md:hidden">あなたのための避難所です。
           </p>
 
-          <a href="https://www.threads.net/@hogushiya_kida" target="_blank" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/30 text-white px-5 py-2 rounded-full font-bold text-xs hover:bg-white hover:text-brand-brown transition shadow-lg">
-            <span>@hogushiya_kida</span>
-            <span class="bg-brand-brown px-2 py-0.5 rounded text-[10px]">Threads</span>
-          </a>
+          <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <a href="#three-pillars" class="inline-block bg-brand-gold text-brand-brown px-8 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-white transition transform hover:scale-105">
+                ほぐしやきだ の世界観
+                <span class="ml-1">↓</span>
+            </a>
+            <a href="diagnosis.html" class="inline-block bg-white/20 backdrop-blur border border-white/50 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-brand-brown transition">
+                まずは無料で体質診断
+            </a>
+          </div>
       </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-4 py-12">
-      <a href="omikuji.html" class="group relative block overflow-hidden rounded-3xl shadow-2xl ring-1 ring-brand-brown/10 transform transition hover:-translate-y-1 duration-300">
-        <div class="absolute inset-0 bg-brand-darkbrown"></div>
-        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#E2B46D 1px, transparent 1px); background-size: 16px 16px;"></div>
-
-        <div class="relative flex flex-col md:flex-row items-center">
-           <div class="w-full md:w-5/12 h-48 md:h-auto relative bg-brand-ivory overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-transparent to-brand-darkbrown/90 z-10 opacity-80"></div>
-              <img src="./img/omikuji_banner.png" alt="おみくじを振るクマ" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700">
-           </div>
-
-           <div class="w-full md:w-7/12 p-8 text-white z-20 text-center md:text-left">
-              <span class="inline-block bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full mb-3 tracking-widest border border-red-400/50 shadow-sm">
-                 1日3回限定
-              </span>
-              <h2 class="text-2xl md:text-3xl font-serif font-bold text-brand-gold mb-3 drop-shadow-md">
-                 毒舌・養生おみくじ
-              </h2>
-              <p class="text-brand-beige/80 text-xs md:text-sm mb-6 leading-relaxed font-medium">
-                 あなたの今日の不調を、漢方視点でズバリ診断。<br>
-                 覚悟のある方のみ、筒を振ってください。
-              </p>
-              <span class="inline-flex items-center gap-2 bg-brand-gold text-brand-brown font-bold py-3 px-8 rounded-full shadow-lg group-hover:bg-white transition-all transform group-hover:scale-105">
-                 運勢を引く
-                 <span class="text-lg">→</span>
-              </span>
-           </div>
+    <section class="py-16 px-4 bg-brand-ivory">
+        <div class="max-w-2xl mx-auto text-center font-serif text-brand-brown">
+            <h2 class="text-xl md:text-2xl font-bold mb-8 tracking-widest">白衣を脱いで、あなたの日常へ。</h2>
+            <div class="text-sm md:text-base leading-relaxed-lg opacity-80 space-y-6 text-left md:text-center">
+                <p>
+                    私は以前、医療の現場にいました。<br>
+                    そこで気づいたのは、病院に行くほどではないけれど、<br class="hidden md:inline">
+                    確かに辛さを抱えている人が、街には溢れているということ。
+                </p>
+                <p>
+                    だから私は、病院の外に場所を作りました。<br>
+                    先生と患者としてではなく、対等な人間として。<br>
+                    専門的な技術を、もっと気兼ねない距離感で。
+                </p>
+                <p>
+                    無理せず、飾らず、<br class="hidden md:inline">
+                    あなたがあなたらしくいられる時間を約束します。
+                </p>
+            </div>
+            <div class="mt-8">
+                <a href="profile.html" class="text-xs font-bold border-b border-brand-brown/30 pb-1 hover:text-brand-gold hover:border-brand-gold transition">
+                    プロフィール・想いを見る →
+                </a>
+            </div>
         </div>
-      </a>
     </section>
-    <section class="py-10 px-4 bg-white">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-lg md:text-xl font-serif font-bold text-brand-brown mb-8 flex items-center justify-center gap-4">
-                <span class="h-px w-6 bg-brand-gold"></span>
-                ほぐしや きだの流儀
-                <span class="h-px w-6 bg-brand-gold"></span>
-            </h2>
+
+    <section id="three-pillars" class="max-w-6xl mx-auto px-4 pb-16">
+        <div class="text-center mb-10">
+            <span class="text-brand-gold font-bold text-xs tracking-widest uppercase">3 Pillars</span>
+            <h2 class="text-2xl font-serif font-bold text-brand-brown mt-2">あなたを整える3つの鍵</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
             
-            <div class="font-serif text-brand-black/80 leading-loose text-sm md:text-base">
-                <p class="mb-6">
-                    東洋医学（漢方）で地図を描き、<br>
-                    もみほぐしで巡りを促す。<br>
-                    そして、要となるのが独自の調整法です。
+            <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-brown flex flex-col hover:-translate-y-1 transition duration-300">
+                <div class="h-12 w-12 bg-brand-brown/10 rounded-full flex items-center justify-center mb-4 text-2xl">⚖️</div>
+                <h3 class="text-lg font-serif font-bold text-brand-brown mb-2">重力調整 Sowell®︎</h3>
+                <p class="text-xs font-bold text-brand-gold mb-3">福岡の喧騒を忘れる「無重力」体験</p>
+                <p class="text-sm text-brand-black/70 leading-relaxed mb-6 flex-grow">
+                    筋肉を強く揉むのではなく、骨格と筋膜のバランスを整えます。「立っているのが辛い」が「立っているだけで心地よい」に変わる、根本からの解放体験。
                 </p>
-                <div class="bg-brand-ivory p-6 md:p-8 rounded-xl border border-brand-brown/10 inline-block shadow-sm">
-                    <p class="text-brand-darkbrown font-medium italic mb-2 text-base md:text-lg">
-                        特殊な枕に身をゆだねるだけで、<br>
-                        からだは “本来の調整” を始める。
-                    </p>
-                    <p class="text-brand-darkbrown/80 text-sm md:text-base">
-                        無理のない自然な作用で、<br>
-                        静かに整っていく──それが <span class="font-serif font-bold">Sowell<span class="text-xs align-top">®︎</span></span>
-                    </p>
-                    <div class="mt-4">
-                      <a href="sowell.html" class="inline-flex items-center gap-2 text-xs md:text-sm font-bold text-brand-brown bg-white/80 border border-brand-brown/20 rounded-full px-4 py-1.5 hover:bg-brand-brown hover:text-white transition">
-                        Sowellとは？ 詳しく見る
-                        <span aria-hidden="true">→</span>
-                      </a>
-                    </div>
-                </div>
-                <p class="mt-6 text-xs text-brand-black/60">
-                    Sowellist（ソウェリスト）として、<br>
-                    この3つを融合した「養生」をお届けします。
+                <a href="sowell.html" class="inline-block text-center w-full bg-brand-ivory text-brand-brown font-bold text-xs py-3 rounded-lg hover:bg-brand-brown hover:text-white transition">
+                    身体をほどく技術とは？
+                </a>
+            </article>
+
+            <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-gold flex flex-col hover:-translate-y-1 transition duration-300 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-brand-gold text-brand-brown text-[10px] font-bold px-3 py-1 rounded-bl-lg">Popular</div>
+                <div class="h-12 w-12 bg-brand-gold/20 rounded-full flex items-center justify-center mb-4 text-2xl">🔮</div>
+                <h3 class="text-lg font-serif font-bold text-brand-brown mb-2">五行体質診断</h3>
+                <p class="text-xs font-bold text-brand-gold mb-3">自分だけの「取扱説明書」を手に入れる</p>
+                <p class="text-sm text-brand-black/70 leading-relaxed mb-6 flex-grow">
+                    たった1分の無料診断で、あなたの体質を判定。ネットの情報に惑わされず、あなたに本当に合った「休み方・食べ方」が分かります。
                 </p>
-            </div>
+                <a href="diagnosis.html" class="inline-block text-center w-full bg-brand-gold text-brand-brown font-bold text-xs py-3 rounded-lg hover:bg-brand-brown hover:text-white transition shadow-sm">
+                    今すぐ無料で診断する
+                </a>
+            </article>
+
+            <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-[#558B2F] flex flex-col hover:-translate-y-1 transition duration-300">
+                <div class="h-12 w-12 bg-[#558B2F]/10 rounded-full flex items-center justify-center mb-4 text-2xl">🌱</div>
+                <h3 class="text-lg font-serif font-bold text-brand-brown mb-2">養生と探究の実験室</h3>
+                <p class="text-xs font-bold text-[#558B2F] mb-3">先生はいません。一緒に学びませんか？</p>
+                <p class="text-sm text-brand-black/70 leading-relaxed mb-6 flex-grow">
+                    ここは一方的に指導する場所ではありません。元OTの視点と東洋医学の知恵をシェアしながら、自分の身体をもっと面白がるための知的な時間です。
+                </p>
+                <a href="blog/blog.html" class="inline-block text-center w-full bg-[#F1F8E9] text-[#558B2F] font-bold text-xs py-3 rounded-lg hover:bg-[#558B2F] hover:text-white transition">
+                    実験ノート（コラム）を見る
+                </a>
+            </article>
+
         </div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-4 pb-16 mt-8 relative z-20">
-      <div class="grid md:grid-cols-2 gap-5 items-stretch">
-        
-        <a href="salon.html" class="group flex flex-col h-full bg-gradient-to-br from-[#FFF8E1] to-white rounded-xl p-6 shadow-soft border-2 border-brand-gold relative overflow-hidden transform hover:-translate-y-1 transition duration-300 md:col-span-2 lg:col-span-1 lg:row-span-2">
-          <div class="absolute top-0 right-0 bg-brand-gold text-brand-brown text-[11px] font-bold px-4 py-1 rounded-bl-lg shadow-sm z-10 tracking-wider">
-             指名予約
-          </div>
-          
-          <div class="flex items-center gap-4 mb-3 border-b border-brand-gold/30 pb-3">
-            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-brand-gold overflow-hidden shadow-sm flex-shrink-0">
-               <img src="./img/icon_salon.png" alt="サロンアイコン" class="w-full h-full object-cover">
+    <section class="max-w-4xl mx-auto px-4 pb-16">
+        <a href="salon.html" class="group relative block overflow-hidden rounded-3xl shadow-2xl ring-1 ring-brand-brown/10 transform transition hover:-translate-y-1 duration-300">
+            <div class="absolute inset-0 bg-brand-darkbrown"></div>
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#E2B46D 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+            <div class="relative flex flex-col md:flex-row items-center p-8 md:p-10 gap-8">
+                <div class="flex-grow text-center md:text-left">
+                   <div class="inline-block bg-brand-gold text-brand-brown text-[10px] font-bold px-3 py-1 rounded-full mb-4 tracking-widest shadow-sm">
+                      ACTIVITY BASE
+                   </div>
+                   <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mb-4">
+                      福岡・もみ徳（赤坂・姪浜）
+                   </h2>
+                   <p class="text-brand-beige/80 text-sm mb-6 leading-relaxed font-medium">
+                      作業療法士の視点と、Sowellの技術。<br>
+                      完全予約・指名制で、あなたの身体とじっくり向き合います。
+                   </p>
+                   <ul class="flex flex-wrap justify-center md:justify-start gap-2 mb-6 text-[10px] text-white/60">
+                       <li class="border border-white/20 px-2 py-1 rounded">#自律神経</li>
+                       <li class="border border-white/20 px-2 py-1 rounded">#肩こり・腰痛</li>
+                       <li class="border border-white/20 px-2 py-1 rounded">#原因不明のダルさ</li>
+                   </ul>
+                </div>
+                
+                <div class="flex-shrink-0">
+                    <span class="inline-flex flex-col items-center justify-center w-40 h-40 bg-white/5 backdrop-blur rounded-full border border-white/20 text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-brown transition-all duration-500">
+                        <span class="text-sm font-bold mb-1">指名して</span>
+                        <span class="text-lg font-serif font-bold">予約画面へ</span>
+                        <span class="text-2xl mt-1">→</span>
+                    </span>
+                </div>
             </div>
-            <div>
-                <p class="text-[10px] text-brand-brown/70 font-bold mb-0.5">活動拠点はこちら</p>
-                <h2 class="text-lg font-serif font-bold text-brand-brown">もみ徳（予約・出勤）</h2>
-            </div>
-          </div>
-          
-          <p class="text-xs md:text-sm text-brand-black/80 leading-relaxed mb-4 font-medium">
-            「もみ徳（赤坂・姪浜）」にて施術を行っています。<br>
-            <span class="text-brand-brown font-bold border-b border-brand-gold/50">「木田」ご指名</span>での空き状況・ご予約はこちら。
-          </p>
-          
-          <div class="mt-auto text-center">
-            <span class="inline-block w-full bg-brand-brown text-white text-sm font-bold py-2 rounded-lg shadow-md group-hover:bg-brand-darkbrown transition">
-                指名して予約へ進む →
-            </span>
-          </div>
         </a>
-
-        <a href="diagnosis.html" class="group flex flex-col h-full bg-gradient-to-br from-white to-brand-ivory rounded-xl p-6 shadow-soft border-2 border-brand-gold/40 hover:-translate-y-1 transition duration-300 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">HOT</div>
-          
-          <div class="flex items-center gap-4 mb-3 border-b border-brand-brown/10 pb-3">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-brand-gold/30 overflow-hidden shadow-sm flex-shrink-0">
-               <img src="./img/icon_diagnosis.png" alt="五行アイコン" class="w-full h-full object-cover">
-            </div>
-            <h2 class="text-base font-serif font-bold text-brand-brown">毒舌五行診断</h2>
-          </div>
-          <p class="text-xs md:text-sm text-brand-black/70 leading-relaxed mb-3">
-            あなたの本質と不調の傾向を、東洋医学で辛口分析。
-          </p>
-          <span class="inline-block mt-auto text-xs font-bold text-brand-gold group-hover:underline">覚悟を決めて診断する →</span>
-        </a>
-
-        <a href="blog/blog.html" class="group flex flex-col h-full bg-gradient-to-br from-[#FFFBEF] to-[#E8F5E9] rounded-xl p-6 shadow-soft border-2 border-[#81C784]/30 hover:-translate-y-1 transition duration-300 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-[#7CB342] text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-sm z-10">NEW OPEN</div>
-          
-          <div class="flex items-center gap-4 mb-3 border-b border-[#7CB342]/20 pb-3">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-[#7CB342]/30 overflow-hidden shadow-sm flex-shrink-0">
-               <img src="./img/kuma_icon.png" alt="クマ仙人" class="w-full h-full object-cover">
-            </div>
-            <div>
-                <h2 class="text-base font-serif font-bold text-[#558B2F]">クマ仙人の知恵袋</h2>
-            </div>
-          </div>
-          <p class="text-xs md:text-sm text-brand-black/70 leading-relaxed mb-3">
-            日々の不調に寄り添う、おいしい養生レシピと仙人のつぶやき。
-          </p>
-          <span class="inline-block mt-auto text-xs font-bold text-[#558B2F] group-hover:underline">庵（いおり）を覗いてみる →</span>
-        </a>
-
-        <a href="study/study.html" class="group flex flex-col h-full bg-white rounded-xl p-6 shadow-soft border border-brand-brown/5 hover:-translate-y-1 transition duration-300">
-          <div class="flex items-center gap-4 mb-3 border-b border-brand-brown/10 pb-3">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-brand-brown/10 overflow-hidden shadow-sm flex-shrink-0">
-               <img src="./img/icon_study.png" alt="学習帳アイコン" class="w-full h-full object-cover">
-            </div>
-            <h2 class="text-base font-serif font-bold text-brand-brown">漢方学習帳</h2>
-          </div>
-          <p class="text-xs md:text-sm text-brand-black/70 leading-relaxed mb-3">
-            古典『黄帝内経』の研究や施術考察など、少しマニアックな知識の記録。
-          </p>
-          <span class="inline-block mt-auto text-xs font-bold text-brand-brown group-hover:underline">学びの記録を見る →</span>
-        </a>
-
-        <a href="profile.html" class="group flex flex-col h-full bg-white rounded-xl p-6 shadow-soft border border-brand-brown/5 hover:-translate-y-1 transition duration-300">
-          <div class="flex items-center gap-4 mb-3 border-b border-brand-brown/10 pb-3">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-brand-brown/10 overflow-hidden shadow-sm flex-shrink-0">
-               <img src="./img/icon_profile.png" alt="プロフィールアイコン" class="w-full h-full object-cover">
-            </div>
-            <h2 class="text-base font-serif font-bold text-brand-brown">プロフィール</h2>
-          </div>
-          <p class="text-xs md:text-sm text-brand-black/70 leading-relaxed mb-3">
-            Sowellistとしての理念や、これからのビジョンについて。
-          </p>
-          <span class="inline-block mt-auto text-xs font-bold text-brand-brown group-hover:underline">詳細を見る →</span>
-        </a>
-
-        <div class="group flex flex-col h-full bg-[#F5F5F4] rounded-xl p-6 border border-[#E7E5E4] opacity-90">
-          <div class="flex items-center gap-4 mb-3 border-b border-[#E7E5E4] pb-3">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-[#A8A29E]/30 overflow-hidden shadow-sm flex-shrink-0">
-               <img src="./img/icon_akizuki.png" alt="秋月アイコン" class="w-full h-full object-cover">
-            </div>
-            <h2 class="text-base font-serif font-bold text-[#57534E]">秋月・古民家サロン</h2>
-          </div>
-          <p class="text-xs md:text-sm text-[#57534E]/80 leading-relaxed">
-            秋月の自然と古民家を借りて計画中の、滞在型サロン構想。
-          </p>
-          <span class="inline-block mt-auto text-[10px] font-bold text-[#57534E]/60 border border-[#57534E]/20 px-2 py-0.5 rounded w-max">COMING SOON</span>
-        </div>
-
-      </div>
     </section>
 
     <section class="max-w-3xl mx-auto px-4 mb-16">
@@ -296,33 +243,51 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="bg-gradient-to-r from-brand-darkbrown to-brand-brown text-white/80 py-8 text-center text-sm mt-auto">
-    <div class="flex justify-center gap-4 mb-4 text-xs font-bold">
+  <footer class="bg-gradient-to-r from-brand-darkbrown to-brand-brown text-white/80 py-10 text-center text-sm mt-auto relative z-10">
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-6 text-xs font-bold max-w-2xl mx-auto px-4">
       <a href="salon.html" class="text-brand-gold hover:text-white transition">指名予約</a>
-      <a href="omikuji.html" class="hover:text-brand-gold transition">おみくじ</a>
       <a href="diagnosis.html" class="hover:text-brand-gold transition">五行診断</a>
-      <a href="blog/blog.html" class="hover:text-brand-gold transition">知恵袋</a>
-      <a href="sowell.html" class="hover:text-brand-gold transition">Sowellとは？</a>
+      <a href="omikuji.html" class="hover:text-brand-gold transition">おみくじ</a>
+      <a href="blog/blog.html" class="hover:text-brand-gold transition">知恵袋・コラム</a>
+      <a href="sowell.html" class="hover:text-brand-gold transition">Sowellについて</a>
+      <a href="profile.html" class="hover:text-brand-gold transition">プロフィール</a>
     </div>
-    <div class="mb-4">
-        <a href="https://www.threads.net/@hogushiya_kida" target="_blank" class="text-xs border border-white/30 px-3 py-1 rounded-full hover:bg-white hover:text-brand-brown transition">Threads: @hogushiya_kida</a>
+    
+    <div class="mb-6">
+        <a href="https://www.threads.net/@hogushiya_kida" target="_blank" class="inline-flex items-center gap-2 text-xs border border-white/30 px-4 py-2 rounded-full hover:bg-white hover:text-brand-brown transition">
+            <span>Threads: @hogushiya_kida</span>
+        </a>
     </div>
-    <p class="text-[10px] opacity-50">© 2025 ほぐしや きだ</p>
+
+    <p class="text-[10px] opacity-50">
+        保有資格：作業療法士（国家資格）<br>
+        © 2025 ほぐしや きだ
+    </p>
   </footer>
 
-  <div class="fixed bottom-4 left-4 right-4 z-40 md:hidden animate-fade-in-up">
-    <a href="salon.html" class="flex items-center justify-between bg-brand-brown text-white px-5 py-3 rounded-full shadow-lg border border-brand-gold/30 hover:bg-brand-darkbrown transition">
-        <div class="flex flex-col">
-            <span class="text-[10px] text-brand-gold font-bold">福岡・もみ徳で受ける</span>
-            <span class="text-sm font-bold tracking-widest">木田を指名予約する</span>
-        </div>
-        <div class="bg-white text-brand-brown w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg shadow-sm">
-            →
-        </div>
-    </a>
+  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-brand-brown/10 pb-safe pt-2 px-4 shadow-[0_-5px_20px_rgba(0,0,0,0.05)] animate-fade-in-up">
+    <div class="flex gap-3 pb-3">
+        <a href="diagnosis.html" class="flex-1 flex flex-col items-center justify-center bg-brand-ivory text-brand-brown py-2.5 rounded-lg border border-brand-brown/10">
+            <span class="text-lg mb-0.5">🔮</span>
+            <span class="text-[10px] font-bold">無料診断</span>
+        </a>
+        <a href="salon.html" class="flex-[2] flex items-center justify-center gap-2 bg-brand-brown text-white py-2.5 rounded-lg shadow-md">
+            <div class="flex flex-col items-start leading-none">
+                <span class="text-[9px] text-brand-gold font-bold mb-0.5">福岡・もみ徳で</span>
+                <span class="text-xs font-bold tracking-widest">木田を指名予約</span>
+            </div>
+            <span class="text-lg font-bold">→</span>
+        </a>
+    </div>
   </div>
+
+  <style>
+      /* iPhoneの下部バー領域を確保するためのユーティリティ */
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+  </style>
 
 </body>
 </html>
