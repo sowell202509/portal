@@ -12,7 +12,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>重力調整 Sowell®︎とは｜ほぐしや きだ</title>
-  <meta name="description" content="寝ても疲れが取れないあなたへ。重力から解放され、骨格を本来の位置へリセットする「Sowell®調整法」の紹介ページです。"/>
+  <meta name="description" content="寝ても疲れが取れないあなたへ。重力から解放され、骨格を本来の位置へリセットする「Sowell®調整法」の特設ページです。"/>
   <meta name="theme-color" content="#5A463B"/>
     
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,9 +48,8 @@
     }
   </script>
   <style>
-    /* Indexと同じ背景処理 */
+    /* ヒーロー背景（施術の落ち着いたイメージ） */
     .hero-bg {
-        /* 既存の sowell_session.png をヒーロー背景として再利用 */
         background-image: url('img/sowell_session.png'); 
         background-size: cover;
         background-position: center;
@@ -58,10 +57,10 @@
     .text-shadow {
         text-shadow: 0 2px 4px rgba(0,0,0,0.6);
     }
+    /* テキストの折り返しを美しく */
     .text-balance {
         text-wrap: balance;
     }
-    /* 読み物としての質感を高める */
     body { 
         background-color: #FBF9F6;
     }
@@ -76,12 +75,13 @@
         <span class="text-xs font-bold">Home</span>
       </a>
       <span class="font-serif font-bold text-lg tracking-wider">Sowell<span class="text-xs align-top">®︎</span></span>
-      <div class="w-12"></div> </div>
+      <div class="w-12"></div>
+    </div>
   </header>
 
   <main class="flex-grow">
     
-    <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center text-center hero-bg">
+    <section class="relative h-[65vh] min-h-[550px] flex items-center justify-center text-center hero-bg">
       <div class="absolute inset-0 bg-brand-darkbrown/60 backdrop-blur-[1px]"></div> 
       <div class="relative z-10 px-4 w-full max-w-4xl mx-auto">
           
@@ -89,51 +89,136 @@
             Sowell Method
           </div>
 
-          <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight text-shadow text-balance">
+          <p class="text-brand-gold font-bold tracking-widest text-sm md:text-base mb-4">
+              揉んでも戻る、その疲れに。
+          </p>
+
+          <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-8 leading-tight text-shadow text-balance">
             重力を脱いで、<br>
             骨格をリセットする。
           </h1>
           
           <p class="text-white/90 max-w-lg mx-auto text-sm md:text-base mb-10 font-medium leading-loose text-shadow">
-             寝ても疲れが取れないのは、<br>
+             あなたの体が休まらないのは、<br>
              「寝ている間も支えている」から。<br>
-             物理的に重力をゼロにする、新しい休息法。
+             物理的に重力の影響をゼロにする、<br class="md:hidden">唯一の調整法です。
           </p>
 
-          <a href="#logic" class="inline-block bg-brand-gold text-brand-brown px-8 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-white transition transform hover:scale-105">
+          <a href="#problem" class="inline-block bg-brand-gold text-brand-brown px-8 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-white transition transform hover:scale-105">
               そのロジックを見る ↓
           </a>
       </div>
     </section>
 
-    <section id="logic" class="py-16 px-5 bg-white rounded-t-3xl -mt-6 relative z-20">
+    <section id="problem" class="py-20 px-4 bg-white rounded-t-3xl -mt-6 relative z-20">
         <div class="max-w-3xl mx-auto text-center">
-            <div class="mb-8 flex justify-center">
-                <div class="w-20 h-20 bg-brand-brown/5 rounded-full flex items-center justify-center p-4">
-                    <img src="img/icon_sowell_pillow.png" alt="Sowellアイコン" class="w-full h-full object-contain opacity-80">
-                </div>
+            <h2 class="text-xl md:text-2xl font-serif font-bold text-brand-brown mb-8 leading-relaxed">
+                なぜ、あなたの疲れは<br>
+                一晩寝ても抜けないのか？
+            </h2>
+
+            <div class="bg-brand-beige rounded-2xl p-8 mb-10 text-left">
+                <h3 class="text-lg font-bold text-brand-brown mb-4 border-b border-brand-brown/10 pb-2">
+                    原因は「筋肉の固定化」です。
+                </h3>
+                <p class="text-sm md:text-base leading-loose text-brand-black/80 mb-4">
+                    私たちは起きている間、常に地球の重力と戦っています。<br>
+                    デスクワークや立ち仕事で、身体を支える筋肉はガチガチに緊張したまま「固定」されています。
+                </p>
+                <p class="text-sm md:text-base leading-loose text-brand-black/80">
+                    <strong class="text-red-800 bg-red-50 px-1">実は、ベッドに入ってもこの緊張は続いています。</strong><br>
+                    長年の癖で、脳が「支えなきゃ」と命令し続けているため、寝ている間も身体は休まっていないのです。
+                </p>
+            </div>
+            
+            <p class="font-serif text-lg text-brand-brown font-bold">
+                そこで必要なのが、<br>
+                Sowellによる「強制的な解放」です。
+            </p>
+        </div>
+    </section>
+
+    <section id="logic" class="py-16 px-4 bg-brand-ivory">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-brand-gold font-bold text-[10px] tracking-widest uppercase">The Science</span>
+                <h2 class="text-2xl font-serif font-bold text-brand-brown mt-2 mb-4">Sowellの科学</h2>
+                <p class="text-xs text-brand-black/60">スピリチュアルや感覚の話ではありません。<br>物理的に環境を変えるアプローチです。</p>
             </div>
 
-            <h2 class="text-xl md:text-2xl font-serif font-bold text-brand-brown mb-6">
-                なぜ、「枕」ひとつで<br>身体が変わるのか？
-            </h2>
-            
-            <div class="text-sm md:text-base leading-loose text-brand-black/80 font-medium text-left md:text-center space-y-6">
-                <p>
-                    私たちの筋肉は、起きている間じゅう、重力に抗って身体を支えています。<br>
-                    デスクワークや立ち仕事で固まった筋肉は、ベッドに横になっても「支える癖」が抜けず、緊張し続けています。
-                </p>
-                <p>
-                    <span class="bg-brand-gold/20 font-bold px-1">Sowell（ソウェル）</span>は、特殊な形状の枕を身体の隙間に「添える（Sowell）」ことで、物理的に支える必要のない環境を作り出します。
-                </p>
-                <p>
-                    「もう支えなくていいんだ」と脳が理解した瞬間、深層の筋肉がフッと緩み、骨格が本来あるべき場所へと帰っていくのです。
-                </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <article class="bg-white rounded-2xl p-8 shadow-soft border-t-4 border-brand-brown flex flex-col items-center text-center">
+                    <div class="h-16 w-16 bg-brand-brown/10 rounded-full flex items-center justify-center text-3xl mb-6">⚖️</div>
+                    <h3 class="text-lg font-serif font-bold text-brand-brown mb-4">1. 重力の分散</h3>
+                    <p class="text-sm text-brand-black/70 leading-relaxed text-left">
+                        特殊なブロック（Sowellピロー）で身体の隙間を物理的に埋めます。重力がかかるポイントを分散させ、まるで無重力空間にいるような「支えなくていい環境」を作ります。
+                    </p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-8 shadow-soft border-t-4 border-brand-gold flex flex-col items-center text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-gold text-brand-brown text-[10px] font-bold px-3 py-1 rounded-bl-lg">重要</div>
+                    <div class="h-16 w-16 bg-brand-gold/20 rounded-full flex items-center justify-center text-3xl mb-6">🧠</div>
+                    <h3 class="text-lg font-serif font-bold text-brand-brown mb-4">2. 脳の認識リセット</h3>
+                    <p class="text-sm text-brand-black/70 leading-relaxed text-left">
+                        身体が完全に支えられていると脳が認識すると、防衛本能による「緊張指令」が解除されます。マッサージでは届かない深層のロックが、内側から外れます。
+                    </p>
+                </article>
+
+                <article class="bg-white rounded-2xl p-8 shadow-soft border-t-4 border-brand-brown flex flex-col items-center text-center">
+                    <div class="h-16 w-16 bg-brand-brown/10 rounded-full flex items-center justify-center text-3xl mb-6">🦴</div>
+                    <h3 class="text-lg font-serif font-bold text-brand-brown mb-4">3. 生理的湾曲の回復</h3>
+                    <p class="text-sm text-brand-black/70 leading-relaxed text-left">
+                        筋肉のロックが外れると、骨格は自然と本来のS字カーブ（生理的湾曲）に戻ろうとします。無理な矯正をせず、あなた自身の復元力で整います。
+                    </p>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <section class="py-12 px-4 bg-brand-ivory">
+    <section class="py-20 px-4 bg-brand-brown text-white text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-serif font-bold mb-8 leading-relaxed">
+                「ゼロ」ではなく、<br>
+                <span class="text-brand-gold">「マイナス」</span>へ連れていく。
+            </h2>
+            
+            <div class="space-y-6 text-sm md:text-base leading-loose text-white/80 font-medium">
+                <p>
+                    一般的な整体やマッサージは、緊張をほぐして「プラスマイナス・ゼロ」の状態を目指します。<br>
+                    しかし、それだけでは足りません。
+                </p>
+                <p>
+                    バネが一度縮まないと高く飛べないように、<br>
+                    人間の体も一度<strong class="text-white border-b border-brand-gold">「マイナス（完全な脱力）」</strong>の状態を作らないと、<br>
+                    本来のパフォーマンスは発揮できないのです。
+                </p>
+                <p>
+                    意識的な脱力では「ゼロ」が限界。<br>
+                    Sowellという道具に身を委ねて初めて、<br>
+                    体は「動き出すためのマイナス」へ到達します。
+                </p>
+            </div>
+
+            <ul class="mt-10 inline-block text-left bg-black/20 p-6 rounded-xl border border-white/10 space-y-3">
+                <li class="flex items-center gap-3">
+                    <span class="text-brand-gold text-lg">✔</span>
+                    <span class="text-sm">胸郭・腸腰筋が深く緩み、呼吸が変わる</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="text-brand-gold text-lg">✔</span>
+                    <span class="text-sm">生理的湾曲が戻り、立ち姿が変わる</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="text-brand-gold text-lg">✔</span>
+                    <span class="text-sm">「縮む」ができるから、「伸びる」が楽になる</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-brand-ivory">
         <div class="max-w-4xl mx-auto text-center">
             <p class="text-xs font-bold text-brand-brown/60 mb-4 tracking-widest">30 SECONDS MOVIE</p>
             <div class="inline-block rounded-2xl overflow-hidden shadow-xl border-4 border-white mx-auto w-full max-w-[300px]">
@@ -142,43 +227,6 @@
                 </video>
             </div>
             <p class="text-xs text-brand-brown/60 mt-4">※音声は流れません</p>
-        </div>
-    </section>
-
-    <section class="py-16 px-4 bg-brand-ivory">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-10">
-                <span class="text-brand-gold font-bold text-[10px] tracking-widest uppercase">3 Points</span>
-                <h2 class="text-xl font-serif font-bold text-brand-brown mt-1">Sowellの科学</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                
-                <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-brown flex flex-col">
-                    <div class="h-10 w-10 bg-brand-brown/10 rounded-full flex items-center justify-center text-xl mb-4">⚖️</div>
-                    <h3 class="text-base font-serif font-bold text-brand-brown mb-2">1. 重力の分散</h3>
-                    <p class="text-sm text-brand-black/70 leading-relaxed">
-                        特殊なブロックで身体の隙間を埋め、重力がかかるポイントを分散。「無重力」に近い環境を作り、筋肉を休ませます。
-                    </p>
-                </article>
-
-                <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-gold flex flex-col">
-                    <div class="h-10 w-10 bg-brand-gold/20 rounded-full flex items-center justify-center text-xl mb-4">🧠</div>
-                    <h3 class="text-base font-serif font-bold text-brand-brown mb-2">2. 脳の認識リセット</h3>
-                    <p class="text-sm text-brand-black/70 leading-relaxed">
-                        完全に支えられていると脳が認識すると、防衛本能による「緊張」が解除されます。マッサージでは届かない深層まで脱力します。
-                    </p>
-                </article>
-
-                <article class="bg-white rounded-2xl p-6 shadow-soft border-t-4 border-brand-brown flex flex-col">
-                    <div class="h-10 w-10 bg-brand-brown/10 rounded-full flex items-center justify-center text-xl mb-4">🦴</div>
-                    <h3 class="text-base font-serif font-bold text-brand-brown mb-2">3. 生理的湾曲の回復</h3>
-                    <p class="text-sm text-brand-black/70 leading-relaxed">
-                        筋肉のロックが外れると、骨格は自然と本来のS字カーブ（生理的湾曲）に戻ろうとします。無理な矯正は一切しません。
-                    </p>
-                </article>
-
-            </div>
         </div>
     </section>
 
@@ -208,31 +256,22 @@
         </div>
     </section>
 
-    <section class="py-16 px-4 bg-brand-ivory">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-xl font-serif font-bold text-brand-brown mb-8">こんなお悩みの方へ</h2>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">寝ても疲れが取れない</span>
-                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">マッサージですぐ戻る</span>
-                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">猫背・巻き肩</span>
-                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">呼吸が浅い気がする</span>
-                <span class="bg-white text-brand-brown px-4 py-2 rounded-full shadow-sm text-sm border border-brand-brown/10">原因不明のダルさ</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-brand-brown text-white py-16 px-4 text-center">
+    <section class="bg-brand-brown text-white py-20 px-4 text-center">
         <div class="max-w-2xl mx-auto">
-            <h2 class="text-2xl font-serif font-bold mb-4">まずは一度、ご体感ください</h2>
-            <p class="text-white/80 mb-8 leading-relaxed text-sm">
-                「重力を脱ぐ」感覚は、体験して初めて分かります。<br>
-                全身調整コースで、その軽さに驚いてください。
+            <h2 class="text-2xl font-serif font-bold mb-6">まずは一度、ご体感ください</h2>
+            <p class="text-white/80 mb-10 leading-relaxed text-sm">
+                言葉で説明できるのはここまでです。<br>
+                「重力を脱ぐ」という未体験の感覚。<br>
+                ぜひ、あなたの身体で答え合わせをしてください。
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="salon.html" class="inline-block bg-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-white transition shadow-lg">
+            <div class="flex flex-col md:flex-row justify-center gap-5">
+                <a href="salon.html" class="inline-block bg-brand-gold text-brand-brown font-bold px-10 py-4 rounded-full hover:bg-white transition shadow-lg text-base">
                     もみ徳（福岡）で予約する
                 </a>
             </div>
+            <p class="text-xs text-white/40 mt-6">
+                ※「全身調整コース」をお選びください
+            </p>
         </div>
     </section>
 
