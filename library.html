@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SXB69DFE11');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>思考と養生の書庫｜ほぐしや きだ</title>
+  <meta name="description" content="ほぐしやきだの読み物アーカイブ。日々の養生を語る「クマ仙人の知恵袋」と、東洋医学を深く掘り下げる「漢方学習帳」。"/>
+  <meta name="theme-color" content="#5A463B"/>
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'brand-black':'#2B2725',
+            'brand-brown':'#5A463B',
+            'brand-darkbrown':'#3E3029',
+            'brand-gold':'#E2B46D',
+            'brand-beige':'#F6F1EB',
+            'brand-ivory':'#FBF9F6'
+          },
+          animation: { 'fade-in': 'fadeIn 0.8s ease-out forwards' },
+          keyframes: { fadeIn: { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-ivory text-brand-black antialiased flex flex-col min-h-screen">
+
+  <header class="bg-white/80 backdrop-blur sticky top-0 z-50 border-b border-brand-brown/10">
+    <div class="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-brand-brown hover:opacity-70 transition">
+        <span class="text-lg">←</span>
+        <span class="text-xs font-bold">Topに戻る</span>
+      </a>
+      <h1 class="font-serif font-bold text-brand-brown text-sm md:text-base">思考と養生の書庫</h1>
+      <div class="w-10"></div> </div>
+  </header>
+
+  <main class="flex-grow px-4 py-12 animate-fade-in">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center mb-12">
+          <p class="text-brand-gold font-bold text-xs tracking-widest uppercase mb-2">LIBRARY</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-brand-brown mb-4">
+              どちらの本を読みますか？
+          </h2>
+          <p class="text-sm text-brand-black/60 leading-relaxed">
+              日常に寄り添う「知恵」と、<br>
+              深淵を覗く「学習」。<br>
+              今の気分に合わせてお選びください。
+          </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-stretch">
+
+        <a href="blog/blog.html" class="group relative bg-white rounded-2xl p-8 shadow-sm border-2 border-[#81C784]/20 hover:border-[#81C784] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+             <div class="absolute top-0 right-0 w-24 h-24 bg-[#E8F5E9] rounded-bl-full -mr-4 -mt-4 transition group-hover:scale-110"></div>
+             
+             <div class="relative z-10 flex flex-col h-full text-center items-center">
+                 <div class="w-20 h-20 bg-[#F1F8E9] rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:rotate-6 transition duration-500">
+                     <img src="./img/kuma_icon.png" alt="クマ仙人" class="w-16 h-16 object-cover opacity-90">
+                 </div>
+                 
+                 <h3 class="text-xl font-serif font-bold text-[#558B2F] mb-3">クマ仙人の知恵袋</h3>
+                 <span class="inline-block bg-[#E8F5E9] text-[#558B2F] text-[10px] font-bold px-3 py-1 rounded-full mb-4">
+                     初心者〜中級者向け
+                 </span>
+                 
+                 <p class="text-sm text-brand-black/70 leading-loose mb-8">
+                     「なんとなくダルい」「季節の変わり目が辛い」。<br>
+                     そんな日々の悩みに、ゆるく、優しく答える<br>養生レシピとエッセイ。
+                 </p>
+                 
+                 <div class="mt-auto">
+                     <span class="inline-block border-b-2 border-[#81C784] text-[#558B2F] text-xs font-bold pb-1 group-hover:text-[#33691E] transition">
+                         庵（いおり）を覗く →
+                     </span>
+                 </div>
+             </div>
+        </a>
+
+        <a href="study/study.html" class="group relative bg-white rounded-2xl p-8 shadow-sm border-2 border-brand-brown/10 hover:border-brand-brown hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+             <div class="absolute top-0 right-0 w-24 h-24 bg-brand-beige rounded-bl-full -mr-4 -mt-4 transition group-hover:scale-110"></div>
+             
+             <div class="relative z-10 flex flex-col h-full text-center items-center">
+                 <div class="w-20 h-20 bg-brand-beige rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:-rotate-3 transition duration-500">
+                     <img src="./img/icon_study.png" alt="学習帳" class="w-12 h-12 object-contain opacity-80">
+                 </div>
+                 
+                 <h3 class="text-xl font-serif font-bold text-brand-brown mb-3">漢方学習帳</h3>
+                 <span class="inline-block bg-brand-beige text-brand-brown text-[10px] font-bold px-3 py-1 rounded-full mb-4">
+                     マニアック・探求者向け
+                 </span>
+                 
+                 <p class="text-sm text-brand-black/70 leading-loose mb-8">
+                     『黄帝内経』の解釈や、施術における考察記録。<br>
+                     「なぜ？」を突き詰めたい人や、<br>東洋医学の深淵に触れたい人へ。
+                 </p>
+                 
+                 <div class="mt-auto">
+                     <span class="inline-block border-b-2 border-brand-brown text-brand-brown text-xs font-bold pb-1 group-hover:text-brand-darkbrown transition">
+                         学習記録を開く →
+                     </span>
+                 </div>
+             </div>
+        </a>
+
+      </div>
+      
+      </div>
+  </main>
+
+  <footer class="text-center py-8 text-[10px] text-brand-black/40">
+      <p>© 2025 ほぐしや きだ</p>
+  </footer>
+
+</body>
+</html>
