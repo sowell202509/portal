@@ -55,150 +55,82 @@
       <div class="w-10"></div> </div>
   </header>
 
-  <main class="flex-grow px-4 py-12 animate-fade-in bg-washi">
-    <div class="max-w-4xl mx-auto">
+  <main class="flex-grow px-4 py-12 animate-fade-in bg-washi flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto w-full">
       
-      <div class="text-center mb-16 relative">
-        <div class="inline-block relative">
-            <div class="absolute -inset-4 bg-gradient-to-r from-transparent via-white/50 to-transparent blur-xl"></div>
-            <img src="./img/hebi.png" class="w-24 h-24 object-contain mx-auto mb-4 relative z-10 sacred-glow" alt="ヘビ博士">
-        </div>
-        
-        <h1 class="text-3xl md:text-4xl font-serif font-bold text-brand-darkbrown mb-6 leading-tight relative z-10">
-          東洋医学の<br>
-          <span class="inline-block border-b-4 border-brand-gold/30 pb-1">「根拠」</span>を探求する。
-        </h1>
-        <p class="text-sm text-brand-brown/70 leading-loose max-w-md mx-auto font-serif">
-          感覚的な「知恵袋」の裏側にある理論を深掘り。<br>
-          ここは、ヘビ博士と一緒に学ぶ<br>大人のための「漢方の図書室」です。
-        </p>
+      <div class="text-center mb-12">
+          <p class="text-brand-gold font-bold text-xs tracking-widest uppercase mb-2">LIBRARY</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-brand-brown mb-4">
+              どちらの本を読みますか？
+          </h2>
+          <p class="text-sm text-brand-black/60 leading-relaxed">
+              日常に寄り添う「知恵」と、<br>
+              深淵を覗く「学習」。<br>
+              今の気分に合わせてお選びください。
+          </p>
       </div>
 
-      <div class="space-y-6">
+      <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
 
-        <a href="study/vol0-rain.html" class="block bg-white p-6 rounded-[2rem] shadow-card border border-brand-brown/10 hover:border-brand-gold hover:-translate-y-1 transition duration-300 group relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-2 h-full bg-brand-brown/20 group-hover:bg-brand-gold transition"></div>
-          <div class="pl-4">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold text-brand-brown/50 tracking-widest">Vol.0</span>
-              <span class="text-[10px] bg-brand-bg text-brand-brown px-2 py-0.5 rounded-full">基礎理論</span>
-            </div>
-            <h2 class="text-lg md:text-xl font-serif font-bold text-brand-darkbrown mb-2 group-hover:text-brand-brown transition">なぜ、雨の日は頭が痛くなるのか？</h2>
-            <p class="text-xs text-gray-500 leading-relaxed">「天人合一（てんじんごういつ）」思想の考察。環境と人体の同期システムについて。</p>
-          </div>
+        <a href="blog/blog.html" class="group relative bg-white rounded-[2rem] p-8 shadow-sm border-2 border-[#81C784]/20 hover:border-[#81C784] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+             <div class="absolute top-0 right-0 w-32 h-32 bg-[#E8F5E9] rounded-bl-full -mr-6 -mt-6 transition group-hover:scale-110"></div>
+             
+             <div class="relative z-10 flex flex-col h-full text-center items-center">
+                 <div class="w-32 h-32 bg-[#F1F8E9] rounded-full flex items-center justify-center mb-6 shadow-sm border-4 border-white group-hover:rotate-6 transition duration-500 overflow-hidden">
+                     <img src="img/kuma_icon.png" alt="クマ仙人" class="w-full h-full object-cover">
+                 </div>
+                 
+                 <h3 class="text-xl font-serif font-bold text-[#558B2F] mb-2">クマ仙人の知恵袋</h3>
+                 <span class="inline-block bg-[#E8F5E9] text-[#558B2F] text-[10px] font-bold px-3 py-1 rounded-full mb-6">
+                     初心者〜中級者向け
+                 </span>
+                 
+                 <p class="text-sm text-brand-black/70 leading-loose mb-8">
+                     「なんとなくダルい」「季節の変わり目が辛い」。<br>
+                     そんな日々の悩みに、ゆるく、優しく答える<br>養生レシピとエッセイ。
+                 </p>
+                 
+                 <div class="mt-auto">
+                     <span class="inline-block border-b-2 border-[#81C784] text-[#558B2F] text-xs font-bold pb-1 group-hover:text-[#33691E] transition">
+                         庵（いおり）を覗く →
+                     </span>
+                 </div>
+             </div>
         </a>
 
-        <a href="study/vol1-yinyang.html" class="block bg-white p-6 rounded-[2rem] shadow-card border border-brand-brown/10 hover:border-brand-gold hover:-translate-y-1 transition duration-300 group relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-2 h-full bg-brand-brown/20 group-hover:bg-brand-gold transition"></div>
-          <div class="pl-4">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold text-brand-brown/50 tracking-widest">Vol.1</span>
-              <span class="text-[10px] bg-brand-bg text-brand-brown px-2 py-0.5 rounded-full">陰陽論</span>
-            </div>
-            <h2 class="text-lg md:text-xl font-serif font-bold text-brand-darkbrown mb-2 group-hover:text-brand-brown transition">陰陽（いんよう）の相対性</h2>
-            <p class="text-xs text-gray-500 leading-relaxed">二元論ではない「バランス」の本質。交感神経・副交感神経との相関関係。</p>
-          </div>
+        <a href="study/study.html" class="group relative bg-white rounded-[2rem] p-8 shadow-sm border-2 border-brand-brown/10 hover:border-brand-brown hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+             <div class="absolute top-0 right-0 w-32 h-32 bg-brand-beige rounded-bl-full -mr-6 -mt-6 transition group-hover:scale-110"></div>
+             
+             <div class="relative z-10 flex flex-col h-full text-center items-center">
+                 <div class="relative w-40 h-32 mb-6">
+                    <div class="absolute left-1/2 -translate-x-1/2 top-0 w-32 h-32 bg-brand-beige rounded-full flex items-center justify-center shadow-sm border-4 border-white group-hover:-rotate-3 transition duration-500 overflow-hidden z-10">
+                        <img src="img/hebi.png" alt="ヘビ博士" class="w-full h-full object-contain">
+                    </div>
+                    <div class="absolute -right-2 bottom-0 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-brand-beige z-20 group-hover:scale-110 transition duration-500 delay-100 overflow-hidden">
+                        <img src="img/frog-dr.png" alt="カエル親方" class="w-full h-full object-contain">
+                    </div>
+                 </div>
+                 
+                 <h3 class="text-xl font-serif font-bold text-brand-brown mb-2">漢方学習帳</h3>
+                 <span class="inline-block bg-brand-beige text-brand-brown text-[10px] font-bold px-3 py-1 rounded-full mb-6">
+                     マニアック・探求者向け
+                 </span>
+                 
+                 <p class="text-sm text-brand-black/70 leading-loose mb-8">
+                     『黄帝内経』の解釈や、施術における考察記録。<br>
+                     「なぜ？」を突き詰めたい人や、<br>東洋医学の深淵に触れたい人へ。
+                 </p>
+                 
+                 <div class="mt-auto">
+                     <span class="inline-block border-b-2 border-brand-brown text-brand-brown text-xs font-bold pb-1 group-hover:text-brand-darkbrown transition">
+                         学習記録を開く →
+                     </span>
+                 </div>
+             </div>
         </a>
-
-        <a href="study/vol2-gogyo.html" class="block bg-white p-6 rounded-[2rem] shadow-card border border-brand-brown/10 hover:border-brand-gold hover:-translate-y-1 transition duration-300 group relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-2 h-full bg-brand-brown/20 group-hover:bg-brand-gold transition"></div>
-          <div class="pl-4">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold text-brand-brown/50 tracking-widest">Vol.2</span>
-              <span class="text-[10px] bg-brand-bg text-brand-brown px-2 py-0.5 rounded-full">五行説</span>
-            </div>
-            <h2 class="text-lg md:text-xl font-serif font-bold text-brand-darkbrown mb-2 group-hover:text-brand-brown transition">「五行」って結局なんなの？</h2>
-            <p class="text-xs text-gray-500 leading-relaxed">木・火・土・金・水。世界を回す5つのシステム論。</p>
-          </div>
-        </a>
-
-        <a href="study/vol3-kiketsusui.html" class="block bg-white p-6 rounded-[2rem] shadow-card border border-brand-brown/10 hover:border-brand-gold hover:-translate-y-1 transition duration-300 group relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-2 h-full bg-brand-brown/20 group-hover:bg-brand-gold transition"></div>
-          <div class="pl-4">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold text-brand-brown/50 tracking-widest">Vol.3</span>
-              <span class="text-[10px] bg-brand-bg text-brand-brown px-2 py-0.5 rounded-full">気血水</span>
-            </div>
-            <h2 class="text-lg md:text-xl font-serif font-bold text-brand-darkbrown mb-2 group-hover:text-brand-brown transition">気・血・津液（き・けつ・しんえき）</h2>
-            <p class="text-xs text-gray-500 leading-relaxed">エネルギー（気）、ガソリン（血）、冷却水（水）。不足すると人間はただの肉塊になる。</p>
-          </div>
-        </a>
-        
-        <a href="study/vol4-gozo.html" class="block bg-white p-6 rounded-[2rem] shadow-card border border-brand-brown/10 hover:border-brand-gold hover:-translate-y-1 transition duration-300 group relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-2 h-full bg-brand-brown/20 group-hover:bg-brand-gold transition"></div>
-          <div class="pl-4">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold text-brand-brown/50 tracking-widest">Vol.4</span>
-              <span class="text-[10px] bg-brand-bg text-brand-brown px-2 py-0.5 rounded-full">臓象学説</span>
-            </div>
-            <h2 class="text-lg md:text-xl font-serif font-bold text-brand-darkbrown mb-2 group-hover:text-brand-brown transition">【前編】五臓六腑（五臓編）</h2>
-            <p class="text-xs text-gray-500 leading-relaxed">「臓」と「腑」の違いとは？ 体内エリート集団「五臓」の役割分担。</p>
-          </div>
-        </a>
-
-        <a href="study/vol5-roppu.html" class="block bg-white p-6 rounded-[2rem] shadow-card border border-brand-brown/10 hover:border-brand-orange hover:-translate-y-1 transition duration-300 group relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-2 h-full bg-brand-orange/50 group-hover:bg-brand-orange transition"></div>
-          <div class="pl-4">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold text-brand-brown/50 tracking-widest">Vol.5</span>
-              <span class="text-[10px] bg-brand-bg text-brand-brown px-2 py-0.5 rounded-full">臓象学説</span>
-            </div>
-            <h2 class="text-lg md:text-xl font-serif font-bold text-brand-darkbrown mb-2 group-hover:text-brand-brown transition">【後編】五臓六腑（六腑編）</h2>
-            <p class="text-xs text-gray-500 leading-relaxed">現場のプロフェッショナル「六腑」。消化と排泄のパイプライン。</p>
-          </div>
-        </a>
-
-        <a href="study/extra-winter.html" class="block bg-white p-6 rounded-[2rem] shadow-card border border-winter-accent/20 hover:border-winter-accent hover:-translate-y-1 transition duration-300 group relative overflow-hidden">
-           <div class="absolute top-0 left-0 w-2 h-full bg-winter-accent/30 group-hover:bg-winter-accent transition"></div>
-           <div class="pl-4">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold text-winter-accent tracking-widest">Extra</span>
-              <span class="text-[10px] bg-winter-accent/10 text-winter-accent px-2 py-0.5 rounded-full">季節の養生</span>
-            </div>
-            <h2 class="text-lg md:text-xl font-serif font-bold text-brand-darkbrown mb-2 group-hover:text-winter-accent transition">冬（水）の季節論</h2>
-            <p class="text-xs text-gray-500 leading-relaxed">「閉蔵（へいぞう）」の時期における人体の変化と、腎（生命力）の守り方。</p>
-          </div>
-        </a>
-
-        <div class="block bg-gray-50/50 p-6 rounded-[2rem] border-2 border-dashed border-gray-200 relative overflow-hidden select-none grayscale opacity-70">
-          <div class="pl-4">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-xs font-bold text-gray-400 tracking-widest">Coming Soon</span>
-            </div>
-            <h2 class="text-lg md:text-xl font-serif font-bold text-gray-400 mb-2">舌診（ぜっしん）</h2>
-            <p class="text-xs text-gray-400 leading-relaxed">「舌は内臓の通知表」。毎朝のベーで分かる、自分の体調チェック法。</p>
-          </div>
-        </div>
 
       </div>
-
-      <div class="mt-20 pt-10 border-t border-brand-brown/10">
-        <a href="blog/blog.html" class="block bg-gradient-to-br from-[#FFFBEF] to-[#E8F5E9] rounded-[2.5rem] p-8 border border-[#81C784]/30 relative overflow-hidden group hover:shadow-lg transition duration-500">
-            <div class="absolute -right-10 -bottom-10 text-9xl opacity-10 select-none group-hover:scale-110 transition duration-700">🐻</div>
-            
-            <div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
-               <div class="flex-shrink-0 w-20 h-20 bg-white rounded-full border-4 border-[#81C784]/20 flex items-center justify-center overflow-hidden shadow-sm group-hover:rotate-12 transition duration-500">
-                  <img src="./img/kuma_icon.png" alt="クマ仙人" class="w-full h-full object-cover">
-               </div>
-               
-               <div class="text-center md:text-left">
-                  <p class="text-[10px] font-bold text-[#558B2F] mb-2 tracking-widest">PRACTICAL ADVICE</p>
-                  <h3 class="text-xl font-serif font-bold text-[#33691E] mb-2 group-hover:text-[#2E7D32] transition">クマ仙人の知恵袋（実践編）</h3>
-                  <p class="text-xs text-[#558B2F] leading-relaxed">
-                      「理論はわかったけど、結局どうすればいいの？」<br>
-                      そんな時はこちらへ。おばあちゃんの知恵袋のような、優しいレシピと養生法。
-                  </p>
-               </div>
-               
-               <div class="ml-auto mt-4 md:mt-0">
-                  <span class="inline-block bg-[#7CB342] text-white text-xs font-bold px-6 py-3 rounded-full group-hover:bg-[#689F38] transition shadow-md">
-                      庵（いおり）へ行く →
-                  </span>
-               </div>
-            </div>
-        </a>
-      </div>
-
+      
     </div>
   </main>
 
