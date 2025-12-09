@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXB69DFE11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SXB69DFE11');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vol.0 「陰」と「陽」って結局なんなの？｜漢方学習帳</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Noto Sans JP","sans-serif"], serif: ["Shippori Mincho","serif"] },
+          colors: {
+            'brand-black':'#333333',
+            'brand-brown':'#5A463B',
+            'brand-darkbrown':'#3E3029',
+            'brand-gold':'#C5A059',
+            'brand-bg':'#F5F2ED', 
+            'brand-paper':'#FFFFFF',
+            'brand-accent-green': '#5E7C60',
+          },
+          backgroundImage: {
+            'washi': "url('https://www.transparenttextures.com/patterns/washi.png')",
+          },
+          boxShadow:{ 
+            card:'0 10px 40px -10px rgba(90, 70, 59, 0.15)',
+            glow: '0 0 20px rgba(255, 255, 255, 0.8)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F5F2ED;
+      background-image: radial-gradient(#E5E0D8 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    
+    .tategaki {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      letter-spacing: 0.2em;
+    }
+
+    .article-body p {
+      margin-bottom: 2em;
+      line-height: 2.2;
+      font-size: 1.05rem;
+      color: #4a4a4a;
+      font-feature-settings: "palt";
+    }
+    
+    .article-body h2 {
+      font-family: "Shippori Mincho", serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #3E3029;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      position: relative;
+    }
+    .article-body h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background-color: #C5A059;
+      margin-top: 0.5rem;
+    }
+
+    .marker {
+      background: linear-gradient(transparent 70%, #FDE68A 70%);
+      font-weight: 700;
+      padding: 0 4px;
+    }
+
+    /* 博士の教え吹き出しスタイル */
+    .hebi-talk {
+      background-color: #fff;
+      border: 2px solid #5E7C60;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 2rem 0;
+      position: relative;
+      box-shadow: 4px 4px 0px #5E7C60;
+    }
+    .hebi-talk::before {
+      content: '博士の教え';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #5E7C60;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 10px;
+      border-radius: 10px;
+    }
+    
+    .sacred-glow {
+      filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+    }
+  </style>
+</head>
+<body class="text-brand-black antialiased flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-[#F5F2ED]/95 backdrop-blur border-b border-brand-brown/10">
+    <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="study.html" class="text-xs font-serif font-bold text-brand-brown hover:opacity-70 transition flex items-center gap-1">
+        <span class="border border-brand-brown/30 rounded-full w-6 h-6 flex items-center justify-center">←</span>
+        <span>書庫に戻る</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <div class="w-2 h-2 rounded-full bg-brand-gold"></div>
+        <span class="font-serif font-bold text-lg text-brand-darkbrown tracking-widest">漢方学習帳</span>
+        <div class="w-2 h-2 rounded-full bg-brand-gold"></div>
+      </div>
+      <div class="w-16"></div>
+    </div>
+  </header>
+
+  <main class="flex-grow py-8 md:py-16 px-4">
+    
+    <article class="max-w-3xl mx-auto relative">
+      
+      <div class="bg-white rounded-[2.5rem] shadow-card overflow-hidden border border-[#E5E0D8] relative z-10">
+        
+        <div class="h-2 bg-gradient-to-r from-brand-brown via-brand-gold to-brand-brown"></div>
+
+        <div class="bg-washi p-8 md:p-12 text-center relative">
+          
+          <div class="inline-flex flex-col items-center mb-6">
+            <span class="text-brand-brown/50 text-[10px] font-bold tracking-widest uppercase mb-1">Volume.0</span>
+            <span class="bg-brand-brown text-white text-xs font-serif px-4 py-1 rounded-full">学びの記録</span>
+          </div>
+
+          <h1 class="text-2xl md:text-4xl font-serif font-bold leading-tight mb-8 text-brand-darkbrown">
+            「陰」と「陽」って<br>
+            <span class="inline-block border-b-4 border-brand-gold/30 pb-1">結局なんなの？</span>
+          </h1>
+
+          <div class="relative inline-block mt-4 mb-8">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-t from-brand-gold/20 to-transparent rounded-full blur-xl"></div>
+            
+            <img src="../img/hebi.png" alt="ヘビ博士" class="w-40 h-40 object-contain relative z-10 sacred-glow mx-auto transform hover:scale-105 transition duration-700 ease-in-out">
+            
+            <div class="absolute -right-4 -top-4 md:-right-16 md:top-0 bg-white border border-brand-brown/20 p-3 rounded-xl rounded-bl-none shadow-sm animate-bounce duration-[2000ms] z-20">
+              <p class="text-xs font-bold text-brand-brown whitespace-nowrap">バランスが命じゃ！</p>
+            </div>
+          </div>
+
+          <p class="text-sm md:text-base text-brand-brown/80 font-serif">
+            ── 漢方の基本「陰陽論」をざっくり理解する話
+          </p>
+        </div>
+
+        <div class="p-8 md:p-14 article-body bg-white relative">
+          
+          <p>こんにちは、ほぐしや きだです。<br>
+          「陰陽（いんよう）」という言葉、漫画や占いなんかで聞いたことありますよね。</p>
+
+          <div class="bg-[#F8F6F4] p-6 rounded-xl border-l-4 border-brand-brown mb-8 italic text-brand-brown/80 text-sm">
+             「陰キャ・陽キャ」みたいに、<br>
+             暗い・明るいという性格の話？
+          </div>
+
+          <p>最初はそんなイメージだったんですが、博士に教えてもらうと、もっと壮大で、私たちの体調管理に直結する<span class="marker">「バランスの法則」</span>のことだったんです。</p>
+
+          <h2>1. この世は「2つの力」でできている</h2>
+
+          <p>漢方では、世界にあるすべてのものは「陰（いん）」と「陽（よう）」の2つに分けられると考えます。</p>
+
+          <div class="my-10 relative group">
+             <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold via-blue-200 to-brand-gold rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+             <img src="../img/inyo.png" alt="陰と陽のバランス" class="relative rounded-2xl shadow-xl w-full border border-white/50">
+             
+             <div class="mt-3 text-center text-xs text-gray-400 font-serif">
+               ▲ 昼に活動し（陽）、夜に休む（陰）。このリズムが基本。
+             </div>
+          </div>
+
+          <p>大切なのは、<strong>「どちらが良い・悪い」ではない</strong>ということです。<br>
+          イラストの博士のように、太陽の下で活動する時間（陽）も大切ですし、月夜にぐっすり眠る時間（陰）も同じくらい大切ですよね。</p>
+
+          <h2>2. 体の中の「シーソー」</h2>
+
+          <p>私たちの体も、この2つのバランスで動いています。<br>
+          一番わかりやすいのが「自律神経」です。</p>
+
+          <ul class="list-none bg-brand-bg p-6 rounded-xl space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-gold mt-1">●</span>
+              <span><strong>陽（交感神経）</strong><br>頑張るモード。活動、興奮、発熱。</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-brown mt-1">●</span>
+              <span><strong>陰（副交感神経）</strong><br>休むモード。リラックス、冷却、栄養補給。</span>
+            </li>
+          </ul>
+
+          <p>現代人はどうしても「陽（頑張りすぎ）」になりがち。<br>
+          頭痛やほてり、イライラは、体の中の「陽」が増えすぎて、クールダウンさせる「陰」が足りなくなっているサインかもしれません。</p>
+
+          <div class="hebi-talk">
+             <p class="text-sm font-medium leading-relaxed">
+               そうじゃ。<br>
+               「影（陰）」があるから「光（陽）」が存在できるように、<br>
+               しっかり休む（陰）からこそ、良いパフォーマンス（陽）が出せるんじゃよ。<br>
+               疲れを感じたら、それは<span class="text-brand-accent-green font-bold">「陰を補給せよ（休め）」</span>という体からの指令じゃな。
+             </p>
+          </div>
+
+          <h2>3. 本日の「学び」</h2>
+
+          <div class="border-2 border-brand-gold/30 p-8 my-8 text-center bg-white relative">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-4 text-brand-gold font-serif">まとめ</span>
+            <p class="font-serif text-lg md:text-xl text-brand-brown leading-loose">
+              不調は「敵」ではなく、<br>
+              <span class="marker">バランスの偏り</span>を<br>
+              教えてくれるサイン。
+            </p>
+          </div>
+
+          <p>「あ、いま陽に偏ってるな」と気づくだけで、ちょっとお風呂にゆっくり入ろうとか、早く寝ようとか、対策が見えてきます。<br>
+          次回は、このバランスを整える具体的な方法について学んでいきたいと思います。</p>
+
+        </div>
+
+        <div class="bg-[#FAF8F5] p-8 md:p-12 text-center border-t border-brand-brown/10">
+            
+          <p class="font-serif font-bold text-brand-brown mb-8 text-lg">今回の学びは役に立ちましたか？</p>
+          
+          <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
+            <button id="likeBtn" class="w-full md:w-auto group relative inline-flex items-center justify-center gap-2 bg-white border-2 border-brand-gold text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-brand-gold hover:text-white transition-all duration-300 shadow-sm">
+              <span id="likeIcon" class="text-xl group-hover:scale-125 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+              </span>
+              <span id="likeText">面白かった！</span>
+              <span id="floatingHeart" class="absolute -top-4 left-1/2 transform -translate-x-1/2 text-brand-gold opacity-0 pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                  <path fill-rule="evenodd" d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813a3.75 3.75 0 002.576-2.576l.813-2.846A.75.75 0 019 4.5zM9 15a.75.75 0 01.75.75v1.5h1.5a.75.75 0 010 1.5h-1.5v1.5a.75.75 0 01-1.5 0v-1.5h-1.5a.75.75 0 010-1.5h1.5v-1.5A.75.75 0 019 15z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+
+            <button id="shareBtn" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-brand-bg text-brand-brown font-bold px-8 py-3 rounded-full hover:bg-brand-brown hover:text-white transition-all duration-300 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5" /></svg>
+              <span>共有する</span>
+            </button>
+          </div>
+          
+          <p id="thanksMsg" class="text-sm text-brand-gold font-bold opacity-0 transition-opacity duration-500 h-0">
+            ありがとうございます。励みになります🌿
+          </p>
+
+          <div class="mt-8 pt-8 border-t border-brand-brown/10">
+            <a href="https://forms.gle/KG1RNXE7tEPHfsej9" target="_blank" class="inline-flex items-center justify-center gap-2 text-sm text-brand-brown/60 hover:text-brand-brown transition">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+              博士への質問・感想はこちら
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="max-w-2xl mx-auto mt-16 p-8 text-center bg-white/50 rounded-3xl backdrop-blur-sm border border-white">
+        <h3 class="text-lg font-serif font-bold mb-4 text-brand-brown">不調の理由、一緒に探しませんか？</h3>
+        <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+          「なぜ辛いのか」を東洋医学の視点で見立て、<br>
+          お一人お一人に合わせた施術を行っています。
+        </p>
+        <a href="../salon.html" class="inline-flex items-center justify-center gap-2 bg-brand-brown text-white font-bold px-8 py-3 rounded-xl hover:bg-brand-darkbrown hover:-translate-y-1 transition shadow-lg w-full md:w-auto">
+          <span>もみ徳（予約・出勤）を見る</span>
+        </a>
+      </div>
+
+      <div class="absolute -top-4 -right-4 w-24 h-64 bg-[#E2B46D] opacity-10 rounded-lg -z-10 tategaki flex items-center justify-center font-serif font-bold text-4xl select-none pointer-events-none">
+        漢方学習
+      </div>
+      <div class="absolute -bottom-4 -left-4 w-24 h-64 bg-[#5E7C60] opacity-10 rounded-lg -z-10 tategaki flex items-center justify-center font-serif font-bold text-4xl select-none pointer-events-none">
+        身体調和
+      </div>
+
+    </article>
+
+  </main>
+
+  <footer class="text-brand-brown/40 py-8 text-center text-xs">
+    <div class="flex justify-center gap-6 mb-4 font-bold">
+      <a href="../index.html" class="hover:text-brand-brown transition">ポータルTop</a>
+      <a href="../salon.html" class="hover:text-brand-brown transition">もみ徳 予約</a>
+    </div>
+    <p>© 2025 Hogushi-ya Kida & Hebi-Hakase</p>
+  </footer>
+
+  <script>
+    const likeBtn = document.getElementById('likeBtn');
+    const likeIcon = document.getElementById('likeIcon');
+    const likeText = document.getElementById('likeText');
+    const thanksMsg = document.getElementById('thanksMsg');
+    const floatingHeart = document.getElementById('floatingHeart');
+    const pageId = window.location.pathname; 
+
+    if (likeBtn) {
+        if (localStorage.getItem('liked_' + pageId)) {
+            setLikedState();
+        }
+
+        likeBtn.addEventListener('click', function() {
+            if (likeBtn.classList.contains('liked')) return;
+
+            floatingHeart.animate([
+                { transform: 'translate(-50%, 0) scale(1)', opacity: 1 },
+                { transform: 'translate(-50%, -50px) scale(1.5)', opacity: 0 }
+            ], { duration: 800, easing: 'ease-out' });
+
+            localStorage.setItem('liked_' + pageId, 'true');
+            setLikedState();
+        });
+    }
+
+    function setLikedState() {
+        likeBtn.classList.add('liked', 'bg-brand-gold', 'text-white', 'border-transparent'); 
+        likeIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M7.493 18.75c-.425 0-.82-.236-.975-.632A7.48 7.48 0 016 15.375c0-1.75.599-3.358 1.602-4.634.151-.192.373-.309.6-.397.473-.183.89-.514 1.212-.924a9.042 9.042 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75 2.25 2.25 0 012.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H14.23c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H7.494z" /></svg>';
+        likeText.textContent = '感謝！';
+        thanksMsg.classList.remove('opacity-0', 'h-0');
+        likeBtn.style.pointerEvents = 'none';
+    }
+
+    const shareBtn = document.getElementById('shareBtn');
+    if(shareBtn){
+        shareBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+                const originalText = shareBtn.innerHTML;
+                shareBtn.innerHTML = '<span>コピー完了</span>';
+                setTimeout(() => {
+                    shareBtn.innerHTML = originalText;
+                }, 2000);
+            } catch (err) {}
+        });
+    }
+  </script>
+
+</body>
+</html>
