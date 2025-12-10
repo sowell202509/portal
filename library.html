@@ -17,18 +17,18 @@
 
   <meta property="og:title" content="思考と養生の書庫｜ほぐしや きだ" />
   <meta property="og:description" content="ほぐしやきだの読み物アーカイブ。日々の養生を語る「クマ仙人の知恵袋」と、東洋医学を深く掘り下げる「漢方学習帳」。" />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="ほぐしや きだ" />
-  
-  <meta property="og:url" content="https://hogushiyakida.com/" />
-  
+   
+  <meta property="og:url" content="https://hogushiyakida.com/library.html" />
+   
   <meta property="og:image" content="https://hogushiyakida.com/img/ogp.png" />
-  
+   
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
-  
+   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -67,7 +67,7 @@
 
   <main class="flex-grow px-4 py-12 animate-fade-in bg-washi flex flex-col justify-center">
     <div class="max-w-4xl mx-auto w-full">
-      
+       
       <div class="text-center mb-12">
           <p class="text-brand-gold font-bold text-xs tracking-widest uppercase mb-2">LIBRARY</p>
           <h2 class="text-2xl md:text-3xl font-serif font-bold text-brand-brown mb-4">
@@ -140,10 +140,58 @@
         </a>
 
       </div>
-      
+       
     </div>
   </main>
 
+  <section class="py-12 px-4 border-t border-brand-brown/10">
+    <div class="max-w-md mx-auto text-center">
+      <h3 class="font-serif font-bold text-brand-brown mb-6 flex items-center justify-center gap-2">
+        <span class="text-xl">📚</span>
+        <span>書庫をシェアする</span>
+      </h3>
+      
+      <div class="grid grid-cols-2 gap-4">
+        <a href="https://social-plugins.line.me/lineit/share?url=https://hogushiyakida.com/library.html" target="_blank" rel="nofollow" class="flex flex-col items-center justify-center gap-2 bg-[#06C755] text-white py-4 rounded-xl shadow-sm hover:opacity-90 transition transform hover:-translate-y-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.121.303.079.793.037 1.096-.145 1.066-.645 2.744-.702 2.962-.06.23-.332.899.391.49 4.363-2.458 6.784-4.73 7.087-5.049.034-.035.07-.07.104-.108 3.528-1.927 5.99-5.461 5.99-9.601z"/></svg>
+          <span class="text-xs font-bold">LINEで送る</span>
+        </a>
+
+        <a href="https://twitter.com/intent/tweet?text=日常に寄り添う知恵と、深淵を覗く学習。｜思考と養生の書庫&url=https://hogushiyakida.com/library.html&hashtags=ほぐしやきだ,東洋医学" target="_blank" rel="nofollow" class="flex flex-col items-center justify-center gap-2 bg-black text-white py-4 rounded-xl shadow-sm hover:opacity-90 transition transform hover:-translate-y-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span class="text-xs font-bold">Xでポスト</span>
+        </a>
+      </div>
+
+      <button onclick="shareNative()" class="w-full mt-4 bg-white text-brand-brown font-bold py-3 rounded-xl border border-brand-brown/10 hover:bg-brand-brown hover:text-white transition flex items-center justify-center gap-2">
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+         </svg>
+         その他の方法でシェア
+      </button>
+
+    </div>
+  </section>
+
+  <script>
+    function shareNative() {
+      const shareData = {
+        title: '思考と養生の書庫｜ほぐしや きだ',
+        text: '日常に寄り添う知恵と、深淵を覗く学習。ほぐしやきだの読み物アーカイブ。',
+        url: 'https://hogushiyakida.com/library.html'
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => console.log('シェアしました'))
+          .catch((err) => console.log('シェアキャンセル', err));
+      } else {
+        navigator.clipboard.writeText(shareData.url).then(() => {
+          alert('URLをコピーしました！\n' + shareData.url);
+        });
+      }
+    }
+  </script>
   <footer class="text-center py-8 text-[10px] text-brand-black/40">
       <p>© 2025 ほぐしや きだ</p>
   </footer>
