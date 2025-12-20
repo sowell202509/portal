@@ -3,258 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ピヨ教授の不養生更生施設 | 黄金の養生学</title>
+    <title>ピヨ教授の不養生更生施設</title>
     <style>
-        :root {
-            --main-gold: #cba55f;
-            --bright-yellow: #ffd700;
-            --bg-black: #0a0a0a;
-            --card-bg: #161616;
-            --text-cream: #fdf5e6;
-            --max-width: 800px;
+        :root { --main-gold: #cba55f; --bright-yellow: #ffd700; --bg-black: #0a0a0a; --text-cream: #fdf5e6; }
+        
+        body { margin: 0; padding: 0; font-family: "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-black); color: var(--text-cream); line-height: 1.6; letter-spacing: 0.05em; }
+        .container { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+        
+        section { padding: 100px 0; text-align: center; }
+        img { max-width: 100%; height: auto; margin-bottom: 40px; filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2)); }
+
+        /* タイトル：短く、強く */
+        h1, h2 { 
+            background: linear-gradient(70deg, #8c6a2c, #ffd700, #fdf5e6, #ffd700, #8c6a2c); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+            font-weight: 900; line-height: 1.2; margin: 0 0 20px;
+        }
+        h1 { font-size: clamp(1.8rem, 6vw, 3rem); }
+        h2 { font-size: clamp(1.4rem, 5vw, 2.2rem); }
+
+        p { font-size: 0.95rem; opacity: 0.9; margin: 0; }
+        .highlight { color: var(--bright-yellow); font-weight: bold; }
+
+        /* メソッド：表を極限までシンプルに */
+        .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+        .method-item { background: #161616; padding: 20px; border-radius: 12px; border: 1px solid #333; }
+        .method-label { font-size: 0.7rem; color: var(--main-gold); display: block; margin-bottom: 5px; }
+        .method-text { font-size: 1.1rem; font-weight: bold; }
+
+        /* 進化エリア */
+        .evolution-box { margin-top: 60px; padding: 40px 20px; border-top: 1px solid #222; }
+
+        /* CTA：邪魔にならないが目立つ */
+        .cta-outer { position: fixed; bottom: 30px; left: 0; width: 100%; z-index: 1000; text-align: center; }
+        .btn-note { 
+            display: inline-block; background: linear-gradient(45deg, #8c6a2c, #ffd700, #8c6a2c); 
+            color: #000; text-decoration: none; padding: 18px 40px; border-radius: 100px; 
+            font-weight: 900; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
         }
 
-        /* リセット & ベース */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-            background-color: var(--bg-black);
-            color: var(--text-cream);
-            line-height: 1.8;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* 装飾セクション */
-        section {
-            padding: 100px 0;
-            text-align: center;
-            border-bottom: 1px solid #222;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 24px auto;
-            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.25));
-            border-radius: 12px;
-        }
-
-        /* 黄金グラデーションタイトル */
-        h1, h2 {
-            background: linear-gradient(70deg, #8c6a2c, #ffd700, #fdf5e6, #ffd700, #8c6a2c);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            line-height: 1.4;
-            margin-bottom: 32px;
-            animation: textFlow 5s linear infinite;
-        }
-
-        @keyframes textFlow {
-            to { background-position: 200% center; }
-        }
-
-        h1 { font-size: clamp(1.6rem, 6vw, 2.8rem); }
-        h2 { font-size: clamp(1.3rem, 5vw, 2.2rem); }
-
-        .highlight {
-            color: var(--bright-yellow);
-            font-weight: bold;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
-        }
-
-        /* ヒーローエリア */
-        .hero {
-            background: radial-gradient(circle at 50% 40%, #2a2a2a, var(--bg-black));
-            padding-top: 120px;
-        }
-
-        /* 究極のテーブル設計 */
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 40px 0;
-            border: 2px solid var(--main-gold);
-            border-radius: 16px;
-            background: var(--card-bg);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 500px;
-        }
-
-        th, td {
-            padding: 24px 16px;
-            border-bottom: 1px solid #333;
-        }
-
-        th {
-            background: linear-gradient(to bottom, var(--bright-yellow), var(--main-gold));
-            color: #000;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        td { font-size: 0.95rem; }
-
-        /* 進化カード */
-        .evolution-card {
-            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-            padding: 50px 30px;
-            border-radius: 24px;
-            border: 1px solid #444;
-            margin-top: 50px;
-            box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1);
-        }
-
-        /* ナビゲーション */
-        .back-link {
-            display: inline-block;
-            margin-top: 48px;
-            color: var(--main-gold);
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            border-bottom: 1px solid transparent;
-            transition: 0.3s;
-        }
-        .back-link:hover {
-            color: var(--bright-yellow);
-            border-bottom: 1px solid var(--bright-yellow);
-        }
-
-        /* 黄金のフローティングCTA */
-        .cta-outer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 30px 0;
-            background: linear-gradient(to top, rgba(10,10,10,1) 60%, rgba(10,10,10,0));
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-        }
-
-        .btn-note {
-            display: block;
-            width: 90%;
-            max-width: 450px;
-            background: linear-gradient(45deg, #8c6a2c, #ffd700, #fff, #ffd700, #8c6a2c);
-            background-size: 200% auto;
-            color: #000;
-            text-decoration: none;
-            padding: 22px;
-            border-radius: 100px;
-            font-weight: 900;
-            font-size: clamp(1.1rem, 4vw, 1.3rem);
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: shineBtn 4s linear infinite;
-        }
-
-        @keyframes shineBtn {
-            to { background-position: 200% center; }
-        }
-
-        .btn-note:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.6);
-        }
-
-        .btn-note:active { transform: scale(0.97); }
-
-        .btn-subtext {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: normal;
-            margin-top: 4px;
-            opacity: 0.8;
-        }
-
-        footer {
-            padding: 80px 20px 180px;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--main-gold);
-            background: #050505;
-            letter-spacing: 2px;
-        }
-
-        /* メディアクエリ（デスクトップ調整） */
-        @media (min-width: 768px) {
-            section { padding: 140px 0; }
-            img { margin: 40px auto; }
-        }
+        footer { padding-bottom: 120px; opacity: 0.5; font-size: 0.7rem; }
+        .back { color: var(--main-gold); text-decoration: none; font-size: 0.8rem; display: block; margin-top: 40px; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <section class="hero">
-            <img src="piyo_hero.png" alt="王座に君臨する黄金のピヨ教授">
-            <h1>「まだ“努力”なんて無駄なことしてんの？<br>愚民の自覚があるなら僕様から学べピヨ。」</h1>
-            <p>努力は不要。必要なのは、天才だけが知る<br><span class="highlight">「究極のズボラ養生」</span>のみだ。</p>
+        <section>
+            <img src="img/piyo_hero.png" alt="王座">
+            <h1>努力は、毒だ。</h1>
+            <p>まだ無駄な足掻きを続けるのか？<br>僕様が教えるのは、最短の<span class="highlight">「ズボラ養生」</span>のみだ。</p>
         </section>
 
         <section>
-            <h2>世の中の健康法は拷問だピヨ。</h2>
-            <img src="piyo_laugh.png" alt="嘲笑うピヨ教授" style="max-width: 320px;">
-            <p>三日坊主で自分を責め、高いサプリで安心したふりをする情弱ども。<br>そんな生活を続けて、明日があると思ってるのが不思議だピヨ。</p>
-            <p class="highlight">「安心しろ、僕様はもっとズボラだ。」</p>
+            <h2>頑張るから、壊れる。</h2>
+            <img src="img/piyo_laugh.png" alt="嘲笑" style="max-width: 280px;">
+            <p>三日坊主、サプリ漬け、睡眠不足。<br>そんな拷問はもうやめろ。<span class="highlight">「もっと、ズボラでいい。」</span></p>
         </section>
 
         <section>
-            <h2>最短・最小の「怠惰養生学」</h2>
-            <img src="piyo_bed.png" alt="寝たままの贅沢講義">
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>項目</th><th>愚民のやり方</th><th>ピヨ教授の教え</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>食事</td><td>我慢のサラダ</td><td><span class="highlight">工夫して食え</span></td></tr>
-                        <tr><td>運動</td><td>続かないジム</td><td><span class="highlight">寝ながら整えろ</span></td></tr>
-                        <tr><td>睡眠</td><td>質の追求（笑）</td><td><span class="highlight">まずスマホ捨てろ</span></td></tr>
-                    </tbody>
-                </table>
+            <h2>怠惰こそが、正解。</h2>
+            <img src="img/piyo_bed.png" alt="講義">
+            <div class="method-grid">
+                <div class="method-item"><span class="method-label">食事</span><span class="method-text">工夫して、食え。</span></div>
+                <div class="method-item"><span class="method-label">運動</span><span class="method-text">寝ながら、整えろ。</span></div>
+                <div class="method-item" style="grid-column: span 2;"><span class="method-label">睡眠</span><span class="method-text">まず、スマホを捨てろ。</span></div>
             </div>
         </section>
 
-        <section class="evolution">
-            <div class="evolution-card">
-                <h2>僕様を飽きさせるなよ？</h2>
-                <img src="piyo_evolution.png" alt="黄金の進化図">
-                <p>Noteが10記事更新されるたびに、<br>僕様の衣装が<span class="highlight">豪華（ラグジュアリー）</span>になる仕様だピヨ。</p>
-            </div>
-            <a href="index.html" class="back-link">← 木田のポータルサイトへ戻る</a>
+        <section class="evolution-box">
+            <h2>進化を、目撃せよ。</h2>
+            <img src="img/piyo_evolution.png" alt="進化">
+            <p>Noteが10記事更新されるたびに、<br>僕様の衣装は<span class="highlight">豪華（ラグジュアリー）</span>に変わる。</p>
+            <a href="index.html" class="back">← ポータルサイトへ戻る</a>
         </section>
+
+        <footer><p>© 2025 GOLDEN PIYO PROFESSOR</p></footer>
     </div>
 
     <div class="cta-outer">
         <a href="https://note.com/piyokyouju/n/nc5aae1943e08" class="btn-note">
-            教授のNoteを拝読する
-            <span class="btn-subtext">（クリックしろ愚民ども。話はそれからだ。）</span>
+            Noteで真理を学ぶ
         </a>
     </div>
-
-    <footer>
-        <p>© 2025 GOLDEN PIYO PROFESSOR<br>Managed by hogushiyakida.com</p>
-        <p style="margin-top: 20px; opacity: 0.5;">このページを閉じても、貴様の不養生は治らないピヨ。</p>
-    </footer>
-
 </body>
 </html>
