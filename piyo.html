@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ピヨ教授の不養生更生施設 | 黄金の養生学</title>
+    <style>
+        :root {
+            --main-gold: #cba55f;
+            --bright-yellow: #ffd700;
+            --bg-black: #0a0a0a;
+            --card-bg: #161616;
+            --text-cream: #fdf5e6;
+            --max-width: 800px;
+        }
+
+        /* リセット & ベース */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-cream);
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 装飾セクション */
+        section {
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 24px auto;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.25));
+            border-radius: 12px;
+        }
+
+        /* 黄金グラデーションタイトル */
+        h1, h2 {
+            background: linear-gradient(70deg, #8c6a2c, #ffd700, #fdf5e6, #ffd700, #8c6a2c);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            line-height: 1.4;
+            margin-bottom: 32px;
+            animation: textFlow 5s linear infinite;
+        }
+
+        @keyframes textFlow {
+            to { background-position: 200% center; }
+        }
+
+        h1 { font-size: clamp(1.6rem, 6vw, 2.8rem); }
+        h2 { font-size: clamp(1.3rem, 5vw, 2.2rem); }
+
+        .highlight {
+            color: var(--bright-yellow);
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+        }
+
+        /* ヒーローエリア */
+        .hero {
+            background: radial-gradient(circle at 50% 40%, #2a2a2a, var(--bg-black));
+            padding-top: 120px;
+        }
+
+        /* 究極のテーブル設計 */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 40px 0;
+            border: 2px solid var(--main-gold);
+            border-radius: 16px;
+            background: var(--card-bg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th, td {
+            padding: 24px 16px;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            background: linear-gradient(to bottom, var(--bright-yellow), var(--main-gold));
+            color: #000;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        td { font-size: 0.95rem; }
+
+        /* 進化カード */
+        .evolution-card {
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            padding: 50px 30px;
+            border-radius: 24px;
+            border: 1px solid #444;
+            margin-top: 50px;
+            box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        /* ナビゲーション */
+        .back-link {
+            display: inline-block;
+            margin-top: 48px;
+            color: var(--main-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+        .back-link:hover {
+            color: var(--bright-yellow);
+            border-bottom: 1px solid var(--bright-yellow);
+        }
+
+        /* 黄金のフローティングCTA */
+        .cta-outer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 0;
+            background: linear-gradient(to top, rgba(10,10,10,1) 60%, rgba(10,10,10,0));
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-note {
+            display: block;
+            width: 90%;
+            max-width: 450px;
+            background: linear-gradient(45deg, #8c6a2c, #ffd700, #fff, #ffd700, #8c6a2c);
+            background-size: 200% auto;
+            color: #000;
+            text-decoration: none;
+            padding: 22px;
+            border-radius: 100px;
+            font-weight: 900;
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: shineBtn 4s linear infinite;
+        }
+
+        @keyframes shineBtn {
+            to { background-position: 200% center; }
+        }
+
+        .btn-note:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.6);
+        }
+
+        .btn-note:active { transform: scale(0.97); }
+
+        .btn-subtext {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: normal;
+            margin-top: 4px;
+            opacity: 0.8;
+        }
+
+        footer {
+            padding: 80px 20px 180px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--main-gold);
+            background: #050505;
+            letter-spacing: 2px;
+        }
+
+        /* メディアクエリ（デスクトップ調整） */
+        @media (min-width: 768px) {
+            section { padding: 140px 0; }
+            img { margin: 40px auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <section class="hero">
+            <img src="piyo_hero.png" alt="王座に君臨する黄金のピヨ教授">
+            <h1>「まだ“努力”なんて無駄なことしてんの？<br>愚民の自覚があるなら僕様から学べピヨ。」</h1>
+            <p>努力は不要。必要なのは、天才だけが知る<br><span class="highlight">「究極のズボラ養生」</span>のみだ。</p>
+        </section>
+
+        <section>
+            <h2>世の中の健康法は拷問だピヨ。</h2>
+            <img src="piyo_laugh.png" alt="嘲笑うピヨ教授" style="max-width: 320px;">
+            <p>三日坊主で自分を責め、高いサプリで安心したふりをする情弱ども。<br>そんな生活を続けて、明日があると思ってるのが不思議だピヨ。</p>
+            <p class="highlight">「安心しろ、僕様はもっとズボラだ。」</p>
+        </section>
+
+        <section>
+            <h2>最短・最小の「怠惰養生学」</h2>
+            <img src="piyo_bed.png" alt="寝たままの贅沢講義">
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>項目</th><th>愚民のやり方</th><th>ピヨ教授の教え</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>食事</td><td>我慢のサラダ</td><td><span class="highlight">工夫して食え</span></td></tr>
+                        <tr><td>運動</td><td>続かないジム</td><td><span class="highlight">寝ながら整えろ</span></td></tr>
+                        <tr><td>睡眠</td><td>質の追求（笑）</td><td><span class="highlight">まずスマホ捨てろ</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="evolution">
+            <div class="evolution-card">
+                <h2>僕様を飽きさせるなよ？</h2>
+                <img src="piyo_evolution.png" alt="黄金の進化図">
+                <p>Noteが10記事更新されるたびに、<br>僕様の衣装が<span class="highlight">豪華（ラグジュアリー）</span>になる仕様だピヨ。</p>
+            </div>
+            <a href="index.html" class="back-link">← 木田のポータルサイトへ戻る</a>
+        </section>
+    </div>
+
+    <div class="cta-outer">
+        <a href="https://note.com/piyokyouju/n/nc5aae1943e08" class="btn-note">
+            教授のNoteを拝読する
+            <span class="btn-subtext">（クリックしろ愚民ども。話はそれからだ。）</span>
+        </a>
+    </div>
+
+    <footer>
+        <p>© 2025 GOLDEN PIYO PROFESSOR<br>Managed by hogushiyakida.com</p>
+        <p style="margin-top: 20px; opacity: 0.5;">このページを閉じても、貴様の不養生は治らないピヨ。</p>
+    </footer>
+
+</body>
+</html>
