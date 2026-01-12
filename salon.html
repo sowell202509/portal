@@ -183,46 +183,38 @@
 
       <div class="mt-10 bg-white rounded-2xl shadow-soft border border-momi-brown/10 p-4 md:p-6">
         
-        <!-- モバイル用スクロールカレンダー -->
         <div class="md:hidden">
           <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2">
-            <!-- 日曜 -->
             <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-brown text-white text-center shadow-soft">
               <p class="text-[13px] md:text-sm opacity-95 font-semibold tracking-wide">日</p>
               <p class="mt-1 text-2xl font-extrabold leading-tight">13:00<br><span class="text-base font-bold">- 21:00</span></p>
               <p class="mt-1 text-[11px] opacity-95">赤坂</p>
             </div>
-            <!-- 月曜 -->
             <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-brown text-white text-center shadow-soft">
               <p class="text-[13px] md:text-sm opacity-95 font-semibold tracking-wide">月</p>
               <p class="mt-1 text-2xl font-extrabold leading-tight">10:00<br><span class="text-base font-bold">- 18:00</span></p>
               <p class="mt-1 text-[11px] opacity-95">赤坂</p>
             </div>
-            <!-- 火曜 -->
             <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-ivory text-momi-ink text-center border border-momi-brown/15">
               <p class="text-[13px] md:text-sm opacity-70 font-semibold tracking-wide">火</p>
               <p class="mt-1 text-xl font-extrabold leading-tight opacity-40">—</p>
               <p class="mt-1 text-[11px] opacity-40">OFF</p>
             </div>
-            <!-- 水曜 -->
             <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-brown text-white text-center shadow-soft">
               <p class="text-[13px] md:text-sm opacity-95 font-semibold tracking-wide">水</p>
               <p class="mt-1 text-2xl font-extrabold leading-tight">10:00<br><span class="text-base font-bold">- 18:00</span></p>
               <p class="mt-1 text-[11px] opacity-95">赤坂</p>
             </div>
-            <!-- 木曜（薬院店） -->
             <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-gold text-momi-ink text-center shadow-soft">
               <p class="text-[13px] md:text-sm opacity-95 font-semibold tracking-wide">木</p>
-              <p class="mt-1 text-2xl font-extrabold leading-tight">10:00<br><span class="text-base font-bold">- 18:00</span></p>
+              <p class="mt-1 text-2xl font-extrabold leading-tight">11:00<br><span class="text-base font-bold">- 19:00</span></p>
               <p class="mt-1 text-[11px] opacity-95">薬院</p>
             </div>
-            <!-- 金曜（OFF） -->
             <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-ivory text-momi-ink text-center border border-momi-brown/15">
               <p class="text-[13px] md:text-sm opacity-70 font-semibold tracking-wide">金</p>
               <p class="mt-1 text-xl font-extrabold leading-tight opacity-40">—</p>
               <p class="mt-1 text-[11px] opacity-40">OFF</p>
             </div>
-            <!-- 土曜 -->
             <div class="min-w-[110px] snap-start p-4 rounded-2xl bg-momi-ivory text-momi-ink text-center border border-momi-brown/15">
               <p class="text-[13px] md:text-sm opacity-70 font-semibold tracking-wide">土</p>
               <p class="mt-1 text-xl font-extrabold leading-tight opacity-40">—</p>
@@ -235,7 +227,6 @@
           </div>
         </div>
 
-        <!-- PC用グリッドカレンダー -->
         <div class="hidden md:grid grid-cols-7 gap-2 text-center">
           <div class="p-4 rounded-xl bg-momi-brown text-white">
             <p class="text-xs opacity-90">日</p>
@@ -256,13 +247,11 @@
             <p class="mt-1 leading-tight text-[17px] md:text-lg font-extrabold tracking-tight tabular-nums font-mono">10-18</p>
             <p class="mt-1 text-[12px] opacity-95">赤坂</p>
           </div>
-          <!-- 木曜 -->
           <div class="p-4 rounded-xl bg-momi-gold text-momi-ink ring-1 ring-momi-gold/40">
             <p class="text-xs opacity-90">木</p>
-            <p class="mt-1 leading-tight text-[17px] md:text-lg font-extrabold tracking-tight tabular-nums font-mono">10-18</p>
+            <p class="mt-1 leading-tight text-[17px] md:text-lg font-extrabold tracking-tight tabular-nums font-mono">11-19</p>
             <p class="mt-1 text-[12px] opacity-95">薬院</p>
           </div>
-          <!-- 金曜 -->
           <div class="p-4 rounded-xl bg-momi-ivory border-2 border-momi-brown/20 text-momi-ink/50">
             <p class="text-xs opacity-70">金</p>
             <p class="mt-1 text-lg font-bold opacity-40">—</p>
@@ -282,10 +271,8 @@
       <div class="mt-12 grid md:grid-cols-2 gap-10">
         <div class="bg-white p-6 rounded-2xl shadow-soft border-2 border-momi-brown/40">
           <h3 class="text-xl font-bold text-momi-brown mb-2">赤坂駅店（日・月・水）</h3>
-          <!-- Googleマップ埋め込み（検索クエリ形式に更新） -->
           <iframe src="https://maps.google.co.jp/maps?output=embed&q=もみ徳赤坂駅店" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg"></iframe>
           <div class="mt-3 flex gap-2 text-sm">
-            <!-- リンク先をGoogleマップアプリ形式に更新 -->
             <a href="https://maps.app.goo.gl/9MtcTWiHCFTDid7c8?g_st=ic" target="_blank" class="text-momi-brown underline font-bold">📍 Googleマップアプリで開く</a>
           </div>
         </div>
